@@ -67,7 +67,7 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
 		<div
 			className={`fixed inset-0 z-[3000] flex items-center justify-center bg-black/90 backdrop-blur-[10px] transition-all duration-500 ${isOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}`}>
 			<div
-				className={`main-modal relative w-[95%] max-w-[950px] max-h-[85vh] bg-[#1e293b] rounded-xl flex border border-accent/20 overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.5)] transition-all duration-500 ${isOpen ? "scale-100" : "scale-95"}`}>
+				className={`main-modal relative w-[95%] max-w-[950px] max-h-[85vh] bg-[#121212] rounded-[2rem] flex border border-white/10 overflow-hidden shadow-[0_40px_100px_rgba(0,0,0,0.8)] transition-all duration-500 ${isOpen ? "scale-100" : "scale-95"}`}>
 				{/* Loading Overlay */}
 				{isSending && (
 					<div className='absolute inset-0 z-[100] flex items-center justify-center bg-black/80 backdrop-blur-sm'>
@@ -88,72 +88,72 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
 				)}
 
 				<div
-					className={`modal__half modal__about w-1/2 p-[35px] flex flex-col justify-center bg-accent text-black hidden md:flex transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] ${isAnimating ? "translate-x-0 opacity-100 scale-100" : "-translate-x-[150%] opacity-0 scale-90"}`}>
-					<h3 className='modal__title text-2xl font-bold mb-4 uppercase tracking-widest font-orbitron'>
+					className={`modal__half modal__about w-1/2 p-[45px] flex flex-col justify-center bg-accent text-black hidden md:flex transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] ${isAnimating ? "translate-x-0 opacity-100 scale-100" : "-translate-x-[150%] opacity-0 scale-90"}`}>
+					<h3 className='modal__title text-3xl font-black mb-4 uppercase tracking-tighter'>
 						Drew T Ernst
 					</h3>
-					<h4 className='modal__sub-title text-black/60 font-bold mb-4 uppercase tracking-widest text-[10px]'>
-						Frontend Developer
+					<h4 className='modal__sub-title text-black/40 font-black mb-6 uppercase tracking-[0.3em] text-[10px]'>
+						Senior Systems Engineer
 					</h4>
-					<p className='modal__para leading-relaxed text-black/80 text-sm font-medium'>
-						With a background in Public Relations and Marketing, I approach
-						software not just as a technical challenge, but as a mechanism for
-						trust acquisition and data integrity.
+					<p className='modal__para leading-relaxed text-black/80 text-sm font-bold'>
+						Strategic engineering focused on trust acquisition and data integrity. 
+						Building beyond the interface.
 					</p>
 				</div>
 
 				<div
-					className={`modal__half modal__contact w-full md:w-1/2 p-[35px] flex flex-col justify-center bg-[#1e293b] text-[#d7e3fc] relative transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] ${isAnimating ? "translate-x-0 opacity-100 scale-100" : "translate-x-[150%] opacity-0 scale-90"}`}>
+					className={`modal__half modal__contact w-full md:w-1/2 p-[45px] flex flex-col justify-center bg-[#121212] text-white relative transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] ${isAnimating ? "translate-x-0 opacity-100 scale-100" : "translate-x-[150%] opacity-0 scale-90"}`}>
 					<button
 						onClick={onClose}
-						className='absolute top-6 right-8 text-3xl cursor-pointer text-accent transition-transform z-50 p-2 group/close'>
+						className='absolute top-8 right-8 text-2xl cursor-pointer text-white/20 hover:text-accent transition-all z-50 p-2 group/close'>
 						<Icon
 							icon='bi:x-lg'
 							className='modal__exit block transition-transform duration-300 group-hover/close:rotate-90 group-hover/close:scale-110'
 						/>
 					</button>
-					<h3 className='modal__title text-2xl font-bold mb-6 uppercase tracking-widest text-accent font-orbitron'>
-						Contact
+					<h3 className='modal__title text-2xl font-black mb-8 uppercase tracking-tighter text-white'>
+						Uplink <span className='text-accent italic'>Request.</span>
 					</h3>
-					<form ref={formRef} onSubmit={handleSubmit} className='space-y-4'>
+					<form ref={formRef} onSubmit={handleSubmit} className='space-y-6'>
 						<div className='form__item'>
-							<label className='block text-[9px] font-bold uppercase mb-1 text-accent tracking-[0.2em]'>
-								Name
+							<label className='block text-[9px] font-bold uppercase mb-2 text-white/30 tracking-[0.3em]'>
+								Identity
 							</label>
 							<input
-								className='w-full p-3 bg-white border border-accent/20 rounded text-black font-bold outline-none font-mono text-xs uppercase placeholder:text-black/30'
-								placeholder='NAME...'
+								className='w-full p-4 bg-white/5 border border-white/10 rounded-xl text-white font-bold outline-none font-mono text-xs uppercase placeholder:text-white/20 focus:border-accent/50 transition-all'
+								placeholder='Full Name...'
 								name='user_name'
 								type='text'
 								required
 							/>
 						</div>
 						<div className='form__item'>
-							<label className='block text-[9px] font-bold uppercase mb-1 text-accent tracking-[0.2em]'>
-								Email
+							<label className='block text-[9px] font-bold uppercase mb-2 text-white/30 tracking-[0.3em]'>
+								Coordinate
 							</label>
 							<input
-								className='w-full p-3 bg-white border border-accent/20 rounded text-black font-bold outline-none font-mono text-xs uppercase placeholder:text-black/30'
-								placeholder='EMAIL...'
+								className='w-full p-4 bg-white/5 border border-white/10 rounded-xl text-white font-bold outline-none font-mono text-xs uppercase placeholder:text-white/20 focus:border-accent/50 transition-all'
+								placeholder='Email Address...'
 								name='user_email'
 								type='email'
 								required
 							/>
 						</div>
 						<div className='form__item'>
-							<label className='block text-[9px] font-bold uppercase mb-1 text-accent tracking-[0.2em]'>
-								Message
+							<label className='block text-[9px] font-bold uppercase mb-2 text-white/30 tracking-[0.3em]'>
+								Transmission
 							</label>
 							<textarea
-								className='w-full p-3 bg-white border border-accent/20 rounded text-black font-bold outline-none h-32 font-mono text-xs uppercase placeholder:text-black/30'
-								placeholder='MESSAGE...'
+								className='w-full p-4 bg-white/5 border border-white/10 rounded-xl text-white font-bold outline-none h-32 font-mono text-xs uppercase placeholder:text-white/20 focus:border-accent/50 transition-all'
+								placeholder='System Details...'
 								name='message'
 								required></textarea>
 						</div>
 						<button
 							disabled={isSending}
-							className='w-full py-3 border-2 border-accent text-accent font-bold uppercase tracking-widest hover:bg-accent hover:text-black transition-all text-xs disabled:opacity-50'>
-							{isSending ? "Uplinking..." : "Send Message"}
+							className='group w-full py-4 bg-accent text-black font-black uppercase tracking-widest hover:scale-[1.02] active:scale-95 transition-all text-xs disabled:opacity-50 flex items-center justify-center gap-3 rounded-xl'>
+							{isSending ? "Transmitting..." : "Initialize Uplink"}
+							<Icon icon='solar:rocket-linear' className='text-lg group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform' />
 						</button>
 					</form>
 				</div>

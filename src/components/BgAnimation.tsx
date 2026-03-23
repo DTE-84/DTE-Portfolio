@@ -69,7 +69,7 @@ const BgAnimation: React.FC = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
       const isYellow = currentTheme.current === "yellow";
-      const color = isYellow ? "253, 224, 71" : "0, 255, 204";
+      const color = isYellow ? "253, 224, 71" : "0, 224, 255"; // Electric Blue
 
       particles.forEach((p) => {
         p.x += p.speedX;
@@ -112,17 +112,17 @@ const BgAnimation: React.FC = () => {
     >
       <canvas
         ref={canvasRef}
-        className="absolute inset-0 w-full h-full"
+        className="absolute inset-0 w-full h-full opacity-40"
       />
       <div
-        className="absolute inset-0 bg-[url('/DTE-Portfolio/assets/proxima.jpg')] bg-cover bg-center opacity-5 mix-blend-luminosity grayscale contrast-125 brightness-75"
+        className="absolute inset-0 bg-[url('/DTE-Portfolio/assets/proxima.jpg')] bg-cover bg-center opacity-[0.03] mix-blend-luminosity grayscale contrast-125 brightness-75"
       />
       <div
-        className="absolute w-[500px] h-[500px] rounded-full blur-[80px] bg-accent opacity-15 animate-float"
-        style={{ top: "-10%", left: "-10%" }}
+        className="absolute w-[600px] h-[600px] rounded-full blur-[120px] bg-accent opacity-10 animate-float"
+        style={{ top: "-15%", left: "-10%" }}
       />
       <div
-        className="absolute w-[400px] h-[400px] rounded-full blur-[80px] bg-accent opacity-15 animate-float [animation-delay:-4s]"
+        className="absolute w-[500px] h-[500px] rounded-full blur-[100px] bg-offset opacity-10 animate-float [animation-delay:-4s]"
         style={{ bottom: "-10%", right: "-5%" }}
       />
     </div>
