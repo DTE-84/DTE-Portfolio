@@ -374,7 +374,7 @@ const OtherWorks = () => {
 		},
 		{
 			id: "ProDrip",
-			title: "ProDrip Wraps & Tints",
+			title: "ProDrip",
 			category: "Service Logic",
 			year: 2024,
 			description: "Dynamic landing and service orchestration for premium automotive wraps and tinting services.",
