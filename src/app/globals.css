@@ -16,6 +16,7 @@
   --animate-float: float 8s ease-in-out infinite;
   --animate-orb-pulse: orbPulse 2s ease-in-out infinite;
   --animate-status-pulse: statusPulse 2s infinite ease-in-out;
+  --animate-marquee: marquee 24s linear infinite;
 }
 
 @keyframes float {
@@ -44,6 +45,15 @@
     opacity: 0.5;
     transform: scale(0.9);
     box-shadow: 0 0 5px #fff, 0 0 10px var(--theme-accent);
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
   }
 }
 

@@ -40,12 +40,31 @@ const RevealText: React.FC<{ text: string; isReverse?: boolean }> = ({
 	);
 };
 
-const Hero = () => {
+const Hero = ({ onContactClick }: { onContactClick: () => void }) => {
 	const highlights = [
 		"Real-World Operations",
 		"Compliance-Aware Design",
 		"Full-Stack Systems",
 		"Data Analysis",
+	];
+
+	const quickLinks = [
+		{
+			label: "Portfolio",
+			href: "https://dte-84.github.io/DTE-Portfolio/",
+		},
+		{
+			label: "GitHub",
+			href: "https://github.com/dte-84",
+		},
+		{
+			label: "LinkedIn",
+			href: "https://linkedin.com/in/dte84",
+		},
+		{
+			label: "Resume",
+			href: "/DTE-Portfolio/assets/DrewTErnst_Resume.pdf",
+		},
 	];
 
 	return (
@@ -89,6 +108,27 @@ const Hero = () => {
 						<p className='text-sm text-zinc-500 leading-relaxed mt-8'>
 							Built for useful outcomes, not just polished demos.
 						</p>
+						<div className='flex flex-wrap gap-3 mt-8 pt-6 border-t border-white/10'>
+							{quickLinks.map((link) => (
+								<a
+									key={link.label}
+									href={link.href}
+									target={link.href.startsWith("http") ? "_blank" : undefined}
+									rel={link.href.startsWith("http") ? "noreferrer" : undefined}
+									className='inline-flex items-center gap-2 px-3 py-2 rounded-xl border border-white/10 text-xs font-mono uppercase tracking-[0.2em] text-white/70 hover:text-accent hover:border-accent/40 transition-all'
+								>
+									<span>{link.label}</span>
+									<Icon icon='solar:arrow-right-up-linear' className='text-sm' />
+								</a>
+							))}
+							<button
+								onClick={onContactClick}
+								className='inline-flex items-center gap-2 px-3 py-2 rounded-xl border border-accent/30 text-xs font-mono uppercase tracking-[0.2em] text-accent hover:bg-accent/10 hover:border-accent/50 transition-all'
+							>
+								<span>Contact</span>
+								<Icon icon='solar:letter-linear' className='text-sm' />
+							</button>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -273,17 +313,13 @@ const About: React.FC = () => {
 			<div className='grid md:grid-cols-2 gap-16'>
 				<div className='flex flex-col gap-8'>
 					<h2 className='text-4xl font-black uppercase tracking-tighter'>
-						How I <span className='text-accent italic'>Build.</span>
+						The <span className='text-accent italic'>Philosophy.</span>
 					</h2>
 					<p className='text-lg text-zinc-400 leading-relaxed'>
-						I like building useful software that makes difficult work easier,
-						turns messy problems into manageable systems, and helps people get
-						better outcomes.
+						I like building systems that bridge the gap between high-level engineering and strategic marketing. Every line of code is a communicative act; every UI pattern is a behavioral prompt.
 					</p>
 					<p className='text-zinc-500 leading-relaxed'>
-						My background in marketing and communication helps me shape software
-						around user behavior, business goals, and cleaner delivery for real
-						clients.
+					With a background in Communications and Marketing, I approach software not just as a technical challenge, but as a mechanism for trust acquisition and data integrity.
 					</p>
 				</div>
 				<div className='bg-white/5 border border-white/10 rounded-3xl p-8 grid sm:grid-cols-2 gap-8'>
@@ -428,7 +464,7 @@ export default function Home() {
 		<main className='bg-black min-h-screen text-white selection:bg-accent selection:text-black antialiased font-space relative overflow-hidden'>
 			<BgAnimation />
 			<div className='relative z-10'>
-				<Hero />
+				<Hero onContactClick={() => setIsContactOpen(true)} />
 				<ToolsOfTheTrade />
 				<Work />
 				<About />
