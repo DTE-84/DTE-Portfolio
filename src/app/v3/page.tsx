@@ -33,8 +33,7 @@ const RevealText: React.FC<{ text: string; isReverse?: boolean }> = ({
 				isVisible
 					? "opacity-100 translate-y-0"
 					: `opacity-0 ${isReverse ? "-translate-y-4" : "translate-y-4"}`
-			}`}
-		>
+			}`}>
 			{text}
 		</p>
 	);
@@ -80,7 +79,10 @@ const Hero = ({ onContactClick }: { onContactClick: () => void }) => {
 						<span className='text-white/20 italic'>Ernst.</span>
 					</h1>
 					<div className='max-w-2xl mt-8'>
-						<RevealText text='I build useful software for real people — especially workflow tools, behavioral products, and data-driven web apps that reduce friction and solve real problems.' />
+						<RevealText
+							text='I blend backend data integrity with user-centric design.
+Transforming raw information into high-impact, functional products.'
+						/>
 					</div>
 				</div>
 
@@ -93,8 +95,7 @@ const Hero = ({ onContactClick }: { onContactClick: () => void }) => {
 							{highlights.map((highlight) => (
 								<div
 									key={highlight}
-									className='py-4 first:pt-0 last:pb-0 flex items-center justify-between gap-4'
-								>
+									className='py-4 first:pt-0 last:pb-0 flex items-center justify-between gap-4'>
 									<span className='text-lg md:text-xl font-semibold tracking-tight text-white/90'>
 										{highlight}
 									</span>
@@ -115,16 +116,17 @@ const Hero = ({ onContactClick }: { onContactClick: () => void }) => {
 									href={link.href}
 									target={link.href.startsWith("http") ? "_blank" : undefined}
 									rel={link.href.startsWith("http") ? "noreferrer" : undefined}
-									className='inline-flex items-center gap-2 px-3 py-2 rounded-xl border border-white/10 text-xs font-mono uppercase tracking-[0.2em] text-white/70 hover:text-accent hover:border-accent/40 transition-all'
-								>
+									className='inline-flex items-center gap-2 px-3 py-2 rounded-xl border border-white/10 text-xs font-mono uppercase tracking-[0.2em] text-white/70 hover:text-accent hover:border-accent/40 transition-all'>
 									<span>{link.label}</span>
-									<Icon icon='solar:arrow-right-up-linear' className='text-sm' />
+									<Icon
+										icon='solar:arrow-right-up-linear'
+										className='text-sm'
+									/>
 								</a>
 							))}
 							<button
 								onClick={onContactClick}
-								className='inline-flex items-center gap-2 px-3 py-2 rounded-xl border border-accent/30 text-xs font-mono uppercase tracking-[0.2em] text-accent hover:bg-accent/10 hover:border-accent/50 transition-all'
-							>
+								className='inline-flex items-center gap-2 px-3 py-2 rounded-xl border border-accent/30 text-xs font-mono uppercase tracking-[0.2em] text-accent hover:bg-accent/10 hover:border-accent/50 transition-all'>
 								<span>Contact</span>
 								<Icon icon='solar:letter-linear' className='text-sm' />
 							</button>
@@ -156,8 +158,8 @@ interface ProjectCardProps {
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
 	return (
-		<div className='flex flex-col gap-6'>
-			<div className='group relative bg-white/5 border border-white/10 rounded-2xl overflow-hidden transition-all hover:border-accent/50'>
+		<div className='flex flex-col h-full gap-6'>
+			<div className='group relative bg-white/5 border border-white/10 rounded-2xl overflow-hidden transition-all hover:border-accent/50 flex flex-col h-full'>
 				{project.video && (
 					<div className='relative aspect-video overflow-hidden bg-black'>
 						<video
@@ -171,7 +173,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
 					</div>
 				)}
 
-				<div className='flex flex-col gap-6 p-6'>
+				<div className='flex flex-col gap-6 p-6 flex-1'>
 					<div className='flex justify-between items-start'>
 						<div>
 							<span className='text-[10px] font-mono text-accent uppercase tracking-widest mb-2 block'>
@@ -185,20 +187,18 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
 							href={project.link}
 							target='_blank'
 							rel='noreferrer'
-							className='text-white/40 hover:text-accent transition-colors'
-						>
+							className='text-white/40 hover:text-accent transition-colors'>
 							<Icon icon='solar:arrow-right-up-linear' className='text-2xl' />
 						</a>
 					</div>
 					<p className='text-sm text-zinc-400 leading-relaxed line-clamp-3'>
 						{project.description}
 					</p>
-					<div className='flex flex-wrap gap-2'>
+					<div className='mt-auto flex flex-wrap gap-2'>
 						{project.tags.map((tag) => (
 							<span
 								key={tag}
-								className='text-[9px] font-mono uppercase tracking-widest px-2 py-1 bg-white/5 border border-white/5 rounded text-zinc-500'
-							>
+								className='text-[9px] font-mono uppercase tracking-widest px-2 py-1 bg-white/5 border border-white/5 rounded text-zinc-500'>
 								{tag}
 							</span>
 						))}
@@ -282,13 +282,12 @@ const Work = () => {
 	return (
 		<section
 			id='work'
-			className='py-20 px-6 md:px-12 max-w-7xl mx-auto border-t border-white/5'
-		>
+			className='py-20 px-6 md:px-12 max-w-7xl mx-auto border-t border-white/5'>
 			<div className='flex flex-col gap-12'>
 				<h2 className='text-4xl font-black uppercase tracking-tighter'>
 					Selected <span className='text-accent italic'>Works.</span>
 				</h2>
-				<div className='grid md:grid-cols-2 lg:grid-cols-3 gap-6'>
+				<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch'>
 					{projects.map((project, index) => (
 						<ProjectCard
 							key={project.id}
@@ -308,18 +307,21 @@ const About: React.FC = () => {
 	return (
 		<section
 			id='about'
-			className='py-20 px-6 md:px-12 max-w-7xl mx-auto border-t border-white/5'
-		>
+			className='py-20 px-6 md:px-12 max-w-7xl mx-auto border-t border-white/5'>
 			<div className='grid md:grid-cols-2 gap-16'>
 				<div className='flex flex-col gap-8'>
 					<h2 className='text-4xl font-black uppercase tracking-tighter'>
 						The <span className='text-accent italic'>Philosophy.</span>
 					</h2>
 					<p className='text-lg text-zinc-400 leading-relaxed'>
-						I like building systems that bridge the gap between high-level engineering and strategic marketing. Every line of code is a communicative act; every UI pattern is a behavioral prompt.
+						I like building systems that bridge the gap between high-level
+						engineering and strategic marketing. Every line of code is a
+						communicative act; every UI pattern is a behavioral prompt.
 					</p>
 					<p className='text-zinc-500 leading-relaxed'>
-					With a background in Communications and Marketing, I approach software not just as a technical challenge, but as a mechanism for trust acquisition and data integrity.
+						With a background in Communications and Marketing, I approach
+						software not just as a technical challenge, but as a mechanism for
+						trust acquisition and data integrity.
 					</p>
 				</div>
 				<div className='bg-white/5 border border-white/10 rounded-3xl p-8 grid sm:grid-cols-2 gap-8'>
@@ -411,8 +413,7 @@ const ToolsOfTheTrade = () => {
 				{[...tools, ...tools].map((tool, index) => (
 					<div
 						key={index}
-						className='flex items-center gap-3 grayscale hover:grayscale-0 transition-all opacity-40 hover:opacity-100'
-					>
+						className='flex items-center gap-3 grayscale hover:grayscale-0 transition-all opacity-40 hover:opacity-100'>
 						<Icon icon={tool.icon} className='text-xl' />
 						<span className='font-mono text-[10px] uppercase tracking-[0.2em] font-bold'>
 							{tool.name}
@@ -439,16 +440,14 @@ const Footer = ({ onContactClick }: { onContactClick: () => void }) => {
 				<div className='flex gap-6'>
 					<button
 						onClick={onContactClick}
-						className='px-8 py-4 bg-accent text-black font-black uppercase text-xs rounded-xl hover:scale-105 transition-all'
-					>
+						className='px-8 py-4 bg-accent text-black font-black uppercase text-xs rounded-xl hover:scale-105 transition-all'>
 						Direct Contact
 					</button>
 					<a
 						href='/DTE-Portfolio/assets/DrewTErnst_Resume.pdf'
 						target='_blank'
 						rel='noreferrer'
-						className='px-8 py-4 border border-white/10 text-white font-black uppercase text-xs rounded-xl hover:bg-white/5 transition-all'
-					>
+						className='px-8 py-4 border border-white/10 text-white font-black uppercase text-xs rounded-xl hover:bg-white/5 transition-all'>
 						Resume
 					</a>
 				</div>
