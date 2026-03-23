@@ -122,7 +122,7 @@ const Work = () => {
 				"HIPAA-sensitive clinical documentation tool built to streamline Missouri PCSP drafting, improve first-pass compliance quality, and reduce workflow friction for frontline staff.",
 			tags: ["JavaScript", "HIPAA", "Workflow Design", "Compliance"],
 			link: "https://dte-solutions.icu/pcsp-breakdown.html",
-			video: "/DTE-E-Portfolio/assets/PCSP.mp4",
+			video: "/DTE-Portfolio/assets/PCSP.mp4",
 		},
 		{
 			id: "Pulse",
@@ -133,7 +133,7 @@ const Work = () => {
 				"Behavioral finance application built to help users recognize spending triggers, understand habit patterns, and track progress toward long-term financial goals.",
 			tags: ["Python", "PostgreSQL", "Behavioral Analytics", "ETL"],
 			link: "https://dte-solutions.icu/pulse-breakdown.html",
-			video: "/DTE-E-Portfolio/assets/Pulse.mp4",
+			video: "/DTE-Portfolio/assets/Pulse.mp4",
 		},
 		{
 			id: "SetLogic",
@@ -144,7 +144,7 @@ const Work = () => {
 				"Mobile-first fitness app designed to generate personalized workout plans, meal guidance, and progress support based on user goals and preferences.",
 			tags: ["React", "Firebase", "Fitness Planning", "AI Coaching"],
 			link: "https://dte-84.github.io/SetLogic/",
-			video: "/DTE-E-Portfolio/assets/SetLogic.mp4",
+			video: "/DTE-Portfolio/assets/SetLogic.mp4",
 		},
 		{
 			id: "NestLegacy",
@@ -155,7 +155,7 @@ const Work = () => {
 				"Behavior-driven lead intelligence concept designed to help financial professionals better understand, qualify, and engage high-value prospects.",
 			tags: ["React", "Fintech", "Lead Qualification", "Product Strategy"],
 			link: "https://dte-84.github.io/NestLegacy/",
-			video: "/DTE-E-Portfolio/assets/NestLegacy.mp4",
+			video: "/DTE-Portfolio/assets/NestLegacy.mp4",
 		},
 		{
 			id: "Fluff",
@@ -166,7 +166,7 @@ const Work = () => {
 				"Sports performance tool combining GPS, round analysis, and coaching support to help golfers review play and improve results.",
 			tags: ["React", "Sports Analytics", "GPS", "Coaching"],
 			link: "https://dte-84.github.io/Fluff/",
-			video: "/DTE-E-Portfolio/assets/Fluff.mp4",
+			video: "/DTE-Portfolio/assets/Fluff.mp4",
 		},
 		{
 			id: "TONYS",
@@ -177,7 +177,7 @@ const Work = () => {
 				"Service business website focused on clear presentation, responsive design, and practical customer-facing usability.",
 			tags: ["Vanilla JS", "Responsive Design", "UI/UX"],
 			link: "https://tonyslandscapingllc.com",
-			video: "/DTE-E-Portfolio/assets/TonysLandscaping.mp4",
+			video: "/DTE-Portfolio/assets/TonysLandscaping.mp4",
 		},
 	];
 
@@ -336,7 +336,7 @@ const Footer = ({ onContactClick }: { onContactClick: () => void }) => {
 						Direct Contact
 					</button>
 					<a
-						href='/DTE-E-Portfolio/assets/DrewTErnst_Resume.pdf'
+						href='/DTE-Portfolio/assets/DrewTErnst_Resume.pdf'
 						target='_blank'
 						className='px-8 py-4 border border-white/10 text-white font-black uppercase text-xs rounded-xl hover:bg-white/5 transition-all'>
 						Resume

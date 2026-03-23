@@ -339,7 +339,7 @@ export default function CaseStudyPCSP() {
           <div className="absolute -inset-1 bg-gradient-to-r from-[#00ffcc]/20 to-transparent blur opacity-20 group-hover:opacity-40 transition-opacity" />
           <div className="relative rounded-2xl overflow-hidden border border-accent/40 bg-black aspect-[21/9]">
             <Image
-              src="/DTE-E-Portfolio/assets/pcsp1.png"
+              src="/DTE-Portfolio/assets/pcsp1.png"
               alt="PCSP Assistant Pro interface"
               fill
               quality={80}
@@ -480,7 +480,7 @@ export default function CaseStudyPCSP() {
 
               <div className="relative rounded-2xl overflow-hidden border border-[#00ffcc]/20 bg-[#00ffcc]/5 p-2 aspect-video">
                 <Image
-                  src="/DTE-E-Portfolio/assets/pcsp2.png"
+                  src="/DTE-Portfolio/assets/pcsp2.png"
                   alt="PCSP Workflow diagram"
                   fill
                   quality={80}
@@ -584,7 +584,7 @@ export default function CaseStudyPCSP() {
 
               <div className="relative rounded-2xl overflow-hidden border border-[#00ffcc]/20 bg-[#00ffcc]/5 p-2 aspect-video">
                 <Image
-                  src="/DTE-E-Portfolio/assets/pcsp3.png"
+                  src="/DTE-Portfolio/assets/pcsp3.png"
                   alt="Clinical Logic Builder interface"
                   fill
                   quality={80}

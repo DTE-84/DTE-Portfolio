@@ -3,7 +3,7 @@ const isProd = process.env.NODE_ENV === 'production';
 
 const nextConfig = {
   ...(isProd && { output: 'export' }),
-  ...(isProd && { basePath: '/DTE-E-Portfolio' }),
+  ...(isProd && { basePath: '/DTE-Portfolio' }),
   trailingSlash: true,
   images: {
     unoptimized: true,

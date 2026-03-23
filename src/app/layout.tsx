@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Drew Ernst | Data Analyst & Full-Stack Developer",
     description: "Workflow tools, behavioral products, and data-driven web apps.",
-    images: ["/DTE-E-Portfolio/assets/DTE84resume.png"],
+    images: ["/DTE-Portfolio/assets/DTE84resume.png"],
   },
   keywords: [
     "Frontend Developer",
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     title: "Drew Ernst | Data Analyst & Full-Stack Developer",
     description:
       "Workflow tools, behavioral products, and data-driven web apps.",
-    images: ["/DTE-E-Portfolio/assets/DTE84resume.png"],
+    images: ["/DTE-Portfolio/assets/DTE84resume.png"],
   },
   icons: {
     icon: "/favicon.ico",

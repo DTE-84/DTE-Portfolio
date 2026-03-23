@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "PCSP - MCSDD Case Study",
     description: "Healthcare Compliance Engine Architecture",
-    images: ["/DTE-E-Portfolio/assets/pcsp1.png"],
+    images: ["/DTE-Portfolio/assets/pcsp1.png"],
   },
 };
 

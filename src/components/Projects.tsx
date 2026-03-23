@@ -68,8 +68,8 @@ const Projects: React.FC = () => {
                 description:
                         "Clinical documentation workflow tool built for HIPAA-sensitive use cases, helping teams reduce manual revision work and improve consistency.",
                 tags: ["Next.js", "Compliance Logic", "HIPAA", "Zero-Footprint"],
-                image: "/DTE-E-Portfolio/assets/pcsp1.png",
-                video: "/DTE-E-Portfolio/assets/CaseStudy-PCSP-1771755500766.mp4",
+                image: "/DTE-Portfolio/assets/pcsp1.png",
+                video: "/DTE-Portfolio/assets/CaseStudy-PCSP-1771755500766.mp4",
                 link: "https://dte-84.github.io/PCSP-assistant-PRO/",
                 caseStudy: "/case-study-pcsp/",
                 featured: true,
@@ -84,8 +84,8 @@ const Projects: React.FC = () => {
                         description:
                                 "AI-powered fitness coaching platform with guided training flows, performance tracking, and interactive user feedback.",
                         tags: ["React 19", "Claude AI", "Biomechanics"],
-                        image: "/DTE-E-Portfolio/assets/setlogic-logo.png",
-                        video: "/DTE-E-Portfolio/assets/SetLogic.mp4",
+                        image: "/DTE-Portfolio/assets/setlogic-logo.png",
+                        video: "/DTE-Portfolio/assets/SetLogic.mp4",
                         link: "https://set-logic.vercel.app/",
                         featured: true,
                 },
@@ -97,8 +97,8 @@ const Projects: React.FC = () => {
                         description:
                                 "Lead intelligence platform designed to help financial professionals qualify, understand, and engage high-value prospects more effectively.",
                         tags: ["React 19", "Behavioral Finance", "Lead Intelligence"],
-                        image: "/DTE-E-Portfolio/assets/novaui.png",
-                        video: "/DTE-E-Portfolio/assets/NestLegacy.mp4", 
+                        image: "/DTE-Portfolio/assets/novaui.png",
+                        video: "/DTE-Portfolio/assets/NestLegacy.mp4", 
                         link: "https://dte-84.github.io/NestLegacy/",
                         featured: true,
                 },
@@ -110,8 +110,8 @@ const Projects: React.FC = () => {
                         description:
                                 "AI-assisted finance dashboard built with data integrations and a Python backend to deliver real-time insights, reporting, and smarter user decision support.",
                         tags: ["Python FastAPI", "Data Science", "AWS"],
-                        image: "/DTE-E-Portfolio/assets/novaui.png",
-                        video: "/DTE-E-Portfolio/assets/Pulse.mp4",
+                        image: "/DTE-Portfolio/assets/novaui.png",
+                        video: "/DTE-Portfolio/assets/Pulse.mp4",
                         link: "https://dte-solutions.icu/pulse-breakdown.html",
                         featured: true,
                 },
@@ -123,8 +123,8 @@ const Projects: React.FC = () => {
                         description:
                                 "Golf performance tool combining telemetry, GPS data, and coaching support to help players analyze rounds and improve results.",
                         tags: ["React 19", "Geospatial", "IoT"],
-                        image: "/DTE-E-Portfolio/assets/fluff/FLUFF-GPS.png",
-                        video: "/DTE-E-Portfolio/assets/Fluff.mp4",
+                        image: "/DTE-Portfolio/assets/fluff/FLUFF-GPS.png",
+                        video: "/DTE-Portfolio/assets/Fluff.mp4",
                         link: "https://dte-84.github.io/Fluff/",
                         featured: true,
                 }
@@ -139,8 +139,8 @@ const Projects: React.FC = () => {
                         description:
                                 "A boutique digital portfolio designed for high-impact visual storytelling. Features immersive scroll dynamics and gallery-focused architecture.",
                         tags: ["UX Design", "Framer Motion", "React"],
-                        image: "/DTE-E-Portfolio/assets/kwportfront.png",
-                        video: "/DTE-E-Portfolio/assets/KWModeling-1771900067138.mp4",
+                        image: "/DTE-Portfolio/assets/kwportfront.png",
+                        video: "/DTE-Portfolio/assets/KWModeling-1771900067138.mp4",
                         link: "https://kw-portfolio-kappa.vercel.app/",
                         featured: true,
                 },
@@ -152,8 +152,8 @@ const Projects: React.FC = () => {
                         description:
                                 "A centralized gaming nexus aggregating multi-platform content. Demonstrates advanced DOM manipulation and responsive media grid layouts.",
                         tags: ["Vanilla JS", "CSS3", "Media"],
-                        image: "/DTE-E-Portfolio/assets/siknighthome.png",
-                        video: "/DTE-E-Portfolio/assets/SiKnight-1771896141464.mp4",
+                        image: "/DTE-Portfolio/assets/siknighthome.png",
+                        video: "/DTE-Portfolio/assets/SiKnight-1771896141464.mp4",
                         link: "https://dte-84.github.io/SiKnight/",
                         featured: true,
                 },
@@ -165,8 +165,8 @@ const Projects: React.FC = () => {
                         description:
                                 "A dynamic automotive inventory platform featuring custom filtering logic and high-resolution asset management.",
                         tags: ["Inventory Logic", "Frontend Eng", "UI"],
-                        image: "/DTE-E-Portfolio/assets/santicars.png",
-                        video: "/DTE-E-Portfolio/assets/CarSales.mp4",
+                        image: "/DTE-Portfolio/assets/santicars.png",
+                        video: "/DTE-Portfolio/assets/CarSales.mp4",
                         link: "https://dte-84.github.io/CarSalesInv/",
                         featured: true,
                 },
@@ -178,8 +178,8 @@ const Projects: React.FC = () => {
                         description:
                                 "A service-oriented digital presence featuring custom interactive modules for performance visualization and client acquisition.",
                         tags: ["Commercial UI", "Visual Engine", "GSAP"],
-                        image: "/DTE-E-Portfolio/assets/tonybna.png",
-                        video: "/DTE-E-Portfolio/assets/Tonysllc.mp4",
+                        image: "/DTE-Portfolio/assets/tonybna.png",
+                        video: "/DTE-Portfolio/assets/Tonysllc.mp4",
                         link: "https://tonyslandscapingllc.com",
                         featured: true,
                 }

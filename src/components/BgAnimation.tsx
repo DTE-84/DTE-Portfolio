@@ -115,7 +115,7 @@ const BgAnimation: React.FC = () => {
         className="absolute inset-0 w-full h-full"
       />
       <div
-        className="absolute inset-0 bg-[url('/DTE-E-Portfolio/assets/proxima.jpg')] bg-cover bg-center opacity-5 mix-blend-luminosity grayscale contrast-125 brightness-75"
+        className="absolute inset-0 bg-[url('/DTE-Portfolio/assets/proxima.jpg')] bg-cover bg-center opacity-5 mix-blend-luminosity grayscale contrast-125 brightness-75"
       />
       <div
         className="absolute w-[500px] h-[500px] rounded-full blur-[80px] bg-accent opacity-15 animate-float"
