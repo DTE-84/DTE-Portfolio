@@ -41,19 +41,55 @@ const RevealText: React.FC<{ text: string; isReverse?: boolean }> = ({
 };
 
 const Hero = () => {
+	const highlights = [
+		"Real-World Operations",
+		"Compliance-Aware Design",
+		"Full-Stack Systems",
+		"Data Analysis",
+	];
+
 	return (
 		<section className='pt-32 pb-20 px-6 md:px-12 max-w-7xl mx-auto'>
-			<div className='flex flex-col gap-6'>
-				<span className='text-accent font-mono text-xs tracking-[0.5em] uppercase font-bold'>
-					Data Analyst // Full-Stack Developer
-				</span>
-				<h1 className='text-6xl md:text-9xl font-black tracking-tighter leading-none uppercase'>
-					Drew T
-					<br />
-					<span className='text-white/20 italic'>Ernst.</span>
-				</h1>
-				<div className='max-w-2xl mt-8'>
-					<RevealText text='I build useful software for real people — especially workflow tools, behavioral products, and data-driven web apps that reduce friction and solve real problems.' />
+			<div className='grid lg:grid-cols-[minmax(0,1.5fr)_minmax(280px,420px)] gap-12 items-start'>
+				<div className='flex flex-col gap-6'>
+					<span className='text-accent font-mono text-xs tracking-[0.5em] uppercase font-bold'>
+						Data Analyst // Full-Stack Developer
+					</span>
+					<h1 className='text-6xl md:text-9xl font-black tracking-tighter leading-none uppercase'>
+						Drew T
+						<br />
+						<span className='text-white/20 italic'>Ernst.</span>
+					</h1>
+					<div className='max-w-2xl mt-8'>
+						<RevealText text='I build useful software for real people — especially workflow tools, behavioral products, and data-driven web apps that reduce friction and solve real problems.' />
+					</div>
+				</div>
+
+				<div className='lg:pt-10'>
+					<div className='bg-white/5 border border-white/10 rounded-3xl p-6 md:p-8 backdrop-blur-sm'>
+						<p className='text-[10px] font-mono text-accent uppercase tracking-[0.35em] mb-6'>
+							Highlights
+						</p>
+						<div className='flex flex-col divide-y divide-white/10'>
+							{highlights.map((highlight) => (
+								<div
+									key={highlight}
+									className='py-4 first:pt-0 last:pb-0 flex items-center justify-between gap-4'
+								>
+									<span className='text-lg md:text-xl font-semibold tracking-tight text-white/90'>
+										{highlight}
+									</span>
+									<Icon
+										icon='solar:arrow-right-up-linear'
+										className='text-accent text-lg shrink-0 opacity-70'
+									/>
+								</div>
+							))}
+						</div>
+						<p className='text-sm text-zinc-500 leading-relaxed mt-8'>
+							Built for useful outcomes, not just polished demos.
+						</p>
+					</div>
 				</div>
 			</div>
 		</section>
