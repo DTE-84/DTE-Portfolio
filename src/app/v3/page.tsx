@@ -6,6 +6,8 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import BgAnimation from "../../components/BgAnimation";
 import ContactModal from "../../components/ContactModal";
 import RollingText from "../../components/RollingText";
+import About from "../../components/About";
+import { getAssetPath } from "../../utils/paths";
 
 if (typeof window !== "undefined") {
 	gsap.registerPlugin(ScrollTrigger);
@@ -13,32 +15,40 @@ if (typeof window !== "undefined") {
 
 const Nav = ({ onContactClick }: { onContactClick: () => void }) => {
 	return (
-		<nav className='fixed top-0 left-0 right-0 z-[100] px-6 py-6'>
-			<div className='max-w-7xl mx-auto flex justify-between items-center bg-white/[0.03] backdrop-blur-xl border border-white/10 rounded-2xl px-6 py-3'>
-				<div className='flex items-center gap-3'>
-					<img src='/DTELogo.png' alt='DTE' className='w-8 h-8 opacity-80' />
-					<span className='font-mono text-[9px] tracking-tighter uppercase font-bold text-white/30'>
-						System Orchestrator
-					</span>
+		<nav className='fixed top-0 left-0 right-0 z-[100] bg-black/20 backdrop-blur-xl border-b border-white/10'>
+			<div className='w-full flex justify-between items-center px-6 md:px-16 py-4'>
+				<div className='flex items-center gap-6'>
+					<div className='flex flex-col'>
+						<span className='font-mono text-[11px] tracking-[0.4em] uppercase font-bold text-white flex items-center gap-1.5' style={{ WebkitTextStroke: '0.15px white' }}>
+							Data Analyst 
+							<span className='text-[#00f3ff] mx-0.5' style={{ WebkitTextStroke: '0px' }}>/</span>
+							<span className='text-[#39ff14] mx-0.5' style={{ WebkitTextStroke: '0px' }}>/</span> 
+							Developer
+						</span>
+					</div>
 				</div>
-				<div className='flex items-center gap-8'>
-					<div className='hidden md:flex items-center gap-6'>
-						{["Work", "About"].map((item) => (
+				<div className='flex items-center gap-10'>
+					<div className='hidden md:flex items-center gap-12'>
+						{[
+							{ id: "01", name: "Work", href: "#featured", color: "#00f3ff" },
+							{ id: "02", name: "About", href: "#about", color: "#39ff14" },
+						].map((item) => (
 							<a
-								key={item}
-								href={`#${item.toLowerCase()}`}
-								className='text-[10px] font-mono uppercase tracking-[0.2em] text-white/40 hover:text-accent transition-colors'>
-								<RollingText text={item} />
+								key={item.name}
+								href={item.href}
+								className='group flex items-center gap-3 text-[12px] font-mono uppercase tracking-[0.3em] text-white hover:text-accent transition-all'>
+								<span className='text-[10px] opacity-40 group-hover:opacity-100 transition-opacity whitespace-nowrap' style={{ color: item.color }}>{item.id} //</span>
+								<RollingText text={item.name} />
 							</a>
 						))}
 					</div>
 					<button
 						onClick={onContactClick}
-						className='group flex items-center gap-2 bg-accent/10 hover:bg-accent border border-accent/20 hover:border-accent text-accent hover:text-black px-4 py-2 rounded-xl transition-all duration-300'>
-						<span className='text-[10px] font-mono uppercase tracking-widest font-bold'>
-							Direct Uplink
+						className='group flex items-center gap-3 bg-accent text-black px-6 py-2.5 rounded-xl transition-all duration-300 hover:scale-105 active:scale-95 shadow-[0_0_20px_rgba(var(--theme-accent-rgb),0.3)]'>
+						<span className='text-[12px] font-black uppercase tracking-widest'>
+							Connect
 						</span>
-						<Icon icon='solar:letter-linear' className='text-sm group-hover:translate-x-1 transition-transform' />
+						<Icon icon='nimbus:ecosystem' className='text-sm group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform' />
 					</button>
 				</div>
 			</div>
@@ -70,47 +80,89 @@ const Hero = () => {
 	}, []);
 
 	return (
-		<section ref={containerRef} className='relative min-h-screen flex flex-col justify-center pt-32 pb-20 px-6 md:px-12 max-w-7xl mx-auto'>
-			<div className='grid lg:grid-cols-[1.5fr_1fr] gap-12 items-center'>
-				<div className='flex flex-col gap-8'>
-					<div className='hero-line overflow-hidden'>
-						<span className='text-offset font-mono text-[10px] tracking-[0.5em] uppercase font-bold block mb-4 animate-pulse'>
-							Advanced Financial AI Consultant
-						</span>
-					</div>
-					<h1 className='text-7xl md:text-[10rem] font-black tracking-tighter leading-[0.85] uppercase text-white'>
-						<div className='hero-line'>DREW T</div>
-						<div className='hero-line opacity-10 italic'>ERNST.</div>
-					</h1>
-					<div className='hero-line max-w-2xl mt-8'>
-						<p className='text-xl md:text-2xl text-white/60 leading-relaxed font-medium'>
-							I blend backend <span className='text-accent'>data integrity</span> with user-centric design.
-							Transforming raw information into high-impact, functional products.
-						</p>
-					</div>
-				</div>
+		<section ref={containerRef} className='relative min-h-screen flex flex-col items-center justify-center pt-32 pb-20 px-6 md:px-12 max-w-7xl mx-auto text-center'>
+			{/* Logo Background with Glow */}
+			<div className='hero-highlight absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-2xl aspect-square pointer-events-none z-0'>
+				<div className='absolute inset-0 bg-accent/5 rounded-full blur-[120px] animate-pulse' />
+				<img 
+					src={getAssetPath("DTELogo.png")} 
+					alt='' 
+					className='w-full h-full object-contain opacity-[0.28] scale-150 rotate-12 animate-float'
+				/>
+			</div>
 
-				<div className='hero-highlight relative'>
-					<div className='aspect-square rounded-full border border-white/5 bg-gradient-to-br from-accent/10 to-transparent p-[1px] animate-float'>
-						<div className='w-full h-full rounded-full border border-white/10 bg-black/40 backdrop-blur-3xl flex flex-col items-center justify-center p-12 text-center'>
-							<p className='text-[10px] font-mono text-offset uppercase tracking-[0.4em] mb-4'>
-								Philosophy
-							</p>
-							<p className='text-lg font-medium text-white/90 leading-tight italic'>
-								"I like building systems that bridge the gap between high-level engineering and strategic marketing."
-							</p>
-							<div className='w-12 h-[1px] bg-accent/30 my-6' />
-							<p className='text-[11px] text-white/40 leading-relaxed uppercase tracking-widest'>
-								Every line of code is a communicative act; every UI pattern is a behavioral prompt.
-							</p>
-						</div>
-					</div>
+			<div className='relative z-10 flex flex-col items-center gap-8'>
+				
+				<h1 className='text-6xl md:text-[13rem] font-black tracking-tighter leading-none uppercase text-white flex flex-col items-center'>
+					<div className='hero-line'>DREW</div>
+					<div className='hero-line mt-[-0.1em]'>ERNST.</div>
+				</h1>
+
+				<div className='hero-line max-w-2xl mt-12 bg-white/[0.02] backdrop-blur-md border border-white/5 p-8 rounded-3xl relative overflow-hidden group'>
+					<div className='absolute inset-0 bg-gradient-to-r from-transparent via-white/[0.02] to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000' />
+					<p className='text-lg md:text-xl text-white/90 leading-relaxed font-medium italic'>
+						"I blend backend <span className='text-accent'>data integrity</span> with user-centric design. Transforming raw information into high-impact, functional products."
+					</p>
+					<div className='w-12 h-[1px] bg-accent/30 mx-auto mt-6' />
 				</div>
 			</div>
 			
 			<div className='absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/20 animate-bounce'>
 				<span className='text-[8px] font-mono uppercase tracking-[0.3em]'>System Discovery</span>
 				<Icon icon='solar:mouse-minimalistic-linear' className='text-xl' />
+			</div>
+		</section>
+	);
+};
+
+const TechStack = () => {
+	const categories = [
+		{
+			title: "Systems & Core",
+			color: "text-accent",
+			borderColor: "border-accent/30",
+			hoverBorder: "hover:border-accent",
+			items: ["React 19", "TypeScript", "Python", "Java", "C#", "Node.js"]
+		},
+		{
+			title: "Cloud & Database",
+			color: "text-offset",
+			borderColor: "border-offset/30",
+			hoverBorder: "hover:border-offset",
+			items: ["AWS", "PostgreSQL", "Docker", "SQL", "Git", "Supabase"]
+		},
+		{
+			title: "UI/UX & Method",
+			color: "text-white",
+			borderColor: "border-white/20",
+			hoverBorder: "hover:border-white",
+			items: ["Tailwind", "GSAP", "Figma", "OOD", "SDLC", "Agile"]
+		}
+	];
+
+	return (
+		<section className='py-24 px-6 md:px-12 max-w-7xl mx-auto'>
+			<div className='flex flex-col md:flex-row gap-12 items-start justify-center w-full'>
+				{categories.map((cat, i) => (
+					<div key={cat.title} className='flex flex-col items-center gap-6 w-full'>
+						<span className='text-[10px] font-mono uppercase tracking-[0.4em] text-white/30 font-bold'>
+							{cat.title}
+						</span>
+						<div className='flex flex-wrap justify-center gap-4 max-w-[400px]'>
+							{cat.items.map((tech) => (
+								<div 
+									key={tech} 
+									className={`flex items-center justify-center w-[120px] h-[45px] bg-white/[0.02] border ${cat.borderColor} ${cat.color} text-[10px] font-black uppercase tracking-[0.2em] transition-all duration-500 hover:bg-white/[0.05] ${cat.hoverBorder} hover:scale-105 cursor-default group`}
+								>
+									<span className='group-hover:tracking-[0.3em] transition-all duration-500'>{tech}</span>
+								</div>
+							))}
+						</div>
+						{i < categories.length - 1 && (
+							<div className='w-full h-[1px] bg-white/5 md:hidden my-4' />
+						)}
+					</div>
+				))}
 			</div>
 		</section>
 	);
@@ -137,7 +189,7 @@ const FeaturedPCSP = () => {
 	}, []);
 
 	return (
-		<section ref={sectionRef} id='work' className='py-32 px-6 md:px-12 max-w-7xl mx-auto'>
+		<section ref={sectionRef} id='featured' className='py-32 px-6 md:px-12 max-w-7xl mx-auto'>
 			<div className='flex flex-col gap-4 mb-20 px-4'>
 				<span className='pcsp-reveal text-offset font-mono text-[10px] tracking-[0.4em] uppercase font-bold'>
 					Primary Case Study
@@ -164,7 +216,7 @@ const FeaturedPCSP = () => {
 						This tool automates compliant drafting while ensuring HIPAA-sensitive data remains secure and structured.
 					</p>
 					<div className='flex items-center gap-8 mt-4'>
-						<a href='https://dte-solutions.icu/pcsp-breakdown.html' target='_blank' rel='noreferrer' className='group/btn flex items-center gap-4 bg-accent text-black px-10 py-5 rounded-2xl font-black uppercase text-xs transition-all hover:scale-105 active:scale-95'>
+						<a href='https://dte-84.github.io/DTE-E-Portfolio/case-study-pcsp/' target='_blank' rel='noreferrer' className='group/btn flex items-center gap-4 bg-accent text-black px-10 py-5 rounded-2xl font-black uppercase text-xs transition-all hover:scale-105 active:scale-95'>
 							<span>Deep Dive Breakdown</span>
 							<Icon icon='solar:arrow-right-up-linear' className='text-lg group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform' />
 						</a>
@@ -180,7 +232,7 @@ const FeaturedPCSP = () => {
 
 				<div className='pcsp-reveal relative aspect-[4/3] lg:aspect-auto rounded-[2.5rem] overflow-hidden bg-black/40 border border-white/10 order-1 lg:order-2 group-hover:border-accent/30 transition-colors'>
 					<video
-						src='/DTE-Portfolio/assets/PCSP.mp4'
+						src={getAssetPath("assets/PCSP.mp4")}
 						autoPlay
 						loop
 						muted
@@ -225,7 +277,7 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
 		<div ref={cardRef} className='group relative flex flex-col gap-6 p-4 rounded-[2.5rem] bg-white/[0.02] border border-white/5 hover:border-accent/20 transition-all duration-500'>
 			<div className='aspect-video rounded-[2rem] overflow-hidden bg-white/5 border border-white/10 relative transition-all duration-500 group-hover:border-accent/30'>
 				<video
-					src={project.video}
+					src={getAssetPath(project.video)}
 					autoPlay
 					loop
 					muted
@@ -268,7 +320,7 @@ const OtherWorks = () => {
 			description: "Full-stack behavioral finance pipeline with Python/Pandas telemetry and Postgres persistence.",
 			tags: ["Python", "Pandas", "PostgreSQL"],
 			link: "https://dte-solutions.icu/pulse-breakdown.html",
-			video: "/DTE-Portfolio/assets/Pulse.mp4",
+			video: "assets/Pulse.mp4",
 		},
 		{
 			id: "SetLogic",
@@ -278,7 +330,7 @@ const OtherWorks = () => {
 			description: "AI-driven fitness orchestration platform with real-time trajectory tracking.",
 			tags: ["React", "Firebase", "AI"],
 			link: "https://dte-84.github.io/SetLogic/",
-			video: "/DTE-Portfolio/assets/SetLogic.mp4",
+			video: "assets/SetLogic.mp4",
 		},
 		{
 			id: "NestLegacy",
@@ -288,12 +340,52 @@ const OtherWorks = () => {
 			description: "Cinematic lead intelligence platform featuring wide-angle analytics.",
 			tags: ["Analytics", "Fintech", "UX"],
 			link: "https://dte-84.github.io/NestLegacy/",
-			video: "/DTE-Portfolio/assets/NestLegacy.mp4",
+			video: "assets/NestLegacy.mp4",
+		},
+		{
+			id: "KW_MODELING",
+			title: "Key Wallis Modeling",
+			category: "Visual Storytelling",
+			year: 2025,
+			description: "High-impact digital portfolio featuring immersive scroll dynamics and gallery-focused architecture.",
+			tags: ["UX Design", "Framer Motion", "React"],
+			link: "https://kw-portfolio-kappa.vercel.app/",
+			video: "assets/KWModel.mp4",
+		},
+		{
+			id: "TONYS_LLC",
+			title: "Tonys Landscaping",
+			category: "Service Logic",
+			year: 2024,
+			description: "Custom interactive modules for performance visualization and client acquisition in the landscaping sector.",
+			tags: ["Commercial UI", "GSAP", "Logic"],
+			link: "https://tonyslandscapingllc.com",
+			video: "assets/TonysLandscaping.mp4",
+		},
+		{
+			id: "SSANTIAGO",
+			title: "Santi's Car Sales",
+			category: "Automotive Logic",
+			year: 2024,
+			description: "Interactive inventory showroom for premium pre-owned vehicles, optimized for search transparency and high-conversion leads.",
+			tags: ["Inventory Logic", "UX", "Sales Engine"],
+			link: "https://dte-84.github.io/CarSalesInv/",
+			video: "assets/CarSales.mp4",
+		},
+		{
+			id: "ProDrip",
+			title: "ProDrip Wraps & Tints",
+			category: "Service Logic",
+			year: 2024,
+			description: "Dynamic landing and service orchestration for premium automotive wraps and tinting services.",
+			tags: ["Branding", "Logic", "UI"],
+			link: "https://dte-84.github.io/ProDrip/",
+			video: "assets/ProDrip.mp4",
 		},
 	];
 
 	return (
-		<section className='py-32 px-6 md:px-12 max-w-7xl mx-auto'>
+		<section id='work' className='py-32 px-6 md:px-12 max-w-7xl mx-auto'>
 			<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12'>
 				{projects.map((project, i) => (
 					<ProjectCard key={project.id} project={project} index={i} />
@@ -333,7 +425,7 @@ const Footer = ({ onContactClick }: { onContactClick: () => void }) => {
 	return (
 		<footer className='py-32 px-6 md:px-12 max-w-7xl mx-auto'>
 			<div className='bg-white/[0.03] border border-white/10 rounded-[3rem] p-12 md:p-24 flex flex-col items-center text-center gap-12'>
-				<img src='/DTELogo.png' alt='DTE' className='w-24 h-24 opacity-80' />
+				<img src={getAssetPath("DTELogo.png")} alt='DTE' className='w-24 h-24 opacity-80' />
 				<div className='max-w-3xl flex flex-col gap-6'>
 					<h2 className='text-5xl md:text-8xl font-black uppercase tracking-tighter leading-none'>
 						Ready for the <span className='text-accent italic'>Uplink?</span>
@@ -344,7 +436,7 @@ const Footer = ({ onContactClick }: { onContactClick: () => void }) => {
 				</div>
 				<div className='flex flex-wrap justify-center gap-6'>
 					<button onClick={onContactClick} className='group bg-accent text-black px-12 py-6 rounded-2xl font-black uppercase text-sm transition-all hover:scale-105 active:scale-95 flex items-center gap-3'>
-						<RollingText text='Direct Uplink' hoverColor='text-white' />
+						<RollingText text='Connection' hoverColor='text-white' />
 						<Icon icon='solar:letter-linear' className='text-xl' />
 					</button>
 					<a href='https://dte-84.github.io/DTE-Portfolio/assets/DrewTErnst_Resume.pdf' target='_blank' rel='noreferrer' className='bg-white/5 border border-white/10 text-white px-12 py-6 rounded-2xl font-black uppercase text-sm transition-all hover:bg-white/10 hover:border-white/20 flex items-center gap-3'>
@@ -374,14 +466,16 @@ export default function Home() {
 	const [isContactOpen, setIsContactOpen] = useState(false);
 
 	return (
-		<main className='bg-black min-h-screen text-white selection:bg-accent selection:text-black antialiased font-space relative overflow-hidden'>
+		<main className='bg-black min-h-screen text-white selection:bg-accent selection:text-black antialiased font-space relative overflow-x-hidden'>
 			<BgAnimation />
 			<Nav onContactClick={() => setIsContactOpen(true)} />
 			<div className='relative z-10'>
 				<Hero />
+				<TechStack />
 				<ExperienceMarquee />
 				<FeaturedPCSP />
 				<OtherWorks />
+				<About />
 				<Footer onContactClick={() => setIsContactOpen(true)} />
 			</div>
 

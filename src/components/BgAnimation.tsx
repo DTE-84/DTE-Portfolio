@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useRef } from "react";
+import { getAssetPath } from "../utils/paths";
 
 type Particle = {
   x: number;
@@ -115,7 +116,8 @@ const BgAnimation: React.FC = () => {
         className="absolute inset-0 w-full h-full opacity-40"
       />
       <div
-        className="absolute inset-0 bg-[url('/DTE-Portfolio/assets/proxima.jpg')] bg-cover bg-center opacity-[0.03] mix-blend-luminosity grayscale contrast-125 brightness-75"
+        className={`absolute inset-0 bg-cover bg-center opacity-[0.03] mix-blend-luminosity grayscale contrast-125 brightness-75`}
+        style={{ backgroundImage: `url(${getAssetPath("assets/proxima.jpg")})` }}
       />
       <div
         className="absolute w-[600px] h-[600px] rounded-full blur-[120px] bg-accent opacity-10 animate-float"
