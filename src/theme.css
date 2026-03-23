@@ -1,0 +1,21 @@
+:root {
+  --theme-bg: #000000;
+  --theme-bg-alt: #050505;
+  --theme-accent: #00ffcc;
+  --theme-offset: #06b6d4;
+  --theme-accent-rgb: 0, 255, 204;
+  --theme-text: #FFFFFF;
+  --theme-text-dim: rgba(255, 255, 255, 0.7);
+  --theme-shadow: rgba(0, 255, 204, 0.4);
+  --container-width: 1100px;
+}
+
+[data-theme="yellow"] {
+  --theme-bg: #000000;
+  --theme-bg-alt: #050505;
+  --theme-accent: #00AAFA;
+  --theme-offset: #008CD4;
+  --theme-accent-rgb: 0, 170, 250;
+  --theme-text: #FFFFFF;
+  --theme-shadow: rgba(0, 170, 250, 0.4);
+}

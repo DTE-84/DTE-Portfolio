@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drew T. Ernst - Pulse Resume</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #000;
+            --secondary: #444;
+            --accent: #30C476;
+            --border: #ddd;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.4;
+            color: var(--primary);
+            background: #fff;
+            padding: 0.5in;
+        }
+        .container {
+            max-width: 8.5in;
+            margin: auto;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        h1 {
+            font-size: 28pt;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+        .subtitle {
+            font-weight: 600;
+            color: var(--secondary);
+            font-size: 11pt;
+            margin-bottom: 5px;
+        }
+        .contact {
+            font-size: 9pt;
+            color: var(--secondary);
+        }
+        .section-title {
+            font-size: 11pt;
+            font-weight: 700;
+            text-transform: uppercase;
+            border-bottom: 1.5pt solid var(--primary);
+            margin: 15px 0 10px;
+            padding-bottom: 2px;
+        }
+        .profile-text {
+            font-size: 9.5pt;
+            text-align: justify;
+        }
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 120px 1fr;
+            font-size: 9pt;
+            gap: 5px;
+        }
+        .skill-label { font-weight: 700; }
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            font-weight: 700;
+            font-size: 10pt;
+            margin-top: 12px;
+        }
+        .job-sub {
+            font-style: italic;
+            font-size: 9pt;
+            color: var(--secondary);
+            margin-bottom: 5px;
+        }
+        ul {
+            margin-left: 18px;
+            font-size: 9pt;
+        }
+        li { margin-bottom: 4px; }
+        strong { color: #000; }
+        .highlight { color: var(--accent); font-weight: 700; }
+        @media print {
+            body { padding: 0; }
+            .container { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>DREW T. ERNST</h1>
+            <div class="subtitle">Full-Stack Developer | Software Engineer | Cloud & AI Specialist</div>
+            <div class="contact">Quincy, IL | (217) 653-9445 | dte.solutions.llc@gmail.com | Portfolio | LinkedIn</div>
+        </header>
+
+        <section>
+            <div class="section-title">Professional Profile</div>
+            <p class="profile-text">
+                Strategic Full-Stack Software Developer with expertise in OOD (Object-Oriented Design) and modern Cloud Computing architectures. Proven track record in high-stakes development, including HIPAA-compliant clinical engines and <strong>behavioral AI financial ecosystems</strong>. Expert in full-lifecycle debugging, cross-platform integration (AWS & Azure), and LLM reasoning implementation. Combines technical clarity with deep psychological insight to deliver production-grade solutions for complex user environments.
+            </p>
+        </section>
+
+        <section>
+            <div class="section-title">Technical Skills</div>
+            <div class="skills-grid">
+                <div class="skill-label">Languages</div><div>JavaScript, TypeScript, Python, Java, C#, SQL (PostgreSQL, MongoDB)</div>
+                <div class="skill-label">Frameworks</div><div>React 19, Node.js, FastAPI, Spring Framework, .NET Core, Next.js</div>
+                <div class="skill-label">Cloud & DevOps</div><div>Amazon Web Services (AWS), Microsoft Azure, Docker, CI/CD Pipelines</div>
+                <div class="skill-label">AI & Specialized</div><div><strong>Generative AI Integration (GPT-4o)</strong>, Behavioral Mirroring, RESTful APIs, JWT Auth</div>
+                <div class="skill-label">Methodology</div><div>SDLC, Agile/Scrum, OOD, Workflow Optimization, Debugging</div>
+            </div>
+        </section>
+
+        <section>
+            <div class="section-title">Key Software Development Initiatives</div>
+            
+            <div class="job-header">
+                <div>Lead Full-Stack Developer • Pulse (The Behavioral Finance Assistant)</div>
+                <div>2026</div>
+            </div>
+            <div class="job-sub">Production-grade behavioral finance ecosystem architected to bridge the gap between transactional data and user psychology.</div>
+            <ul>
+                <li><strong>Nova AI Consciousness:</strong> Engineered an evolving AI assistant using <strong>GPT-4o</strong> with a custom long-term memory system; implemented "Behavioral Mirroring" to correlate financial velocity with user stress indices, sleep quality, and mood.</li>
+                <li><strong>Cognitive Anomaly Detection:</strong> Developed logic to identify "Impulse Clusters" and "Stress-Spending Patterns," triggering proactive psychological interventions and real-time behavioral nudges.</li>
+                <li><strong>High-Velocity Architecture:</strong> Architected a multi-tier system with React 19 and a FastAPI asynchronous backend, ensuring sub-millisecond response times for real-time data visualization via Recharts.</li>
+                <li><strong>Distributed Data Management:</strong> Managed high-velocity records via the <strong>AWS S3 Receipt Ecosystem</strong>, utilizing pre-signed URL protocols for encrypted cloud storage and audit-readiness.</li>
+            </ul>
+
+            <div class="job-header">
+                <div>Lead Software Engineer • Marion County DDSD — Missouri DMH</div>
+                <div>2026</div>
+            </div>
+            <div class="job-sub">PCSP Assistant Pro — HIPAA-compliant clinical documentation engine for state government audits.</div>
+            <ul>
+                <li><strong>Workflow Optimization:</strong> Engineered a clinical documentation workflow that reduced plan revision cycles by 40%, ensuring 100% adherence to rigorous state audit requirements.</li>
+                <li><strong>Enterprise Logic:</strong> Developed a client-side engine using Vanilla JavaScript and OOD, providing technical clarity to non-technical staff through intelligent UI phrasing patterns.</li>
+                <li><strong>Security Excellence:</strong> Designed a "Zero-Footprint" in-memory processing architecture to satisfy HIPAA database security standards and eliminate data vulnerability.</li>
+            </ul>
+
+            <div class="job-header">
+                <div>Full-Stack Engineer • SiKnight Game Hub • Interactive Data Platform</div>
+                <div>2025–2026</div>
+            </div>
+            <ul>
+                <li><strong>Real-Time Systems:</strong> Leveraged Node.js and Socket.io to sustain high-frequency live game state management with millisecond latency.</li>
+                <li><strong>Full-Stack Mastery:</strong> Implemented Java/Spring patterns for scalable leaderboard services, ensuring robust communication between frontend and backend.</li>
+            </ul>
+        </section>
+
+        <section>
+            <div class="section-title">Education & Training</div>
+            <div class="job-header">
+                <div>Frontend Simplified Bootcamp • Production-Grade React & Software Architecture</div>
+                <div>Completed 2025</div>
+            </div>
+            <div class="job-header">
+                <div>B.S. Communication • Quincy University | B.S. Marketing • Culver-Stockton College</div>
+                <div>GPA: 3.8</div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

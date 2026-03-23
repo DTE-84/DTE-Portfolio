@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drew T Ernst | Frontend Engineer Resume</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #0f172a;
+            --accent-color: #00ffcc;
+            --text-main: #1e293b;
+            --text-muted: #475569;
+            --bg-light: #f1f5f9;
+            --line-color: #e2e8f0;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-main);
+            background-color: #0a0a0c;
+            line-height: 1.4;
+            padding: 40px 20px;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: var(--accent-color);
+            text-decoration: none;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            transition: opacity 0.3s;
+        }
+
+        .back-link:hover { opacity: 0.7; }
+
+        .resume-container {
+            max-width: 850px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 40px 50px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+            border-top: 5px solid var(--accent-color);
+        }
+
+        header { margin-bottom: 15px; text-align: center; }
+        h1 { font-size: 2.2rem; font-weight: 800; color: var(--primary-color); letter-spacing: -0.025em; margin-bottom: 2px; }
+        .subtitle { font-size: 1rem; font-weight: 600; color: #4f46e5; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 10px; }
+        
+        .contact-bar { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; font-size: 0.8rem; color: var(--text-muted); }
+        .contact-item::after { content: "|"; margin-left: 12px; color: var(--line-color); }
+        .contact-item:last-child::after { content: ""; }
+        .contact-item a { color: var(--text-muted); text-decoration: none; }
+
+        section { margin-bottom: 16px; }
+        .section-title { font-size: 0.85rem; font-weight: 700; color: #4f46e5; letter-spacing: 0.08em; border-bottom: 1px solid var(--line-color); padding-bottom: 2px; margin-bottom: 8px; text-transform: uppercase; }
+
+        #summary { font-size: 0.85rem; color: var(--text-muted); line-height: 1.5; text-align: center; margin-bottom: 20px; padding-bottom: 15px; border-bottom: 1px solid var(--line-color); }
+
+        .skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 20px; }
+        .skill-category { font-size: 0.8rem; }
+        .skill-category strong { color: var(--primary-color); font-weight: 600; }
+
+        .entry-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2px; }
+        .entry-header h3 { font-size: 0.95rem; font-weight: 700; color: var(--primary-color); }
+        .entry-location { font-size: 0.8rem; color: var(--text-muted); font-weight: 500; }
+        
+        .project-link { font-size: 0.8rem; margin-bottom: 4px; }
+        .project-link a { color: #4f46e5; text-decoration: none; font-weight: 500; }
+
+        .bullet-list { list-style-type: none; }
+        .bullet-list li { font-size: 0.85rem; margin-bottom: 3px; position: relative; padding-left: 12px; color: var(--text-muted); }
+        .bullet-list li::before { content: "•"; color: #4f46e5; position: absolute; left: 0; font-weight: bold; }
+
+        .education-grid { display: flex; flex-direction: column; gap: 4px; }
+        .education-entry p { font-size: 0.8rem; color: var(--text-muted); }
+
+        @media print {
+            @page { margin: 0.5cm; size: letter; }
+            body { background: #fff; padding: 0; }
+            .back-link { display: none; }
+            .resume-container { margin: 0; box-shadow: none; padding: 0; width: 100%; }
+        }
+
+        @media (max-width: 600px) {
+            .resume-container { padding: 25px; }
+            .skills-grid { grid-template-columns: 1fr; }
+            .entry-header { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+    <div style="max-width: 850px; margin: 0 auto;">
+        <a href="index.html" class="back-link">← Return to Portfolio</a>
+    </div>
+    
+    <div class="resume-container">
+        <header>
+            <h1>DREW T ERNST</h1>
+            <p class="subtitle">Frontend Engineer | Software Developer</p>
+            <div class="contact-bar">
+                <span class="contact-item">Quincy, IL</span>
+                <span class="contact-item">(217) 653-9445</span>
+                <span class="contact-item">dte.solutions.llc@gmail.com</span>
+                <span class="contact-item"><a href="https://dte-solutionsllc.gitlab.io/Portfolio">dte-solutionsllc.gitlab.io/Portfolio</a></span>
+            </div>
+        </header>
+
+        <section id="summary">
+            <p>Detail-oriented Frontend Engineer specializing in React and Vue.js. Architected the 'ISP Assistant Pro'—a Zero-Footprint Logic Engine ensuring Missouri state audit compliance. Expert in responsive design and API integration, focused on writing clean, scalable code.</p>
+        </section>
+
+        <section id="skills">
+            <h2 class="section-title">TECHNICAL SKILLS</h2>
+            <div class="skills-grid">
+                <div class="skill-category"><strong>Frameworks:</strong> React, Vue.js, Next.js</div>
+                <div class="skill-category"><strong>Languages:</strong> TS, JS (ES6+), HTML5, CSS3</div>
+                <div class="skill-category"><strong>UI:</strong> Tailwind, Bootstrap, Material-UI, Sass</div>
+                <div class="skill-category"><strong>Tools:</strong> Git, Node.js, Firebase, Vite, Agile</div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2 class="section-title">FEATURED PROJECT</h2>
+            <div class="project-entry">
+                <div class="entry-header">
+                    <h3>ISP Assistant Pro – Clinical Narrative Calculator</h3>
+                    <span class="entry-location">Marion County DDSD | 2026</span>
+                </div>
+                <p class="project-link"><a href="case-study-isp.html">View Case Study</a></p>
+                <ul class="bullet-list">
+                    <li>Architected a Zero-Footprint Logic Engine using Vanilla JS to validate Missouri-compliant narratives, achieving 100% adherence to state audit standards.</li>
+                    <li>Developed responsive UI with state-approved active verbs, reducing plan revision cycles by 40%.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="experience">
+            <h2 class="section-title">PROFESSIONAL EXPERIENCE</h2>
+            <div class="experience-entry">
+                <div class="entry-header">
+                    <h3>Frontend Developer & Software Engineer</h3>
+                    <span class="entry-location">Self-Employed | 2025 – Present</span>
+                </div>
+                <ul class="bullet-list">
+                    <li>Engineer custom applications using React and Vue.js with component-based architecture.</li>
+                    <li>Translate complex designs into responsive, mobile-first interfaces using Tailwind CSS.</li>
+                    <li>Integrate RESTful APIs and Firebase for real-time, data-driven applications.</li>
+                    <li>Optimize performance via code splitting and efficient state management.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="education">
+            <h2 class="section-title">EDUCATION & TRAINING</h2>
+            <div class="education-grid">
+                <div class="education-entry">
+                    <div class="entry-header">
+                        <strong>Frontend Simplified Bootcamp</strong>
+                        <span class="entry-location">2025</span>
+                    </div>
+                </div>
+                <div class="education-entry">
+                    <div class="entry-header">
+                        <strong>Bachelor of Communication</strong>
+                        <span class="entry-location">Quincy University</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

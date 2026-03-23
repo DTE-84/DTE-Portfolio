@@ -1,0 +1,42 @@
+workflow:
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "push"
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+    - if: $CI_COMMIT_BRANCH
+
+image: node:20-alpine
+
+stages:
+  - build
+  - deploy
+
+cache:
+  key:
+    files:
+      - package-lock.json
+  paths:
+    - node_modules/
+
+build_site:
+  stage: build
+  script:
+    - npm install
+    - NEXT_TELEMETRY_DISABLED=1 npm run build -- --no-lint
+  artifacts:
+    paths:
+      - out/
+    expire_in: 1 hour
+
+pages:
+  stage: deploy
+  needs: ["build_site"]
+  script:
+    - rm -rf public
+    - mv out public
+    - touch public/.nojekyll
+  artifacts:
+    paths:
+      - public
+  rules:
+    - if: $CI_COMMIT_BRANCH == "main"
+

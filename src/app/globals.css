@@ -1,0 +1,154 @@
+@import "tailwindcss";
+@import "../theme.css";
+
+@theme {
+  --color-nova-blue: #7dd3fc;
+  --color-nova-violet: #a855f7;
+  --font-orbitron: var(--font-orbitron), ui-sans-serif, system-ui, sans-serif;
+  --font-space: var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif;
+
+  --color-accent: var(--theme-accent);
+  --color-accent-rgb: var(--theme-accent-rgb);
+  --color-offset: var(--theme-offset);
+  --color-secondary: var(--theme-secondary);
+
+  --animate-pulse-slow: pulse 2s linear infinite;
+  --animate-float: float 8s ease-in-out infinite;
+  --animate-orb-pulse: orbPulse 2s ease-in-out infinite;
+  --animate-status-pulse: statusPulse 2s infinite ease-in-out;
+}
+
+@keyframes float {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(30px, 30px) scale(1.1); }
+}
+
+@keyframes orbPulse {
+  0%, 100% {
+    transform: scale(1.3);
+    box-shadow: 0 0 10px var(--theme-accent);
+  }
+  50% {
+    transform: scale(1.5);
+    box-shadow: 0 0 25px var(--theme-accent);
+  }
+}
+
+@keyframes statusPulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+    box-shadow: 0 0 10px #fff, 0 0 20px var(--theme-accent);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(0.9);
+    box-shadow: 0 0 5px #fff, 0 0 10px var(--theme-accent);
+  }
+}
+
+@keyframes hero-wave-breathe {
+  0%, 100% {
+    transform: translateY(0px);
+    text-shadow: 0 0 20px rgba(var(--theme-accent-rgb), 0.8), 0 0 40px rgba(var(--theme-accent-rgb), 0.5), 0 0 60px rgba(var(--theme-accent-rgb), 0.3);
+  }
+  50% {
+    transform: translateY(-8px);
+    text-shadow: 0 0 30px rgba(var(--theme-accent-rgb), 1), 0 0 50px rgba(var(--theme-accent-rgb), 0.7), 0 0 80px rgba(var(--theme-accent-rgb), 0.5);
+  }
+}
+
+@keyframes main-flicker {
+  0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100% {
+    opacity: 1;
+    text-shadow: 0 0 10px rgba(var(--theme-accent-rgb), 0.5);
+  }
+  20%, 21.999%, 63%, 63.999%, 65%, 69.999% {
+    opacity: 0.4;
+    text-shadow: none;
+  }
+}
+
+@keyframes button-pulse {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(var(--theme-accent-rgb), 0.2);
+    transform: translateY(0);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(var(--theme-accent-rgb), 0.4), 0 0 10px var(--theme-offset);
+    transform: translateY(-2px);
+  }
+}
+
+@keyframes list-pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  50% {
+    opacity: 0.5;
+    transform: translateX(3px);
+  }
+}
+
+body {
+  font-family: var(--font-space), ui-sans-serif, system-ui, sans-serif;
+  background-color: var(--theme-bg);
+  background-image:
+    radial-gradient(circle at center, rgba(255,255,255,0.02) 0%, transparent 70%),
+    radial-gradient(circle at center, rgba(255,255,255,0.02) 0%, transparent 70%);
+  background-size: 60px 60px;
+  background-position: 0 0, 30px 30px;
+  background-attachment: fixed;
+  color: var(--theme-text);
+  overflow-x: hidden;
+  transition: background 0.5s ease;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-orbitron) !important;
+}
+
+.flicker-animation {
+  animation: main-flicker 4s infinite;
+}
+
+.container-main {
+  width: 100%;
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 30px;
+}
+
+.tech-tab {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--theme-accent);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  clip-path: polygon(10% 0, 90% 0, 100% 30%, 100% 70%, 90% 100%, 10% 100%, 0 70%, 0 30%);
+  border: 1px solid rgba(var(--theme-accent-rgb), 0.3);
+  transition: 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  background: rgba(var(--theme-accent-rgb), 0.05);
+}
+
+.tech-tab:hover {
+  background: rgba(var(--theme-accent-rgb), 0.15);
+  box-shadow: 0 0 25px rgba(var(--theme-accent-rgb), 0.3);
+  color: var(--theme-text);
+  border-color: var(--theme-accent);
+  transform: translateY(-2px);
+}
+
+.terminal-list li::before {
+  content: ">>";
+  position: absolute;
+  left: 0;
+  color: var(--theme-accent);
+  font-family: var(--font-orbitron);
+  font-size: 14px;
+  top: 4px;
+  animation: list-pulse 1.5s infinite;
+}
+

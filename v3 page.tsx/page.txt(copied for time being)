@@ -1,0 +1,251 @@
+"use client";
+import Navbar from "../../components/Navbar";
+import Image from "next/image";
+import React, { useEffect, useRef, useState } from "react";
+import { Icon } from "@iconify/react";
+import BgAnimation from "../../components/BgAnimation";
+import ContactModal from "../../components/ContactModal";
+
+
+const RevealText: React.FC<{ text: string; isReverse?: boolean }> = ({
+	text,
+	isReverse = false,
+}) => {
+	const [isVisible, setIsVisible] = useState(false);
+	const containerRef = useRef<HTMLParagraphElement>(null);
+
+	useEffect(() => {
+		const observer = new IntersectionObserver(
+			([entry]) => {
+				setIsVisible(entry.isIntersecting);
+			},
+			{ threshold: 0.15 },
+		);
+
+		if (containerRef.current) {
+			observer.observe(containerRef.current);
+		}
+
+		
+const TextEditor = () => {
+	const [text, setText] = useState('');
+	const [fontSize, setFontSize] = useState(16);
+  
+	const handleTextChange = (e) => {
+	  setText(e.target.value);
+	};
+  
+	const handleFontSizeChange = (e) => {
+	  setFontSize(e.target.value);
+	};
+  
+	const handleRemoveText = () => {
+	  setText('');
+	};
+  
+	const handleErase = () => {
+	  setText(text.slice(0, -1));
+	};
+  
+	  const Hero = () => {
+	
+const ProjectCard = ({ project }: { project: any }) => {
+	if (!project) return null;
+
+	
+
+const Work = () => {
+	const projects = [
+		{
+			id: "NestLegacy",
+			title: "NestLegacy - Wealth Transfer Engine",
+			category: "Enterprise Fintech",
+			year: "2026",
+			description:
+				"Digital trust layer for the $84 trillion wealth transfer. AI-driven lead intelligence bridging inheritors to fiduciary experts through behavioral financial modeling.",
+			tags: ["React 19", "Behavioral Finance", "Lead Intelligence", "Nova AI"],
+			image: "/DTE-E-Portfolio/assets/novaui.png",
+			video: "/DTE-E-Portfolio/assets/NestLegacy.mp4",
+			link: "https://dte-84.github.io/NestLegacy/",
+		},
+		{
+			id: "Pulse",
+			title: "Pulse - Behavioral Intelligence Platform",
+			category: "Behavioral Fintech",
+			year: "2026",
+			description:
+				"High-fidelity financial dashboard utilizing behavioral psychology to detect spending rhythms and emotional triggers. Engineered with a FastAPI asynchronous backend and Nova AI integration.",
+			tags: ["React 19", "FastAPI", "MongoDB", "Behavioral AI"],
+			image: "/DTE-E-Portfolio/assets/novaui.png",
+			video: "/DTE-E-Portfolio/assets/Pulse.mp4",
+			link: "https://dte-solutions.icu/pulse-breakdown.html",
+		},
+		{
+			id: "Fluff",
+			title: "Fluff - IoT Telemetry Engine",
+			category: "Performance Analytics",
+			year: "2026",
+			description:
+				"Multi-source telemetry suite orchestrating real-time GPS coordinates and historical player databases. Features an audible AI assistant for PGA-grade performance analysis.",
+			tags: ["React 19", "Geospatial", "IoT Sync", "Biometrics"],
+			image: "/DTE-E-Portfolio/assets/fluff/FLUFF-GPS.png",
+			video: "/DTE-E-Portfolio/assets/Fluff.mp4",
+			link: "https://dte-84.github.io/Fluff/",
+		},
+		{
+			id: "SIKNIGHT",
+			title: "SiKnight Game Hub",
+			category: "Interactive Media",
+			year: "2026",
+			description:
+				"High-engagement gaming portal featuring an interactive engine, real-time leaderboard, and virtual currency.",
+			tags: ["React", "Interactive", "Game Design"],
+			image: "/DTE-E-Portfolio/assets/siknighthome.png",
+			video: "/DTE-E-Portfolio/assets/siknight.mp4",
+			link: "https://dte-84.github.io/SiKnight/",
+		},
+		{
+			id: "KEANO",
+			title: "Keano Wallis Modeling",
+			category: "Editorial Design",
+			year: "2026",
+			description:
+				"Immersive visual architecture for a high-end creative portfolio, focusing on fluid navigation.",
+			tags: ["Next.js", "Motion", "Tailwind"],
+			image: "/DTE-E-Portfolio/assets/kwportfront.png",
+			video: "/DTE-E-Portfolio/assets/KWModel.mp4",
+			link: "https://kw-portfolio-kappa.vercel.app/",
+		},
+		{
+			id: "TONYS",
+			title: "Landscaping Logic",
+			category: "Commercial UI",
+			year: "2026",
+			description:
+				"Service-oriented architecture featuring a custom interactive engine for visual data comparison.",
+			tags: ["Vanilla JS", "UI/UX", "GSAP"],
+			image: "/DTE-E-Portfolio/assets/tonybna.png",
+			video: "/DTE-E-Portfolio/assets/Tonysllc.mp4",
+			link: "https://tonyslandscapingllc.com",
+		},
+		{
+			id: "REACT_ESTORE",
+			title: "State Logic Store",
+			category: "Digital Commerce",
+			year: "2025",
+			description:
+				"Technical demonstration of advanced state management and asynchronous data orchestration.",
+			tags: ["React", "Hooks", "API"],
+			image: "/DTE-E-Portfolio/assets/library.png",
+			video: "/DTE-E-Portfolio/assets/estore.mp4",
+			link: "https://dte-84.github.io/E-Commerce-Books/",
+		},
+		{
+			id: "CARSALES",
+			title: "Inventory Discovery",
+			category: "Automotive SaaS",
+			year: "2025",
+			description:
+				"Automotive marketplace interface optimized for complex search heuristics and high-speed filtering.",
+			tags: ["React", "REST API", "UX Design"],
+			image: "/DTE-E-Portfolio/assets/santishowroom.png",
+			video: "/DTE-E-Portfolio/assets/CarSales.mp4",
+			link: "https://dte-84.github.io/CarSalesInv/",
+		},
+		{
+			id: "CRYPTOLIVE",
+			title: "CryptoLive Engine",
+			category: "Fintech",
+			year: "2026",
+			description:
+				"High-performance websocket implementation for real-time market data visualization.",
+			tags: ["React", "Socket.io", "Chart.js"],
+			image: "/DTE-E-Portfolio/assets/cryptolive (2).png",
+			link: "https://cryptolive-5jmo.onrender.com/",
+		},
+	];
+
+	
+const About = () => {
+	
+const ToolsOfTheTrade = () => {
+	
+const Footer = ({ onContactClick }: { onContactClick: () => void }) => {
+	
+export default function Home() {
+	const [isContactOpen, setIsContactOpen] = useState(false);
+
+	return (
+		<main className='bg-black min-h-screen text-white selection:bg-accent selection:text-black antialiased font-(family-name:--font-space-grotesk)'>
+			<BgAnimation />
+			<Navbar onContactClick={() => setIsContactOpen(true)} />
+			<Hero />
+			<ToolsOfTheTrade />
+			<Work />
+			<About />
+			<Footer onContactClick={() => setIsContactOpen(true)} />
+
+			<ContactModal
+				isOpen={isContactOpen}
+				onClose={() => setIsContactOpen(false)}
+			/>
+
+			<style jsx global>{`
+				h1,
+				h2,
+				h3,
+				h4,
+				.font-orbitron {
+					font-family: var(--font-orbitron), sans-serif !important;
+				}
+				@keyframes fade-in {
+					from {
+						opacity: 0;
+						transform: translateY(20px);
+					}
+					to {
+						opacity: 1;
+						transform: translateY(0);
+					}
+				}
+				.animate-fade-in {
+					animation: fade-in 1s ease-out forwards;
+				}
+				:root {
+					--accent: #00ffcc;
+				}
+				.text-accent {
+					color: var(--accent);
+				}
+				.bg-accent {
+					background-color: var(--accent);
+				}
+				.border-accent {
+					border-color: var(--accent);
+				}
+
+				.nav-link {
+					position: relative;
+				}
+				.nav-link::after {
+					content: "";
+					position: absolute;
+					width: 100%;
+					transform: scaleX(0);
+					height: 2px;
+					bottom: -4px;
+					left: 0;
+					background-color: var(--accent);
+					transform-origin: bottom left;
+					transition: transform 0.3s ease-out;
+				}
+				.nav-link:hover::after {
+					transform: scaleX(1);
+				}
+			`}</style>
+		</main>
+	);
+}
+
+export default Home;
+

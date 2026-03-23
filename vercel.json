@@ -1,0 +1,14 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": true,
+  "rewrites": [
+    {
+      "source": "/resume",
+      "destination": "/resume/index.html"
+    },
+    {
+      "source": "/hub",
+      "destination": "/hub/index.html"
+    }
+  ]
+}
