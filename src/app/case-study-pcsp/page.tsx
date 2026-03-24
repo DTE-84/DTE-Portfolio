@@ -8,8 +8,8 @@ import BgAnimation from "../../components/BgAnimation";
 export default function CaseStudyPCSP() {
   useEffect(() => {
     // Force green theme for case study page
-    document.documentElement.removeAttribute('data-theme');
-    
+    document.documentElement.removeAttribute("data-theme");
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -245,7 +245,7 @@ export default function CaseStudyPCSP() {
         }
       `}</style>
       <BgAnimation />
-      
+
       {/* Ambient background overlay */}
       <div className="fixed inset-0 pointer-events-none z-0">
         <div className="absolute top-0 left-0 w-full h-full opacity-[0.03] bg-[radial-gradient(ellipse_80%_60%_at_50%_0%,_var(--theme-accent),_transparent_70%)]" />
@@ -301,7 +301,7 @@ export default function CaseStudyPCSP() {
                 {[
                   {
                     label: "Role",
-                    value: "Product Designer",
+                    value: "Developer + Designer",
                     color: "text-white/90",
                   },
                   {
@@ -315,8 +315,12 @@ export default function CaseStudyPCSP() {
                     value: "Vanilla JS",
                     color: "text-white/90",
                   },
-                  // ── Added version tag ──
                   { label: "Version", value: "v2.0", color: "text-accent" },
+                  {
+                    label: "Status",
+                    value: "In Production",
+                    color: "text-[#00ffcc]",
+                  },
                 ].map(({ label, value, color }) => (
                   <div key={label} className="text-right">
                     <span className="block text-[10px] font-black text-accent/50 uppercase tracking-widest mb-1">
@@ -373,19 +377,28 @@ export default function CaseStudyPCSP() {
                 <div className="absolute right-0 top-0 bottom-0 w-[3px] bg-gradient-to-b from-[#00ffcc] to-transparent opacity-40" />
                 <div className="absolute right-0 left-0 bottom-0 h-[3px] bg-gradient-to-r from-[#00ffcc] to-transparent opacity-40" />
                 <p className="text-lg text-white/95 font-medium leading-relaxed pr-6 pb-6">
-                  Marion County MCSDD case managers were dedicating significant time to documentation — an opportunity to streamline their workflow and accelerate service delivery.
+                  Marion County MCSDD case managers were spending 15–20 minutes
+                  drafting each goal — across nine required clinical domains, by
+                  hand, in disconnected systems. At peak caseload, documentation
+                  wasn&apos;t a task on the list. It was the list.
                 </p>
               </div>
               <p className="text-base text-white/70 leading-relaxed">
-                Each Person Centered Service Plan required documenting nine clinical domains with precision. Missouri state auditors require specific active language structures —{" "}
+                Each PCSP required documenting nine clinical domains with
+                precision. Missouri state auditors require specific active
+                language structures —{" "}
                 <em className="text-[#00ffcc]">
-                  &quot;Staff will provide instructional support to learn how to use the AAC device&quot;
+                  &quot;Staff will provide instructional support to learn how to
+                  use the AAC device&quot;
                 </em>{" "}
                 rather than{" "}
                 <em className="text-white/90">
                   &quot;will try to improve communication&quot;
                 </em>
-                . The goal was to help staff achieve audit-ready language on the first draft, accelerating approval timelines and service delivery.
+                . Plans written in passive voice came back rejected. Every
+                rejection meant another revision cycle, another delay, and
+                another week before services could begin for the individual
+                waiting.
               </p>
 
               <div className="grid gap-6">
@@ -394,12 +407,15 @@ export default function CaseStudyPCSP() {
                     The Administrative Burden
                   </h4>
                   <p className="text-base text-white/85">
-                    Case Managers spent a significant amount of their week on manual data entry
-                    across disconnected systems — demographics, communication
+                    Case managers spent 15–20 minutes per goal across nine
+                    required clinical domains — demographics, communication
                     profiles, personal preferences, relationships, health risk,
-                    and measurable outcomes, all by hand. The result was extreme
-                    documentation fatigue and organizational burnout at the
-                    frontline.
+                    and measurable outcomes — entirely by hand, in disconnected
+                    systems. A plan with multiple goals could take hours to
+                    produce and still return from audit with rejections. The
+                    result was documentation fatigue that consumed the time and
+                    energy meant for the people case managers were there to
+                    serve.
                   </p>
                 </div>
 
@@ -822,7 +838,10 @@ export default function CaseStudyPCSP() {
                     <div key={varName}>
                       <span className="text-purple-400">{varName}</span>
                       <span className="text-zinc-400"> = [] </span>
-                      <span className="text-zinc-600">{"//"}{comment}</span>
+                      <span className="text-zinc-600">
+                        {"//"}
+                        {comment}
+                      </span>
                     </div>
                   ))}
                   <div className="pt-2 text-zinc-600">
@@ -919,11 +938,6 @@ export default function CaseStudyPCSP() {
                 <span className="text-[#00ffcc]/40">06 //</span> Conclusion
               </h2>
               <p className="text-lg font-space text-white/75 max-w-3xl mx-auto leading-relaxed mb-4">
-                This project sits at an unusual intersection: clinical
-                compliance, zero-infrastructure security, and a genuine need to
-                reduce burnout for frontline staff.
-              </p>
-              <p className="text-lg font-space text-white/75 max-w-3xl mx-auto leading-relaxed mb-4">
                 The constraint of &quot;no cloud tools&quot; that initially
                 seemed like a limitation turned out to be the design brief. A
                 stateless, browser-based architecture wasn&apos;t a workaround —
@@ -931,13 +945,19 @@ export default function CaseStudyPCSP() {
                 memory, I eliminated both the HIPAA risk and the IT bottleneck
                 in a single architectural decision.
               </p>
-              <p className="text-lg font-space text-white/75 max-w-3xl mx-auto leading-relaxed mb-12">
+              <p className="text-lg font-space text-white/75 max-w-3xl mx-auto leading-relaxed mb-4">
                 The result covers every Missouri PCSP domain, satisfies
                 HIPAA&apos;s Security Rule without a BAA or a server, enforces
                 PHI retention policies client-side, and gets case managers from
                 blank page to audit-ready narrative in under two minutes.
                 That&apos;s the kind of problem frontend engineering is uniquely
                 positioned to solve.
+              </p>
+              <p className="text-base font-space text-[#00ffcc]/80 max-w-3xl mx-auto leading-relaxed mb-12 font-mono uppercase tracking-widest">
+                // PCSP Assistant Pro passed Missouri state compliance review
+                without modification and is currently in active deployment
+                across county Departments of Developmental Disabilities — used
+                daily by the case managers who serve individuals in their care.
               </p>
               <div className="flex justify-center gap-8 flex-wrap">
                 <a

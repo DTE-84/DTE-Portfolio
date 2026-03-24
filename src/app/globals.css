@@ -19,6 +19,17 @@
   --animate-marquee: marquee 24s linear infinite;
 }
 
+
+@font-face {
+  font-family: 'Mancho';
+  src: url('/fonts/Mancho.OTF') format('opentype');
+  font-weight: black;
+  font-style: normal;
+}
+@theme {
+  --font-mancho: "Mancho", sans-serif;
+}
+
 @keyframes float {
   0%, 100% { transform: translate(0, 0) scale(1); }
   50% { transform: translate(30px, 30px) scale(1.1); }
@@ -115,9 +126,13 @@ body {
   transition: background 0.5s ease;
 }
 
-h1, h2, h3, h4, h5, h6 {
+ h2, h3, h4, h5, h6 {
   font-family: var(--font-orbitron) !important;
 }
+h1 {
+  font-family: var(--font-orbitron) !important;
+}
+
 
 .flicker-animation {
   animation: main-flicker 4s infinite;
@@ -160,5 +175,35 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 14px;
   top: 4px;
   animation: list-pulse 1.5s infinite;
+}
+
+@keyframes shine {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.text-shine {
+  position: relative;
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.1);
+  text-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+}
+
+.text-shine::after {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    transparent 45%,
+    rgba(255, 255, 255, 0.5) 50%,
+    transparent 55%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 6s infinite linear;
+  pointer-events: none;
+  z-index: 1;
 }
 
