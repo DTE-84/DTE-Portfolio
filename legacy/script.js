@@ -201,7 +201,7 @@ function contact(event) {
     })
     .catch((err) => {
       if (loading) loading.style.display = "none";
-      alert("Comms error. Direct uplink to: dte.solutions.llc@gmail.com");
+      alert("Comms error. Connect to: dte.solutions.llc@gmail.com");
     });
 }
 

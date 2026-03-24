@@ -37,7 +37,7 @@ const DTELogoModular = forwardRef<HTMLDivElement, DTELogoModularProps>(
           style={{ zIndex: 10, ...layerStyle }}
         >
           <Image
-            src="/Isolated hex shell.png"
+            src="/outterhex.png"
             alt="DTE outer hex wireframe"
             fill
             className="object-contain"
@@ -60,7 +60,7 @@ const DTELogoModular = forwardRef<HTMLDivElement, DTELogoModularProps>(
           style={{ zIndex: 20, ...layerStyle }}
         >
           <Image
-            src="/Inner hex glow panel.png"
+            src="/Innerhex.png"
             alt="DTE inner hex glow panel"
             fill
             className="object-contain"
@@ -81,7 +81,7 @@ const DTELogoModular = forwardRef<HTMLDivElement, DTELogoModularProps>(
           style={{ zIndex: 30, ...layerStyle }}
         >
           <Image
-            src="/Isolated bar graph f.png"
+            src="/bargraph.png"
             alt="DTE bar graph"
             fill
             className="object-contain"
@@ -101,7 +101,7 @@ const DTELogoModular = forwardRef<HTMLDivElement, DTELogoModularProps>(
           style={{ zIndex: 40, ...layerStyle }}
         >
           <Image
-            src="/Isolated left angle .png"
+            src="/leftangle.png"
             alt="DTE left angle bracket"
             fill
             className="object-contain"
@@ -142,7 +142,7 @@ const DTELogoModular = forwardRef<HTMLDivElement, DTELogoModularProps>(
           style={{ zIndex: 50, ...layerStyle }}
         >
           <Image
-            src="/Isolated slash symbo.png"
+            src="/slash.png"
             alt="DTE slash symbol"
             fill
             className="object-contain"

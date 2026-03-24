@@ -59,7 +59,7 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
 			.catch((error: unknown) => {
 				setIsSending(false);
 				console.error("EmailJS Error:", error);
-				alert("Direct uplink failed. Please email dte.solutions.llc@gmail.com");
+				alert("Connection failed. Please email dte.solutions.llc@gmail.com");
 			});
 	};
 

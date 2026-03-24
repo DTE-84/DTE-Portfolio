@@ -49,7 +49,7 @@ const Footer: React.FC<FooterProps> = ({ onContactClick, onGatewayClick }) => {
 				.catch((error: unknown) => {
 					setIsSending(false);
 					console.error("EmailJS Error:", error);
-					alert("Direct uplink failed. Please email dte.solutions.llc@gmail.com");
+					alert("Connect failed. Please email dte.solutions.llc@gmail.com");
 				});
 		} else {
 			setIsSending(false);

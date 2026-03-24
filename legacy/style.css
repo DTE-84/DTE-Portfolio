@@ -355,11 +355,11 @@ h6,
 }
 
 .hero-content h1 {
-  font-family: "Orbitron", sans-serif !important;
+  font-family: "Mancho", sans-serif !important;
   font-size: clamp(2.5rem, 10vw, 6rem);
   font-weight: 800;
   text-transform: uppercase;
-  color: whitesmoke;
+  color: black;
   position: relative;
   display: inline-block;
   letter-spacing: clamp(4px, 2vw, 8px);
