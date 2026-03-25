@@ -9,14 +9,13 @@ import RollingText from "../../components/RollingText";
 import About from "../../components/About";
 import { getAssetPath } from "../../utils/paths";
 import DTELogoModular from "../../components/DTELogoModular";
-import Head from "next/head";
 if (typeof window !== "undefined") {
 	gsap.registerPlugin(ScrollTrigger);
 }
 
 const Nav = ({ onContactClick }: { onContactClick: () => void }) => {
 	return (
-		<nav className='fixed top-0 left-0 right-0 z-[100] bg-black/20 backdrop-blur-xl border-b border-white/10'>
+		<nav className='fixed top-0 left-0 right-0 z-100 bg-black/20 backdrop-blur-xl border-b border-white/10'>
 			<div className='w-full flex justify-between items-center px-6 md:px-16 py-4'>
 				<div className='flex items-center gap-6'>
 					<div className='flex flex-col'>
@@ -82,28 +81,6 @@ const Hero = () => {
 		const ctx = gsap.context(() => {
 			const tl = gsap.timeline({ defaults: { ease: "power4.out" } });
 
-			// ── Phase 0: Full Screen Logo Entry Video ───────────────────────
-			// Video starts front and center, full screen scale.
-			tl.fromTo(
-				".hero-logo-video",
-				{ opacity: 0, scale: 1.1, zIndex: 50 },
-				{ opacity: 1, scale: 1, duration: 2.0, ease: "expo.out" },
-			);
-
-			// Transition video to background glow after a delay
-			tl.to(
-				".hero-logo-video",
-				{
-					opacity: 0.25,
-					scale: 1.2,
-					filter: "blur(40px)",
-					zIndex: 0,
-					duration: 1.0,
-					ease: "power2.inOut",
-				},
-				"+=1.5",
-			).addLabel("contentReveal");
-
 			// ── Phase 6 (Modified) ──────────────────────────────────────────
 			// Name "DREW ERNST" — triggers as video moves to background.
 			tl.fromTo(
@@ -141,24 +118,12 @@ const Hero = () => {
 			ref={containerRef}
 			className='relative min-h-screen flex flex-col items-center justify-center pt-24 pb-16 px-6 text-center overflow-x-clip'>
 			{/* ── Full Screen Logo Video ────────────────────────────── */}
-			<div
-				className='hero-logo-video pointer-events-none absolute inset-0 w-full h-full flex items-center justify-center z-[50]'
-				style={{ opacity: 0 }}>
-				<video
-					ref={videoRef}
-					src={getAssetPath("logoentry.mp4")}
-					autoPlay
-					muted
-					playsInline
-					className='w-full h-full object-cover'
-				/>
-			</div>
 
 			{/* ── Ambient radial glow ─────────────────────────────────── */}
 			<div
 				className='hero-glow pointer-events-none absolute inset-0 flex items-center justify-center'
 				style={{ opacity: 0 }}>
-				<div className='w-[850px] h-[850px] rounded-full bg-accent/15 blur-[160px]' />
+				<div className='w-212.5 h-212.5 rounded-full bg-accent/15 blur-[160px]' />
 			</div>
 
 			{/* ── NAME REVEAL ────────────────── */}
@@ -198,9 +163,9 @@ const Hero = () => {
 
 			{/* ── QUOTE CARD ──────────────────────────────────────────── */}
 			<div
-				className='hero-sub mt-7 max-w-xl bg-white/[0.025] backdrop-blur-md border border-white/[0.06] px-7 py-6 rounded-3xl relative overflow-hidden group'
+				className='hero-sub mt-7 max-w-xl bg-white/2.5 backdrop-blur-md border border-white/6 px-7 py-6 rounded-3xl relative overflow-hidden group'
 				style={{ opacity: 0 }}>
-				<div className='absolute inset-0 bg-gradient-to-r from-transparent via-white/[0.025] to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 pointer-events-none' />
+				<div className='absolute inset-0 bg-linear-to-r from-transparent via-white/2.5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 pointer-events-none' />
 				<p className='text-base md:text-lg text-white/75 leading-relaxed font-medium italic'>
 					I blend backend{" "}
 					<span className='text-accent not-italic font-bold'>
@@ -209,7 +174,7 @@ const Hero = () => {
 					with user-centric design — transforming raw information into
 					high-impact, functional products.
 				</p>
-				<div className='w-10 h-[1px] bg-accent/30 mx-auto mt-5' />
+				<div className='w-10 h-px bg-accent/30 mx-auto mt-5' />
 			</div>
 
 			{/* ── CTA BUTTONS ─────────────────────────────────────────── */}
@@ -227,7 +192,7 @@ const Hero = () => {
 				</a>
 				<a
 					href='#about'
-					className='group flex items-center gap-3 bg-white/[0.04] border border-white/10 text-white/60 px-8 py-4 rounded-2xl font-black uppercase text-[11px] tracking-[0.25em] transition-all duration-300 hover:bg-white/[0.08] hover:border-white/20 hover:text-white'>
+					className='group flex items-center gap-3 bg-white/4 border border-white/10 text-white/60 px-8 py-4 rounded-2xl font-black uppercase text-[11px] tracking-[0.25em] transition-all duration-300 hover:bg-white/8 hover:border-white/20 hover:text-white'>
 					<RollingText text='About Me' />
 				</a>
 			</div>
@@ -277,11 +242,11 @@ const TechStack = () => {
 						<span className='text-[10px] font-mono uppercase tracking-[0.4em] text-white/30 font-bold'>
 							{cat.title}
 						</span>
-						<div className='flex flex-wrap justify-center gap-4 max-w-[400px]'>
+						<div className='flex flex-wrap justify-center gap-4 max-w-100'>
 							{cat.items.map((tech) => (
 								<div
 									key={tech}
-									className={`flex items-center justify-center w-[120px] h-[45px] bg-white/[0.02] border ${cat.borderColor} ${cat.color} text-[10px] font-black uppercase tracking-[0.2em] transition-all duration-500 hover:bg-white/[0.05] ${cat.hoverBorder} hover:scale-105 cursor-default group`}>
+									className={`flex items-center justify-center w-30 h-11.25 bg-white/2 border ${cat.borderColor} ${cat.color} text-[10px] font-black uppercase tracking-[0.2em] transition-all duration-500 hover:bg-white/5 ${cat.hoverBorder} hover:scale-105 cursor-default group`}>
 									<span className='group-hover:tracking-[0.3em] transition-all duration-500'>
 										{tech}
 									</span>
@@ -289,7 +254,7 @@ const TechStack = () => {
 							))}
 						</div>
 						{i < categories.length - 1 && (
-							<div className='w-full h-[1px] bg-white/5 md:hidden my-4' />
+							<div className='w-full h-px bg-white/5 md:hidden my-4' />
 						)}
 					</div>
 				))}
@@ -332,7 +297,7 @@ const FeaturedPCSP = () => {
 				</h2>
 			</div>
 
-			<div className='group relative grid lg:grid-cols-[1.2fr_1fr] gap-12 bg-white/[0.03] border border-white/10 rounded-[4rem] overflow-hidden p-8 md:p-16 transition-all duration-700 hover:border-accent/40'>
+			<div className='group relative grid lg:grid-cols-[1.2fr_1fr] gap-12 bg-white/3 border border-white/10 rounded-[4rem] overflow-hidden p-8 md:p-16 transition-all duration-700 hover:border-accent/40'>
 				<div className='pcsp-reveal flex flex-col justify-center gap-8 order-2 lg:order-1'>
 					<div className='flex flex-wrap gap-3'>
 						{["HIPAA", "SQL", "Next.js", "Case Management"].map((tag) => (
@@ -379,7 +344,7 @@ const FeaturedPCSP = () => {
 					</div>
 				</div>
 
-				<div className='pcsp-reveal relative aspect-[4/3] lg:aspect-auto rounded-[2.5rem] overflow-hidden bg-black/40 border border-white/10 order-1 lg:order-2 group-hover:border-accent/30 transition-colors'>
+				<div className='pcsp-reveal relative aspect-4/3 lg:aspect-auto rounded-[2.5rem] overflow-hidden bg-black/40 border border-white/10 order-1 lg:order-2 group-hover:border-accent/30 transition-colors'>
 					<video
 						src={getAssetPath("assets/PCSP.mp4")}
 						autoPlay
@@ -388,7 +353,7 @@ const FeaturedPCSP = () => {
 						playsInline
 						className='w-full h-full object-cover scale-[1.02] group-hover:scale-110 transition-transform duration-[2s] ease-out'
 					/>
-					<div className='absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent' />
+					<div className='absolute inset-0 bg-linear-to-t from-black/80 via-transparent to-transparent' />
 				</div>
 			</div>
 		</section>
@@ -435,9 +400,9 @@ const FeaturedPulse = () => {
 			</div>
 
 			{/* Card — video LEFT, content RIGHT (inverse of PCSP) */}
-			<div className='group relative grid lg:grid-cols-[1fr_1.2fr] gap-12 bg-white/[0.03] border border-white/10 rounded-[4rem] overflow-hidden p-8 md:p-16 transition-all duration-700 hover:border-accent/30'>
+			<div className='group relative grid lg:grid-cols-[1fr_1.2fr] gap-12 bg-white/3 border border-white/10 rounded-[4rem] overflow-hidden p-8 md:p-16 transition-all duration-700 hover:border-accent/30'>
 				{/* Video — left column */}
-				<div className='pulse-reveal relative aspect-[4/3] lg:aspect-auto rounded-[2.5rem] overflow-hidden bg-black/40 border border-white/10 order-1 group-hover:border-accent/30 transition-colors'>
+				<div className='pulse-reveal relative aspect-4/3 lg:aspect-auto rounded-[2.5rem] overflow-hidden bg-black/40 border border-white/10 order-1 group-hover:border-accent/30 transition-colors'>
 					<video
 						src={getAssetPath("assets/Pulse.mp4")}
 						autoPlay
@@ -446,7 +411,7 @@ const FeaturedPulse = () => {
 						playsInline
 						className='w-full h-full object-cover scale-[1.02] group-hover:scale-110 transition-transform duration-[2s] ease-out'
 					/>
-					<div className='absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-transparent' />
+					<div className='absolute inset-0 bg-linear-to-b from-black/60 via-transparent to-transparent' />
 					{/* Live data badge */}
 					<div className='absolute top-6 left-6 flex items-center gap-2 bg-black/70 backdrop-blur-md border border-accent/20 rounded-full px-4 py-2'>
 						<div className='w-1.5 h-1.5 rounded-full bg-accent animate-ping' />
@@ -548,15 +513,15 @@ const ProjectCard = ({
 	return (
 		<div
 			ref={cardRef}
-			className='group relative flex flex-col gap-6 p-4 rounded-[2.5rem] bg-white/[0.02] border border-white/5 hover:border-accent/20 transition-all duration-500'>
-			<div className='aspect-video rounded-[2rem] overflow-hidden bg-white/5 border border-white/10 relative transition-all duration-500 group-hover:border-accent/30'>
+			className='group relative flex flex-col gap-6 p-4 rounded-[2.5rem] bg-white/2 border border-white/5 hover:border-accent/20 transition-all duration-500'>
+			<div className='aspect-video rounded-4xl overflow-hidden bg-white/5 border border-white/10 relative transition-all duration-500 group-hover:border-accent/30'>
 				<video
 					src={getAssetPath(project.video)}
 					autoPlay
 					loop
 					muted
 					playsInline
-					className='w-full h-full object-cover opacity-40 group-hover:opacity-100 transition-opacity duration-700 scale-[1.01] group-hover:scale-110 transition-transform duration-[3s]'
+					className='w-full h-full object-cover opacity-40 group-hover:opacity-100  duration-[3s] scale-[1.01] group-hover:scale-110 '
 				/>
 				<div className='absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors' />
 				<a
@@ -572,7 +537,7 @@ const ProjectCard = ({
 					<span className='text-[9px] font-mono text-offset uppercase tracking-[0.3em] font-bold'>
 						{project.category}
 					</span>
-					<div className='h-[1px] w-8 bg-white/10' />
+					<div className='h-px w-8 bg-white/10' />
 					<span className='text-[9px] font-mono text-white/20 uppercase tracking-[0.3em]'>
 						{project.year}
 					</span>
@@ -669,7 +634,7 @@ const OtherWorks = () => {
 			description:
 				"Dynamic landing and service orchestration for premium automotive wraps and tinting services.",
 			tags: ["Branding", "Logic", "UI"],
-			link: "https://dte-84.github.io/ProDrip/",
+			link: "https://dte-84.github.io/ProDip/",
 			video: "assets/ProDrip.mp4",
 		},
 	];
@@ -682,10 +647,10 @@ const OtherWorks = () => {
 			{/* Section header */}
 			<div className='flex flex-col gap-4 mb-16 px-4'>
 				<span className='works-header text-white/30 font-mono text-[10px] tracking-[0.4em] uppercase font-bold'>
-					More Work
+					Other Deployments
 				</span>
 				<h2 className='works-header text-4xl md:text-6xl font-black uppercase tracking-tighter leading-none text-white'>
-					Other Deployments
+					Archives
 				</h2>
 			</div>
 			<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12'>
@@ -710,7 +675,7 @@ const marqueeItems = [
 
 const ExperienceMarquee = () => {
 	return (
-		<section className='py-12 border-y border-white/5 bg-white/[0.02] overflow-hidden whitespace-nowrap rotate-[-1deg] translate-y-12 z-50 relative'>
+		<section className='py-12 border-y border-white/5 bg-white/2 overflow-hidden whitespace-nowrap rotate--1 translate-y-12 z-50 relative'>
 			<div className='flex animate-marquee'>
 				{[...Array(4)].map((_, i) => (
 					<div key={i} className='flex items-center gap-12 px-6'>
@@ -732,15 +697,15 @@ const ExperienceMarquee = () => {
 const Footer = ({ onContactClick }: { onContactClick: () => void }) => {
 	return (
 		<footer className='py-32 px-6 md:px-12 max-w-7xl mx-auto'>
-			<div className='bg-white/[0.03] border border-white/10 rounded-[3rem] p-12 md:p-24 flex flex-col items-center text-center gap-12'>
-				<div className='w-[140px] h-[140px] opacity-80'>
+			<div className='relative overflow-hidden bg-white/3 border border-white/10 rounded-[3rem] p-12 md:p-24 flex flex-col items-center text-center gap-12'>
+				<div className='absolute inset-0 z-0 h-full flex items-center justify-center opacity-20'>
 					<DTELogoModular isStatic />
 				</div>
 				<div className='max-w-3xl flex flex-col gap-6'>
-					<h2 className='text-5xl md:text-8xl font-black uppercase tracking-tighter leading-none'>
-						Ready for the <span className='text-accent italic'>Uplink?</span>
+					<h2 className='text-5xl md:text-8xl font-black uppercase tracking-tighter leading-none z-20'>
+						Connect & <span className='text-accent italic'>Collaborate.</span>
 					</h2>
-					<p className='text-xl text-white/40 font-medium'>
+					<p className='text-xl text-white font-medium z-20'>
 						Available for strategic engineering partnerships and high-fidelity
 						systems development.
 					</p>
@@ -756,25 +721,25 @@ const Footer = ({ onContactClick }: { onContactClick: () => void }) => {
 						href='https://dte-84.github.io/DTE-Portfolio/assets/DrewTErnst_Resume.pdf'
 						target='_blank'
 						rel='noreferrer'
-						className='bg-white/5 border border-white/10 text-white px-12 py-6 rounded-2xl font-black uppercase text-sm transition-all hover:bg-white/10 hover:border-white/20 flex items-center gap-3'>
+						className='bg-black/5 border border-white/10 text-white px-12 py-6 rounded-2xl font-black uppercase text-sm transition-all hover:bg-white/10 hover:border-white/20 flex items-center gap-3'>
 						<RollingText text='Download Dossier' />
 						<Icon icon='solar:file-download-linear' className='text-xl' />
 					</a>
 				</div>
-				<div className='mt-12 flex flex-col items-center gap-4'>
+				<div className='mt-12 flex flex-col items-center gap-4 z-20'>
 					<div className='flex gap-8'>
 						<a
 							href='https://github.com/dte-84'
 							target='_blank'
 							rel='noreferrer'
-							className='text-2xl text-white/20 hover:text-accent transition-colors'>
+							className='text-2xl text-white hover:text-accent transition-colors'>
 							<Icon icon='simple-icons:github' />
 						</a>
 						<a
 							href='https://linkedin.com/in/dte84'
 							target='_blank'
 							rel='noreferrer'
-							className='text-2xl text-white/20 hover:text-accent transition-colors'>
+							className='text-2xl text-white hover:text-accent transition-colors'>
 							<Icon icon='simple-icons:linkedin' />
 						</a>
 					</div>

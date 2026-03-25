@@ -60,7 +60,7 @@ const About: React.FC = () => {
 				<div className='flex items-center gap-6 mb-16'>
 					<h2 className='text-2xl md:text-3xl font-bold text-white tracking-widest uppercase'>
 						<span style={{ color: "var(--theme-accent)", opacity: 0.8 }}>
-							01 //
+							MY //
 						</span>{" "}
 						Identity
 					</h2>
