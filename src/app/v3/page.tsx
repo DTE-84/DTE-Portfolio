@@ -75,28 +75,37 @@ const Nav = ({ onContactClick }: { onContactClick: () => void }) => {
 
 const Hero = () => {
 	const containerRef = useRef<HTMLDivElement>(null);
-	const videoRef = useRef<HTMLVideoElement>(null);
+	const logoRef = useRef<HTMLDivElement>(null);
 
 	useEffect(() => {
 		const ctx = gsap.context(() => {
 			const tl = gsap.timeline({ defaults: { ease: "power4.out" } });
 
-			// ── Phase 6 (Modified) ──────────────────────────────────────────
-			// Name "DREW ERNST" — triggers as video moves to background.
+			// Define contentReveal label at the start
+			tl.addLabel("contentReveal", 0);
+
+			// Logo Animation
+			tl.fromTo(
+				".hero-logo",
+				{ scale: 0.8, opacity: 0, x: -30 },
+				{ scale: 1, opacity: 1, x: 0, duration: 1.5 },
+				"contentReveal"
+			);
+
+			// Name "DREW ERNST"
 			tl.fromTo(
 				".hero-char",
 				{ y: 90, opacity: 0 },
-				{ y: 0, opacity: 1, duration: 1.2, stagger: 0.04, ease: "power4.out" },
-				"contentReveal-=1.5",
+				{ y: 0, opacity: 1, duration: 1.2, stagger: 0.04 },
+				"contentReveal+=0.3",
 			);
 
-			// ── Phase 7 (Modified) ──────────────────────────────────────────
 			// Tagline, quote card, and CTA
 			tl.fromTo(
 				".hero-sub",
 				{ y: 22, opacity: 0 },
-				{ y: 0, opacity: 1, duration: 1.0, stagger: 0.15, ease: "power3.out" },
-				"contentReveal-=0.8",
+				{ y: 0, opacity: 1, duration: 1.0, stagger: 0.15 },
+				"contentReveal+=0.8",
 			);
 
 			// Ambient glow pulses in with the content
@@ -104,7 +113,7 @@ const Hero = () => {
 				".hero-glow",
 				{ scale: 0.6, opacity: 0 },
 				{ scale: 1, opacity: 1, duration: 3.0, ease: "expo.out" },
-				"contentReveal-=2.0",
+				"contentReveal",
 			);
 		}, containerRef);
 
@@ -116,85 +125,165 @@ const Hero = () => {
 	return (
 		<section
 			ref={containerRef}
-			className='relative min-h-screen flex flex-col items-center justify-center pt-24 pb-16 px-6 text-center overflow-x-clip'>
-			{/* ── Full Screen Logo Video ────────────────────────────── */}
+			className='relative min-h-screen flex items-center justify-center pt-24 pb-16 px-6 md:px-16 overflow-x-clip'>
+			<style jsx>{`
+				.orb-ring {
+					position: absolute;
+					top: 50%;
+					left: 50%;
+					border-radius: 50%;
+					pointer-events: none;
+					aspect-ratio: 1/1;
+				}
+				.orb-ring-1 {
+					width: 110%;
+					height: 110%;
+					border: 1px solid rgba(0, 243, 255, 0.2);
+					margin-left: -55%;
+					margin-top: -55%;
+					animation: spin 20s linear infinite;
+				}
+				.orb-ring-2 {
+					width: 130%;
+					height: 130%;
+					border: 1px solid rgba(57, 255, 20, 0.15);
+					margin-left: -65%;
+					margin-top: -65%;
+					animation: spin-reverse 35s linear infinite;
+				}
+				.orb-ring-3 {
+					width: 150%;
+					height: 150%;
+					border: 1px solid rgba(0, 243, 255, 0.1);
+					margin-left: -75%;
+					margin-top: -75%;
+					animation: spin 50s linear infinite;
+				}
+				.orb {
+					position: absolute;
+					border-radius: 50%;
+					display: block;
+					animation: orb-magic 4s ease-in-out infinite;
+				}
+				.orb-ring-1 .orb { width: 6px; height: 6px; background: #00f3ff; box-shadow: 0 0 15px #00f3ff; }
+				.orb-ring-2 .orb { width: 5px; height: 5px; background: #39ff14; box-shadow: 0 0 15px #39ff14; }
+				.orb-ring-3 .orb { width: 4px; height: 4px; background: #00f3ff; opacity: 0.6; }
 
+				.orb:nth-child(1) { top: 0%; left: 50%; transform: translate(-50%, -50%); animation-delay: 0s; }
+				.orb:nth-child(2) { top: 75%; left: 93.3%; transform: translate(-50%, -50%); animation-delay: 1.3s; }
+				.orb:nth-child(3) { top: 75%; left: 6.7%; transform: translate(-50%, -50%); animation-delay: 2.6s; }
+
+				@keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+				@keyframes spin-reverse { from { transform: rotate(0deg); } to { transform: rotate(-360deg); } }
+				@keyframes orb-magic {
+					0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.6; }
+					50% { transform: translate(-50%, -50%) scale(1.5); opacity: 1; box-shadow: 0 0 25px currentColor; }
+				}
+			`}</style>
 			{/* ── Ambient radial glow ─────────────────────────────────── */}
 			<div
 				className='hero-glow pointer-events-none absolute inset-0 flex items-center justify-center'
 				style={{ opacity: 0 }}>
-				<div className='w-212.5 h-212.5 rounded-full bg-accent/15 blur-[160px]' />
+				<div className='w-full h-full md:w-[120%] md:h-[120%] rounded-full bg-accent/5 blur-[120px]' />
 			</div>
 
-			{/* ── NAME REVEAL ────────────────── */}
-			<div className='relative z-10 mt-4'>
-				<h1
-					className='font-orbitron font-black uppercase tracking-tighter leading-none text-white'
-					style={{
-						fontSize: "clamp(3.2rem, 13vw, 8.5rem)",
-						textShadow:
-							"0 0 80px rgba(0,224,255,0.18), 0 0 160px rgba(0,224,255,0.08)",
-					}}>
-					{nameLines.map((line, lineIdx) => (
-						<div key={lineIdx} className={lineIdx > 0 ? "mt-[-0.06em]" : ""}>
-							{line.split("").map((char, charIdx) => (
-								<span
-									key={charIdx}
-									className='hero-char inline-block'
-									style={{ opacity: 0, willChange: "transform, opacity" }}>
-									{char === "." ? (
-										<span className='text-accent'>{char}</span>
-									) : (
-										char
-									)}
-								</span>
-							))}
+			<div className='w-full max-w-7xl flex flex-col md:flex-row items-center justify-between relative z-10'>
+				{/* ── LEFT COLUMN: LOGO + RINGS ────────────────── */}
+				<div className='hero-logo w-full md:w-1/2 flex items-center justify-center md:justify-start' style={{ opacity: 0 }}>
+					<div className='relative w-64 h-64 md:w-[480px] md:h-[480px] flex items-center justify-center'>
+						{/* Hub Rings Integration */}
+						<div className="orb-ring orb-ring-1">
+							<div className="orb"></div>
+							<div className="orb"></div>
+							<div className="orb"></div>
 						</div>
-					))}
-				</h1>
-			</div>
+						<div className="orb-ring orb-ring-2">
+							<div className="orb"></div>
+							<div className="orb"></div>
+							<div className="orb"></div>
+						</div>
+						<div className="orb-ring orb-ring-3">
+							<div className="orb"></div>
+							<div className="orb"></div>
+							<div className="orb"></div>
+						</div>
 
-			{/* ── TAGLINE ─────────────────────────────────────────────── */}
-			<p
-				className='hero-sub mt-5 text-[10px] md:text-[12px] font-mono uppercase tracking-[0.55em] font-bold'
-				style={{ color: "var(--theme-accent)", opacity: 0 }}>
-				Full-Stack Developer &nbsp;//&nbsp; AI App Builder
-			</p>
+						<div className='relative z-20 w-48 h-48 md:w-80 md:h-80'>
+							<DTELogoModular isStatic />
+						</div>
+					</div>
+				</div>
 
-			{/* ── QUOTE CARD ──────────────────────────────────────────── */}
-			<div
-				className='hero-sub mt-7 max-w-xl bg-white/2.5 backdrop-blur-md border border-white/6 px-7 py-6 rounded-3xl relative overflow-hidden group'
-				style={{ opacity: 0 }}>
-				<div className='absolute inset-0 bg-linear-to-r from-transparent via-white/2.5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 pointer-events-none' />
-				<p className='text-base md:text-lg text-white/75 leading-relaxed font-medium italic'>
-					I blend backend{" "}
-					<span className='text-accent not-italic font-bold'>
-						data integrity
-					</span>{" "}
-					with user-centric design — transforming raw information into
-					high-impact, functional products.
-				</p>
-				<div className='w-10 h-px bg-accent/30 mx-auto mt-5' />
-			</div>
+				{/* ── RIGHT COLUMN: CONTENT ────────────────── */}
+				<div className='w-full md:w-1/2 flex flex-col items-center md:items-start text-center md:text-left md:pl-16'>
+					{/* NAME REVEAL */}
+					<h1
+						className='font-orbitron font-black uppercase tracking-tighter leading-none text-white mb-4'
+						style={{
+							fontSize: "clamp(3.2rem, 8vw, 7.5rem)",
+							textShadow:
+								"0 0 80px rgba(0,224,255,0.18), 0 0 160px rgba(0,224,255,0.08)",
+						}}>
+						{nameLines.map((line, lineIdx) => (
+							<div key={lineIdx} className={lineIdx > 0 ? "mt-[-0.06em]" : ""}>
+								{line.split("").map((char, charIdx) => (
+									<span
+										key={charIdx}
+										className='hero-char inline-block'
+										style={{ opacity: 0, willChange: "transform, opacity" }}>
+										{char === "." ? (
+											<span className='text-accent'>{char}</span>
+										) : (
+											char
+										)}
+									</span>
+								))}
+							</div>
+						))}
+					</h1>
 
-			{/* ── CTA BUTTONS ─────────────────────────────────────────── */}
-			<div
-				className='hero-sub mt-8 flex flex-col sm:flex-row items-center justify-center gap-4'
-				style={{ opacity: 0 }}>
-				<a
-					href='#featured'
-					className='group flex items-center gap-3 bg-accent text-black px-8 py-4 rounded-2xl font-black uppercase text-[11px] tracking-[0.25em] transition-all duration-300 hover:scale-105 active:scale-95 shadow-[0_0_30px_rgba(var(--theme-accent-rgb),0.35)]'>
-					<RollingText text='View My Work' hoverColor='text-white' />
-					<Icon
-						icon='solar:arrow-right-down-linear'
-						className='text-base group-hover:translate-y-1 transition-transform'
-					/>
-				</a>
-				<a
-					href='#about'
-					className='group flex items-center gap-3 bg-white/4 border border-white/10 text-white/60 px-8 py-4 rounded-2xl font-black uppercase text-[11px] tracking-[0.25em] transition-all duration-300 hover:bg-white/8 hover:border-white/20 hover:text-white'>
-					<RollingText text='About Me' />
-				</a>
+					{/* TAGLINE */}
+					<p
+						className='hero-sub text-[10px] md:text-[12px] font-mono uppercase tracking-[0.55em] font-bold mb-8'
+						style={{ color: "var(--theme-accent)", opacity: 0 }}>
+						Systems Engineer &nbsp;//&nbsp; Behavioral AI Architect
+					</p>
+
+					{/* QUOTE CARD */}
+					<div
+						className='hero-sub max-w-xl bg-white/2.5 backdrop-blur-md border border-white/6 px-7 py-6 rounded-3xl relative overflow-hidden group mb-10'
+						style={{ opacity: 0 }}>
+						<div className='absolute inset-0 bg-linear-to-r from-transparent via-white/2.5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 pointer-events-none' />
+						<p className='text-base md:text-lg text-white/75 leading-relaxed font-medium italic'>
+							I blend backend{" "}
+							<span className='text-accent not-italic font-bold'>
+								data integrity
+							</span>{" "}
+							with user-centric design — transforming raw information into
+							high-impact, functional products.
+						</p>
+					</div>
+
+					{/* CTA BUTTONS */}
+					<div
+						className='hero-sub flex flex-col sm:flex-row items-center gap-4'
+						style={{ opacity: 0 }}>
+						<a
+							href='#featured'
+							className='group flex items-center gap-3 bg-accent text-black px-8 py-4 rounded-2xl font-black uppercase text-[11px] tracking-[0.25em] transition-all duration-300 hover:scale-105 active:scale-95 shadow-[0_0_30px_rgba(var(--theme-accent-rgb),0.35)]'>
+							<RollingText text='View My Work' hoverColor='text-white' />
+							<Icon
+								icon='solar:arrow-right-down-linear'
+								className='text-base group-hover:translate-y-1 transition-transform'
+							/>
+						</a>
+						<a
+							href='#about'
+							className='group flex items-center gap-3 bg-white/4 border border-white/10 text-white/60 px-8 py-4 rounded-2xl font-black uppercase text-[11px] tracking-[0.25em] transition-all duration-300 hover:bg-white/8 hover:border-white/20 hover:text-white'>
+							<RollingText text='About Me' />
+						</a>
+					</div>
+				</div>
 			</div>
 
 			{/* ── SCROLL INDICATOR ────────────────────────────────────── */}
@@ -498,13 +587,13 @@ const ProjectCard = ({
 	const cardRef = useRef<HTMLDivElement>(null);
 
 	useEffect(() => {
-		gsap.from(cardRef.current, {
+		gsap.to(cardRef.current, {
 			scrollTrigger: {
 				trigger: cardRef.current,
 				start: "top 90%",
 			},
-			y: 40,
-			opacity: 0,
+			y: 0,
+			opacity: 1,
 			duration: 0.8,
 			delay: index * 0.1,
 		});
@@ -513,41 +602,69 @@ const ProjectCard = ({
 	return (
 		<div
 			ref={cardRef}
-			className='group relative flex flex-col gap-6 p-4 rounded-[2.5rem] bg-white/2 border border-white/5 hover:border-accent/20 transition-all duration-500'>
-			<div className='aspect-video rounded-4xl overflow-hidden bg-white/5 border border-white/10 relative transition-all duration-500 group-hover:border-accent/30'>
+			className='group relative flex flex-col gap-6 p-6 rounded-[3rem] bg-white/2 border border-white/5 hover:border-accent/30 transition-all duration-700 hover:bg-white/[0.03] shadow-2xl hover:shadow-accent/5'
+			style={{ opacity: 0, transform: "translateY(40px)" }}>
+			<div className='aspect-video rounded-[2rem] overflow-hidden bg-black/40 border border-white/10 relative transition-all duration-700 group-hover:border-accent/40'>
 				<video
 					src={getAssetPath(project.video)}
 					autoPlay
 					loop
 					muted
 					playsInline
-					className='w-full h-full object-cover opacity-40 group-hover:opacity-100  duration-[3s] scale-[1.01] group-hover:scale-110 '
+					className='w-full h-full object-cover opacity-30 group-hover:opacity-100 duration-[2s] scale-[1.02] group-hover:scale-110 ease-out'
 				/>
-				<div className='absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors' />
+				<div className='absolute inset-0 bg-linear-to-t from-black/60 via-transparent to-transparent opacity-60 group-hover:opacity-30 transition-opacity' />
+				
 				<a
 					href={project.link}
 					target='_blank'
 					rel='noreferrer'
-					className='absolute top-6 right-6 w-12 h-12 rounded-full bg-black/80 backdrop-blur-md border border-white/10 flex items-center justify-center text-white opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 hover:bg-accent hover:text-black hover:border-accent'>
+					className='absolute top-8 right-8 w-14 h-14 rounded-full bg-black/80 backdrop-blur-xl border border-white/10 flex items-center justify-center text-white opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 hover:bg-accent hover:text-black hover:border-accent hover:scale-110 z-20'>
 					<Icon icon='solar:arrow-right-up-linear' className='text-2xl' />
 				</a>
-			</div>
-			<div className='px-4 pb-4'>
-				<div className='flex items-center gap-3 mb-4'>
-					<span className='text-[9px] font-mono text-offset uppercase tracking-[0.3em] font-bold'>
-						{project.category}
-					</span>
-					<div className='h-px w-8 bg-white/10' />
-					<span className='text-[9px] font-mono text-white/20 uppercase tracking-[0.3em]'>
-						{project.year}
-					</span>
+
+				<div className='absolute bottom-6 left-8 flex flex-wrap gap-2 opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-700 delay-100 z-20'>
+					{project.tags.map((tag) => (
+						<span 
+							key={tag}
+							className='text-[8px] font-mono font-black uppercase tracking-widest px-3 py-1.5 bg-black/60 backdrop-blur-md border border-white/10 text-white/80 rounded-lg'>
+							{tag}
+						</span>
+					))}
 				</div>
-				<h3 className='text-2xl font-black uppercase tracking-tighter mb-4 text-white hover:text-accent transition-colors'>
+			</div>
+
+			<div className='px-2'>
+				<div className='flex items-center justify-between mb-4'>
+					<div className='flex items-center gap-3'>
+						<span className='text-[10px] font-mono text-accent uppercase tracking-[0.4em] font-bold'>
+							{project.category}
+						</span>
+						<div className='h-px w-8 bg-accent/20' />
+						<span className='text-[10px] font-mono text-white/20 uppercase tracking-[0.4em]'>
+							{project.year}
+						</span>
+					</div>
+				</div>
+				
+				<h3 className='text-3xl md:text-4xl font-black uppercase tracking-tighter mb-4 text-white group-hover:text-accent transition-colors duration-500'>
 					<RollingText text={project.title} />
 				</h3>
-				<p className='text-sm text-white/40 leading-relaxed line-clamp-2 font-medium'>
+				
+				<p className='text-base text-white/40 leading-relaxed font-medium mb-8 max-w-xl group-hover:text-white/60 transition-colors duration-500'>
 					{project.description}
 				</p>
+
+				<div className='flex flex-wrap gap-3 mt-auto pt-6 border-t border-white/5'>
+					{project.tags.map((tag) => (
+						<div 
+							key={tag}
+							className='flex items-center gap-2 px-4 py-2 bg-white/2 border border-white/5 rounded-xl text-[9px] font-mono uppercase tracking-widest text-white/40 group-hover:border-accent/20 group-hover:text-accent/60 transition-all duration-500 hover:bg-accent/5 hover:text-accent hover:scale-105 cursor-default'>
+							<div className='w-1 h-1 rounded-full bg-accent/20 group-hover:bg-accent/40' />
+							{tag}
+						</div>
+					))}
+				</div>
 			</div>
 		</div>
 	);
@@ -577,8 +694,8 @@ const OtherWorks = () => {
 			category: "HealthTech",
 			year: 2026,
 			description:
-				"AI-driven fitness orchestration platform with real-time trajectory tracking.",
-			tags: ["React", "Firebase", "AI"],
+				"AI-driven fitness orchestration platform with real-time trajectory tracking and behavioral insights.",
+			tags: ["React 19", "Firebase", "GSAP", "AI"],
 			link: "https://dte-84.github.io/SetLogic/",
 			video: "assets/SetLogic.mp4",
 		},
@@ -588,8 +705,8 @@ const OtherWorks = () => {
 			category: "Fintech",
 			year: 2026,
 			description:
-				"Cinematic lead intelligence platform featuring wide-angle analytics.",
-			tags: ["Analytics", "Fintech", "UX"],
+				"Cinematic lead intelligence platform featuring wide-angle analytics and high-fidelity reporting.",
+			tags: ["Next.js", "Analytics", "UX Design", "GSAP"],
 			link: "https://dte-84.github.io/NestLegacy/",
 			video: "assets/NestLegacy.mp4",
 		},
@@ -600,7 +717,7 @@ const OtherWorks = () => {
 			year: 2025,
 			description:
 				"High-impact digital portfolio featuring immersive scroll dynamics and gallery-focused architecture.",
-			tags: ["UX Design", "Framer Motion", "React"],
+			tags: ["UX Design", "Framer Motion", "React", "GSAP"],
 			link: "https://kw-portfolio-kappa.vercel.app/",
 			video: "assets/KWModel.mp4",
 		},
@@ -611,7 +728,7 @@ const OtherWorks = () => {
 			year: 2024,
 			description:
 				"Custom interactive modules for performance visualization and client acquisition in the landscaping sector.",
-			tags: ["Commercial UI", "GSAP", "Logic"],
+			tags: ["Vanilla JS", "GSAP", "Logic Engine", "UI/UX"],
 			link: "https://tonyslandscapingllc.com",
 			video: "assets/TonysLandscaping.mp4",
 		},
@@ -621,8 +738,8 @@ const OtherWorks = () => {
 			category: "Automotive Logic",
 			year: 2024,
 			description:
-				"Interactive inventory showroom for premium pre-owned vehicles, optimized for search transparency and high-conversion leads.",
-			tags: ["Inventory Logic", "UX", "Sales Engine"],
+				"Interactive inventory showroom for premium pre-owned vehicles, optimized for search transparency.",
+			tags: ["React", "Inventory Logic", "UX", "Sales Engine"],
 			link: "https://dte-84.github.io/CarSalesInv/",
 			video: "assets/CarSales.mp4",
 		},
@@ -633,7 +750,7 @@ const OtherWorks = () => {
 			year: 2024,
 			description:
 				"Dynamic landing and service orchestration for premium automotive wraps and tinting services.",
-			tags: ["Branding", "Logic", "UI"],
+			tags: ["Branding", "Logic", "UI", "Next.js"],
 			link: "https://dte-84.github.io/ProDip/",
 			video: "assets/ProDrip.mp4",
 		},
@@ -645,15 +762,15 @@ const OtherWorks = () => {
 			id='work'
 			className='py-32 px-6 md:px-12 max-w-7xl mx-auto'>
 			{/* Section header */}
-			<div className='flex flex-col gap-4 mb-16 px-4'>
+			<div className='flex flex-col gap-4 mb-20 px-4'>
 				<span className='works-header text-white/30 font-mono text-[10px] tracking-[0.4em] uppercase font-bold'>
-					Other Deployments
+					Other Deployments // 
 				</span>
-				<h2 className='works-header text-4xl md:text-6xl font-black uppercase tracking-tighter leading-none text-white'>
-					Archives
+				<h2 className='works-header text-5xl md:text-8xl font-black uppercase tracking-tighter leading-none text-white'>
+					The <span className='text-accent italic'>Archive.</span>
 				</h2>
 			</div>
-			<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12'>
+			<div className='grid grid-cols-1 lg:grid-cols-2 gap-12'>
 				{projects.map((project, i) => (
 					<ProjectCard key={project.id} project={project} index={i} />
 				))}
@@ -666,7 +783,7 @@ const marqueeItems = [
 	"Data Integrity",
 	"Full-Stack Systems",
 	"Behavioral Tech",
-	"Senior Systems Engineer",
+	"Systems Engineer",
 	"PostgreSQL",
 	"React 19",
 	"Python / Pandas",

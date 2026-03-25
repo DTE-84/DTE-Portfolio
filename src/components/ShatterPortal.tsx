@@ -59,7 +59,7 @@ const ShatterPortal = () => {
       >
         <span className="flex items-center gap-3">
           <div className="w-2 h-2 rounded-full bg-[#a855f7] animate-pulse shadow-[0_0_10px_#a855f7]" />
-          Establish Uplink
+          Establish Connect
         </span>
       </button>
     </>

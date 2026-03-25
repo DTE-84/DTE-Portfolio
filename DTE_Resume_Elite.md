@@ -24,7 +24,7 @@ A hybrid of **Advanced Software Engineering** and **Strategic Communication**. L
 
 ## HIGH-PERFORMANCE ENGINEERING & DATA ANALYTICS INITIATIVES
 
-### Founder & Senior BI Consultant • DTE Solutions LLC | 2025 – Present
+### Founder &  BI Consultant • DTE Solutions LLC | 2025 – Present
 
 _Strategic Technical Orchestration & Data-Driven Intelligence for High-Stakes Environments._
 **Tech Stack:** TypeScript, Next.js, Node.js, C#, .NET Core, AWS, Docker
@@ -42,7 +42,7 @@ _Digital Trust Layer & Wealth Acquisition Engine for the $84 Trillion Transfer._
 - **Projective Wealth Analytics:** Architected interactive longevity and tax-exposure systems using **TypeScript** and **Tailwind CSS**, delivering immediate mathematical value through precise, data-integrity-driven UI components.
 - **Enterprise Nexus:** Developed a modular hub-style architecture in **Next.js**, deployed on **Vercel** to ensure global scalability and clear data lineage across complex organizational structures.
 
-### Senior Data Analyst & Lead Developer • Pulse (The Behavioral Finance Conscience) | 2026
+###  Data Analyst & Lead Developer • Pulse (The Behavioral Finance Conscience) | 2026
 
 _Production-grade behavioral finance system designed to analyze Correlation vs. Causation between financial velocity and user psychology._
 **Tech Stack:** React 19, FastAPI (Python), PostgreSQL, MongoDB, AWS S3, Recharts

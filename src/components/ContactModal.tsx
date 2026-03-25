@@ -82,7 +82,7 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
 				{isSuccess && (
 					<div className='absolute inset-0 z-[100] flex flex-col items-center justify-center bg-accent text-black font-black uppercase tracking-widest text-center px-10'>
 						<Icon icon='solar:check-circle-bold' className='text-8xl mb-6' />
-						<h2 className='text-3xl mb-4 font-orbitron'>Uplink Successful</h2>
+						<h2 className='text-3xl mb-4 font-orbitron'>Connecetion Successful</h2>
 						<p className='text-sm'>Response protocol initiated</p>
 					</div>
 				)}
@@ -93,7 +93,7 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
 						Drew T Ernst
 					</h3>
 					<h4 className='modal__sub-title text-black/40 font-black mb-6 uppercase tracking-[0.3em] text-[10px]'>
-						Senior Systems Engineer
+						Systems Engineer
 					</h4>
 					<p className='modal__para leading-relaxed text-black/80 text-sm font-bold'>
 						Strategic engineering focused on trust acquisition and data integrity. 
@@ -112,7 +112,7 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
 						/>
 					</button>
 					<h3 className='modal__title text-2xl font-black mb-8 uppercase tracking-tighter text-white'>
-						Uplink <span className='text-accent italic'>Request.</span>
+						Lets <span className='text-accent italic'>Chat.</span>
 					</h3>
 					<form ref={formRef} onSubmit={handleSubmit} className='space-y-6'>
 						<div className='form__item'>
@@ -152,7 +152,7 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
 						<button
 							disabled={isSending}
 							className='group w-full py-4 bg-accent text-black font-black uppercase tracking-widest hover:scale-[1.02] active:scale-95 transition-all text-xs disabled:opacity-50 flex items-center justify-center gap-3 rounded-xl'>
-							{isSending ? "Transmitting..." : "Initialize Uplink"}
+							{isSending ? "Transmitting..." : "Connect"}
 							<Icon icon='solar:rocket-linear' className='text-lg group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform' />
 						</button>
 					</form>

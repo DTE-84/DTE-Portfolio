@@ -72,7 +72,7 @@ const Footer: React.FC<FooterProps> = ({ onContactClick, onGatewayClick }) => {
 							</h2>
 							<p className='text-zinc-400 text-lg max-w-md leading-relaxed'>
 								Have a project in mind or just want to discuss high-fidelity
-								frontend architecture? My uplink is always active.
+								frontend architecture? I&apos;d love to hear from you!
 							</p>
 						</div>
 
@@ -124,7 +124,7 @@ const Footer: React.FC<FooterProps> = ({ onContactClick, onGatewayClick }) => {
 										className='text-6xl mb-4'
 									/>
 									<h2 className='text-2xl mb-2 font-orbitron'>
-										Uplink Success
+										Success!
 									</h2>
 									<p className='text-[10px]'>Transmission received</p>
 								</div>
