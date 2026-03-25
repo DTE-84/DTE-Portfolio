@@ -9,7 +9,7 @@ import RollingText from "../../components/RollingText";
 import About from "../../components/About";
 import { getAssetPath } from "../../utils/paths";
 import DTELogoModular from "../../components/DTELogoModular";
-
+import Head from "next/head";
 if (typeof window !== "undefined") {
 	gsap.registerPlugin(ScrollTrigger);
 }
@@ -76,95 +76,58 @@ const Nav = ({ onContactClick }: { onContactClick: () => void }) => {
 
 const Hero = () => {
 	const containerRef = useRef<HTMLDivElement>(null);
-	const logoRef = useRef<HTMLDivElement>(null);
+	const videoRef = useRef<HTMLVideoElement>(null);
 
 	useEffect(() => {
 		const ctx = gsap.context(() => {
 			const tl = gsap.timeline({ defaults: { ease: "power4.out" } });
 
-			// ── Phase 1 ─────────────────────────────────────────────────────
-			// Outer Hex Shell — erupts from deep background.
-			// Starts as a near-invisible speck (scale 0.04) with a blur haze,
-			// then rockets forward to full size — pure "object approaching through space."
+			// ── Phase 0: Full Screen Logo Entry Video ───────────────────────
+			// Video starts front and center, full screen scale.
 			tl.fromTo(
-				"#hex-shell",
-				{ scale: 0.04, opacity: 0, filter: "blur(14px)" },
+				".hero-logo-video",
+				{ opacity: 0, scale: 1.1, zIndex: 50 },
+				{ opacity: 1, scale: 1, duration: 2.0, ease: "expo.out" },
+			);
+
+			// Transition video to background glow after a delay
+			tl.to(
+				".hero-logo-video",
 				{
-					scale: 1,
-					opacity: 1,
-					filter: "blur(0px)",
-					duration: 2.0,
-					ease: "expo.out",
+					opacity: 0.25,
+					scale: 1.2,
+					filter: "blur(40px)",
+					zIndex: 0,
+					duration: 1.0,
+					ease: "power2.inOut",
 				},
-			);
+				"+=1.5",
+			).addLabel("contentReveal");
 
-			// ── Phase 2 ─────────────────────────────────────────────────────
-			// Inner Hex Glow Panel — blooms inward, slight elastic overshoot.
-			tl.fromTo(
-				"#inner-hex",
-				{ scale: 0.3, opacity: 0 },
-				{ scale: 1, opacity: 1, duration: 1.1, ease: "back.out(2.2)" },
-				"-=0.75",
-			);
-
-			// ── Phase 3 ─────────────────────────────────────────────────────
-			// Bar Graph — the data core rises from the floor of the hex.
-			tl.fromTo(
-				"#bar-graph",
-				{ opacity: 0, y: 32 },
-				{ opacity: 1, y: 0, duration: 1.0, ease: "power3.out" },
-				"-=0.45",
-			);
-
-			// ── Phase 4 ─────────────────────────────────────────────────────
-			// Angle Brackets — slam in from both sides simultaneously.
-			tl.fromTo(
-				"#bracket-left",
-				{ x: -170, opacity: 0 },
-				{ x: 0, opacity: 1, duration: 0.9, ease: "expo.out" },
-				"-=0.35",
-			);
-			tl.fromTo(
-				"#bracket-right",
-				{ x: 170, opacity: 0 },
-				{ x: 0, opacity: 1, duration: 0.9, ease: "expo.out" },
-				"<", // exact same start time as bracket-left
-			);
-
-			// ── Phase 5 ─────────────────────────────────────────────────────
-			// Diagonal Slash — drops from above with a crisp back-ease snap.
-			tl.fromTo(
-				"#slash",
-				{ y: -130, opacity: 0 },
-				{ y: 0, opacity: 1, duration: 0.75, ease: "back.out(1.6)" },
-				"-=0.15",
-			);
-
-			// ── Phase 6 ─────────────────────────────────────────────────────
-			// Name "DREW ERNST" — each character rises from below, staggered.
-			// The logo is fully assembled before a single letter appears.
+			// ── Phase 6 (Modified) ──────────────────────────────────────────
+			// Name "DREW ERNST" — triggers as video moves to background.
 			tl.fromTo(
 				".hero-char",
 				{ y: 90, opacity: 0 },
-				{ y: 0, opacity: 1, duration: 1.0, stagger: 0.032, ease: "power4.out" },
-				"-=0.05",
+				{ y: 0, opacity: 1, duration: 1.2, stagger: 0.04, ease: "power4.out" },
+				"contentReveal-=1.5",
 			);
 
-			// ── Phase 7 ─────────────────────────────────────────────────────
-			// Tagline, quote card, and CTA — cascade in after the name lands.
+			// ── Phase 7 (Modified) ──────────────────────────────────────────
+			// Tagline, quote card, and CTA
 			tl.fromTo(
 				".hero-sub",
 				{ y: 22, opacity: 0 },
-				{ y: 0, opacity: 1, duration: 0.75, stagger: 0.12, ease: "power3.out" },
-				"-=0.55",
+				{ y: 0, opacity: 1, duration: 1.0, stagger: 0.15, ease: "power3.out" },
+				"contentReveal-=0.8",
 			);
 
-			// Ambient glow pulses in immediately as the timeline fires
+			// Ambient glow pulses in with the content
 			tl.fromTo(
 				".hero-glow",
-				{ scale: 0.4, opacity: 0 },
-				{ scale: 1, opacity: 1, duration: 2.5, ease: "expo.out" },
-				0,
+				{ scale: 0.6, opacity: 0 },
+				{ scale: 1, opacity: 1, duration: 3.0, ease: "expo.out" },
+				"contentReveal-=2.0",
 			);
 		}, containerRef);
 
@@ -177,19 +140,28 @@ const Hero = () => {
 		<section
 			ref={containerRef}
 			className='relative min-h-screen flex flex-col items-center justify-center pt-24 pb-16 px-6 text-center overflow-x-clip'>
+			{/* ── Full Screen Logo Video ────────────────────────────── */}
+			<div
+				className='hero-logo-video pointer-events-none absolute inset-0 w-full h-full flex items-center justify-center z-[50]'
+				style={{ opacity: 0 }}>
+				<video
+					ref={videoRef}
+					src={getAssetPath("logoentry.mp4")}
+					autoPlay
+					muted
+					playsInline
+					className='w-full h-full object-cover'
+				/>
+			</div>
+
 			{/* ── Ambient radial glow ─────────────────────────────────── */}
 			<div
 				className='hero-glow pointer-events-none absolute inset-0 flex items-center justify-center'
 				style={{ opacity: 0 }}>
-				<div className='w-[750px] h-[750px] rounded-full bg-accent/10 blur-[150px]' />
+				<div className='w-[850px] h-[850px] rounded-full bg-accent/15 blur-[160px]' />
 			</div>
 
-			{/* ── THE LOGO — center stage ─────────────────────────────── */}
-			<div className='relative z-10 w-[300px] h-[300px] md:w-[420px] md:h-[420px]'>
-				<DTELogoModular ref={logoRef} />
-			</div>
-
-			{/* ── NAME REVEAL — character by character ────────────────── */}
+			{/* ── NAME REVEAL ────────────────── */}
 			<div className='relative z-10 mt-4'>
 				<h1
 					className='font-orbitron font-black uppercase tracking-tighter leading-none text-white'
@@ -230,12 +202,12 @@ const Hero = () => {
 				style={{ opacity: 0 }}>
 				<div className='absolute inset-0 bg-gradient-to-r from-transparent via-white/[0.025] to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 pointer-events-none' />
 				<p className='text-base md:text-lg text-white/75 leading-relaxed font-medium italic'>
-					"I blend backend{" "}
+					I blend backend{" "}
 					<span className='text-accent not-italic font-bold'>
 						data integrity
 					</span>{" "}
 					with user-centric design — transforming raw information into
-					high-impact, functional products."
+					high-impact, functional products.
 				</p>
 				<div className='w-10 h-[1px] bg-accent/30 mx-auto mt-5' />
 			</div>
@@ -265,7 +237,6 @@ const Hero = () => {
 				<span className='text-[8px] font-mono uppercase tracking-[0.4em]'>
 					System Discovery
 				</span>
-				
 			</div>
 		</section>
 	);
@@ -373,11 +344,10 @@ const FeaturedPCSP = () => {
 						))}
 					</div>
 					<p className='text-4xl font-bold leading-tight text-white/90'>
-						"Streamlining Missouri PCSP workflow through{" "}
+						Streamlining Missouri PCSP workflow through{" "}
 						<span className='text-offset italic'>
 							deterministic data integrity.
 						</span>
-						"
 					</p>
 					<p className='text-lg text-white/50 leading-relaxed max-w-xl'>
 						A high-fidelity clinical documentation engine built to reduce
@@ -501,11 +471,10 @@ const FeaturedPulse = () => {
 					</div>
 
 					<p className='text-3xl md:text-4xl font-bold leading-tight text-white/90'>
-						"Behavioral finance intelligence with{" "}
+						Behavioral finance intelligence with{" "}
 						<span className='text-accent italic'>
 							predictive telemetry at the core.
 						</span>
-						"
 					</p>
 
 					<p className='text-base text-white/50 leading-relaxed max-w-lg'>
