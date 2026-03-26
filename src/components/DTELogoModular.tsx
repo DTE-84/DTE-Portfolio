@@ -6,10 +6,11 @@ import { getAssetPath } from "../utils/paths";
 interface DTELogoModularProps {
 	className?: string;
 	isStatic?: boolean;
+	shouldSpin?: boolean;
 }
 
 const DTELogoModular = forwardRef<HTMLDivElement, DTELogoModularProps>(
-	({ className = "", isStatic = false }, ref) => {
+	({ className = "", isStatic = false, shouldSpin = false }, ref) => {
 		// When animated (hero), pieces start invisible — GSAP drives them in.
 		// When static (footer / nav), everything is immediately visible.
 		const layerStyle: React.CSSProperties = isStatic
@@ -24,10 +25,11 @@ const DTELogoModular = forwardRef<HTMLDivElement, DTELogoModularProps>(
 
 				<div
 					id='slash'
-					className='absolute inset-0 pointer-events-none select-none'
-					style={{ zIndex: 50, ...layerStyle }}>
+					className={`absolute   pointer-events-none select-none ${shouldSpin ? 'animate-spin-slow' : ''}`}
+					style={{ zIndex: 50,  width: '650px',  height: '650px',...layerStyle }}>
+						
 					<Image
-						src={getAssetPath("DTELogo.png")}
+						src={getAssetPath("bglogoswirl1.png")}
 						alt='DTE LOGO'
 						fill
 						className='object-contain'

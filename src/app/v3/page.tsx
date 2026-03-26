@@ -89,7 +89,7 @@ const Hero = () => {
 				".hero-logo",
 				{ scale: 0.8, opacity: 0, x: -30 },
 				{ scale: 1, opacity: 1, x: 0, duration: 1.5 },
-				"contentReveal"
+				"contentReveal",
 			);
 
 			// Name "DREW ERNST"
@@ -138,78 +138,184 @@ const Hero = () => {
 				.orb-ring-1 {
 					width: 110%;
 					height: 110%;
-					border: 1px solid rgba(0, 243, 255, 0.2);
+					border: 1px solid rgba(0, 170, 250, 0.3);
 					margin-left: -55%;
 					margin-top: -55%;
-					animation: spin 20s linear infinite;
+					animation: spin 20s ease-in-out infinite;
 				}
 				.orb-ring-2 {
 					width: 130%;
 					height: 130%;
-					border: 1px solid rgba(57, 255, 20, 0.15);
+					border: 1px solid rgba(0, 255, 204, 0.25);
 					margin-left: -65%;
 					margin-top: -65%;
-					animation: spin-reverse 35s linear infinite;
+					animation: spin-reverse 45s ease-in-out infinite;
 				}
 				.orb-ring-3 {
 					width: 150%;
 					height: 150%;
-					border: 1px solid rgba(0, 243, 255, 0.1);
+					border: 1px solid rgba(0, 140, 212, 0.2);
 					margin-left: -75%;
 					margin-top: -75%;
-					animation: spin 50s linear infinite;
+					animation: spin 60s ease-in-out infinite;
 				}
 				.orb {
 					position: absolute;
 					border-radius: 50%;
 					display: block;
-					animation: orb-magic 4s ease-in-out infinite;
+					animation: orb-magic 3s ease-in-out infinite;
 				}
-				.orb-ring-1 .orb { width: 6px; height: 6px; background: #00f3ff; box-shadow: 0 0 15px #00f3ff; }
-				.orb-ring-2 .orb { width: 5px; height: 5px; background: #39ff14; box-shadow: 0 0 15px #39ff14; }
-				.orb-ring-3 .orb { width: 4px; height: 4px; background: #00f3ff; opacity: 0.6; }
+				.orb-ring-1 .orb:nth-child(1) {
+					background: #00aafa;
+				}
+				.orb-ring-1 .orb:nth-child(2) {
+					background: #00ffcc;
+				}
+				.orb-ring-1 .orb:nth-child(3) {
+					background: #008cd4;
+				}
 
-				.orb:nth-child(1) { top: 0%; left: 50%; transform: translate(-50%, -50%); animation-delay: 0s; }
-				.orb:nth-child(2) { top: 75%; left: 93.3%; transform: translate(-50%, -50%); animation-delay: 1.3s; }
-				.orb:nth-child(3) { top: 75%; left: 6.7%; transform: translate(-50%, -50%); animation-delay: 2.6s; }
+				.orb-ring-2 .orb:nth-child(1) {
+					background: #008cd4;
+				}
+				.orb-ring-2 .orb:nth-child(2) {
+					background: #00aafa;
+				}
+				.orb-ring-2 .orb:nth-child(3) {
+					background: #00ffcc;
+				}
 
-				@keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-				@keyframes spin-reverse { from { transform: rotate(0deg); } to { transform: rotate(-360deg); } }
+				.orb-ring-3 .orb:nth-child(1) {
+					background: #00ffcc;
+				}
+				.orb-ring-3 .orb:nth-child(2) {
+					background: #008cd4;
+				}
+				.orb-ring-3 .orb:nth-child(3) {
+					background: #00aafa;
+				}
+
 				@keyframes orb-magic {
-					0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.6; }
-					50% { transform: translate(-50%, -50%) scale(1.5); opacity: 1; box-shadow: 0 0 25px currentColor; }
+					0%,
+					100% {
+						transform: translate(-50%, -50%) scale(1);
+						box-shadow:
+							0 0 15px currentColor,
+							0 0 30px currentColor;
+						opacity: 0.9;
+					}
+					50% {
+						transform: translate(-50%, -50%) scale(1.4);
+						box-shadow:
+							0 0 25px currentColor,
+							0 0 50px currentColor,
+							0 0 75px currentColor;
+						opacity: 1;
+					}
+				}
+
+				.orb:nth-child(1) {
+					top: 0%;
+					left: 50%;
+					transform: translate(-50%, -50%);
+				}
+				.orb:nth-child(2) {
+					top: 75%;
+					left: 93.3%;
+					transform: translate(-50%, -50%);
+				}
+				.orb:nth-child(3) {
+					top: 75%;
+					left: 6.7%;
+					transform: translate(-50%, -50%);
+				}
+
+				.orb-ring-1 .orb:nth-child(1) {
+					animation-delay: 0s;
+				}
+				.orb-ring-1 .orb:nth-child(2) {
+					animation-delay: 1s;
+				}
+				.orb-ring-1 .orb:nth-child(3) {
+					animation-delay: 2s;
+				}
+
+				.orb-ring-2 .orb:nth-child(1) {
+					animation-delay: 0.5s;
+				}
+				.orb-ring-2 .orb:nth-child(2) {
+					animation-delay: 1.5s;
+				}
+				.orb-ring-2 .orb:nth-child(3) {
+					animation-delay: 2.5s;
+				}
+
+				.orb-ring-3 .orb:nth-child(1) {
+					animation-delay: 0.33s;
+				}
+				.orb-ring-3 .orb:nth-child(2) {
+					animation-delay: 1.33s;
+				}
+				.orb-ring-3 .orb:nth-child(3) {
+					animation-delay: 2.33s;
+				}
+
+				@keyframes spin {
+					from {
+						transform: rotate(0deg);
+					}
+					to {
+						transform: rotate(360deg);
+					}
+				}
+				@keyframes spin-reverse {
+					from {
+						transform: rotate(0deg);
+					}
+					to {
+						transform: rotate(-360deg);
+					}
 				}
 			`}</style>
 			{/* ── Ambient radial glow ─────────────────────────────────── */}
 			<div
 				className='hero-glow pointer-events-none absolute inset-0 flex items-center justify-center'
 				style={{ opacity: 0 }}>
-				<div className='w-full h-full md:w-[120%] md:h-[120%] rounded-full bg-accent/5 blur-[120px]' />
+				{/* Glow removed */}
 			</div>
 
-			<div className='w-full max-w-7xl flex flex-col md:flex-row items-center justify-between relative z-10'>
+			<div className='w-full max-w-7xl flex flex-col md:flex-row items-center justify-between relative z-10 '>
 				{/* ── LEFT COLUMN: LOGO + RINGS ────────────────── */}
-				<div className='hero-logo w-full md:w-1/2 flex items-center justify-center md:justify-start' style={{ opacity: 0 }}>
-					<div className='relative w-64 h-64 md:w-[480px] md:h-[480px] flex items-center justify-center'>
+				<div
+					className='hero-logo w-full md:w-1/2 flex items-center justify-center md:justify-start'
+					style={{ opacity: 0 }}>
+					<div className='relative w-64 h-64 md:w-120 md:h-120 flex items-center justify-center'>
 						{/* Hub Rings Integration */}
-						<div className="orb-ring orb-ring-1">
-							<div className="orb"></div>
-							<div className="orb"></div>
-							<div className="orb"></div>
+						<div className='orb-ring orb-ring-1'>
+							<div className='orb'></div>
+							<div className='orb'></div>
+							<div className='orb'></div>
 						</div>
-						<div className="orb-ring orb-ring-2">
-							<div className="orb"></div>
-							<div className="orb"></div>
-							<div className="orb"></div>
+						<div className='orb-ring orb-ring-2'>
+							<div className='orb'></div>
+							<div className='orb'></div>
+							<div className='orb'></div>
 						</div>
-						<div className="orb-ring orb-ring-3">
-							<div className="orb"></div>
-							<div className="orb"></div>
-							<div className="orb"></div>
+						<div className='orb-ring orb-ring-3'>
+							<div className='orb'></div>
+							<div className='orb'></div>
+							<div className='orb'></div>
 						</div>
 
-						<div className='relative z-20 w-48 h-48 md:w-80 md:h-80'>
-							<DTELogoModular isStatic />
+						<div
+							className='relative z-20 w-48 h-48 md:w-80 md:h-80'
+							style={{
+								WebkitMaskImage:
+									"radial-gradient(circle, black 30%, transparent 80%)",
+								maskImage:
+									"radial-gradient(circle, black 30%, transparent 80%)",
+							}}>
+							<DTELogoModular isStatic shouldSpin={true} />
 						</div>
 					</div>
 				</div>
@@ -307,16 +413,16 @@ const TechStack = () => {
 		},
 		{
 			title: "Cloud & Database",
-			color: "text-offset",
-			borderColor: "border-offset/30",
-			hoverBorder: "hover:border-offset",
+			color: "text-white",
+			borderColor: "border-white/20",
+			hoverBorder: "hover:border-white",
 			items: ["AWS", "PostgreSQL", "Docker", "SQL", "Git", "Supabase"],
 		},
 		{
 			title: "UI/UX & Method",
-			color: "text-white",
-			borderColor: "border-white/20",
-			hoverBorder: "hover:border-white",
+			color: "text-offset/30",
+			borderColor: "border-offset/30",
+			hoverBorder: "hover:offset",
 			items: ["Tailwind", "GSAP", "Figma", "OOD", "SDLC", "Agile"],
 		},
 	];
@@ -614,7 +720,7 @@ const ProjectCard = ({
 					className='w-full h-full object-cover opacity-30 group-hover:opacity-100 duration-[2s] scale-[1.02] group-hover:scale-110 ease-out'
 				/>
 				<div className='absolute inset-0 bg-linear-to-t from-black/60 via-transparent to-transparent opacity-60 group-hover:opacity-30 transition-opacity' />
-				
+
 				<a
 					href={project.link}
 					target='_blank'
@@ -625,7 +731,7 @@ const ProjectCard = ({
 
 				<div className='absolute bottom-6 left-8 flex flex-wrap gap-2 opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-700 delay-100 z-20'>
 					{project.tags.map((tag) => (
-						<span 
+						<span
 							key={tag}
 							className='text-[8px] font-mono font-black uppercase tracking-widest px-3 py-1.5 bg-black/60 backdrop-blur-md border border-white/10 text-white/80 rounded-lg'>
 							{tag}
@@ -646,18 +752,18 @@ const ProjectCard = ({
 						</span>
 					</div>
 				</div>
-				
+
 				<h3 className='text-3xl md:text-4xl font-black uppercase tracking-tighter mb-4 text-white group-hover:text-accent transition-colors duration-500'>
 					<RollingText text={project.title} />
 				</h3>
-				
+
 				<p className='text-base text-white/40 leading-relaxed font-medium mb-8 max-w-xl group-hover:text-white/60 transition-colors duration-500'>
 					{project.description}
 				</p>
 
 				<div className='flex flex-wrap gap-3 mt-auto pt-6 border-t border-white/5'>
 					{project.tags.map((tag) => (
-						<div 
+						<div
 							key={tag}
 							className='flex items-center gap-2 px-4 py-2 bg-white/2 border border-white/5 rounded-xl text-[9px] font-mono uppercase tracking-widest text-white/40 group-hover:border-accent/20 group-hover:text-accent/60 transition-all duration-500 hover:bg-accent/5 hover:text-accent hover:scale-105 cursor-default'>
 							<div className='w-1 h-1 rounded-full bg-accent/20 group-hover:bg-accent/40' />
@@ -764,7 +870,7 @@ const OtherWorks = () => {
 			{/* Section header */}
 			<div className='flex flex-col gap-4 mb-20 px-4'>
 				<span className='works-header text-white/30 font-mono text-[10px] tracking-[0.4em] uppercase font-bold'>
-					Other Deployments // 
+					Other Deployments //
 				</span>
 				<h2 className='works-header text-5xl md:text-8xl font-black uppercase tracking-tighter leading-none text-white'>
 					The <span className='text-accent italic'>Archive.</span>
@@ -815,9 +921,6 @@ const Footer = ({ onContactClick }: { onContactClick: () => void }) => {
 	return (
 		<footer className='py-32 px-6 md:px-12 max-w-7xl mx-auto'>
 			<div className='relative overflow-hidden bg-white/3 border border-white/10 rounded-[3rem] p-12 md:p-24 flex flex-col items-center text-center gap-12'>
-				<div className='absolute inset-0 z-0 h-full flex items-center justify-center opacity-20'>
-					<DTELogoModular isStatic />
-				</div>
 				<div className='max-w-3xl flex flex-col gap-6'>
 					<h2 className='text-5xl md:text-8xl font-black uppercase tracking-tighter leading-none z-20'>
 						Connect & <span className='text-accent italic'>Collaborate.</span>
