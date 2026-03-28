@@ -315,7 +315,7 @@ const Hero = () => {
 								maskImage:
 									"radial-gradient(circle, black 30%, transparent 80%)",
 							}}>
-							<DTELogoModular isStatic shouldSpin={true} />
+							<DTELogoModular isStatic shouldSpin={false} />
 						</div>
 					</div>
 				</div>

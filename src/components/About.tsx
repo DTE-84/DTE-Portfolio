@@ -70,11 +70,11 @@ const About: React.FC = () => {
 
 				<div className='grid lg:grid-cols-3 gap-12 lg:gap-20'>
 					<div className='lg:col-span-2'>
-						<RevealText text='Specializing in the intersection of advanced data orchestration and technical precision, DTE Solutions builds sophisticated applications and programs designed to solve complex world problems. I engineer high-fidelity interfaces that serve as intuitive bridges between complex data systems and the human users who navigate them.' />
+						<RevealText text='As a Senior Systems Engineer, I specialize in the architecture of high-fidelity deterministic pipelines and behavioral AI systems. I engineer sophisticated data orchestration layers that bridge the gap between complex relational models and high-impact user interfaces, prioritizing data integrity and signal clarity in every deployment.' />
 						<br />
-						<RevealText text="My background in operations management provides a unique 'business-first' lens. I view data not as a static resource, but as a critical component of a larger problem-solving ecosystem where communication protocols and collaborative engineering are paramount." />
+						<RevealText text="My background in operations management provides a unique 'business-first' lens for technical architecture. I view data not as a static resource, but as a critical component of a larger problem-solving ecosystem where deterministic communication protocols and high-fidelity engineering are paramount." />
 						<br />
-						<RevealText text="Transitioning from leadership to frontend development has refined my focus on clarity, impact, and systemic efficiency. I don't just build components; I engineer workflows that streamline performance and drive measurable results for global challenges." />
+						<RevealText text="Transitioning from leadership to systems engineering has refined my focus on systemic efficiency and predictive analytics. I don't just build components; I engineer end-to-end data workflows that transform raw telemetry into actionable intelligence for global challenges." />
 					</div>
 
 					<div className='space-y-10'>
@@ -83,18 +83,16 @@ const About: React.FC = () => {
 						</h4>
 						<ul className='terminal-list list-none p-0 mt-[30px]'>
 							<li className="relative pl-[25px] mb-[18px] text-[clamp(0.85rem,1.8vw,1.1rem)] text-[#d7e3fc]/75 leading-relaxed font-semibold before:content-['>>'] before:absolute before:left-0 before:text-accent before:font-orbitron before:text-[14px] before:top-[4px] before:animate-[list-pulse_1.5s_infinite]">
-								<span className='bold'>User-Centric Design:</span> Empathizing
-								with the user to ensure interfaces are as intuitive as they are
-								functional.
+								<span className='bold'>Deterministic Architecture:</span> Engineering
+								systems where data integrity and predictable outcomes are foundational.
 							</li>
 							<li className="relative pl-[25px] mb-[18px] text-[clamp(0.85rem,1.8vw,1.1rem)] text-[#d7e3fc]/75 leading-relaxed font-semibold before:content-['>>'] before:absolute before:left-0 before:text-accent before:font-orbitron before:text-[14px] before:top-[4px] before:animate-[list-pulse_1.5s_infinite]">
-								<span className='bold'>Collaborative Excellence:</span> Clear
-								communication and documentation are as vital as the codebase
-								itself.
+								<span className='bold'>High-Fidelity Signal:</span> Prioritizing clarity 
+								and precision in data visualization and AI-driven insights.
 							</li>
 							<li className="relative pl-[25px] mb-[18px] text-[clamp(0.85rem,1.8vw,1.1rem)] text-[#d7e3fc]/75 leading-relaxed font-semibold before:content-['>>'] before:absolute before:left-0 before:text-accent before:font-orbitron before:text-[14px] before:top-[4px] before:animate-[list-pulse_1.5s_infinite]">
-								<span className='bold'>Results-Driven:</span> Building tools
-								that streamline operations and enhance user engagement.
+								<span className='bold'>Analytical Precision:</span> Building 
+								tools that leverage behavioral telemetry to drive measurable results.
 							</li>
 						</ul>
 					</div>

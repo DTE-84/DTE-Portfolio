@@ -15,7 +15,7 @@ const DTELogoModular = forwardRef<HTMLDivElement, DTELogoModularProps>(
 		// When static (footer / nav), everything is immediately visible.
 		const layerStyle: React.CSSProperties = isStatic
 			? { opacity: 1 }
-			: { opacity: 0 };
+			: { opacity: 1 }; // Forcing opacity to 1 for systemlogo comparison
 
 		return (
 			<div
@@ -26,10 +26,10 @@ const DTELogoModular = forwardRef<HTMLDivElement, DTELogoModularProps>(
 				<div
 					id='slash'
 					className={`absolute   pointer-events-none select-none ${shouldSpin ? 'animate-spin-slow' : ''}`}
-					style={{ zIndex: 50,  width: '650px',  height: '650px',...layerStyle }}>
+					style={{ zIndex: 50,  width: '500px',  height: '500px',...layerStyle }}>
 						
 					<Image
-						src={getAssetPath("bglogoswirl1.png")}
+						src={getAssetPath("systemlogo.png")}
 						alt='DTE LOGO'
 						fill
 						className='object-contain'
