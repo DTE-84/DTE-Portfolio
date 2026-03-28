@@ -352,7 +352,7 @@ const Hero = () => {
 					<p
 						className='hero-sub text-[10px] md:text-[12px] font-mono uppercase tracking-[0.55em] font-bold mb-8'
 						style={{ color: "var(--theme-accent)", opacity: 0 }}>
-						Systems Engineer &nbsp;//&nbsp; Behavioral AI Architect
+						Systems Engineer &nbsp;//&nbsp; AI Architect
 					</p>
 
 					{/* QUOTE CARD */}
