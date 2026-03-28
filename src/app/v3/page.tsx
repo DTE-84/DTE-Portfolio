@@ -60,7 +60,7 @@ const Nav = ({ onContactClick }: { onContactClick: () => void }) => {
 						onClick={onContactClick}
 						className='group flex items-center gap-3 bg-accent text-black px-6 py-2.5 rounded-xl transition-all duration-300 hover:scale-105 active:scale-95 shadow-[0_0_20px_rgba(var(--theme-accent-rgb),0.3)]'>
 						<span className='text-[12px] font-black uppercase tracking-widest'>
-							Connect
+							Contact Me
 						</span>
 						<Icon
 							icon='nimbus:ecosystem'

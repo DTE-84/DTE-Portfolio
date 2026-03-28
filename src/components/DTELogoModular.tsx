@@ -27,6 +27,7 @@ const DTELogoModular = forwardRef<HTMLDivElement, DTELogoModularProps>(
 					id='slash'
 					className={`absolute   pointer-events-none select-none ${shouldSpin ? 'animate-spin-slow' : ''}`}
 					style={{ zIndex: 50,  width: '500px',  height: '500px',...layerStyle }}>
+
 						
 					<Image
 						src={getAssetPath("systemlogo.png")}
