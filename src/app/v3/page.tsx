@@ -9,8 +9,7 @@ import RollingText from "../../components/RollingText";
 import About from "../../components/About";
 import { getAssetPath } from "../../utils/paths";
 import DTELogoModular from "../../components/DTELogoModular";
-import TechStack from "../../components/TechStack";
-import ProjectCard from "../../components/ProjectCard";
+
 if (typeof window !== "undefined") {
 	gsap.registerPlugin(ScrollTrigger);
 }
