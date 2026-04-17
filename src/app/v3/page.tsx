@@ -9,7 +9,8 @@ import RollingText from "../../components/RollingText";
 import About from "../../components/About";
 import { getAssetPath } from "../../utils/paths";
 import DTELogoModular from "../../components/DTELogoModular";
-
+import TechStack from "../../components/TechStack";
+import ProjectCard from "../../components/ProjectCard";
 if (typeof window !== "undefined") {
 	gsap.registerPlugin(ScrollTrigger);
 }
@@ -51,7 +52,7 @@ const Nav = ({ onContactClick }: { onContactClick: () => void }) => {
 								<span
 									className='text-[10px] opacity-80 group-hover:opacity-100 transition-opacity whitespace-nowrap'
 									style={{ color: item.color }}>
-									{item.id} //
+									{item.id} {"//"}
 								</span>
 								<RollingText text={item.name} />
 							</a>
