@@ -360,6 +360,36 @@ const OtherWorks = () => {
 	);
 };
 
+const TechStack = () => {
+	const tools = [
+		{ name: "TypeScript", icon: "logos:typescript-icon" },
+		{ name: "React 19", icon: "logos:react" },
+		{ name: "Next.js", icon: "logos:nextjs-icon" },
+		{ name: "Python", icon: "logos:python" },
+		{ name: "PostgreSQL", icon: "logos:postgresql" },
+		{ name: "FastAPI", icon: "logos:fastapi-icon" },
+		{ name: "AWS", icon: "logos:aws" },
+		{ name: "Docker", icon: "logos:docker-icon" },
+	];
+
+	return (
+		<section className='py-12 overflow-hidden border-y border-white/5 bg-white/[0.02]'>
+			<div className='flex gap-12 items-center animate-marquee whitespace-nowrap'>
+				{[...tools, ...tools].map((tool, index) => (
+					<div
+						key={index}
+						className='flex items-center gap-3 grayscale hover:grayscale-0 transition-all opacity-40 hover:opacity-100'>
+						<Icon icon={tool.icon} className='text-xl' />
+						<span className='font-mono text-[10px] uppercase tracking-[0.2em] font-bold'>
+							{tool.name}
+						</span>
+					</div>
+				))}
+			</div>
+		</section>
+	);
+};
+
 const marqueeItems = ["Data Integrity", "Full-Stack Systems", "Behavioral Tech", "Systems Engineer", "PostgreSQL", "React 19", "Python / Pandas", "DTE Solutions LLC"];
 
 const ExperienceMarquee = () => {
