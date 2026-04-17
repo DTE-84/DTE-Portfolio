@@ -79,7 +79,7 @@ export default function VersionSelector({ forcedOpen = false, onClose, isOpen = 
 
         {/* BUSINESS HUB - WHITE (CENTER) */}
         <Link
-          href="https://dte-84.github.io/DTE-Solutions-Hub/"
+          href="https://dte-solutions.icu/"
           onClick={handleSelect}
           className="group flex-1 p-10 bg-zinc-900 border-2 border-white/10 hover:border-white transition-all duration-500 relative overflow-hidden rounded-[40px] shadow-2xl flex flex-col items-center justify-center"
         >
