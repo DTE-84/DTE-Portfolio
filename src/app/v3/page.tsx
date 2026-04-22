@@ -164,7 +164,7 @@ const FeaturedPCSP = () => {
 					</div>
 					<p className='text-4xl font-bold leading-tight text-white/90'>Streamlining Missouri PCSP workflow through <span className='text-offset italic'>deterministic data integrity.</span></p>
 					<p className='text-lg text-white/50 leading-relaxed max-w-xl'>A high-fidelity clinical documentation engine built to reduce friction for frontline healthcare staff. This tool automates compliant drafting while ensuring HIPAA-sensitive data remains secure.</p>
-					<a href='/case-study-pcsp' className='group/btn inline-flex items-center gap-4 bg-accent text-black px-10 py-5 rounded-2xl font-black uppercase text-xs transition-all hover:scale-105 active:scale-95 self-start'>
+					<a href='https://dte-84.github.io/DTE-E-Portfolio/case-study-pcsp/' className='group/btn inline-flex items-center gap-4 bg-accent text-black px-10 py-5 rounded-2xl font-black uppercase text-xs transition-all hover:scale-105 active:scale-95 self-start'>
 						<span>Deep Dive Breakdown</span>
 						<Icon icon='solar:arrow-right-up-linear' className='text-lg group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform' />
 					</a>
