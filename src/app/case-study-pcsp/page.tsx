@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Icon } from "@iconify/react";
 import Image from "next/image";
 import BgAnimation from "../../components/BgAnimation";
+import { getAssetPath } from "../../utils/paths";
 export default function CaseStudyPCSP() {
   useEffect(() => {
     // Force green theme for case study page
@@ -276,7 +277,7 @@ export default function CaseStudyPCSP() {
         <header className="mb-12">
           <div className="flex justify-between items-start mb-12">
             <Link
-              href="/"
+              href={getAssetPath("/")}
               className="text-[10px] font-black uppercase tracking-[0.3em] text-accent/60 hover:text-accent transition-colors flex items-center gap-2"
             >
               <Icon icon="solar:arrow-left-linear" /> Return
@@ -969,7 +970,7 @@ export default function CaseStudyPCSP() {
                   Launch Live App
                 </a>
                 <Link
-                  href="/"
+                  href={getAssetPath("/")}
                   className="px-8 py-4 border border-[#00ffcc]/20 text-[#00ffcc] font-black uppercase tracking-widest text-xs rounded hover:bg-[#00ffcc]/5 transition-all"
                 >
                   Back to Home

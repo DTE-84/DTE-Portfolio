@@ -19,6 +19,7 @@ import {
   Lock
 } from 'lucide-react';
 import Link from 'next/link';
+import { getAssetPath } from "../../utils/paths";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -64,7 +65,7 @@ const QuarterlyCaseStudy = () => {
       {/* Navigation */}
       <nav className="fixed top-0 w-full z-50 px-8 py-6 flex justify-between items-center backdrop-blur-md border-b border-white/5">
         <div className="flex items-center gap-2">
-          <Link href="/" className="flex items-center gap-2">
+          <Link href={getAssetPath("/")} className="flex items-center gap-2">
             <div className="w-8 h-8 rounded bg-[#c5a059]/20 border border-[#c5a059] flex items-center justify-center">
               <ShieldCheck className="text-[#c5a059] w-5 h-5" />
             </div>
@@ -158,7 +159,7 @@ const QuarterlyCaseStudy = () => {
           </div>
           <div className="reveal bg-white/5 border border-white/10 border-l-4 border-l-red-500/50 p-2 relative overflow-hidden flex items-center justify-center rounded-lg backdrop-blur-md">
              <img 
-               src="/assets/pcsp1.png" 
+               src={getAssetPath("assets/pcsp1.png")} 
                alt="MCSDD Quarterly Pro Interface" 
                className="w-full h-auto rounded opacity-90 group-hover:opacity-100 transition-opacity"
              />

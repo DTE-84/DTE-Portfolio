@@ -209,7 +209,7 @@ const FeaturedQuarterly = () => {
 					</div>
 					<p className='text-3xl md:text-4xl font-bold leading-tight text-white/90'>High-fidelity audit resilience engine for <span className='text-accent italic'>Missouri DMH/MMAC reporting.</span></p>
 					<p className='text-base text-white/50 leading-relaxed max-w-lg'>Features deterministic validation against the April 2026 EVV Hard Launch and Oct 2025 HRST mandates. Built to solve the 80% supervisory oversight gap.</p>
-					<a href='/case-study-quarterly' className='group/btn inline-flex items-center gap-4 bg-white/5 border border-accent/30 text-accent px-10 py-5 rounded-2xl font-black uppercase text-xs transition-all hover:bg-accent hover:text-black hover:border-transparent hover:scale-105 active:scale-95 self-start'>
+					<a href={getAssetPath('case-study-quarterly')} className='group/btn inline-flex items-center gap-4 bg-white/5 border border-accent/30 text-accent px-10 py-5 rounded-2xl font-black uppercase text-xs transition-all hover:bg-accent hover:text-black hover:border-transparent hover:scale-105 active:scale-95 self-start'>
 						<span>Case Study breakdown</span>
 						<Icon icon='solar:arrow-right-up-linear' className='text-lg group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform' />
 					</a>
