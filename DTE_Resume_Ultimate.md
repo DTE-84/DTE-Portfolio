@@ -57,7 +57,7 @@ Python (Pandas, NumPy, FastAPI) • React 19, Next.js, Vite • PostgreSQL, SQL,
 ### Projects
 
 **MCSDD | PCSP Assistant - Missouri State Agency Compliance Engine** | 10/2025
-*https://dte-solutions.icu/case-study-pcsp/*
+*https://dte-84.github.io/DTE-E-Portfolio/case-study-pcsp/*
 - Architected a “Zero-Footprint” Logic Engine that eliminated all server-side privacy risks and hosting fees. By processing HIPAA data locally in volatile RAM, the system ensures 100% data residency with zero POST requests.
 - Eliminated Missouri DMH audit rejections by building an automated validation system. Engineered hard logic to enforce state-mandated “Active Treatment” structures and person-centered supports, significantly reducing administrative revision cycles.
 - Achieved HIPAA technical compliance without a BAA or database by developing a custom security framework featuring 4-second debounced auto-saves, 30-minute idle timeouts, and 30-day PHI auto-expiry to ensure zero persistent data footprint.
