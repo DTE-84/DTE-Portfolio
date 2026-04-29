@@ -280,7 +280,7 @@ const FeaturedEcommerce = () => {
 			</div>
 			<div className='group relative grid lg:grid-cols-[1fr_1.2fr] gap-12 bg-white/3 border border-white/10 rounded-[4rem] overflow-hidden p-8 md:p-16 transition-all duration-700 hover:border-accent/30'>
 				<div className='ecomm-reveal relative aspect-4/3 lg:aspect-auto rounded-[2.5rem] overflow-hidden bg-black/40 border border-white/10 order-1 group-hover:border-accent/30 transition-colors'>
-					<video src={getAssetPath("assets/PCSP.mp4")} autoPlay loop muted playsInline className='w-full h-full object-cover scale-[1.02] group-hover:scale-110 transition-transform duration-[2s] ease-out' />
+					<video src={getAssetPath("assets/ecommSQL.mp4")} autoPlay loop muted playsInline className='w-full h-full object-cover scale-[1.02] group-hover:scale-110 transition-transform duration-[2s] ease-out' />
 					<div className='absolute inset-0 bg-linear-to-b from-black/60 via-transparent to-transparent' />
 				</div>
 				<div className='ecomm-reveal flex flex-col justify-center gap-7 order-2'>
@@ -291,7 +291,7 @@ const FeaturedEcommerce = () => {
 					</div>
 					<p className='text-3xl md:text-4xl font-bold leading-tight text-white/90'>Advanced SQL engineering and <span className='text-accent italic'>EDA for commerce telemetry.</span></p>
 					<p className='text-base text-white/50 leading-relaxed max-w-lg'>Complex multi-table joins, window functions (NTILE, DENSE_RANK), and LTV cohort analysis to drive business intelligence.</p>
-					<a href='https://ecomm-sql.vercel.app/' target='_blank' rel='noreferrer' className='group/btn inline-flex items-center gap-4 bg-white/5 border border-accent/30 text-accent px-10 py-5 rounded-2xl font-black uppercase text-xs transition-all hover:bg-accent hover:text-black hover:border-transparent hover:scale-105 active:scale-95 self-start'>
+					<a href='https://dte-84.github.io/ecommSQL/' target='_blank' rel='noreferrer' className='group/btn inline-flex items-center gap-4 bg-white/5 border border-accent/30 text-accent px-10 py-5 rounded-2xl font-black uppercase text-xs transition-all hover:bg-accent hover:text-black hover:border-transparent hover:scale-105 active:scale-95 self-start'>
 						<span>Live Dashboard</span>
 						<Icon icon='solar:arrow-right-up-linear' className='text-lg group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform' />
 					</a>
