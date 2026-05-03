@@ -34,15 +34,15 @@ const Nav = ({ onContactClick }: { onContactClick: () => void }) => {
 								style={{ WebkitTextStroke: "0px" }}>
 								/
 							</span>
-							Developer
+							Full-Stack
 						</span>
 					</div>
 				</div>
 				<div className='flex items-center gap-10'>
 					<div className='hidden md:flex items-center gap-12'>
 						{[
-							{ id: "01", name: "Work", href: "#featured", color: "#00f3ff" },
-							{ id: "02", name: "About", href: "#about", color: "#39ff14" },
+							{ id: "01", name: "Flagship", href: "#flagship", color: "#00f3ff" },
+							{ id: "02", name: "Systems", href: "#work", color: "#39ff14" },
 						].map((item) => (
 							<a
 								key={item.name}
@@ -61,7 +61,7 @@ const Nav = ({ onContactClick }: { onContactClick: () => void }) => {
 						onClick={onContactClick}
 						className='group flex items-center gap-3 bg-accent text-black px-6 py-2.5 rounded-xl transition-all duration-300 hover:scale-105 active:scale-95 shadow-[0_0_20px_rgba(var(--theme-accent-rgb),0.3)]'>
 						<span className='text-[12px] font-black uppercase tracking-widest'>
-							Contact Me
+							Contact
 						</span>
 						<Icon
 							icon='nimbus:ecosystem'
@@ -74,7 +74,7 @@ const Nav = ({ onContactClick }: { onContactClick: () => void }) => {
 	);
 };
 
-const Hero = () => {
+const Hero = ({ onContactClick }: { onContactClick: () => void }) => {
 	const containerRef = useRef<HTMLDivElement>(null);
 
 	useEffect(() => {
@@ -84,7 +84,6 @@ const Hero = () => {
 			tl.fromTo(".hero-logo", { scale: 0.8, opacity: 0, x: -30 }, { scale: 1, opacity: 1, x: 0, duration: 1.5 }, "contentReveal");
 			tl.fromTo(".hero-char", { y: 90, opacity: 0 }, { y: 0, opacity: 1, duration: 1.2, stagger: 0.04 }, "contentReveal+=0.3");
 			tl.fromTo(".hero-sub", { y: 22, opacity: 0 }, { y: 0, opacity: 1, duration: 1.0, stagger: 0.15 }, "contentReveal+=0.8");
-			tl.fromTo(".hero-glow", { scale: 0.6, opacity: 0 }, { scale: 1, opacity: 1, duration: 3.0, ease: "expo.out" }, "contentReveal");
 		}, containerRef);
 		return () => ctx.revert();
 	}, []);
@@ -102,7 +101,7 @@ const Hero = () => {
 					</div>
 				</div>
 				<div className='w-full md:w-1/2 flex flex-col items-center md:items-start text-center md:text-left md:pl-16'>
-					<h1 className='font-orbitron font-black uppercase tracking-tighter leading-none text-white mb-4' style={{ fontSize: "clamp(3.2rem, 8vw, 7.5rem)", textShadow: "0 0 80px rgba(0,224,255,0.18), 0 0 160px rgba(0,224,255,0.08)" }}>
+					<h1 className='font-orbitron font-black uppercase tracking-tighter leading-none text-white mb-4' style={{ fontSize: "clamp(3.2rem, 8vw, 7.5rem)" }}>
 						{nameLines.map((line, lineIdx) => (
 							<div key={lineIdx} className={lineIdx > 0 ? "mt-[-0.06em]" : ""}>
 								{line.split("").map((char, charIdx) => (
@@ -114,22 +113,24 @@ const Hero = () => {
 						))}
 					</h1>
 					<p className='hero-sub text-[10px] md:text-[12px] font-mono uppercase tracking-[0.55em] font-bold mb-8' style={{ color: "var(--theme-accent)", opacity: 0 }}>
-						Systems Engineer &nbsp;//&nbsp; AI Architect
+						Data Analyst &nbsp;//&nbsp; Full-Stack Capability
 					</p>
 					<div className='hero-sub max-w-xl bg-white/2.5 backdrop-blur-md border border-white/6 px-7 py-6 rounded-3xl relative overflow-hidden group mb-10' style={{ opacity: 0 }}>
-						<div className='absolute inset-0 bg-linear-to-r from-transparent via-white/2.5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 pointer-events-none' />
 						<p className='text-base md:text-lg text-white/75 leading-relaxed font-medium italic'>
-							I blend backend <span className='text-accent not-italic font-bold'>data integrity</span> with user-centric design — transforming raw information into high-impact, functional products.
+							I build <span className='text-accent not-italic font-bold'>secure, data-driven systems</span> and real-world applications — turning raw data into usable architecture and clear insights.
 						</p>
 					</div>
 					<div className='hero-sub flex flex-col sm:flex-row items-center gap-4' style={{ opacity: 0 }}>
-						<a href='#featured' className='group flex items-center gap-3 bg-accent text-black px-8 py-4 rounded-2xl font-black uppercase text-[11px] tracking-[0.25em] transition-all duration-300 hover:scale-105 active:scale-95 shadow-[0_0_30px_rgba(var(--theme-accent-rgb),0.35)]'>
-							<RollingText text='View My Work' hoverColor='text-white' />
+						<a href='#flagship' className='group flex items-center gap-3 bg-accent text-black px-8 py-4 rounded-2xl font-black uppercase text-[11px] tracking-[0.25em] transition-all duration-300 hover:scale-105 active:scale-95 shadow-[0_0_30px_rgba(var(--theme-accent-rgb),0.35)]'>
+							<RollingText text='View Work' hoverColor='text-white' />
 							<Icon icon='solar:arrow-right-down-linear' className='text-base group-hover:translate-y-1 transition-transform' />
 						</a>
-						<a href='#about' className='group flex items-center gap-3 bg-white/4 border border-white/10 text-white/60 px-8 py-4 rounded-2xl font-black uppercase text-[11px] tracking-[0.25em] transition-all duration-300 hover:bg-white/8 hover:border-white/20 hover:text-white'>
-							<RollingText text='About Me' />
+						<a href='#work' className='group flex items-center gap-3 bg-white/4 border border-white/10 text-white/60 px-8 py-4 rounded-2xl font-black uppercase text-[11px] tracking-[0.25em] transition-all duration-300 hover:bg-white/8 hover:border-white/20 hover:text-white'>
+							<RollingText text='View Systems' />
 						</a>
+						<button onClick={onContactClick} className='group flex items-center gap-3 bg-white/4 border border-white/10 text-white/60 px-8 py-4 rounded-2xl font-black uppercase text-[11px] tracking-[0.25em] transition-all duration-300 hover:bg-white/8 hover:border-white/20 hover:text-white'>
+							<RollingText text='Contact' />
+						</button>
 					</div>
 				</div>
 			</div>
@@ -137,11 +138,36 @@ const Hero = () => {
 	);
 };
 
-const FeaturedISP = () => {
+const StrengthsArchitecture = () => {
+	const strengths = [
+		{ id: "01", title: "Data Understanding", body: "Interpreting complex variables to find deterministic patterns.", icon: "solar:database-linear" },
+		{ id: "02", title: "Systems Execution", body: "Engineering robust, full-stack backends for real-world utility.", icon: "solar:cpu-linear" },
+		{ id: "03", title: "UI Communications", body: "Translating technical telemetry into high-fidelity visual clarity.", icon: "solar:graph-new-linear" }
+	];
+
+	return (
+		<section className='py-32 px-6 md:px-12 max-w-7xl mx-auto border-t border-white/5'>
+			<div className='grid md:grid-cols-3 gap-12'>
+				{strengths.map((s) => (
+					<div key={s.id} className='group p-10 rounded-[3rem] bg-white/2 border border-white/5 hover:border-accent/30 transition-all'>
+						<div className='w-16 h-16 rounded-2xl bg-accent/10 border border-accent/20 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform'>
+							<Icon icon={s.icon} className='text-3xl text-accent' />
+						</div>
+						<span className='block font-mono text-[10px] text-accent/50 uppercase tracking-[0.4em] mb-4'>{s.id} // Strength</span>
+						<h3 className='text-2xl font-black uppercase tracking-tighter text-white mb-4'>{s.title}</h3>
+						<p className='text-white/40 leading-relaxed'>{s.body}</p>
+					</div>
+				))}
+			</div>
+		</section>
+	);
+};
+
+const FlagshipBuilds = () => {
 	const sectionRef = useRef<HTMLElement>(null);
 	useEffect(() => {
 		const ctx = gsap.context(() => {
-			gsap.from(".pcsp-reveal", {
+			gsap.from(".flagship-reveal", {
 				scrollTrigger: { trigger: sectionRef.current, start: "top 80%" },
 				y: 50, opacity: 0, duration: 1, stagger: 0.2, ease: "power3.out"
 			});
@@ -149,153 +175,40 @@ const FeaturedISP = () => {
 		return () => ctx.revert();
 	}, []);
 
+	const builds = [
+		{ id: "Pulse", title: "Pulse Behavioral AI", tags: ["FastAPI", "React 19", "PostgreSQL"], desc: "High-fidelity financial dashboard utilizing behavioral psychology signals and predictive telemetry.", link: "https://dte-solutions.icu/pulse-breakdown.html", video: "assets/Pulse.mp4" },
+		{ id: "PCSP", title: "PCSP Assistant Pro", tags: ["Next.js", "AES-256", "HIPAA"], desc: "Deterministic documentation engine (v3.0) hardened with AES-GCM 256-bit encryption for HIPAA compliance.", link: getAssetPath("case-study-pcsp"), video: "assets/PCSP.mp4" },
+		{ id: "SQL", title: "SQL Analytics Engine", tags: ["PostgreSQL", "Analytics", "Window Fns"], desc: "Advanced engineering for commerce telemetry using window functions, CTEs, and high-fidelity cohort analysis.", link: "https://dte-84.github.io/ecommSQL/", video: "assets/ecommSQL.mp4" }
+	];
+
 	return (
-		<section ref={sectionRef} id='featured' className='py-32 px-6 md:px-12 max-w-7xl mx-auto'>
+		<section ref={sectionRef} id='flagship' className='py-32 px-6 md:px-12 max-w-7xl mx-auto'>
 			<div className='flex flex-col gap-4 mb-20 px-4'>
-				<span className='pcsp-reveal text-offset font-mono text-[10px] tracking-[0.4em] uppercase font-bold'>Primary Case Study // 01</span>
-				<h2 className='pcsp-reveal text-5xl md:text-8xl font-black uppercase tracking-tighter leading-none text-white'>ISP Assistant Pro</h2>
+				<span className='flagship-reveal text-offset font-mono text-[10px] tracking-[0.4em] uppercase font-bold text-accent'>Principal Architecture //</span>
+				<h2 className='flagship-reveal text-5xl md:text-8xl font-black uppercase tracking-tighter leading-none text-white'>Flagship <span className='text-accent italic'>Builds.</span></h2>
 			</div>
-			<div className='group relative grid lg:grid-cols-[1.2fr_1fr] gap-12 bg-white/3 border border-white/10 rounded-[4rem] overflow-hidden p-8 md:p-16 transition-all duration-700 hover:border-accent/40'>
-				<div className='pcsp-reveal flex flex-col justify-center gap-8 order-2 lg:order-1'>
-					<div className='flex flex-wrap gap-3'>
-						{["HIPAA", "SQL", "Next.js", "AES-256", "PBKDF2"].map(tag => (
-							<span key={tag} className='text-[9px] font-mono uppercase tracking-widest px-4 py-2 bg-accent/10 border border-accent/20 rounded-full text-accent font-bold'>{tag}</span>
-						))}
+			<div className='grid gap-12'>
+				{builds.map((build, i) => (
+					<div key={build.id} className='group relative grid lg:grid-cols-[1.2fr_1fr] gap-12 bg-white/3 border border-white/10 rounded-[4rem] overflow-hidden p-8 md:p-16 transition-all duration-700 hover:border-accent/40'>
+						<div className='flagship-reveal flex flex-col justify-center gap-8 order-2 lg:order-1'>
+							<div className='flex flex-wrap gap-3'>
+								{build.tags.map(tag => (
+									<span key={tag} className='text-[9px] font-mono uppercase tracking-widest px-4 py-2 bg-accent/10 border border-accent/20 rounded-full text-accent font-bold'>{tag}</span>
+								))}
+							</div>
+							<h3 className='text-4xl md:text-5xl font-black uppercase tracking-tighter text-white group-hover:text-accent transition-colors'>{build.title}</h3>
+							<p className='text-lg text-white/50 leading-relaxed max-w-xl'>{build.desc}</p>
+							<a href={build.link} className='group/btn inline-flex items-center gap-4 bg-accent text-black px-10 py-5 rounded-2xl font-black uppercase text-xs transition-all hover:scale-105 active:scale-95 self-start'>
+								<span>System Deep Dive</span>
+								<Icon icon='solar:arrow-right-up-linear' className='text-lg group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform' />
+							</a>
+						</div>
+						<div className='flagship-reveal relative aspect-video lg:aspect-auto rounded-[2.5rem] overflow-hidden bg-black/40 border border-white/10 order-1 lg:order-2 group-hover:border-accent/30 transition-colors'>
+							<video src={getAssetPath(build.video)} autoPlay loop muted playsInline className='w-full h-full object-cover scale-[1.02] group-hover:scale-110 transition-transform duration-[2s] ease-out' />
+							<div className='absolute inset-0 bg-linear-to-t from-black/80 via-transparent to-transparent' />
+						</div>
 					</div>
-					<p className='text-4xl font-bold leading-tight text-white/90'>Streamlining Missouri PCSP workflow through <span className='text-offset italic'>deterministic data integrity.</span></p>
-					<p className='text-lg text-white/50 leading-relaxed max-w-xl'>A high-fidelity documentation engine (v3.0) hardened with AES-GCM 256-bit encryption. Automates compliant drafting while ensuring HIPAA-sensitive data remains cryptographically sealed and accessible only via PBKDF2-derived keys.</p>
-					<a href={getAssetPath('case-study-pcsp')} className='group/btn inline-flex items-center gap-4 bg-accent text-black px-10 py-5 rounded-2xl font-black uppercase text-xs transition-all hover:scale-105 active:scale-95 self-start'>
-						<span>Deep Dive Breakdown</span>
-						<Icon icon='solar:arrow-right-up-linear' className='text-lg group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform' />
-					</a>
-				</div>
-				<div className='pcsp-reveal relative aspect-4/3 lg:aspect-auto rounded-[2.5rem] overflow-hidden bg-black/40 border border-white/10 order-1 lg:order-2 group-hover:border-accent/30 transition-colors'>
-					<video src={getAssetPath("assets/PCSP.mp4")} autoPlay loop muted playsInline className='w-full h-full object-cover scale-[1.02] group-hover:scale-110 transition-transform duration-[2s] ease-out' />
-					<div className='absolute inset-0 bg-linear-to-t from-black/80 via-transparent to-transparent' />
-				</div>
-			</div>
-		</section>
-	);
-};
-
-const FeaturedQuarterly = () => {
-	const sectionRef = useRef<HTMLElement>(null);
-	useEffect(() => {
-		const ctx = gsap.context(() => {
-			gsap.from(".qtr-reveal", {
-				scrollTrigger: { trigger: sectionRef.current, start: "top 80%" },
-				y: 50, opacity: 0, duration: 1, stagger: 0.18, ease: "power3.out"
-			});
-		}, sectionRef);
-		return () => ctx.revert();
-	}, []);
-
-	return (
-		<section ref={sectionRef} className='py-20 px-6 md:px-12 max-w-7xl mx-auto'>
-			<div className='flex flex-col gap-4 mb-16 px-4 items-end text-right'>
-				<span className='qtr-reveal text-accent font-mono text-[10px] tracking-[0.4em] uppercase font-bold'>Audit Resilience // 02</span>
-				<h2 className='qtr-reveal text-4xl md:text-7xl font-black uppercase tracking-tighter leading-none text-white'>Quarterly Pro</h2>
-			</div>
-			<div className='group relative grid lg:grid-cols-[1fr_1.2fr] gap-12 bg-white/3 border border-white/10 rounded-[4rem] overflow-hidden p-8 md:p-16 transition-all duration-700 hover:border-accent/30'>
-				<div className='qtr-reveal relative aspect-4/3 lg:aspect-auto rounded-[2.5rem] overflow-hidden bg-black/40 border border-white/10 order-1 group-hover:border-accent/30 transition-colors'>
-					<video src={getAssetPath("assets/PCSP.mp4")} autoPlay loop muted playsInline className='w-full h-full object-cover scale-[1.02] group-hover:scale-110 transition-transform duration-[2s] ease-out' />
-					<div className='absolute inset-0 bg-linear-to-b from-black/60 via-transparent to-transparent' />
-				</div>
-				<div className='qtr-reveal flex flex-col justify-center gap-7 order-2'>
-					<div className='flex flex-wrap gap-3'>
-						{["React 19", "Audit Logic", "Data Integrity", "Systems Engineering"].map(tag => (
-							<span key={tag} className='text-[9px] font-mono uppercase tracking-widest px-4 py-2 bg-accent/10 border border-accent/20 rounded-full text-accent font-bold'>{tag}</span>
-						))}
-					</div>
-					<p className='text-3xl md:text-4xl font-bold leading-tight text-white/90'>High-fidelity audit resilience engine for <span className='text-accent italic'>Missouri DMH/MMAC reporting.</span></p>
-					<p className='text-base text-white/50 leading-relaxed max-w-lg'>Features deterministic validation against the April 2026 EVV Hard Launch and Oct 2025 HRST mandates. Built to solve the 80% supervisory oversight gap.</p>
-					<a href={getAssetPath('case-study-quarterly')} className='group/btn inline-flex items-center gap-4 bg-white/5 border border-accent/30 text-accent px-10 py-5 rounded-2xl font-black uppercase text-xs transition-all hover:bg-accent hover:text-black hover:border-transparent hover:scale-105 active:scale-95 self-start'>
-						<span>Case Study breakdown</span>
-						<Icon icon='solar:arrow-right-up-linear' className='text-lg group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform' />
-					</a>
-				</div>
-			</div>
-		</section>
-	);
-};
-
-const FeaturedNestLegacy = () => {
-	const sectionRef = useRef<HTMLElement>(null);
-	useEffect(() => {
-		const ctx = gsap.context(() => {
-			gsap.from(".nest-reveal", {
-				scrollTrigger: { trigger: sectionRef.current, start: "top 80%" },
-				y: 50, opacity: 0, duration: 1, stagger: 0.18, ease: "power3.out"
-			});
-		}, sectionRef);
-		return () => ctx.revert();
-	}, []);
-
-	return (
-		<section ref={sectionRef} className='py-20 px-6 md:px-12 max-w-7xl mx-auto'>
-			<div className='flex flex-col gap-4 mb-16 px-4'>
-				<span className='nest-reveal text-accent font-mono text-[10px] tracking-[0.4em] uppercase font-bold'>Enterprise Fintech // 03</span>
-				<h2 className='nest-reveal text-4xl md:text-7xl font-black uppercase tracking-tighter leading-none text-white'>NestLegacy Shell</h2>
-			</div>
-			<div className='group relative grid lg:grid-cols-[1.2fr_1fr] gap-12 bg-white/3 border border-white/10 rounded-[4rem] overflow-hidden p-8 md:p-16 transition-all duration-700 hover:border-accent/30'>
-				<div className='nest-reveal flex flex-col justify-center gap-7 order-2 lg:order-1'>
-					<div className='flex flex-wrap gap-3'>
-						{["React 19", "Behavioral Finance", "Lead Intelligence", "Nova AI"].map(tag => (
-							<span key={tag} className='text-[9px] font-mono uppercase tracking-widest px-4 py-2 bg-accent/10 border border-accent/20 rounded-full text-accent font-bold'>{tag}</span>
-						))}
-					</div>
-					<p className='text-3xl md:text-4xl font-bold leading-tight text-white/90'>Digital trust layer for the <span className='text-accent italic'>$84 trillion wealth transfer.</span></p>
-					<p className='text-base text-white/50 leading-relaxed max-w-xl'>AI-driven lead intelligence bridging inheritors to fiduciary experts through behavioral financial modeling and cinematic analytics.</p>
-					<a href='https://dte-84.github.io/NestLegacy/' target='_blank' rel='noreferrer' className='group/btn inline-flex items-center gap-4 bg-accent text-black px-10 py-5 rounded-2xl font-black uppercase text-xs transition-all hover:scale-105 active:scale-95 self-start'>
-						<span>Portal Uplink</span>
-						<Icon icon='solar:arrow-right-up-linear' className='text-lg group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform' />
-					</a>
-				</div>
-				<div className='nest-reveal relative aspect-4/3 lg:aspect-auto rounded-[2.5rem] overflow-hidden bg-black/40 border border-white/10 order-1 lg:order-2 group-hover:border-accent/30 transition-colors'>
-					<video src={getAssetPath("assets/NestLegacy.mp4")} autoPlay loop muted playsInline className='w-full h-full object-cover scale-[1.02] group-hover:scale-110 transition-transform duration-[2s] ease-out' />
-					<div className='absolute inset-0 bg-linear-to-t from-black/80 via-transparent to-transparent' />
-				</div>
-			</div>
-		</section>
-	);
-};
-
-const FeaturedPulse = () => {
-	const sectionRef = useRef<HTMLElement>(null);
-	useEffect(() => {
-		const ctx = gsap.context(() => {
-			gsap.from(".pulse-reveal", {
-				scrollTrigger: { trigger: sectionRef.current, start: "top 80%" },
-				y: 50, opacity: 0, duration: 1, stagger: 0.18, ease: "power3.out"
-			});
-		}, sectionRef);
-		return () => ctx.revert();
-	}, []);
-
-	return (
-		<section ref={sectionRef} className='py-20 px-6 md:px-12 max-w-7xl mx-auto'>
-			<div className='flex flex-col gap-4 mb-16 px-4 items-end text-right'>
-				<span className='pulse-reveal text-accent font-mono text-[10px] tracking-[0.4em] uppercase font-bold'>Behavioral Intelligence // 04</span>
-				<h2 className='pulse-reveal text-4xl md:text-7xl font-black uppercase tracking-tighter leading-none text-white'>Pulse Behavioral AI</h2>
-			</div>
-			<div className='group relative grid lg:grid-cols-[1fr_1.2fr] gap-12 bg-white/3 border border-white/10 rounded-[4rem] overflow-hidden p-8 md:p-16 transition-all duration-700 hover:border-accent/30'>
-				<div className='pulse-reveal relative aspect-4/3 lg:aspect-auto rounded-[2.5rem] overflow-hidden bg-black/40 border border-white/10 order-1 group-hover:border-accent/30 transition-colors'>
-					<video src={getAssetPath("assets/Pulse.mp4")} autoPlay loop muted playsInline className='w-full h-full object-cover scale-[1.02] group-hover:scale-110 transition-transform duration-[2s] ease-out' />
-					<div className='absolute inset-0 bg-linear-to-b from-black/60 via-transparent to-transparent' />
-				</div>
-				<div className='pulse-reveal flex flex-col justify-center gap-7 order-2'>
-					<div className='flex flex-wrap gap-3'>
-						{["React 19", "FastAPI", "PostgreSQL", "Behavioral AI", "Nova AI"].map(tag => (
-							<span key={tag} className='text-[9px] font-mono uppercase tracking-widest px-4 py-2 bg-accent/10 border border-accent/20 rounded-full text-accent font-bold'>{tag}</span>
-						))}
-					</div>
-					<p className='text-3xl md:text-4xl font-bold leading-tight text-white/90'>High-fidelity financial dashboard utilizing <span className='text-accent italic'>behavioral psychology signals.</span></p>
-					<p className='text-base text-white/50 leading-relaxed max-w-lg'>Engineered with a FastAPI asynchronous backend and Nova AI integration to detect spending rhythms and emotional triggers with predictive telemetry.</p>
-					<a href='https://dte-solutions.icu/pulse-breakdown.html' className='group/btn inline-flex items-center gap-4 bg-white/5 border border-accent/30 text-accent px-10 py-5 rounded-2xl font-black uppercase text-xs transition-all hover:bg-accent hover:text-black hover:border-transparent hover:scale-105 active:scale-95 self-start'>
-						<span>Full Breakdown</span>
-						<Icon icon='solar:arrow-right-up-linear' className='text-lg group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform' />
-					</a>
-				</div>
+				))}
 			</div>
 		</section>
 	);
@@ -339,21 +252,19 @@ const ProjectCard = ({ project, index }: { project: Project; index: number; }) =
 const OtherWorks = () => {
 	const sectionRef = useRef<HTMLElement>(null);
 	const projects: Project[] = [
-		{ id: "Fluff", title: "Fluff Telemetry", category: "Performance Analytics", year: 2026, description: "Multi-source telemetry suite orchestrating real-time GPS coordinates and biometrics for PGA-grade performance analysis.", tags: ["React 19", "Geospatial", "IoT Sync"], link: "https://dte-84.github.io/Fluff/", video: "assets/Fluff.mp4" },
-		{ id: "SiKnight", title: "SiKnight Hub", category: "Interactive Media", year: 2026, description: "High-engagement gaming portal featuring an interactive engine, real-time leaderboard, and virtual currency.", tags: ["React", "Game Design"], link: "https://dte-84.github.io/SiKnight/", video: "assets/siknight.mp4" },
-		{ id: "Keano", title: "Keano Wallis", category: "Editorial Design", year: 2026, description: "Immersive visual architecture for a high-end creative modeling portfolio, focusing on fluid navigation and motion.", tags: ["Next.js", "Motion"], link: "https://kw-portfolio-kappa.vercel.app/", video: "assets/KWModel.mp4" },
-		{ id: "Tonys", title: "Landscaping Logic", category: "Commercial UI", year: 2026, description: "Service-oriented architecture featuring a custom interactive engine for visual data comparison and quote logic.", tags: ["Vanilla JS", "GSAP"], link: "https://tonyslandscapingllc.com", video: "assets/Tonysllc.mp4" },
-		{ id: "SQL_Analytics", title: "SQL Analytics", category: "Data Engineering", year: 2026, description: "Advanced SQL engineering and EDA for commerce telemetry using window functions, CTEs, and cohort analysis.", tags: ["PostgreSQL", "Analytics"], link: "https://dte-84.github.io/ecommSQL/", video: "assets/ecommSQL.mp4" },
-		{ id: "EStore", title: "State Logic Store", category: "Digital Commerce", year: 2025, description: "Technical demonstration of advanced state management and asynchronous data orchestration for e-commerce.", tags: ["React", "API"], link: "https://dte-84.github.io/E-Commerce-Books/", video: "assets/estore.mp4" },
-		{ id: "Inventory", title: "Inventory Discovery", category: "Automotive SaaS", year: 2025, description: "Automotive marketplace interface optimized for complex search heuristics and high-speed filtering.", tags: ["React", "REST API"], link: "https://dte-84.github.io/CarSalesInv/", video: "assets/CarSales.mp4" },
-		{ id: "CryptoLive", title: "CryptoLive Engine", category: "Fintech", year: 2026, description: "High-performance websocket implementation for real-time market data visualization.", tags: ["React", "Socket.io"], link: "https://cryptolive-5jmo.onrender.com/", video: "assets/cryptolive (2).png" },
+		{ id: "Nest", title: "NestLegacy Shell", category: "Enterprise Fintech", year: 2026, description: "Digital trust layer for the $84 trillion wealth transfer using AI lead intelligence.", tags: ["React 19", "AI"], link: "https://dte-84.github.io/NestLegacy/", video: "assets/NestLegacy.mp4" },
+		{ id: "Quarterly", title: "Quarterly Pro", category: "Audit Resilience", year: 2026, description: "Deterministic validation engine for Missouri DMH compliance reporting.", tags: ["Audit Logic", "Systems"], link: getAssetPath("case-study-quarterly"), video: "assets/PCSP.mp4" },
+		{ id: "Fluff", title: "Fluff Telemetry", category: "Performance Analytics", year: 2026, description: "Multi-source telemetry suite orchestrating real-time GPS and biometrics.", tags: ["IoT Sync", "Geospatial"], link: "https://dte-84.github.io/Fluff/", video: "assets/Fluff.mp4" },
+		{ id: "Tonys", title: "Landscaping Logic", category: "Commercial UI", year: 2026, description: "Custom interactive engine for visual data comparison and quote logic.", tags: ["GSAP", "Architecture"], link: "https://tonyslandscapingllc.com", video: "assets/Tonysllc.mp4" },
+		{ id: "SiKnight", title: "SiKnight Hub", category: "Interactive Media", year: 2026, description: "High-engagement gaming portal featuring real-time leaderboard and virtual currency.", tags: ["React", "Game Design"], link: "https://dte-84.github.io/SiKnight/", video: "assets/siknight.mp4" },
+		{ id: "Inventory", title: "Inventory Discovery", category: "Automotive SaaS", year: 2025, description: "Marketplace interface optimized for complex search heuristics and high-speed filtering.", tags: ["REST API", "Search"], link: "https://dte-84.github.io/CarSalesInv/", video: "assets/CarSales.mp4" },
 	];
 
 	return (
 		<section ref={sectionRef} id='work' className='py-32 px-6 md:px-12 max-w-7xl mx-auto'>
 			<div className='flex flex-col gap-4 mb-20 px-4'>
-				<span className='works-header text-white/30 font-mono text-[10px] tracking-[0.4em] uppercase font-bold'>Other Deployments //</span>
-				<h2 className='works-header text-5xl md:text-8xl font-black uppercase tracking-tighter leading-none text-white'>The <span className='text-accent italic'>Archive.</span></h2>
+				<span className='works-header text-white/30 font-mono text-[10px] tracking-[0.4em] uppercase font-bold'>The Systems Portfolio //</span>
+				<h2 className='works-header text-5xl md:text-8xl font-black uppercase tracking-tighter leading-none text-white'>Systems <span className='text-accent italic'>Archive.</span></h2>
 			</div>
 			<div className='grid grid-cols-1 lg:grid-cols-2 gap-12'>
 				{projects.map((project, i) => (
@@ -364,39 +275,8 @@ const OtherWorks = () => {
 	);
 };
 
-const TechStack = () => {
-	const tools = [
-		{ name: "TypeScript", icon: "logos:typescript-icon" },
-		{ name: "React 19", icon: "logos:react" },
-		{ name: "Next.js", icon: "logos:nextjs-icon" },
-		{ name: "Python", icon: "logos:python" },
-		{ name: "PostgreSQL", icon: "logos:postgresql" },
-		{ name: "FastAPI", icon: "logos:fastapi-icon" },
-		{ name: "AWS", icon: "logos:aws" },
-		{ name: "Docker", icon: "logos:docker-icon" },
-	];
-
-	return (
-		<section className='py-12 overflow-hidden border-y border-white/5 bg-white/[0.02]'>
-			<div className='flex gap-12 items-center animate-marquee whitespace-nowrap'>
-				{[...tools, ...tools].map((tool, index) => (
-					<div
-						key={index}
-						className='flex items-center gap-3 grayscale hover:grayscale-0 transition-all opacity-40 hover:opacity-100'>
-						<Icon icon={tool.icon} className='text-xl' />
-						<span className='font-mono text-[10px] uppercase tracking-[0.2em] font-bold'>
-							{tool.name}
-						</span>
-					</div>
-				))}
-			</div>
-		</section>
-	);
-};
-
-const marqueeItems = ["Data Integrity", "Full-Stack Systems", "Behavioral Tech", "Systems Engineer", "PostgreSQL", "React 19", "Python / Pandas", "DTE Solutions LLC"];
-
 const ExperienceMarquee = () => {
+	const marqueeItems = ["Data Integrity", "Full-Stack Systems", "Behavioral Tech", "Systems Engineer", "PostgreSQL", "React 19", "Python / Pandas", "DTE Solutions LLC"];
 	return (
 		<section className='py-12 border-y border-white/5 bg-white/2 overflow-hidden whitespace-nowrap rotate--1 translate-y-12 z-50 relative'>
 			<div className='flex animate-marquee'>
@@ -421,11 +301,11 @@ const Footer = ({ onContactClick }: { onContactClick: () => void }) => {
 			<div className='relative overflow-hidden bg-white/3 border border-white/10 rounded-[3rem] p-12 md:p-24 flex flex-col items-center text-center gap-12'>
 				<div className='max-w-3xl flex flex-col gap-6'>
 					<h2 className='text-5xl md:text-8xl font-black uppercase tracking-tighter leading-none z-20'>Connect & <span className='text-accent italic'>Collaborate.</span></h2>
-					<p className='text-xl text-white font-medium z-20'>Available for strategic engineering partnerships and high-fidelity systems development.</p>
+					<p className='text-xl text-white font-medium z-20'>Available for strategic engineering partnerships and high-fidelity data systems development.</p>
 				</div>
 				<div className='flex flex-wrap justify-center gap-6'>
 					<button onClick={onContactClick} className='group bg-accent text-black px-12 py-6 rounded-2xl font-black uppercase text-sm transition-all hover:scale-105 active:scale-95 flex items-center gap-3'>
-						<RollingText text='Connection' hoverColor='text-white' />
+						<RollingText text='Initiate Contact' hoverColor='text-white' />
 						<Icon icon='solar:letter-linear' className='text-xl' />
 					</button>
 					<a href='https://dte-84.github.io/DTE-Portfolio/assets/DrewTErnst_Resume.pdf' target='_blank' rel='noreferrer' className='bg-black/5 border border-white/10 text-white px-12 py-6 rounded-2xl font-black uppercase text-sm transition-all hover:bg-white/10 hover:border-white/20 flex items-center gap-3'>
@@ -452,13 +332,10 @@ export default function Home() {
 			<BgAnimation />
 			<Nav onContactClick={() => setIsContactOpen(true)} />
 			<div className='relative z-10'>
-				<Hero />
-				<TechStack />
+				<Hero onContactClick={() => setIsContactOpen(true)} />
+				<StrengthsArchitecture />
 				<ExperienceMarquee />
-				<FeaturedISP />
-				<FeaturedQuarterly />
-				<FeaturedNestLegacy />
-				<FeaturedPulse />
+				<FlagshipBuilds />
 				<OtherWorks />
 				<About />
 				<Footer onContactClick={() => setIsContactOpen(true)} />
