@@ -137,7 +137,7 @@ const Hero = () => {
 	);
 };
 
-const FeaturedPCSP = () => {
+const FeaturedISP = () => {
 	const sectionRef = useRef<HTMLElement>(null);
 	useEffect(() => {
 		const ctx = gsap.context(() => {
@@ -153,18 +153,18 @@ const FeaturedPCSP = () => {
 		<section ref={sectionRef} id='featured' className='py-32 px-6 md:px-12 max-w-7xl mx-auto'>
 			<div className='flex flex-col gap-4 mb-20 px-4'>
 				<span className='pcsp-reveal text-offset font-mono text-[10px] tracking-[0.4em] uppercase font-bold'>Primary Case Study // 01</span>
-				<h2 className='pcsp-reveal text-5xl md:text-8xl font-black uppercase tracking-tighter leading-none text-white'>PCSP Assistant Pro</h2>
+				<h2 className='pcsp-reveal text-5xl md:text-8xl font-black uppercase tracking-tighter leading-none text-white'>ISP Assistant Pro</h2>
 			</div>
 			<div className='group relative grid lg:grid-cols-[1.2fr_1fr] gap-12 bg-white/3 border border-white/10 rounded-[4rem] overflow-hidden p-8 md:p-16 transition-all duration-700 hover:border-accent/40'>
 				<div className='pcsp-reveal flex flex-col justify-center gap-8 order-2 lg:order-1'>
 					<div className='flex flex-wrap gap-3'>
-						{["HIPAA", "SQL", "Next.js", "Clinical Logic"].map(tag => (
+						{["HIPAA", "SQL", "Next.js", "AES-256", "PBKDF2"].map(tag => (
 							<span key={tag} className='text-[9px] font-mono uppercase tracking-widest px-4 py-2 bg-accent/10 border border-accent/20 rounded-full text-accent font-bold'>{tag}</span>
 						))}
 					</div>
-					<p className='text-4xl font-bold leading-tight text-white/90'>Streamlining Missouri PCSP workflow through <span className='text-offset italic'>deterministic data integrity.</span></p>
-					<p className='text-lg text-white/50 leading-relaxed max-w-xl'>A high-fidelity clinical documentation engine built to reduce friction for frontline healthcare staff. This tool automates compliant drafting while ensuring HIPAA-sensitive data remains secure.</p>
-					<a href='https://dte-84.github.io/DTE-E-Portfolio/case-study-pcsp/' className='group/btn inline-flex items-center gap-4 bg-accent text-black px-10 py-5 rounded-2xl font-black uppercase text-xs transition-all hover:scale-105 active:scale-95 self-start'>
+					<p className='text-4xl font-bold leading-tight text-white/90'>Streamlining Missouri ISP workflow through <span className='text-offset italic'>deterministic data integrity.</span></p>
+					<p className='text-lg text-white/50 leading-relaxed max-w-xl'>A high-fidelity documentation engine (v3.0) hardened with AES-GCM 256-bit encryption. Automates compliant drafting while ensuring HIPAA-sensitive data remains cryptographically sealed.</p>
+					<a href={getAssetPath('case-study-isp')} className='group/btn inline-flex items-center gap-4 bg-accent text-black px-10 py-5 rounded-2xl font-black uppercase text-xs transition-all hover:scale-105 active:scale-95 self-start'>
 						<span>Deep Dive Breakdown</span>
 						<Icon icon='solar:arrow-right-up-linear' className='text-lg group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform' />
 					</a>
@@ -219,6 +219,47 @@ const FeaturedQuarterly = () => {
 	);
 };
 
+const FeaturedNestLegacy = () => {
+	const sectionRef = useRef<HTMLElement>(null);
+	useEffect(() => {
+		const ctx = gsap.context(() => {
+			gsap.from(".nest-reveal", {
+				scrollTrigger: { trigger: sectionRef.current, start: "top 80%" },
+				y: 50, opacity: 0, duration: 1, stagger: 0.18, ease: "power3.out"
+			});
+		}, sectionRef);
+		return () => ctx.revert();
+	}, []);
+
+	return (
+		<section ref={sectionRef} className='py-20 px-6 md:px-12 max-w-7xl mx-auto'>
+			<div className='flex flex-col gap-4 mb-16 px-4'>
+				<span className='nest-reveal text-accent font-mono text-[10px] tracking-[0.4em] uppercase font-bold'>Enterprise Fintech // 03</span>
+				<h2 className='nest-reveal text-4xl md:text-7xl font-black uppercase tracking-tighter leading-none text-white'>NestLegacy Shell</h2>
+			</div>
+			<div className='group relative grid lg:grid-cols-[1.2fr_1fr] gap-12 bg-white/3 border border-white/10 rounded-[4rem] overflow-hidden p-8 md:p-16 transition-all duration-700 hover:border-accent/30'>
+				<div className='nest-reveal flex flex-col justify-center gap-7 order-2 lg:order-1'>
+					<div className='flex flex-wrap gap-3'>
+						{["React 19", "Behavioral Finance", "Lead Intelligence", "Nova AI"].map(tag => (
+							<span key={tag} className='text-[9px] font-mono uppercase tracking-widest px-4 py-2 bg-accent/10 border border-accent/20 rounded-full text-accent font-bold'>{tag}</span>
+						))}
+					</div>
+					<p className='text-3xl md:text-4xl font-bold leading-tight text-white/90'>Digital trust layer for the <span className='text-accent italic'>$84 trillion wealth transfer.</span></p>
+					<p className='text-base text-white/50 leading-relaxed max-w-xl'>AI-driven lead intelligence bridging inheritors to fiduciary experts through behavioral financial modeling and cinematic analytics.</p>
+					<a href='https://dte-84.github.io/NestLegacy/' target='_blank' rel='noreferrer' className='group/btn inline-flex items-center gap-4 bg-accent text-black px-10 py-5 rounded-2xl font-black uppercase text-xs transition-all hover:scale-105 active:scale-95 self-start'>
+						<span>Portal Uplink</span>
+						<Icon icon='solar:arrow-right-up-linear' className='text-lg group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform' />
+					</a>
+				</div>
+				<div className='nest-reveal relative aspect-4/3 lg:aspect-auto rounded-[2.5rem] overflow-hidden bg-black/40 border border-white/10 order-1 lg:order-2 group-hover:border-accent/30 transition-colors'>
+					<video src={getAssetPath("assets/NestLegacy.mp4")} autoPlay loop muted playsInline className='w-full h-full object-cover scale-[1.02] group-hover:scale-110 transition-transform duration-[2s] ease-out' />
+					<div className='absolute inset-0 bg-linear-to-t from-black/80 via-transparent to-transparent' />
+				</div>
+			</div>
+		</section>
+	);
+};
+
 const FeaturedPulse = () => {
 	const sectionRef = useRef<HTMLElement>(null);
 	useEffect(() => {
@@ -233,66 +274,25 @@ const FeaturedPulse = () => {
 
 	return (
 		<section ref={sectionRef} className='py-20 px-6 md:px-12 max-w-7xl mx-auto'>
-			<div className='flex flex-col gap-4 mb-16 px-4'>
-				<span className='pulse-reveal text-accent font-mono text-[10px] tracking-[0.4em] uppercase font-bold'>Behavioral AI // 03</span>
+			<div className='flex flex-col gap-4 mb-16 px-4 items-end text-right'>
+				<span className='pulse-reveal text-accent font-mono text-[10px] tracking-[0.4em] uppercase font-bold'>Behavioral Intelligence // 04</span>
 				<h2 className='pulse-reveal text-4xl md:text-7xl font-black uppercase tracking-tighter leading-none text-white'>Pulse Behavioral AI</h2>
 			</div>
-			<div className='group relative grid lg:grid-cols-[1.2fr_1fr] gap-12 bg-white/3 border border-white/10 rounded-[4rem] overflow-hidden p-8 md:p-16 transition-all duration-700 hover:border-accent/30'>
-				<div className='pulse-reveal flex flex-col justify-center gap-7 order-2 lg:order-1'>
-					<div className='flex flex-wrap gap-3'>
-						{["Python", "Pandas", "PostgreSQL", "FastAPI", "React 19"].map(tag => (
-							<span key={tag} className='text-[9px] font-mono uppercase tracking-widest px-4 py-2 bg-accent/10 border border-accent/20 rounded-full text-accent font-bold'>{tag}</span>
-						))}
-					</div>
-					<p className='text-3xl md:text-4xl font-bold leading-tight text-white/90'>Financial intelligence with <span className='text-accent italic'>predictive telemetry at the core.</span></p>
-					<p className='text-base text-white/50 leading-relaxed max-w-xl'>A full-stack analytics platform that intercepts real-time behavioral signals from financial data streams using Python/Pandas telemetry layer.</p>
-					<a href='https://dte-solutions.icu/pulse-breakdown.html' className='group/btn inline-flex items-center gap-4 bg-accent text-black px-10 py-5 rounded-2xl font-black uppercase text-xs transition-all hover:scale-105 active:scale-95 self-start'>
-						<span>Full Breakdown</span>
-						<Icon icon='solar:arrow-right-up-linear' className='text-lg group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform' />
-					</a>
-				</div>
-				<div className='pulse-reveal relative aspect-4/3 lg:aspect-auto rounded-[2.5rem] overflow-hidden bg-black/40 border border-white/10 order-1 lg:order-2 group-hover:border-accent/30 transition-colors'>
-					<video src={getAssetPath("assets/Pulse.mp4")} autoPlay loop muted playsInline className='w-full h-full object-cover scale-[1.02] group-hover:scale-110 transition-transform duration-[2s] ease-out' />
-					<div className='absolute inset-0 bg-linear-to-t from-black/80 via-transparent to-transparent' />
-				</div>
-			</div>
-		</section>
-	);
-};
-
-const FeaturedEcommerce = () => {
-	const sectionRef = useRef<HTMLElement>(null);
-	useEffect(() => {
-		const ctx = gsap.context(() => {
-			gsap.from(".ecomm-reveal", {
-				scrollTrigger: { trigger: sectionRef.current, start: "top 80%" },
-				y: 50, opacity: 0, duration: 1, stagger: 0.18, ease: "power3.out"
-			});
-		}, sectionRef);
-		return () => ctx.revert();
-	}, []);
-
-	return (
-		<section ref={sectionRef} className='py-20 px-6 md:px-12 max-w-7xl mx-auto'>
-			<div className='flex flex-col gap-4 mb-16 px-4 items-end text-right'>
-				<span className='ecomm-reveal text-accent font-mono text-[10px] tracking-[0.4em] uppercase font-bold'>Data Analytics // 04</span>
-				<h2 className='ecomm-reveal text-4xl md:text-7xl font-black uppercase tracking-tighter leading-none text-white'>SQL Analytics</h2>
-			</div>
 			<div className='group relative grid lg:grid-cols-[1fr_1.2fr] gap-12 bg-white/3 border border-white/10 rounded-[4rem] overflow-hidden p-8 md:p-16 transition-all duration-700 hover:border-accent/30'>
-				<div className='ecomm-reveal relative aspect-4/3 lg:aspect-auto rounded-[2.5rem] overflow-hidden bg-black/40 border border-white/10 order-1 group-hover:border-accent/30 transition-colors'>
-					<video src={getAssetPath("assets/ecommSQL.mp4")} autoPlay loop muted playsInline className='w-full h-full object-cover scale-[1.02] group-hover:scale-110 transition-transform duration-[2s] ease-out' />
+				<div className='pulse-reveal relative aspect-4/3 lg:aspect-auto rounded-[2.5rem] overflow-hidden bg-black/40 border border-white/10 order-1 group-hover:border-accent/30 transition-colors'>
+					<video src={getAssetPath("assets/Pulse.mp4")} autoPlay loop muted playsInline className='w-full h-full object-cover scale-[1.02] group-hover:scale-110 transition-transform duration-[2s] ease-out' />
 					<div className='absolute inset-0 bg-linear-to-b from-black/60 via-transparent to-transparent' />
 				</div>
-				<div className='ecomm-reveal flex flex-col justify-center gap-7 order-2'>
+				<div className='pulse-reveal flex flex-col justify-center gap-7 order-2'>
 					<div className='flex flex-wrap gap-3'>
-						{["PostgreSQL", "Window Functions", "CTEs", "Cohort Analysis"].map(tag => (
+						{["React 19", "FastAPI", "PostgreSQL", "Behavioral AI", "Nova AI"].map(tag => (
 							<span key={tag} className='text-[9px] font-mono uppercase tracking-widest px-4 py-2 bg-accent/10 border border-accent/20 rounded-full text-accent font-bold'>{tag}</span>
 						))}
 					</div>
-					<p className='text-3xl md:text-4xl font-bold leading-tight text-white/90'>Advanced SQL engineering and <span className='text-accent italic'>EDA for commerce telemetry.</span></p>
-					<p className='text-base text-white/50 leading-relaxed max-w-lg'>Complex multi-table joins, window functions (NTILE, DENSE_RANK), and LTV cohort analysis to drive business intelligence.</p>
-					<a href='https://dte-84.github.io/ecommSQL/' target='_blank' rel='noreferrer' className='group/btn inline-flex items-center gap-4 bg-white/5 border border-accent/30 text-accent px-10 py-5 rounded-2xl font-black uppercase text-xs transition-all hover:bg-accent hover:text-black hover:border-transparent hover:scale-105 active:scale-95 self-start'>
-						<span>Live Dashboard</span>
+					<p className='text-3xl md:text-4xl font-bold leading-tight text-white/90'>High-fidelity financial dashboard utilizing <span className='text-accent italic'>behavioral psychology signals.</span></p>
+					<p className='text-base text-white/50 leading-relaxed max-w-lg'>Engineered with a FastAPI asynchronous backend and Nova AI integration to detect spending rhythms and emotional triggers with predictive telemetry.</p>
+					<a href='https://dte-solutions.icu/pulse-breakdown.html' className='group/btn inline-flex items-center gap-4 bg-white/5 border border-accent/30 text-accent px-10 py-5 rounded-2xl font-black uppercase text-xs transition-all hover:bg-accent hover:text-black hover:border-transparent hover:scale-105 active:scale-95 self-start'>
+						<span>Full Breakdown</span>
 						<Icon icon='solar:arrow-right-up-linear' className='text-lg group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform' />
 					</a>
 				</div>
@@ -339,12 +339,14 @@ const ProjectCard = ({ project, index }: { project: Project; index: number; }) =
 const OtherWorks = () => {
 	const sectionRef = useRef<HTMLElement>(null);
 	const projects: Project[] = [
-		{ id: "SetLogic", title: "SetLogic Fitness", category: "HealthTech", year: 2026, description: "AI-driven fitness orchestration platform with real-time trajectory tracking.", tags: ["React 19", "Firebase", "AI"], link: "https://dte-84.github.io/SetLogic/", video: "assets/SetLogic.mp4" },
-		{ id: "NestLegacy", title: "NestLegacy Shell", category: "Fintech", year: 2026, description: "Cinematic lead intelligence platform featuring wide-angle analytics.", tags: ["Next.js", "Analytics", "UX Design"], link: "https://dte-84.github.io/NestLegacy/", video: "assets/NestLegacy.mp4" },
-		{ id: "DTE_HUB", title: "DTE Solutions Hub", category: "Ecosystem Nexus", year: 2026, description: "Centralized gateway for the DTE product suite, featuring high-fidelity architectural briefs.", tags: ["Next.js", "Branding", "Gateway"], link: "https://dte-solutions.icu/", video: "assets/dte-solutionspreview.mp4" },
-		{ id: "PRODIP", title: "PRODIP Elite", category: "E-Commerce", year: 2026, description: "Premium automotive detailing storefront with high-fidelity asset management.", tags: ["React", "E-Commerce", "UX"], link: "https://dte-84.github.io/PRODIP/", video: "assets/PRODIPpreview.mp4" },
-		{ id: "TONYS_LANDSCAPE", title: "Tony's Landscaping", category: "Service Logic", year: 2025, description: "Localized service platform featuring interactive quote logic and high-impact visual design.", tags: ["React", "Service Design", "Logic"], link: "https://dte-84.github.io/TonyLandscape/", video: "assets/TonyLandscape.mp4" },
-		{ id: "IDYLLIC", title: "Idyllic Tranquility", category: "Wellness Tech", year: 2025, description: "Immersive wellness platform focused on behavioral sentiment and aesthetic continuity.", tags: ["React", "UI/UX", "Animation"], link: "https://dte-84.github.io/idyllictranquility/", video: "assets/Idyllic.mp4" },
+		{ id: "Fluff", title: "Fluff Telemetry", category: "Performance Analytics", year: 2026, description: "Multi-source telemetry suite orchestrating real-time GPS coordinates and biometrics for PGA-grade performance analysis.", tags: ["React 19", "Geospatial", "IoT Sync"], link: "https://dte-84.github.io/Fluff/", video: "assets/Fluff.mp4" },
+		{ id: "SiKnight", title: "SiKnight Hub", category: "Interactive Media", year: 2026, description: "High-engagement gaming portal featuring an interactive engine, real-time leaderboard, and virtual currency.", tags: ["React", "Game Design"], link: "https://dte-84.github.io/SiKnight/", video: "assets/siknight.mp4" },
+		{ id: "Keano", title: "Keano Wallis", category: "Editorial Design", year: 2026, description: "Immersive visual architecture for a high-end creative modeling portfolio, focusing on fluid navigation and motion.", tags: ["Next.js", "Motion"], link: "https://kw-portfolio-kappa.vercel.app/", video: "assets/KWModel.mp4" },
+		{ id: "Tonys", title: "Landscaping Logic", category: "Commercial UI", year: 2026, description: "Service-oriented architecture featuring a custom interactive engine for visual data comparison and quote logic.", tags: ["Vanilla JS", "GSAP"], link: "https://tonyslandscapingllc.com", video: "assets/Tonysllc.mp4" },
+		{ id: "SQL_Analytics", title: "SQL Analytics", category: "Data Engineering", year: 2026, description: "Advanced SQL engineering and EDA for commerce telemetry using window functions, CTEs, and cohort analysis.", tags: ["PostgreSQL", "Analytics"], link: "https://dte-84.github.io/ecommSQL/", video: "assets/ecommSQL.mp4" },
+		{ id: "EStore", title: "State Logic Store", category: "Digital Commerce", year: 2025, description: "Technical demonstration of advanced state management and asynchronous data orchestration for e-commerce.", tags: ["React", "API"], link: "https://dte-84.github.io/E-Commerce-Books/", video: "assets/estore.mp4" },
+		{ id: "Inventory", title: "Inventory Discovery", category: "Automotive SaaS", year: 2025, description: "Automotive marketplace interface optimized for complex search heuristics and high-speed filtering.", tags: ["React", "REST API"], link: "https://dte-84.github.io/CarSalesInv/", video: "assets/CarSales.mp4" },
+		{ id: "CryptoLive", title: "CryptoLive Engine", category: "Fintech", year: 2026, description: "High-performance websocket implementation for real-time market data visualization.", tags: ["React", "Socket.io"], link: "https://cryptolive-5jmo.onrender.com/", video: "assets/cryptolive (2).png" },
 	];
 
 	return (
@@ -453,10 +455,10 @@ export default function Home() {
 				<Hero />
 				<TechStack />
 				<ExperienceMarquee />
-				<FeaturedPCSP />
+				<FeaturedISP />
 				<FeaturedQuarterly />
+				<FeaturedNestLegacy />
 				<FeaturedPulse />
-				<FeaturedEcommerce />
 				<OtherWorks />
 				<About />
 				<Footer onContactClick={() => setIsContactOpen(true)} />

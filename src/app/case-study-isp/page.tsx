@@ -6,7 +6,7 @@ import { Icon } from "@iconify/react";
 import Image from "next/image";
 import BgAnimation from "../../components/BgAnimation";
 import { getAssetPath } from "../../utils/paths";
-export default function CaseStudyPCSP() {
+export default function CaseStudyISP() {
   useEffect(() => {
     // Force green theme for case study page
     document.documentElement.removeAttribute("data-theme");
@@ -88,7 +88,12 @@ export default function CaseStudyPCSP() {
     {
       metric: "Plan Portability",
       before: "Locked to One Machine",
-      after: ".pcsp File / PDF",
+      after: "Encrypted AES-GCM (.pcsp)",
+    },
+    {
+      metric: "Data Confidentiality",
+      before: "Readable Plaintext",
+      after: "Cryptographically Sealed",
     },
     {
       metric: "Person-Centered Data",
@@ -122,7 +127,7 @@ export default function CaseStudyPCSP() {
     {
       icon: "solar:widget-add-linear",
       title: "Modular Builder",
-      body: "A dropdown-driven building block approach converts casual goal language into standardized SMART goals instantly. Each of the nine PCSP sections is self-contained and collapses cleanly for focused drafting.",
+      body: "A dropdown-driven building block approach converts casual goal language into standardized SMART goals instantly. Each of the nine ISP sections is self-contained and collapses cleanly for focused drafting.",
     },
     {
       icon: "solar:library-linear",
@@ -152,8 +157,8 @@ export default function CaseStudyPCSP() {
     },
     {
       icon: "solar:shield-keyhole-linear",
-      title: "HIPAA Privacy Mode",
-      body: "A single toggle replaces all visible PHI with anonymized placeholders in the live preview — enabling safe screen-sharing during supervision and team meetings without ever exposing client data.",
+      title: "Military-Grade Vault",
+      body: "v3.0 introduces AES-GCM 256-bit binary encryption. Every .pcsp file is now a cryptographically sealed container that requires the creator's unique PBKDF2-derived key to unlock, ensuring total data confidentiality.",
     },
 
     {
@@ -177,7 +182,7 @@ export default function CaseStudyPCSP() {
     {
       num: "01",
       title: "Regulatory Discovery",
-      body: 'Before writing a line of code, I conducted a full read of Missouri 9 CSR 45-3.010 and the "Good Life" Framework to map every required clinical trigger. The nine-domain PCSP structure, active treatment language requirements, and HCBS federal compliance rules all had to be baked into the logic before the UI could be designed. The first challenge was regulatory, not technical.',
+      body: 'Before writing a line of code, I conducted a full read of Missouri 9 CSR 45-3.010 and the "Good Life" Framework to map every required clinical trigger. The nine-domain ISP structure, active treatment language requirements, and HCBS federal compliance rules all had to be baked into the logic before the UI could be designed. The first challenge was regulatory, not technical.',
     },
     {
       num: "02",
@@ -212,8 +217,8 @@ export default function CaseStudyPCSP() {
 
     {
       num: "08",
-      title: "HIPAA Compliance Hardening (v2.0)",
-      body: "Added a 4-second debounced auto-save with 48-hour restore prompt, 30-minute HIPAA idle session timeout, and 30-day automatic PHI draft expiry with in-panel expiry warnings. All dynamic innerHTML rendering was secured with an HTML escape helper to prevent injection via user-supplied input. The print stylesheet was updated to stamp a HIPAA confidentiality footer on every printed page.",
+      title: "High-Fidelity Vault (v3.0)",
+      body: "Hardened the security layer by implementing a 'Zero-Knowledge' encryption pipeline. Using the Web Crypto API, passwords undergo PBKDF2 derivation (100k iterations) to generate 256-bit keys. All exported data is binary-encrypted via AES-GCM before Base64 encoding, making PII unreadable at rest.",
     },
     {
       num: "09",
@@ -284,7 +289,7 @@ export default function CaseStudyPCSP() {
             </Link>
             <div className="text-right">
               <span className="block text-[7px] font-mono text-accent/40 mb-1 uppercase tracking-widest">
-                ARCHIVE_ID: 2026_PCSP_PRO_V2
+                ARCHIVE_ID: 2026_ISP_PRO_V3
               </span>
               <div className="inline-block px-3 py-1 rounded-full border border-accent/20 bg-accent/5 text-accent text-[9px] font-black uppercase tracking-[0.4em]">
                 CASE STUDY
@@ -295,7 +300,7 @@ export default function CaseStudyPCSP() {
           <div className="grid lg:grid-cols-2 gap-12 items-end">
             <div className="lg:order-2 text-right">
               <h1 className="text-5xl md:text-7xl font-orbitron uppercase leading-none mb-8 glow-text tracking-normal text-white">
-                PCSP Assistant <br />
+                ISP Assistant <br />
                 <span className="text-accent italic">Pro</span>
               </h1>
               <div className="flex flex-wrap justify-end gap-x-8 gap-y-4 pt-8 border-t border-[#00ffcc]/20">
@@ -316,10 +321,10 @@ export default function CaseStudyPCSP() {
                     value: "Vanilla JS",
                     color: "text-white/90",
                   },
-                  { label: "Version", value: "v2.0", color: "text-accent" },
+                  { label: "Version", value: "v3.0", color: "text-accent" },
                   {
                     label: "Status",
-                    value: "In Production",
+                    value: "Production (Hardened)",
                     color: "text-[#00ffcc]",
                   },
                 ].map(({ label, value, color }) => (
@@ -345,7 +350,7 @@ export default function CaseStudyPCSP() {
           <div className="relative rounded-2xl overflow-hidden border border-accent/40 bg-black aspect-[21/9]">
             <Image
               src="/DTE-Portfolio/assets/pcsp1.png"
-              alt="PCSP Assistant Pro interface"
+              alt="ISP Assistant Pro interface"
               fill
               quality={80}
               priority
@@ -355,7 +360,7 @@ export default function CaseStudyPCSP() {
             <div className="absolute bottom-8 left-8 flex items-center gap-3">
               <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
               <span className="text-[12px] font-mono text-accent uppercase tracking-[0.3em]">
-                System Active // Missouri DMH Engine v2.0
+                System Active // Missouri DMH Engine v3.0 (Encrypted)
               </span>
             </div>
           </div>
@@ -385,7 +390,7 @@ export default function CaseStudyPCSP() {
                 </p>
               </div>
               <p className="text-base text-white/70 leading-relaxed">
-                Each PCSP required documenting nine clinical domains with
+                Each ISP required documenting nine clinical domains with
                 precision. Missouri state auditors require specific active
                 language structures —{" "}
                 <em className="text-[#00ffcc]">
@@ -476,7 +481,7 @@ export default function CaseStudyPCSP() {
                   </div>
                 </div>
                 <p className="text-base text-white/70 leading-relaxed">
-                  I engineered PCSP Assistant Pro as a{" "}
+                  I engineered ISP Assistant Pro as a{" "}
                   <span className="text-white font-semibold">
                     Zero-Footprint Logic Engine
                   </span>{" "}
@@ -487,7 +492,7 @@ export default function CaseStudyPCSP() {
                   servers. No POST requests. No IT tickets. No licensing cost.
                 </p>
                 <p className="text-base text-white/70 leading-relaxed">
-                  The interface covers all nine PCSP domains in a single unified
+                  The interface covers all nine ISP domains in a single unified
                   workspace, from demographics to measurable outcomes — with a
                   clinical word bank, a dynamic communication chart, an
                   unlimited important-people roster, and a multi-goal outcomes
@@ -498,7 +503,7 @@ export default function CaseStudyPCSP() {
               <div className="relative rounded-2xl overflow-hidden border border-[#00ffcc]/20 bg-[#00ffcc]/5 p-2 aspect-video">
                 <Image
                   src="/DTE-Portfolio/assets/pcsp2.png"
-                  alt="PCSP Workflow diagram"
+                  alt="ISP Workflow diagram"
                   fill
                   quality={80}
                   className="rounded-xl opacity-80 shadow-2xl w-full h-full object-cover hover:scale-105 transition-all duration-700 cursor-pointer"
@@ -612,7 +617,7 @@ export default function CaseStudyPCSP() {
               {/* 9 Domains */}
               <div className="p-6 rounded-xl border border-[#00ffcc]/20 bg-white/5">
                 <h4 className="text-[#00ffcc] text-[13px] font-black uppercase tracking-widest mb-6 font-orbitron">
-                  Full Section Architecture — 9 PCSP Domains
+                  Full Section Architecture — 9 ISP Domains
                 </h4>
                 <div className="grid md:grid-cols-3 gap-3">
                   {domains.map(({ num, label }) => (
@@ -723,15 +728,15 @@ export default function CaseStudyPCSP() {
                   {[
                     {
                       title: "Zero-Persistence",
-                      body: "All logic executes in browser RAM. Data never leaves volatile memory during a live session.",
+                      body: "All logic executes in browser RAM. Sensitive PII exists only in volatile memory during a live session, protected by a 256-bit AES session key.",
                     },
                     {
                       title: 'The "Refresh" Wipe',
-                      body: "Closing the tab instantly purges all session data. No database, no POST requests, no residual trace.",
+                      body: "Closing the tab instantly purges all session data and the derived session key. No database, no POST requests, no residual trace.",
                     },
                     {
-                      title: ".pcsp Export",
-                      body: "When persistence is needed, the full plan state serializes to a local .pcsp file. The CM controls where it lives — agency drive, encrypted USB, or secure folder.",
+                      title: ".pcsp Vault Export",
+                      body: "When persistence is needed, the plan state is binary-encrypted (AES-GCM) using a unique PBKDF2-derived key. The .pcsp file is a cryptographically sealed container.",
                     },
                     {
                       title: "Browser Drafts",
@@ -818,7 +823,7 @@ export default function CaseStudyPCSP() {
                   III. Dynamic Data Architecture
                 </h3>
                 <p className="text-sm text-white/75 leading-relaxed">
-                  Several PCSP sections require an unbounded number of entries —
+                  Several ISP sections require an unbounded number of entries —
                   legal representatives, communication chart rows, important
                   people and their activities, and outcome goals. Fixed forms
                   don&apos;t work here: a client might have two guardians or
@@ -881,7 +886,7 @@ export default function CaseStudyPCSP() {
                     {
                       icon: "solar:printer-linear",
                       title: "Print / PDF",
-                      body: "A dedicated print stylesheet strips all UI chrome and stamps a HIPAA confidentiality footer on every page. Outputs a clean, PCSP-formatted document ready for signature or filing.",
+                      body: "A dedicated print stylesheet strips all UI chrome and stamps a HIPAA confidentiality footer on every page. Outputs a clean, ISP-formatted document ready for signature or filing.",
                     },
                     {
                       icon: "solar:diskette-linear",
@@ -929,6 +934,39 @@ export default function CaseStudyPCSP() {
                   cost. The &quot;server&quot; was already on every desk.
                 </p>
               </div>
+
+              {/* VII. Security Protocol */}
+              <div className="space-y-6">
+                <h3 className="text-white font-bold uppercase tracking-widest text-base border-b border-accent/40 pb-2 font-orbitron">
+                  VII. v3.0 Security Protocol (Hardened)
+                </h3>
+                <p className="text-sm text-white/75 leading-relaxed">
+                  Version 3.0 implements a military-grade encryption layer using the browser's native **Web Crypto API**. The system ensures that data is cryptographically sealed at rest and only accessible via a deterministic handshake.
+                </p>
+                <div className="p-6 rounded-xl bg-black border border-accent/40 font-mono text-sm space-y-3">
+                  <div>
+                    <span className="text-[#00ffcc] font-bold">1. Key Derivation Pipeline:</span>
+                    <div className="pl-4 text-zinc-400 mt-1">
+                      Password → PBKDF2 (HMAC-SHA256) → 100,000 Iterations → Unique 256-bit AES Key
+                    </div>
+                  </div>
+                  <div>
+                    <span className="text-[#00ffcc] font-bold">2. Binary Encryption:</span>
+                    <div className="pl-4 text-zinc-400 mt-1">
+                      Plain JSON → AES-GCM (256-bit) → Binary Ciphertext → Base64 Output
+                    </div>
+                  </div>
+                  <div>
+                    <span className="text-[#00ffcc] font-bold">3. Multi-User Handshake:</span>
+                    <div className="pl-4 text-zinc-400 mt-1">
+                      Detect "PCSPv3:" Signature → Extract Salt/IV → Derive Session Key → Decrypt RAM-Only
+                    </div>
+                  </div>
+                </div>
+                <p className="text-xs text-white/50 italic">
+                  Note: The raw password is never stored or used as a key directly. Every file carries its own unique salt, neutralizing rainbow-table and collision attacks.
+                </p>
+              </div>
             </div>
           </section>
 
@@ -947,7 +985,7 @@ export default function CaseStudyPCSP() {
                 in a single architectural decision.
               </p>
               <p className="text-lg font-space text-white/75 max-w-3xl mx-auto leading-relaxed mb-4">
-                The result covers every Missouri PCSP domain, satisfies
+                The result covers every Missouri ISP domain, satisfies
                 HIPAA&apos;s Security Rule without a BAA or a server, enforces
                 PHI retention policies client-side, and gets case managers from
                 blank page to audit-ready narrative in under two minutes.
@@ -955,7 +993,7 @@ export default function CaseStudyPCSP() {
                 positioned to solve.
               </p>
               <p className="text-base font-space text-[#00ffcc]/80 max-w-3xl mx-auto leading-relaxed mb-12 font-mono uppercase tracking-widest">
-                // PCSP Assistant Pro passed Missouri state compliance review
+                // ISP Assistant Pro passed Missouri state compliance review
                 without modification and is currently in active deployment
                 across county Departments of Developmental Disabilities — used
                 daily by the case managers who serve individuals in their care.
