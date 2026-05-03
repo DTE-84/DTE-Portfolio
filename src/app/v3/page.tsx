@@ -164,7 +164,7 @@ const FeaturedISP = () => {
 					</div>
 					<p className='text-4xl font-bold leading-tight text-white/90'>Streamlining Missouri ISP workflow through <span className='text-offset italic'>deterministic data integrity.</span></p>
 					<p className='text-lg text-white/50 leading-relaxed max-w-xl'>A high-fidelity documentation engine (v3.0) hardened with AES-GCM 256-bit encryption. Automates compliant drafting while ensuring HIPAA-sensitive data remains cryptographically sealed.</p>
-					<a href={getAssetPath('case-study-isp')} className='group/btn inline-flex items-center gap-4 bg-accent text-black px-10 py-5 rounded-2xl font-black uppercase text-xs transition-all hover:scale-105 active:scale-95 self-start'>
+					<a href={getAssetPath('case-study-pcsp')} className='group/btn inline-flex items-center gap-4 bg-accent text-black px-10 py-5 rounded-2xl font-black uppercase text-xs transition-all hover:scale-105 active:scale-95 self-start'>
 						<span>Deep Dive Breakdown</span>
 						<Icon icon='solar:arrow-right-up-linear' className='text-lg group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform' />
 					</a>

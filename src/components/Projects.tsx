@@ -70,8 +70,8 @@ const Projects: React.FC = () => {
                 tags: ["Next.js", "Compliance Logic", "HIPAA", "Zero-Footprint"],
                 image: "/DTE-Portfolio/assets/pcsp1.png",
                 video: "/DTE-Portfolio/assets/CaseStudy-PCSP-1771755500766.mp4",
-                link: "/case-study-isp/",
-                caseStudy: "/case-study-isp/",
+                link: "/case-study-pcsp/",
+                caseStudy: "/case-study-pcsp/",
                 featured: true,
         };
 
