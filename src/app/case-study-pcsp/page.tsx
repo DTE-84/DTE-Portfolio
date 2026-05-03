@@ -127,7 +127,7 @@ export default function CaseStudyISP() {
     {
       icon: "solar:widget-add-linear",
       title: "Modular Builder",
-      body: "A dropdown-driven building block approach converts casual goal language into standardized SMART goals instantly. Each of the nine ISP sections is self-contained and collapses cleanly for focused drafting.",
+      body: "A dropdown-driven building block approach converts casual goal language into standardized SMART goals instantly. Each of the nine PCSP sections is self-contained and collapses cleanly for focused drafting.",
     },
     {
       icon: "solar:library-linear",
@@ -300,7 +300,7 @@ export default function CaseStudyISP() {
           <div className="grid lg:grid-cols-2 gap-12 items-end">
             <div className="lg:order-2 text-right">
               <h1 className="text-5xl md:text-7xl font-orbitron uppercase leading-none mb-8 glow-text tracking-normal text-white">
-                ISP Assistant <br />
+                PCSP Assistant <br />
                 <span className="text-accent italic">Pro</span>
               </h1>
               <div className="flex flex-wrap justify-end gap-x-8 gap-y-4 pt-8 border-t border-[#00ffcc]/20">
@@ -350,7 +350,7 @@ export default function CaseStudyISP() {
           <div className="relative rounded-2xl overflow-hidden border border-accent/40 bg-black aspect-[21/9]">
             <Image
               src="/DTE-Portfolio/assets/pcsp1.png"
-              alt="ISP Assistant Pro interface"
+              alt="PCSP Assistant Pro interface"
               fill
               quality={80}
               priority
@@ -481,7 +481,7 @@ export default function CaseStudyISP() {
                   </div>
                 </div>
                 <p className="text-base text-white/70 leading-relaxed">
-                  I engineered ISP Assistant Pro as a{" "}
+                  I engineered PCSP Assistant Pro as a{" "}
                   <span className="text-white font-semibold">
                     Zero-Footprint Logic Engine
                   </span>{" "}
@@ -492,7 +492,7 @@ export default function CaseStudyISP() {
                   servers. No POST requests. No IT tickets. No licensing cost.
                 </p>
                 <p className="text-base text-white/70 leading-relaxed">
-                  The interface covers all nine ISP domains in a single unified
+                  The interface covers all nine PCSP domains in a single unified
                   workspace, from demographics to measurable outcomes — with a
                   clinical word bank, a dynamic communication chart, an
                   unlimited important-people roster, and a multi-goal outcomes
@@ -617,7 +617,7 @@ export default function CaseStudyISP() {
               {/* 9 Domains */}
               <div className="p-6 rounded-xl border border-[#00ffcc]/20 bg-white/5">
                 <h4 className="text-[#00ffcc] text-[13px] font-black uppercase tracking-widest mb-6 font-orbitron">
-                  Full Section Architecture — 9 ISP Domains
+                  Full Section Architecture — 9 PCSP Domains
                 </h4>
                 <div className="grid md:grid-cols-3 gap-3">
                   {domains.map(({ num, label }) => (
@@ -823,7 +823,7 @@ export default function CaseStudyISP() {
                   III. Dynamic Data Architecture
                 </h3>
                 <p className="text-sm text-white/75 leading-relaxed">
-                  Several ISP sections require an unbounded number of entries —
+                  Several PCSP sections require an unbounded number of entries —
                   legal representatives, communication chart rows, important
                   people and their activities, and outcome goals. Fixed forms
                   don&apos;t work here: a client might have two guardians or
@@ -985,7 +985,7 @@ export default function CaseStudyISP() {
                 in a single architectural decision.
               </p>
               <p className="text-lg font-space text-white/75 max-w-3xl mx-auto leading-relaxed mb-4">
-                The result covers every Missouri ISP domain, satisfies
+                The result covers every Missouri PCSP domain, satisfies
                 HIPAA&apos;s Security Rule without a BAA or a server, enforces
                 PHI retention policies client-side, and gets case managers from
                 blank page to audit-ready narrative in under two minutes.
@@ -993,7 +993,7 @@ export default function CaseStudyISP() {
                 positioned to solve.
               </p>
               <p className="text-base font-space text-[#00ffcc]/80 max-w-3xl mx-auto leading-relaxed mb-12 font-mono uppercase tracking-widest">
-                // ISP Assistant Pro passed Missouri state compliance review
+                // PCSP Assistant Pro passed Missouri state compliance review
                 without modification and is currently in active deployment
                 across county Departments of Developmental Disabilities — used
                 daily by the case managers who serve individuals in their care.
