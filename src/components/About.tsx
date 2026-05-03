@@ -70,11 +70,11 @@ const About: React.FC = () => {
 
 				<div className='grid lg:grid-cols-3 gap-12 lg:gap-20'>
 					<div className='lg:col-span-2'>
-						<RevealText text='As a Senior Systems Engineer, I specialize in the architecture of high-fidelity deterministic pipelines and behavioral AI systems. I engineer sophisticated data orchestration layers that bridge the gap between complex relational models and high-impact user interfaces, prioritizing data integrity and signal clarity in every deployment.' />
+						<RevealText text='I design and build secure, data-driven systems that turn complex information into clear, actionable products.' />
 						<br />
-						<RevealText text="My background in operations management provides a unique 'business-first' lens for technical architecture. I view data not as a static resource, but as a critical component of a larger problem-solving ecosystem where deterministic communication protocols and high-fidelity engineering are paramount." />
+						<RevealText text="My work sits at the intersection of backend architecture and user experience-where structured data, predictive analytics, and real-world usability come together." />
 						<br />
-						<RevealText text="Transitioning from leadership to systems engineering has refined my focus on systemic efficiency and predictive analytics. I don't just build components; I engineer end-to-end data workflows that transform raw telemetry into actionable intelligence for global challenges." />
+						<RevealText text="I specialize in creating end-to-end systems that transform raw data into meangingful insights, whether in financial behavior, clinical workflows, or business operations." />
 					</div>
 
 					<div className='space-y-10'>
@@ -83,12 +83,14 @@ const About: React.FC = () => {
 						</h4>
 						<ul className='terminal-list list-none p-0 mt-[30px]'>
 							<li className="relative pl-[25px] mb-[18px] text-[clamp(0.85rem,1.8vw,1.1rem)] text-[#d7e3fc]/75 leading-relaxed font-semibold before:content-['>>'] before:absolute before:left-0 before:text-accent before:font-orbitron before:text-[14px] before:top-[4px] before:animate-[list-pulse_1.5s_infinite]">
-								<span className='bold'>Deterministic Architecture:</span> Engineering
-								systems where data integrity and predictable outcomes are foundational.
+								<span className='bold'>Deterministic Architecture:</span> I believe data is not just information-it's a signal that drives decisions.
 							</li>
 							<li className="relative pl-[25px] mb-[18px] text-[clamp(0.85rem,1.8vw,1.1rem)] text-[#d7e3fc]/75 leading-relaxed font-semibold before:content-['>>'] before:absolute before:left-0 before:text-accent before:font-orbitron before:text-[14px] before:top-[4px] before:animate-[list-pulse_1.5s_infinite]">
-								<span className='bold'>High-Fidelity Signal:</span> Prioritizing clarity 
-								and precision in data visualization and AI-driven insights.
+								<span className='bold'>High-Fidelity Signal:</span>My approach focuses on three core principles:
+								<br>
+								<span className='bold'>1. Determineistic Architecture </span>- Systems should be reliable, predictable, and built on strong data integrity.</br>
+								<br>2.<span className='bold'> Signal Clarity</span> - Data should be structured and presented in a way that makes decisions obvious-not overwhelming.</br>
+								<br>3.<span className='bold'> Analytical Precision</span> - Every system should produce measurable, meaningful outcomes using behavioral and operational data.</br>
 							</li>
 							<li className="relative pl-[25px] mb-[18px] text-[clamp(0.85rem,1.8vw,1.1rem)] text-[#d7e3fc]/75 leading-relaxed font-semibold before:content-['>>'] before:absolute before:left-0 before:text-accent before:font-orbitron before:text-[14px] before:top-[4px] before:animate-[list-pulse_1.5s_infinite]">
 								<span className='bold'>Analytical Precision:</span> Building 
