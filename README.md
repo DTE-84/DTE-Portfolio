@@ -23,7 +23,7 @@ My stack is chosen for **precision, performance, and deterministic behavior**:
 
 ## 🧪 Focus Deployments & Purpose
 
-### 01 // [PCSP Assistant Pro](https://dte-84.github.io/DTE-E-Portfolio/case-study-pcsp/)
+### 01 // [PCSP Assistant Pro](https://dte-84.github.io/DTE-E-Portfolio/case-study-isp/)
 *   **The Why**: Clinical documentation for Missouri DMH was fragmented and high-risk. 
 *   **Purpose**: A zero-footprint, HIPAA-compliant documentation engine that enforces audit-ready language on the first draft. Demonstration of **Security-First Architecture** and **Conditional Logic Engine.**
 
