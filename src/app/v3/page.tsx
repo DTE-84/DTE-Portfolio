@@ -153,7 +153,7 @@ const FeaturedISP = () => {
 		<section ref={sectionRef} id='featured' className='py-32 px-6 md:px-12 max-w-7xl mx-auto'>
 			<div className='flex flex-col gap-4 mb-20 px-4'>
 				<span className='pcsp-reveal text-offset font-mono text-[10px] tracking-[0.4em] uppercase font-bold'>Primary Case Study // 01</span>
-				<h2 className='pcsp-reveal text-5xl md:text-8xl font-black uppercase tracking-tighter leading-none text-white'>PCSP Assistant Pro</h2>
+				<h2 className='pcsp-reveal text-5xl md:text-8xl font-black uppercase tracking-tighter leading-none text-white'>ISP Assistant Pro</h2>
 			</div>
 			<div className='group relative grid lg:grid-cols-[1.2fr_1fr] gap-12 bg-white/3 border border-white/10 rounded-[4rem] overflow-hidden p-8 md:p-16 transition-all duration-700 hover:border-accent/40'>
 				<div className='pcsp-reveal flex flex-col justify-center gap-8 order-2 lg:order-1'>
@@ -164,7 +164,7 @@ const FeaturedISP = () => {
 					</div>
 					<p className='text-4xl font-bold leading-tight text-white/90'>Streamlining Missouri PCSP workflow through <span className='text-offset italic'>deterministic data integrity.</span></p>
 					<p className='text-lg text-white/50 leading-relaxed max-w-xl'>A high-fidelity documentation engine (v3.0) hardened with AES-GCM 256-bit encryption. Automates compliant drafting while ensuring HIPAA-sensitive data remains cryptographically sealed and accessible only via PBKDF2-derived keys.</p>
-					<a href={getAssetPath('case-study-isp')} className='group/btn inline-flex items-center gap-4 bg-accent text-black px-10 py-5 rounded-2xl font-black uppercase text-xs transition-all hover:scale-105 active:scale-95 self-start'>
+					<a href={getAssetPath('case-study-pcsp')} className='group/btn inline-flex items-center gap-4 bg-accent text-black px-10 py-5 rounded-2xl font-black uppercase text-xs transition-all hover:scale-105 active:scale-95 self-start'>
 						<span>Deep Dive Breakdown</span>
 						<Icon icon='solar:arrow-right-up-linear' className='text-lg group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform' />
 					</a>
