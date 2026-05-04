@@ -30,7 +30,7 @@ const DTELogoModular = forwardRef<HTMLDivElement, DTELogoModularProps>(
 
 						
 					<Image
-						src={getAssetPath("dtelogozoom.png")}
+						src={getAssetPath("dtelogo1.png")}
 						alt='DTE LOGO'
 						fill
 						className='object-contain'
