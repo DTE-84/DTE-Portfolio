@@ -68,16 +68,14 @@ const About: React.FC = () => {
 					<div className='h-[1px] flex-grow bg-[var(--theme-accent)]/40'></div>
 				</div>
 
-				<div className='grid lg:grid-cols-3 gap-12 lg:gap-20'>
-					<div className='lg:col-span-2'>
+				<div className='max-w-4xl'>
+					<div className='space-y-6'>
 						<RevealText text='I design and build secure, data-driven systems that turn complex information into clear, actionable products.' />
-						<br />
 						<RevealText text="My work sits at the intersection of backend architecture and user experience-where structured data, predictive analytics, and real-world usability come together." />
-						<br />
 						<RevealText text="I specialize in creating end-to-end systems that transform raw data into meangingful insights, whether in financial behavior, clinical workflows, or business operations." />
 					</div>
 
-					<div className='space-y-10'>
+					<div className='mt-20 space-y-10'>
 						<h4 className='text-lg font-bold text-white uppercase tracking-widest border-b border-[var(--theme-accent)]/60 pb-4'>
 							Philosophy
 						</h4>
