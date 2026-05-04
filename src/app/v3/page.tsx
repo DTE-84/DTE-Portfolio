@@ -163,6 +163,34 @@ const StrengthsArchitecture = () => {
 	);
 };
 
+const tagIcons: Record<string, string> = {
+	"PostgreSQL": "logos:postgresql",
+	"React 19": "logos:react",
+	"Next.js": "logos:nextjs-icon",
+	"TypeScript": "logos:typescript-icon",
+	"Python": "logos:python",
+	"FastAPI": "logos:fastapi-icon",
+	"Gemini Pro": "logos:google-gemini",
+	"AES-256": "solar:shield-keyhole-bold-duotone",
+	"HIPAA": "solar:health-linear",
+	"Analytics": "solar:chart-2-linear",
+	"Window Fns": "solar:database-linear",
+	"IoT Sync": "solar:globus-linear",
+	"Geospatial": "solar:map-point-linear",
+	"Audit Logic": "solar:clipboard-check-linear",
+	"Systems": "solar:settings-linear",
+	"GSAP": "logos:gsap-icon",
+	"Architecture": "solar:structure-linear",
+	"Game Design": "solar:gamepad-linear",
+	"REST API": "solar:server-square-linear",
+	"Search": "solar:magnifer-linear",
+	"Vanilla JS": "logos:javascript",
+	"CSS3": "logos:css-3",
+	"Asymmetric Grid": "solar:grid-linear",
+	"SEO": "solar:magnifer-zoom-in-linear",
+	"Ecosystem": "solar:globus-linear",
+};
+
 const FlagshipBuilds = () => {
 	const sectionRef = useRef<HTMLElement>(null);
 	useEffect(() => {
@@ -176,6 +204,7 @@ const FlagshipBuilds = () => {
 	}, []);
 
 	const builds = [
+		{ id: "Hub", title: "DTE Solutions Hub", tags: ["PostgreSQL", "Analytics", "Window Fns", "Ecosystem"], desc: "Central nexus for the DTE Ecosystem, orchestrating the 'Big Three' focus products via high-fidelity behavioral pipelines.", link: "https://dte-solutions.icu", video: "assets/dte-solutionspreview.mp4" },
 		{ id: "Pulse", title: "Pulse Behavioral AI", tags: ["FastAPI", "React 19", "PostgreSQL"], desc: "High-fidelity financial dashboard utilizing behavioral psychology signals and predictive telemetry.", link: "https://dte-solutions.icu/pulse-breakdown.html", video: "assets/Pulse.mp4" },
 		{ id: "PCSP", title: "PCSP Assistant Pro", tags: ["Next.js", "AES-256", "HIPAA"], desc: "Deterministic documentation engine (v3.0) hardened with AES-GCM 256-bit encryption for HIPAA compliance.", link: getAssetPath("case-study-pcsp"), video: "assets/PCSP.mp4" },
 		{ id: "SQL", title: "SQL Analytics Engine", tags: ["PostgreSQL", "Analytics", "Window Fns"], desc: "Advanced engineering for commerce telemetry using window functions, CTEs, and high-fidelity cohort analysis.", link: "https://dte-84.github.io/ecommSQL/", video: "assets/ecommSQL.mp4" }
@@ -192,9 +221,15 @@ const FlagshipBuilds = () => {
 					<div key={build.id} className='group relative grid lg:grid-cols-[1.2fr_1fr] gap-12 bg-white/3 border border-white/10 rounded-[4rem] overflow-hidden p-8 md:p-16 transition-all duration-700 hover:border-accent/40'>
 						<div className='flagship-reveal flex flex-col justify-center gap-8 order-2 lg:order-1'>
 							<div className='flex flex-wrap gap-3'>
-								{build.tags.map(tag => (
-									<span key={tag} className='text-[9px] font-mono uppercase tracking-widest px-4 py-2 bg-accent/10 border border-accent/20 rounded-full text-accent font-bold'>{tag}</span>
-								))}
+								{build.tags.map(tag => {
+									const icon = tagIcons[tag];
+									return (
+										<span key={tag} className='flex items-center gap-2 text-[9px] font-mono uppercase tracking-widest px-4 py-2 bg-accent/10 border border-accent/20 rounded-full text-accent font-bold'>
+											{icon && <Icon icon={icon} className="text-xs" />}
+											{tag}
+										</span>
+									);
+								})}
 							</div>
 							<h3 className='text-4xl md:text-5xl font-black uppercase tracking-tighter text-white group-hover:text-accent transition-colors'>{build.title}</h3>
 							<p className='text-lg text-white/50 leading-relaxed max-w-xl'>{build.desc}</p>
@@ -244,6 +279,17 @@ const ProjectCard = ({ project, index }: { project: Project; index: number; }) =
 				</div>
 				<h3 className='text-3xl md:text-4xl font-black uppercase tracking-tighter mb-4 text-white group-hover:text-accent transition-colors duration-500'><RollingText text={project.title} /></h3>
 				<p className='text-base text-white/40 leading-relaxed font-medium mb-8 max-w-xl group-hover:text-white/60 transition-colors duration-500'>{project.description}</p>
+				<div className='flex flex-wrap gap-2'>
+					{project.tags.map(tag => {
+						const icon = tagIcons[tag];
+						return (
+							<span key={tag} className='flex items-center gap-2 text-[8px] font-mono uppercase tracking-widest px-3 py-1.5 bg-white/5 border border-white/10 rounded-full text-white/40 font-bold group-hover:border-accent/30 group-hover:text-white/60 transition-colors'>
+								{icon && <Icon icon={icon} className="text-[10px] text-accent/50 group-hover:text-accent" />}
+								{tag}
+							</span>
+						);
+					})}
+				</div>
 			</div>
 		</div>
 	);
@@ -252,11 +298,13 @@ const ProjectCard = ({ project, index }: { project: Project; index: number; }) =
 const OtherWorks = () => {
 	const sectionRef = useRef<HTMLElement>(null);
 	const projects: Project[] = [
-		{ id: "Nest", title: "NestLegacy Shell", category: "Enterprise Fintech", year: 2026, description: "Digital trust layer for the $84 trillion wealth transfer using AI lead intelligence.", tags: ["React 19", "AI"], link: "https://dte-84.github.io/NestLegacy/", video: "assets/NestLegacy.mp4" },
+		{ id: "Hub", title: "DTE Solutions Hub", category: "Corporate Ecosystem", year: 2026, description: "Central nexus for the DTE Ecosystem, orchestrating the 'Big Three' focus products via high-fidelity behavioral pipelines.", tags: ["PostgreSQL", "Analytics", "Window Fns", "Ecosystem"], link: "https://dte-solutions.icu", video: "assets/dte-solutionspreview.mp4" },
+		{ id: "ProDip", title: "Pro Dip LLC", category: "Commercial Aesthetics", year: 2025, description: "High-performance automotive aesthetics hub featuring asymmetric CSS grids and zero-dependency architecture.", tags: ["PostgreSQL", "Analytics", "Window Fns", "Vanilla JS"], link: "https://dte-84.github.io/PRODIP/", video: "assets/PRODIPpreview.mp4" },
+		{ id: "Nest", title: "NestLegacy Shell", category: "Enterprise Fintech", year: 2026, description: "Digital trust layer for the $84 trillion wealth transfer using AI lead intelligence.", tags: ["React 19", "Architecture"], link: "https://dte-84.github.io/NestLegacy/", video: "assets/NestLegacy.mp4" },
 		{ id: "Quarterly", title: "Quarterly Pro", category: "Audit Resilience", year: 2026, description: "Deterministic validation engine for Missouri DMH compliance reporting.", tags: ["Audit Logic", "Systems"], link: getAssetPath("case-study-quarterly"), video: "assets/PCSP.mp4" },
 		{ id: "Fluff", title: "Fluff Telemetry", category: "Performance Analytics", year: 2026, description: "Multi-source telemetry suite orchestrating real-time GPS and biometrics.", tags: ["IoT Sync", "Geospatial"], link: "https://dte-84.github.io/Fluff/", video: "assets/Fluff.mp4" },
 		{ id: "Tonys", title: "Landscaping Logic", category: "Commercial UI", year: 2026, description: "Custom interactive engine for visual data comparison and quote logic.", tags: ["GSAP", "Architecture"], link: "https://tonyslandscapingllc.com", video: "assets/Tonysllc.mp4" },
-		{ id: "SiKnight", title: "SiKnight Hub", category: "Interactive Media", year: 2026, description: "High-engagement gaming portal featuring real-time leaderboard and virtual currency.", tags: ["React", "Game Design"], link: "https://dte-84.github.io/SiKnight/", video: "assets/siknight.mp4" },
+		{ id: "SiKnight", title: "SiKnight Hub", category: "Interactive Media", year: 2026, description: "High-engagement gaming portal featuring real-time leaderboard and virtual currency.", tags: ["React 19", "Game Design"], link: "https://dte-84.github.io/SiKnight/", video: "assets/siknight.mp4" },
 		{ id: "Inventory", title: "Inventory Discovery", category: "Automotive SaaS", year: 2025, description: "Marketplace interface optimized for complex search heuristics and high-speed filtering.", tags: ["REST API", "Search"], link: "https://dte-84.github.io/CarSalesInv/", video: "assets/CarSales.mp4" },
 	];
 
