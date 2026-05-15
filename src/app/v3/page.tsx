@@ -233,7 +233,7 @@ const FlagshipBuilds = () => {
 							</div>
 							<h3 className='text-4xl md:text-5xl font-black uppercase tracking-tighter text-white group-hover:text-accent transition-colors'>{build.title}</h3>
 							<p className='text-lg text-white/50 leading-relaxed max-w-xl'>{build.desc}</p>
-							<a href={build.link} className='group/btn inline-flex items-center gap-4 bg-accent text-black px-10 py-5 rounded-2xl font-black uppercase text-xs transition-all hover:scale-105 active:scale-95 self-start'>
+							<a href={build.link} target='_blank' rel='noreferrer' className='group/btn inline-flex items-center gap-4 bg-accent text-black px-10 py-5 rounded-2xl font-black uppercase text-xs transition-all hover:scale-105 active:scale-95 self-start'>
 								<span>System Deep Dive</span>
 								<Icon icon='solar:arrow-right-up-linear' className='text-lg group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform' />
 							</a>
@@ -298,7 +298,7 @@ const ProjectCard = ({ project, index }: { project: Project; index: number; }) =
 const OtherWorks = () => {
 	const sectionRef = useRef<HTMLElement>(null);
 	const projects: Project[] = [
-		{ id: "Hub", title: "DTE Solutions Hub", category: "Corporate Ecosystem", year: 2026, description: "Central nexus for the DTE Ecosystem, orchestrating the 'Big Three' focus products via high-fidelity behavioral pipelines.", tags: ["PostgreSQL", "Analytics", "Window Fns", "Ecosystem"], link: "https://dte-solutions.icu", video: "assets/dte-solutionspreview.mp4" },
+		{ id: "Spark", title: "Spark Analyzer", category: "Analytical Utility", year: 2026, description: "Precision delivery evaluation engine calculating net profit and hourly velocity for Spark drivers.", tags: ["React 19", "Analytics", "Architecture"], link: "https://spark-bgyyinz73-dte-solutions.vercel.app/", video: "assets/PCSP.mp4" },
 		{ id: "ProDip", title: "Pro Dip LLC", category: "Commercial Aesthetics", year: 2025, description: "High-performance automotive aesthetics hub featuring asymmetric CSS grids and zero-dependency architecture.", tags: ["PostgreSQL", "Analytics", "Window Fns", "Vanilla JS"], link: "https://dte-84.github.io/ProDip/", video: "assets/PRODIPpreview.mp4" },
 		{ id: "Nest", title: "NestLegacy Shell", category: "Enterprise Fintech", year: 2026, description: "Digital trust layer for the $84 trillion wealth transfer using AI lead intelligence.", tags: ["React 19", "Architecture"], link: "https://dte-84.github.io/NestLegacy/", video: "assets/NestLegacy.mp4" },
 		{ id: "Quarterly", title: "Quarterly Pro", category: "Audit Resilience", year: 2026, description: "Deterministic validation engine for Missouri DMH compliance reporting.", tags: ["Audit Logic", "Systems"], link: getAssetPath("case-study-quarterly"), video: "assets/PCSP.mp4" },
