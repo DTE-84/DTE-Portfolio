@@ -206,7 +206,7 @@ const FlagshipBuilds = () => {
 	const builds = [
 		{ id: "Pulse", title: "Pulse Behavioral AI", tags: ["FastAPI", "React 19", "PostgreSQL"], desc: "High-fidelity financial dashboard utilizing behavioral psychology signals and predictive telemetry.", link: "https://dte-solutions.icu/pulse-breakdown.html", video: "assets/Pulse.mp4" },
 		{ id: "PCSP", title: "PCSP Assistant Pro", tags: ["Next.js", "AES-256", "HIPAA"], desc: "Deterministic documentation engine (v3.0) hardened with AES-GCM 256-bit encryption for HIPAA compliance.", link: getAssetPath("case-study-pcsp"), video: "assets/PCSP.mp4" },
-		{ id: "SQL", title: "SQL Analytics Engine", tags: ["PostgreSQL", "Analytics", "Window Fns"], desc: "Advanced engineering for commerce telemetry using window functions, CTEs, and high-fidelity cohort analysis.", link: "https://dte-84.github.io/ecommSQL/", video: "assets/ecommSQL.mp4" },
+		{ id: "SQL", title: "SQL Analytics Engine", tags: ["PostgreSQL", "Analytics", "Window Fns"], desc: "Advanced engineering for commerce telemetry using window functions, CTEs, and high-fidelity cohort analysis.", link: "https://ecomm-505qtlvsc-dte-solutions.vercel.app/", video: "assets/ecommSQL.mp4" },
 		{ id: "Hub", title: "DTE Solutions Hub", tags: ["PostgreSQL", "Analytics", "Window Fns", "Ecosystem"], desc: "Central nexus for the DTE Ecosystem, orchestrating the 'Big Three' focus products via high-fidelity behavioral pipelines.", link: "https://dte-solutions.icu", video: "assets/dte-solutionspreview.mp4" }
 	];
 
