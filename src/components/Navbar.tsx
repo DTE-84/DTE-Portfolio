@@ -92,15 +92,12 @@ export default function Navbar({ onContactClick, theme, onThemeToggle }: NavbarP
           </div>
 
           <button
-            className='md:hidden text-white z-[1001] p-2'
+            className={`md:hidden nav-ham ${isOpen ? "active" : ""}`}
             onClick={toggleMenu}
             aria-label='Toggle Menu'
             aria-expanded={isOpen}>
-            {isOpen ? (
-              <Icon icon='solar:close-circle-bold' className='text-3xl' />
-            ) : (
-              <Icon icon='solar:hamburger-menu-linear' className='text-3xl' />
-            )}
+            <span></span>
+            <span></span>
           </button>
         </div>
       </nav>

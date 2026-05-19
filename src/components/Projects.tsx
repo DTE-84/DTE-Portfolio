@@ -315,9 +315,21 @@ const Projects: React.FC = () => {
                                                 </h2>
                                                 <div className='h-[1px] flex-grow bg-[var(--theme-accent)]/40'></div>
                                         </div>
-                                        <div className='flex flex-col gap-40'>
+                                        {/* Sticky Stacking Grid */}
+                                        <div className='relative flex flex-col gap-0'>
                                                 {archives.map((project, index) => (
-                                                        <ProjectRow key={project.id} project={project} index={index + deployments.length + 1} />
+                                                        <div 
+                                                                key={project.id} 
+                                                                className="sticky top-24 md:top-32 w-full pt-10 pb-40"
+                                                                style={{ 
+                                                                        zIndex: index + 1,
+                                                                        marginTop: index === 0 ? 0 : '-15vh'
+                                                                }}
+                                                        >
+                                                                <div className="bg-black/80 backdrop-blur-xl border border-white/10 rounded-[3rem] p-8 md:p-16 shadow-[0_-20px_50px_rgba(0,0,0,0.5)] transform transition-transform duration-500 hover:scale-[1.01]">
+                                                                        <ProjectRow project={project} index={index + deployments.length + 1} />
+                                                                </div>
+                                                        </div>
                                                 ))}
                                         </div>
                                 </div>

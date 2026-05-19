@@ -68,11 +68,11 @@ Python (Pandas, NumPy, FastAPI) • React 19, Next.js, Vite • PostgreSQL, SQL,
 - Directly solved an **80% supervisory oversight gap** identified by state auditors through integrated monthly case review verification and digital timestamping.
 - Implemented a Similarity Engine to sanitize clinical narratives against "Rubber Stamping" citations—the root cause of Missouri’s 11% unallowable error rates.
 
-**Pulse-Ai: Behavioral Finance Tracker - Full-Stack Data Science** | 01/2026
-*https://dte-84.github.io/Pulse/*
-- Built the entire backend pipeline to handle the messy reality of bank logs—ETL process using Python/Pandas to clean, impute, and prepare raw CSV data for PostgreSQL Star Schema.
-- Implemented behavioral logic to flag “Impulse Triggers” by correlating spending velocity with time-of-day and mood indices. Every transformation is validated by Jest child-process tests to ensure mathematical accuracy.
-- FastAPI backend with MongoDB/Postgres, utilizing Grouped Imputation techniques for multi-period wealth forecasting.
+**Pulse-Ai: Behavioral Finance Tracker - Full-Stack Data Science** | 05/2026
+*https://dte-solutions.icu/pulse-breakdown.html*
+- Architected a high-fidelity PWA (Progressive Web App) with cross-platform mobile installation, enabling real-time behavioral tracking and trigger detection on iOS and Android.
+- Engineered a full ETL pipeline in Python (Pandas/NumPy) to transform raw bank telemetry into a PostgreSQL Star Schema, validated by automated Jest tests for 100% data integrity.
+- Implemented behavioral logic to flag “Impulse Triggers” by correlating spending velocity with time-of-day and mood indices, providing a predictive "Financial Mirror" for users.
 
 **E-Commerce SQL Analytics - Advanced EDA Repository** | 04/2026
 *https://ecomm-sql.vercel.app/*

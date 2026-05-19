@@ -7,72 +7,13 @@ import BgAnimation from "../../components/BgAnimation";
 import ContactModal from "../../components/ContactModal";
 import RollingText from "../../components/RollingText";
 import About from "../../components/About";
+import Navbar from "../../components/Navbar";
 import { getAssetPath } from "../../utils/paths";
 import DTELogoModular from "../../components/DTELogoModular";
 
 if (typeof window !== "undefined") {
 	gsap.registerPlugin(ScrollTrigger);
 }
-
-const Nav = ({ onContactClick }: { onContactClick: () => void }) => {
-	return (
-		<nav className='fixed top-0 left-0 right-0 z-[100] bg-black/20 backdrop-blur-xl border-b border-white/10'>
-			<div className='w-full flex justify-between items-center px-6 md:px-16 py-4'>
-				<div className='flex items-center gap-6'>
-					<div className='flex flex-col'>
-						<span
-							className='font-mono text-[11px] tracking-[0.4em] uppercase font-bold text-white flex items-center gap-1.5'
-							style={{ WebkitTextStroke: "0.15px white" }}>
-							Data Analyst
-							<span
-								className='text-[#00f3ff] mx-0.5'
-								style={{ WebkitTextStroke: "0px" }}>
-								/
-							</span>
-							<span
-								className='text-[#39ff14] mx-0.5'
-								style={{ WebkitTextStroke: "0px" }}>
-								/
-							</span>
-							Full-Stack
-						</span>
-					</div>
-				</div>
-				<div className='flex items-center gap-10'>
-					<div className='hidden md:flex items-center gap-12'>
-						{[
-							{ id: "01", name: "Flagship", href: "#flagship", color: "#00f3ff" },
-							{ id: "02", name: "Systems", href: "#work", color: "#39ff14" },
-						].map((item) => (
-							<a
-								key={item.name}
-								href={item.href}
-								className='group flex items-center gap-3 text-[12px] font-mono uppercase tracking-[0.3em] text-white hover:text-accent transition-all'>
-								<span
-									className='text-[10px] opacity-80 group-hover:opacity-100 transition-opacity whitespace-nowrap'
-									style={{ color: item.color }}>
-									{item.id} {"//"}
-								</span>
-								<RollingText text={item.name} />
-							</a>
-						))}
-					</div>
-					<button
-						onClick={onContactClick}
-						className='group flex items-center gap-3 bg-accent text-black px-6 py-2.5 rounded-xl transition-all duration-300 hover:scale-105 active:scale-95 shadow-[0_0_20px_rgba(var(--theme-accent-rgb),0.3)]'>
-						<span className='text-[12px] font-black uppercase tracking-widest'>
-							Contact
-						</span>
-						<Icon
-							icon='nimbus:ecosystem'
-							className='text-sm group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform'
-						/>
-					</button>
-				</div>
-			</div>
-		</nav>
-	);
-};
 
 const Hero = ({ onContactClick }: { onContactClick: () => void }) => {
 	const containerRef = useRef<HTMLDivElement>(null);
@@ -171,6 +112,7 @@ const tagIcons: Record<string, string> = {
 	"Python": "logos:python",
 	"FastAPI": "logos:fastapi-icon",
 	"Gemini Pro": "logos:google-gemini",
+	"PWA": "solar:smartphone-bold-duotone",
 	"AES-256": "solar:shield-keyhole-bold-duotone",
 	"HIPAA": "solar:health-linear",
 	"Analytics": "solar:chart-2-linear",
@@ -204,7 +146,7 @@ const FlagshipBuilds = () => {
 	}, []);
 
 	const builds = [
-		{ id: "Pulse", title: "Pulse Behavioral AI", tags: ["FastAPI", "React 19", "PostgreSQL"], desc: "High-fidelity financial dashboard utilizing behavioral psychology signals and predictive telemetry.", link: "https://dte-solutions.icu/pulse-breakdown.html", video: "assets/Pulse.mp4" },
+		{ id: "Pulse", title: "Pulse Behavioral AI", tags: ["FastAPI", "React 19", "PWA"], desc: "High-fidelity behavioral dashboard (v3.1) with PWA support and predictive spending telemetry. Mobile-optimized for real-time trigger detection.", link: "https://dte-solutions.icu/pulse-breakdown.html", video: "assets/Pulse.mp4" },
 		{ id: "PCSP", title: "PCSP Assistant Pro", tags: ["Next.js", "AES-256", "HIPAA"], desc: "Deterministic documentation engine (v3.0) hardened with AES-GCM 256-bit encryption for HIPAA compliance.", link: getAssetPath("case-study-pcsp"), video: "assets/PCSP.mp4" },
 		{ id: "SQL", title: "SQL Analytics Engine", tags: ["PostgreSQL", "Analytics", "Window Fns"], desc: "Advanced engineering for commerce telemetry using window functions, CTEs, and high-fidelity cohort analysis.", link: "https://ecomm-505qtlvsc-dte-solutions.vercel.app/", video: "assets/ecommSQL.mp4" },
 		{ id: "Hub", title: "DTE Solutions Hub", tags: ["PostgreSQL", "Analytics", "Window Fns", "Ecosystem"], desc: "Central nexus for the DTE Ecosystem, orchestrating the 'Big Three' focus products via high-fidelity behavioral pipelines.", link: "https://dte-solutions.icu", video: "assets/dte-solutionspreview.mp4" }
@@ -314,9 +256,18 @@ const OtherWorks = () => {
 				<span className='works-header text-white/30 font-mono text-[10px] tracking-[0.4em] uppercase font-bold'>The Systems Portfolio //</span>
 				<h2 className='works-header text-5xl md:text-8xl font-black uppercase tracking-tighter leading-none text-white'>Systems <span className='text-accent italic'>Archive.</span></h2>
 			</div>
-			<div className='grid grid-cols-1 lg:grid-cols-2 gap-12'>
+			<div className='relative flex flex-col gap-0'>
 				{projects.map((project, i) => (
-					<ProjectCard key={project.id} project={project} index={i} />
+					<div 
+						key={project.id} 
+						className="sticky top-24 md:top-32 w-full pt-10 pb-40"
+						style={{ 
+							zIndex: i + 1,
+							marginTop: i === 0 ? 0 : '-20vh'
+						}}
+					>
+						<ProjectCard project={project} index={i} />
+					</div>
 				))}
 			</div>
 		</section>
@@ -378,7 +329,7 @@ export default function Home() {
 	return (
 		<main className='bg-black min-h-screen text-white selection:bg-accent selection:text-black antialiased font-space relative overflow-x-hidden'>
 			<BgAnimation />
-			<Nav onContactClick={() => setIsContactOpen(true)} />
+			<Navbar onContactClick={() => setIsContactOpen(true)} />
 			<div className='relative z-10'>
 				<Hero onContactClick={() => setIsContactOpen(true)} />
 				<StrengthsArchitecture />
