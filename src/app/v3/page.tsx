@@ -256,18 +256,9 @@ const OtherWorks = () => {
 				<span className='works-header text-white/30 font-mono text-[10px] tracking-[0.4em] uppercase font-bold'>The Systems Portfolio //</span>
 				<h2 className='works-header text-5xl md:text-8xl font-black uppercase tracking-tighter leading-none text-white'>Systems <span className='text-accent italic'>Archive.</span></h2>
 			</div>
-			<div className='relative flex flex-col gap-0'>
+			<div className='grid grid-cols-1 lg:grid-cols-2 gap-12'>
 				{projects.map((project, i) => (
-					<div 
-						key={project.id} 
-						className="sticky top-24 md:top-32 w-full pt-10 pb-40"
-						style={{ 
-							zIndex: i + 1,
-							marginTop: i === 0 ? 0 : '-20vh'
-						}}
-					>
-						<ProjectCard project={project} index={i} />
-					</div>
+					<ProjectCard key={project.id} project={project} index={i} />
 				))}
 			</div>
 		</section>
