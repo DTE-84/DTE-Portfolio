@@ -197,13 +197,13 @@ const ProjectCard = ({ project, index }: { project: Project; index: number; }) =
 	const cardRef = useRef<HTMLDivElement>(null);
 	useEffect(() => {
 		gsap.to(cardRef.current, {
-			scrollTrigger: { trigger: cardRef.current, start: "top 90%" },
-			y: 0, opacity: 1, duration: 0.8, delay: index * 0.1,
+			scrollTrigger: { trigger: cardRef.current, start: "top 95%" },
+			y: 0, opacity: 1, duration: 0.5, delay: index * 0.05, ease: "power2.out"
 		});
 	}, [index]);
 
 	return (
-		<div ref={cardRef} className='group relative flex flex-col gap-6 p-6 rounded-[3rem] bg-white/2 border border-white/5 hover:border-accent/30 transition-all duration-700 hover:bg-white/[0.03] shadow-2xl hover:shadow-accent/5' style={{ opacity: 0, transform: "translateY(40px)" }}>
+		<div ref={cardRef} className='group relative flex flex-col gap-6 p-6 rounded-[3rem] bg-white/2 border border-white/5 hover:border-accent/30 transition-all duration-700 hover:bg-white/[0.03] shadow-2xl hover:shadow-accent/5' style={{ opacity: 0, transform: "translateY(20px)" }}>
 			<div className='aspect-video rounded-[2rem] overflow-hidden bg-black/40 border border-white/10 relative transition-all duration-700 group-hover:border-accent/40'>
 				<video src={getAssetPath(project.video)} autoPlay loop muted playsInline className='w-full h-full object-cover opacity-30 group-hover:opacity-100 duration-[2s] scale-[1.02] group-hover:scale-110 ease-out' />
 				<div className='absolute inset-0 bg-linear-to-t from-black/60 via-transparent to-transparent opacity-60 group-hover:opacity-30 transition-opacity' />
