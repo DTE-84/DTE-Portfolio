@@ -146,7 +146,7 @@ const FlagshipBuilds = () => {
 	}, []);
 
 	const builds = [
-		{ id: "Pulse", title: "Pulse Behavioral AI", tags: ["FastAPI", "React 19", "PWA"], desc: "High-fidelity behavioral dashboard (v3.1) with PWA support and predictive spending telemetry. Mobile-optimized for real-time trigger detection.", link: "https://dte-solutions.icu/pulse-breakdown.html", video: "assets/Pulse.mp4" },
+		{ id: "Pulse", title: "Pulse-AI Behavioral Finance", tags: ["FastAPI", "React 19", "PWA"], desc: "Full-stack behavioral finance SaaS utilizing Python, FastAPI, and Pydantic for high-performance REST architecture. Mobile-optimized with PWA support and predictive spending telemetry.", link: "https://dte-solutions.icu/pulse-breakdown.html", video: "assets/Pulse.mp4" },
 		{ id: "PCSP", title: "PCSP Assistant Pro", tags: ["Next.js", "AES-256", "HIPAA"], desc: "Deterministic documentation engine (v3.0) hardened with AES-GCM 256-bit encryption for HIPAA compliance.", link: getAssetPath("case-study-pcsp"), video: "assets/PCSP.mp4" },
 		{ id: "SQL", title: "SQL Analytics Engine", tags: ["PostgreSQL", "Analytics", "Window Fns"], desc: "Advanced engineering for commerce telemetry using window functions, CTEs, and high-fidelity cohort analysis.", link: "https://ecomm-505qtlvsc-dte-solutions.vercel.app/", video: "assets/ecommSQL.mp4" },
 		{ id: "Hub", title: "DTE Solutions Hub", tags: ["PostgreSQL", "Analytics", "Window Fns", "Ecosystem"], desc: "Central nexus for the DTE Ecosystem, orchestrating the 'Big Three' focus products via high-fidelity behavioral pipelines.", link: "https://dte-solutions.icu", video: "assets/dte-solutionspreview.mp4" }
@@ -298,7 +298,7 @@ const Footer = ({ onContactClick }: { onContactClick: () => void }) => {
 						<RollingText text='Initiate Contact' hoverColor='text-white' />
 						<Icon icon='solar:letter-linear' className='text-xl' />
 					</button>
-					<a href='https://dte-84.github.io/DTE-Portfolio/assets/DrewTErnst_Resume.pdf' target='_blank' rel='noreferrer' className='bg-black/5 border border-white/10 text-white px-12 py-6 rounded-2xl font-black uppercase text-sm transition-all hover:bg-white/10 hover:border-white/20 flex items-center gap-3'>
+					<a href='https://dte-84.github.io/DTE-Portfolio/DTE_Resume.pdf' target='_blank' rel='noreferrer' className='bg-black/5 border border-white/10 text-white px-12 py-6 rounded-2xl font-black uppercase text-sm transition-all hover:bg-white/10 hover:border-white/20 flex items-center gap-3'>
 						<RollingText text='Download Dossier' />
 						<Icon icon='solar:file-download-linear' className='text-xl' />
 					</a>
