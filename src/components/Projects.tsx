@@ -127,6 +127,19 @@ const Projects: React.FC = () => {
                         video: "/DTE-Portfolio/assets/Fluff.mp4",
                         link: "https://dte-solutions.icu/fluff-breakdown.html",
                         featured: true,
+                },
+                {
+                        id: "KEYS_BEATS",
+                        title: "Keys Beats",
+                        category: "Interactive Audio Portfolio",
+                        year: "2026",
+                        description:
+                                "A high-fidelity promotional nexus featuring a real-time audio-reactive visualizer and a dynamic friction cursor. Engineered for immersive musical storytelling and elite brand positioning.",
+                        tags: ["Web Audio API", "Canvas 2D", "Space Grotesk"],
+                        image: "/DTE-Portfolio/assets/keysmainlogo.png",
+                        video: "/DTE-Portfolio/assets/KeysBeats.mp4",
+                        link: "https://keys-beats.vercel.app/",
+                        featured: true,
                 }
         ];
 
