@@ -112,7 +112,7 @@ const Projects: React.FC = () => {
                         tags: ["PostgreSQL", "Gemini Pro", "Data Integrity"],
                         image: "/DTE-Portfolio/assets/novaui.png",
                         video: "/DTE-Portfolio/assets/Pulse.mp4",
-                        link: "https://dte-solutions.icu/pulse-breakdown.html",
+                        link: "https://pulse-blond-three.vercel.app/",
                         featured: true,
                 },
                 {
