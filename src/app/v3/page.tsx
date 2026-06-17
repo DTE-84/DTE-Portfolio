@@ -112,6 +112,7 @@ const tagIcons: Record<string, string> = {
 	"Python": "logos:python",
 	"FastAPI": "logos:fastapi-icon",
 	"Gemini Pro": "logos:google-gemini",
+	"Claude AI": "logos:anthropic-icon",
 	"PWA": "solar:smartphone-bold-duotone",
 	"AES-256": "solar:shield-keyhole-bold-duotone",
 	"HIPAA": "solar:health-linear",
@@ -173,17 +174,19 @@ const FlagshipBuilds = () => {
 									);
 								})}
 							</div>
-							<h3 className='text-4xl md:text-5xl font-black uppercase tracking-tighter text-white group-hover:text-accent transition-colors'>{build.title}</h3>
+							<Link href={build.link} target='_blank' rel='noreferrer'>
+								<h3 className='text-4xl md:text-5xl font-black uppercase tracking-tighter text-white group-hover:text-accent transition-colors'>{build.title}</h3>
+							</Link>
 							<p className='text-lg text-white/50 leading-relaxed max-w-xl'>{build.desc}</p>
 							<a href={build.link} target='_blank' rel='noreferrer' className='group/btn inline-flex items-center gap-4 bg-accent text-black px-10 py-5 rounded-2xl font-black uppercase text-xs transition-all hover:scale-105 active:scale-95 self-start'>
 								<span>System Deep Dive</span>
 								<Icon icon='solar:arrow-right-up-linear' className='text-lg group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform' />
 							</a>
 						</div>
-						<div className='flagship-reveal relative aspect-video lg:aspect-auto rounded-[2.5rem] overflow-hidden bg-black/40 border border-white/10 order-1 lg:order-2 group-hover:border-accent/30 transition-colors'>
+						<Link href={build.link} target='_blank' rel='noreferrer' className='flagship-reveal relative aspect-video lg:aspect-auto rounded-[2.5rem] overflow-hidden bg-black/40 border border-white/10 order-1 lg:order-2 group-hover:border-accent/30 transition-colors'>
 							<video src={getAssetPath(build.video)} autoPlay loop muted playsInline className='w-full h-full object-cover scale-[1.02] group-hover:scale-110 transition-transform duration-[2s] ease-out' />
 							<div className='absolute inset-0 bg-linear-to-t from-black/80 via-transparent to-transparent' />
-						</div>
+						</Link>
 					</div>
 				))}
 			</div>
@@ -204,13 +207,13 @@ const ProjectCard = ({ project, index }: { project: Project; index: number; }) =
 
 	return (
 		<div ref={cardRef} className='group relative flex flex-col gap-6 p-6 rounded-[3rem] bg-white/2 border border-white/5 hover:border-accent/30 transition-all duration-700 hover:bg-white/[0.03] shadow-2xl hover:shadow-accent/5' style={{ opacity: 0, transform: "translateY(20px)" }}>
-			<div className='aspect-video rounded-[2rem] overflow-hidden bg-black/40 border border-white/10 relative transition-all duration-700 group-hover:border-accent/40'>
+			<Link href={project.link} target='_blank' rel='noreferrer' className='aspect-video rounded-[2rem] overflow-hidden bg-black/40 border border-white/10 relative transition-all duration-700 group-hover:border-accent/40'>
 				<video src={getAssetPath(project.video)} autoPlay loop muted playsInline className='w-full h-full object-cover opacity-30 group-hover:opacity-100 duration-[2s] scale-[1.02] group-hover:scale-110 ease-out' />
 				<div className='absolute inset-0 bg-linear-to-t from-black/60 via-transparent to-transparent opacity-60 group-hover:opacity-30 transition-opacity' />
-				<a href={project.link} target='_blank' rel='noreferrer' className='absolute top-8 right-8 w-14 h-14 rounded-full bg-black/80 backdrop-blur-xl border border-white/10 flex items-center justify-center text-white opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 hover:bg-accent hover:text-black hover:border-accent hover:scale-110 z-20'>
+				<div className='absolute top-8 right-8 w-14 h-14 rounded-full bg-black/80 backdrop-blur-xl border border-white/10 flex items-center justify-center text-white opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 hover:bg-accent hover:text-black hover:border-accent hover:scale-110 z-20'>
 					<Icon icon='solar:arrow-right-up-linear' className='text-2xl' />
-				</a>
-			</div>
+				</div>
+			</Link>
 			<div className='px-2'>
 				<div className='flex items-center justify-between mb-4'>
 					<div className='flex items-center gap-3'>
@@ -219,7 +222,9 @@ const ProjectCard = ({ project, index }: { project: Project; index: number; }) =
 						<span className='text-[10px] font-mono text-white/20 uppercase tracking-[0.4em]'>{project.year}</span>
 					</div>
 				</div>
-				<h3 className='text-3xl md:text-4xl font-black uppercase tracking-tighter mb-4 text-white group-hover:text-accent transition-colors duration-500'><RollingText text={project.title} /></h3>
+				<Link href={project.link} target='_blank' rel='noreferrer'>
+					<h3 className='text-3xl md:text-4xl font-black uppercase tracking-tighter mb-4 text-white group-hover:text-accent transition-colors duration-500'><RollingText text={project.title} /></h3>
+				</Link>
 				<p className='text-base text-white/40 leading-relaxed font-medium mb-8 max-w-xl group-hover:text-white/60 transition-colors duration-500'>{project.description}</p>
 				<div className='flex flex-wrap gap-2'>
 					{project.tags.map(tag => {
@@ -240,11 +245,15 @@ const ProjectCard = ({ project, index }: { project: Project; index: number; }) =
 const OtherWorks = () => {
 	const sectionRef = useRef<HTMLElement>(null);
 	const projects: Project[] = [
+		{ id: "ResaleIQ", title: "ResaleIQ Neural", category: "Boutique Intelligence", year: 2026, description: "Luxury boutique intelligence suite utilizing neural market analytics and high-conversion SEO generation for elite resellers.", tags: ["React 19", "Claude AI", "SEO"], link: "https://dte-84.github.io/ResaleIQ/", video: "assets/resale-iq.mp4" },
+		{ id: "SetLogic", title: "SetLogic Orchestrator", category: "Deterministic AI", year: 2026, description: "High-fidelity fitness orchestrator utilizing real-time biometric telemetry and 'Visual Logic' libraries for adaptive coaching.", tags: ["React 19", "Claude AI", "Telemetry"], link: "https://dte-solutions.icu/setlogic-breakdown.html", video: "assets/SetLogic.mp4" },
 		{ id: "KeysBeats", title: "Keys Beats Nexus", category: "Interactive Audio", year: 2026, description: "Real-time audio-reactive promotional nexus featuring kinetic canvas bloom and dynamic friction cursor physics.", tags: ["Web Audio API", "Canvas 2D", "Architecture"], link: "https://keys-beats.vercel.app/", video: "assets/KeysBeats.mp4" },
-		{ id: "ProDip", title: "Pro Dip LLC", category: "Commercial Aesthetics", year: 2025, description: "High-performance automotive aesthetics hub featuring asymmetric CSS grids and zero-dependency architecture.", tags: ["PostgreSQL", "Analytics", "Window Fns", "Vanilla JS"], link: "https://dte-84.github.io/ProDip/", video: "assets/PRODIPpreview.mp4" },
-		{ id: "Nest", title: "NestLegacy Shell", category: "Enterprise Fintech", year: 2026, description: "Digital trust layer for the $84 trillion wealth transfer using AI lead intelligence.", tags: ["React 19", "Architecture"], link: "https://dte-84.github.io/NestLegacy/", video: "assets/NestLegacy.mp4" },
+		{ id: "Nest", title: "NestLegacy Shell", category: "Enterprise Fintech", year: 2026, description: "Digital trust layer for the $84 trillion wealth transfer using AI lead intelligence.", tags: ["React 19", "Architecture"], link: "https://dte-solutions.icu/nestlegacy-breakdown.html", video: "assets/NestLegacy.mp4" },
 		{ id: "Quarterly", title: "Quarterly Pro", category: "Audit Resilience", year: 2026, description: "Deterministic validation engine for Missouri DMH compliance reporting.", tags: ["Audit Logic", "Systems"], link: getAssetPath("case-study-quarterly"), video: "assets/PCSP.mp4" },
 		{ id: "Fluff", title: "Fluff Telemetry", category: "Performance Analytics", year: 2026, description: "Multi-source telemetry suite orchestrating real-time GPS and biometrics.", tags: ["IoT Sync", "Geospatial"], link: "https://dte-84.github.io/Fluff/", video: "assets/Fluff.mp4" },
+		{ id: "CryptoLive", title: "CryptoLive Engine", category: "Websocket Fintech", year: 2026, description: "High-performance websocket implementation for real-time market data visualization and predictive node tracking.", tags: ["React", "Socket.io", "Chart.js"], link: "https://cryptolive-5jmo.onrender.com/", video: "assets/FinancialTrack.mp4" },
+		{ id: "StateLogic", title: "State Logic Store", category: "Digital Commerce", year: 2025, description: "Technical demonstration of advanced state management and asynchronous data orchestration for e-commerce.", tags: ["React", "Hooks", "API"], link: "https://dte-84.github.io/E-Commerce-Books/", video: "assets/estore.mp4" },
+		{ id: "ProDip", title: "Pro Dip LLC", category: "Commercial Aesthetics", year: 2025, description: "High-performance automotive aesthetics hub featuring asymmetric CSS grids and zero-dependency architecture.", tags: ["PostgreSQL", "Analytics", "Window Fns", "Vanilla JS"], link: "https://dte-84.github.io/ProDip/", video: "assets/PRODIPpreview.mp4" },
 		{ id: "Tonys", title: "Landscaping Logic", category: "Commercial UI", year: 2026, description: "Custom interactive engine for visual data comparison and quote logic.", tags: ["GSAP", "Architecture"], link: "https://tonyslandscapingllc.com", video: "assets/Tonysllc.mp4" },
 		{ id: "SiKnight", title: "SiKnight Hub", category: "Interactive Media", year: 2026, description: "High-engagement gaming portal featuring real-time leaderboard and virtual currency.", tags: ["React 19", "Game Design"], link: "https://dte-84.github.io/SiKnight/", video: "assets/siknight.mp4" },
 		{ id: "Inventory", title: "Inventory Discovery", category: "Automotive SaaS", year: 2025, description: "Marketplace interface optimized for complex search heuristics and high-speed filtering.", tags: ["REST API", "Search"], link: "https://dte-84.github.io/CarSalesInv/", video: "assets/CarSales.mp4" },
