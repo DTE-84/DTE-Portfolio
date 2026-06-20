@@ -435,6 +435,12 @@ h1 {
   z-index: 1001;
 }
 
+@media (min-width: 768px) {
+  .nav-ham {
+    display: none !important;
+  }
+}
+
 .nav-ham span {
   width: 20px;
   height: 2px;

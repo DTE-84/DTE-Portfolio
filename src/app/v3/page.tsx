@@ -81,6 +81,7 @@ const Hero = ({ onContactClick }: { onContactClick: () => void }) => {
 };
 
 const StrengthsArchitecture = () => {
+	const strengths = [
 		{ id: "01", title: "Data Analysis", body: "Cleaning, structuring, and analyzing complex datasets to extract actionable business insights.", icon: "solar:database-linear" },
 		{ id: "02", title: "Backend Engineering", body: "Building reliable APIs and robust database architectures using Python, FastAPI, and PostgreSQL.", icon: "solar:cpu-linear" },
 		{ id: "03", title: "Frontend Development", body: "Creating responsive, accessible, and high-performance user interfaces with React and Next.js.", icon: "solar:graph-new-linear" }
