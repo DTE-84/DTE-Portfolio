@@ -144,7 +144,20 @@ const Projects: React.FC = () => {
         ];
 
         const archives: Project[] = [
-                                {
+                {
+                        id: "MW_PROPERTIES",
+                        title: "MW Properties",
+                        category: "Commercial Real Estate",
+                        year: "2026",
+                        description:
+                                "A digital portfolio for a real estate renovation and investor portal. Features interactive showcase sliders and a structured lead pipeline architecture.",
+                        tags: ["React 18", "Vite", "Vanilla CSS"],
+                        image: "/DTE-Portfolio/assets/MWISPthumbnail.png",
+                        link: "https://mw-properties-c2j5cshcx-dte-solutions.vercel.app/",
+                        caseStudy: "/mwproperties-breakdown.html",
+                        featured: true,
+                },
+                {
                         id: "KW_MODELING",
                         title: "Key Wallis Modeling",
                         category: "High-Fidelity UX",
