@@ -1,5 +1,6 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
+import Link from "next/link";
 import { Icon } from "@iconify/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -249,7 +250,7 @@ const ProjectCard = ({ project, index }: { project: Project; index: number; }) =
 const OtherWorks = () => {
 	const sectionRef = useRef<HTMLElement>(null);
 	const projects: Project[] = [
-		{ id: "MWProperties", title: "MW Properties", category: "Real Estate Portal", year: 2026, description: "A high-fidelity digital portfolio for property renovation and investor acquisition, featuring a customized lead capture pipeline.", tags: ["React 19", "Vite", "Vanilla JS"], link: "https://mw-properties-c2j5cshcx-dte-solutions.vercel.app/", image: "assets/MWISPthumbnail.png" },
+		{ id: "MWProperties", title: "MW Properties", category: "Real Estate Portal", year: 2026, description: "A high-fidelity digital portfolio for property renovation and investor acquisition, featuring a customized lead capture pipeline.", tags: ["React 19", "Vite", "Vanilla JS"], link: "https://mw-properties.vercel.app/", image: "assets/MWISPthumbnail.png" },
 		{ id: "ResaleIQ", title: "ResaleIQ Neural", category: "Boutique Intelligence", year: 2026, description: "Luxury boutique intelligence suite utilizing neural market analytics and high-conversion SEO generation for elite resellers.", tags: ["React 19", "Claude AI", "SEO"], link: "https://dte-84.github.io/ResaleIQ/", video: "assets/resale-iq.mp4" },
 		{ id: "SetLogic", title: "SetLogic Orchestrator", category: "Deterministic AI", year: 2026, description: "High-fidelity fitness orchestrator utilizing real-time biometric telemetry and 'Visual Logic' libraries for adaptive coaching.", tags: ["React 19", "Claude AI", "Telemetry"], link: "https://dte-solutions.icu/setlogic-breakdown.html", video: "assets/SetLogic.mp4" },
 		{ id: "KeysBeats", title: "Keys Beats Nexus", category: "Interactive Audio", year: 2026, description: "Real-time audio-reactive promotional nexus featuring kinetic canvas bloom and dynamic friction cursor physics.", tags: ["Web Audio API", "Canvas 2D", "Architecture"], link: "https://keys-beats.vercel.app/", video: "assets/KeysBeats.mp4" },
