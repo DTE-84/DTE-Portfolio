@@ -194,7 +194,7 @@ const FlagshipBuilds = () => {
 	);
 };
 
-interface Project { id: string; title: string; category: string; year: number; description: string; tags: string[]; link: string; video: string; }
+interface Project { id: string; title: string; category: string; year: number; description: string; tags: string[]; link: string; video?: string; image?: string; }
 
 const ProjectCard = ({ project, index }: { project: Project; index: number; }) => {
 	const cardRef = useRef<HTMLDivElement>(null);
@@ -208,7 +208,11 @@ const ProjectCard = ({ project, index }: { project: Project; index: number; }) =
 	return (
 		<div ref={cardRef} className='group relative flex flex-col gap-6 p-6 rounded-[3rem] bg-white/2 border border-white/5 hover:border-accent/30 transition-all duration-700 hover:bg-white/[0.03] shadow-2xl hover:shadow-accent/5' style={{ opacity: 0, transform: "translateY(20px)" }}>
 			<Link href={project.link} target='_blank' rel='noreferrer' className='aspect-video rounded-[2rem] overflow-hidden bg-black/40 border border-white/10 relative transition-all duration-700 group-hover:border-accent/40'>
-				<video src={getAssetPath(project.video)} autoPlay loop muted playsInline className='w-full h-full object-cover opacity-30 group-hover:opacity-100 duration-[2s] scale-[1.02] group-hover:scale-110 ease-out' />
+				{project.video ? (
+					<video src={getAssetPath(project.video)} autoPlay loop muted playsInline className='w-full h-full object-cover opacity-30 group-hover:opacity-100 duration-[2s] scale-[1.02] group-hover:scale-110 ease-out' />
+				) : project.image ? (
+					<img src={getAssetPath(project.image)} alt={project.title} className='w-full h-full object-cover opacity-50 group-hover:opacity-100 duration-[2s] scale-[1.02] group-hover:scale-110 ease-out transition-all' />
+				) : null}
 				<div className='absolute inset-0 bg-linear-to-t from-black/60 via-transparent to-transparent opacity-60 group-hover:opacity-30 transition-opacity' />
 				<div className='absolute top-8 right-8 w-14 h-14 rounded-full bg-black/80 backdrop-blur-xl border border-white/10 flex items-center justify-center text-white opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 hover:bg-accent hover:text-black hover:border-accent hover:scale-110 z-20'>
 					<Icon icon='solar:arrow-right-up-linear' className='text-2xl' />
@@ -245,6 +249,7 @@ const ProjectCard = ({ project, index }: { project: Project; index: number; }) =
 const OtherWorks = () => {
 	const sectionRef = useRef<HTMLElement>(null);
 	const projects: Project[] = [
+		{ id: "MWProperties", title: "MW Properties", category: "Real Estate Portal", year: 2026, description: "A high-fidelity digital portfolio for property renovation and investor acquisition, featuring a customized lead capture pipeline.", tags: ["React 19", "Vite", "Vanilla JS"], link: "https://mw-properties-c2j5cshcx-dte-solutions.vercel.app/", image: "assets/MWISPthumbnail.png" },
 		{ id: "ResaleIQ", title: "ResaleIQ Neural", category: "Boutique Intelligence", year: 2026, description: "Luxury boutique intelligence suite utilizing neural market analytics and high-conversion SEO generation for elite resellers.", tags: ["React 19", "Claude AI", "SEO"], link: "https://dte-84.github.io/ResaleIQ/", video: "assets/resale-iq.mp4" },
 		{ id: "SetLogic", title: "SetLogic Orchestrator", category: "Deterministic AI", year: 2026, description: "High-fidelity fitness orchestrator utilizing real-time biometric telemetry and 'Visual Logic' libraries for adaptive coaching.", tags: ["React 19", "Claude AI", "Telemetry"], link: "https://dte-solutions.icu/setlogic-breakdown.html", video: "assets/SetLogic.mp4" },
 		{ id: "KeysBeats", title: "Keys Beats Nexus", category: "Interactive Audio", year: 2026, description: "Real-time audio-reactive promotional nexus featuring kinetic canvas bloom and dynamic friction cursor physics.", tags: ["Web Audio API", "Canvas 2D", "Architecture"], link: "https://keys-beats.vercel.app/", video: "assets/KeysBeats.mp4" },
