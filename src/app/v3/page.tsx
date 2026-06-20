@@ -59,16 +59,16 @@ const Hero = ({ onContactClick }: { onContactClick: () => void }) => {
 					</p>
 					<div className='hero-sub max-w-xl bg-white/2.5 backdrop-blur-md border border-white/6 px-7 py-6 rounded-3xl relative overflow-hidden group mb-10' style={{ opacity: 0 }}>
 						<p className='text-base md:text-lg text-white/75 leading-relaxed font-medium italic'>
-							I build <span className='text-accent not-italic font-bold'>secure, data-driven systems</span> and real-world applications — turning raw data into usable architecture and clear insights.
+							I engineer <span className='text-accent not-italic font-bold'>full-stack applications and data pipelines</span> that solve real business problems—turning raw requirements into reliable, production-ready systems.
 						</p>
 					</div>
 					<div className='hero-sub flex flex-col sm:flex-row items-center gap-4' style={{ opacity: 0 }}>
 						<a href='#flagship' className='group flex items-center gap-3 bg-accent text-black px-8 py-4 rounded-2xl font-black uppercase text-[11px] tracking-[0.25em] transition-all duration-300 hover:scale-105 active:scale-95 shadow-[0_0_30px_rgba(var(--theme-accent-rgb),0.35)]'>
-							<RollingText text='View Work' hoverColor='text-white' />
+							<RollingText text='View Flagship' hoverColor='text-white' />
 							<Icon icon='solar:arrow-right-down-linear' className='text-base group-hover:translate-y-1 transition-transform' />
 						</a>
 						<a href='#work' className='group flex items-center gap-3 bg-white/4 border border-white/10 text-white/60 px-8 py-4 rounded-2xl font-black uppercase text-[11px] tracking-[0.25em] transition-all duration-300 hover:bg-white/8 hover:border-white/20 hover:text-white'>
-							<RollingText text='View Systems' />
+							<RollingText text='See All Projects' />
 						</a>
 						<button onClick={onContactClick} className='group flex items-center gap-3 bg-white/4 border border-white/10 text-white/60 px-8 py-4 rounded-2xl font-black uppercase text-[11px] tracking-[0.25em] transition-all duration-300 hover:bg-white/8 hover:border-white/20 hover:text-white'>
 							<RollingText text='Contact' />
@@ -81,10 +81,9 @@ const Hero = ({ onContactClick }: { onContactClick: () => void }) => {
 };
 
 const StrengthsArchitecture = () => {
-	const strengths = [
-		{ id: "01", title: "Data Understanding", body: "Interpreting complex variables to find deterministic patterns.", icon: "solar:database-linear" },
-		{ id: "02", title: "Systems Execution", body: "Engineering robust, full-stack backends for real-world utility.", icon: "solar:cpu-linear" },
-		{ id: "03", title: "UI Communications", body: "Translating technical telemetry into high-fidelity visual clarity.", icon: "solar:graph-new-linear" }
+		{ id: "01", title: "Data Analysis", body: "Cleaning, structuring, and analyzing complex datasets to extract actionable business insights.", icon: "solar:database-linear" },
+		{ id: "02", title: "Backend Engineering", body: "Building reliable APIs and robust database architectures using Python, FastAPI, and PostgreSQL.", icon: "solar:cpu-linear" },
+		{ id: "03", title: "Frontend Development", body: "Creating responsive, accessible, and high-performance user interfaces with React and Next.js.", icon: "solar:graph-new-linear" }
 	];
 
 	return (
@@ -148,10 +147,10 @@ const FlagshipBuilds = () => {
 	}, []);
 
 	const builds = [
-		{ id: "Pulse", title: "Pulse-AI Behavioral Finance", tags: ["FastAPI", "React 19", "PWA"], desc: "Full-stack behavioral finance SaaS utilizing Python, FastAPI, and Pydantic for high-performance REST architecture. Mobile-optimized with PWA support and predictive spending telemetry.", link: "https://dte-solutions.icu/pulse-breakdown.html", video: "assets/Pulse.mp4" },
-		{ id: "PCSP", title: "PCSP Assistant Pro", tags: ["Next.js", "AES-256", "HIPAA"], desc: "Deterministic documentation engine (v3.0) hardened with AES-GCM 256-bit encryption for HIPAA compliance.", link: getAssetPath("case-study-pcsp"), video: "assets/PCSP.mp4" },
-		{ id: "SQL", title: "SQL Analytics Engine", tags: ["PostgreSQL", "Analytics", "Window Fns"], desc: "Advanced engineering for commerce telemetry using window functions, CTEs, and high-fidelity cohort analysis.", link: "https://ecomm-505qtlvsc-dte-solutions.vercel.app/", video: "assets/ecommSQL.mp4" },
-		{ id: "Hub", title: "DTE Solutions Hub", tags: ["PostgreSQL", "Analytics", "Window Fns", "Ecosystem"], desc: "Central nexus for the DTE Ecosystem, orchestrating the 'Big Three' focus products via high-fidelity behavioral pipelines.", link: "https://dte-solutions.icu", video: "assets/dte-solutionspreview.mp4" }
+		{ id: "Pulse", title: "Pulse-AI Behavioral Finance", tags: ["FastAPI", "React 19", "PWA"], desc: "A full-stack personal finance application built with a React/Next.js frontend and a Python/FastAPI backend. Features secure user authentication, transaction categorization, and a PostgreSQL database for reliable data storage.", link: "https://dte-solutions.icu/pulse-breakdown.html", video: "assets/Pulse.mp4" },
+		{ id: "PCSP", title: "PCSP Assistant Pro", tags: ["Next.js", "AES-256", "HIPAA"], desc: "A specialized compliance documentation tool for state case managers. It securely encrypts user data locally in the browser using AES-GCM 256-bit encryption to ensure HIPAA compliance before saving.", link: getAssetPath("case-study-pcsp"), video: "assets/PCSP.mp4" },
+		{ id: "SQL", title: "SQL Analytics Engine", tags: ["PostgreSQL", "Analytics", "Window Fns"], desc: "A comprehensive data analysis project using advanced PostgreSQL queries. I utilized CTEs, window functions, and joins to analyze e-commerce datasets and extract key business metrics like customer retention and sales trends.", link: "https://ecomm-505qtlvsc-dte-solutions.vercel.app/", video: "assets/ecommSQL.mp4" },
+		{ id: "ResaleIQ", title: "ResaleIQ Neural", tags: ["React 19", "Claude AI", "SEO"], desc: "AI-powered resale assistant that generates optimized listings and pricing intelligence for luxury goods.", link: "https://dte-84.github.io/ResaleIQ/", video: "Resale-IQ.mp4" }
 	];
 
 	return (
@@ -250,19 +249,16 @@ const ProjectCard = ({ project, index }: { project: Project; index: number; }) =
 const OtherWorks = () => {
 	const sectionRef = useRef<HTMLElement>(null);
 	const projects: Project[] = [
-		{ id: "MWProperties", title: "MW Properties", category: "Real Estate Portal", year: 2026, description: "A high-fidelity digital portfolio for property renovation and investor acquisition, featuring a customized lead capture pipeline.", tags: ["React 19", "Vite", "Vanilla JS"], link: "https://mw-properties.vercel.app/", image: "mwpropertiesmain.png" },
-		{ id: "ResaleIQ", title: "ResaleIQ Neural", category: "Boutique Intelligence", year: 2026, description: "Luxury boutique intelligence suite utilizing neural market analytics and high-conversion SEO generation for elite resellers.", tags: ["React 19", "Claude AI", "SEO"], link: "https://dte-84.github.io/ResaleIQ/", video: "Resale-IQ.mp4" },
-		{ id: "SetLogic", title: "SetLogic Orchestrator", category: "Deterministic AI", year: 2026, description: "High-fidelity fitness orchestrator utilizing real-time biometric telemetry and 'Visual Logic' libraries for adaptive coaching.", tags: ["React 19", "Claude AI", "Telemetry"], link: "https://dte-solutions.icu/setlogic-breakdown.html", video: "assets/SetLogic.mp4" },
-		{ id: "KeysBeats", title: "Keys Beats Nexus", category: "Interactive Audio", year: 2026, description: "Real-time audio-reactive promotional nexus featuring kinetic canvas bloom and dynamic friction cursor physics.", tags: ["Web Audio API", "Canvas 2D", "Architecture"], link: "https://keys-beats.vercel.app/", video: "assets/KeysBeats.mp4" },
-		{ id: "Nest", title: "NestLegacy Shell", category: "Enterprise Fintech", year: 2026, description: "Digital trust layer for the $84 trillion wealth transfer using AI lead intelligence.", tags: ["React 19", "Architecture"], link: "https://dte-solutions.icu/nestlegacy-breakdown.html", video: "assets/NestLegacy.mp4" },
-		{ id: "Quarterly", title: "Quarterly Pro", category: "Audit Resilience", year: 2026, description: "Deterministic validation engine for Missouri DMH compliance reporting.", tags: ["Audit Logic", "Systems"], link: getAssetPath("case-study-quarterly"), video: "assets/PCSP.mp4" },
-		{ id: "Fluff", title: "Fluff Telemetry", category: "Performance Analytics", year: 2026, description: "Multi-source telemetry suite orchestrating real-time GPS and biometrics.", tags: ["IoT Sync", "Geospatial"], link: "https://dte-84.github.io/Fluff/", video: "assets/Fluff.mp4" },
-		{ id: "CryptoLive", title: "CryptoLive Engine", category: "Websocket Fintech", year: 2026, description: "High-performance websocket implementation for real-time market data visualization and predictive node tracking.", tags: ["React", "Socket.io", "Chart.js"], link: "https://cryptolive-5jmo.onrender.com/", video: "assets/FinancialTrack.mp4" },
-		{ id: "StateLogic", title: "State Logic Store", category: "Digital Commerce", year: 2025, description: "Technical demonstration of advanced state management and asynchronous data orchestration for e-commerce.", tags: ["React", "Hooks", "API"], link: "https://dte-84.github.io/E-Commerce-Books/", video: "assets/estore.mp4" },
-		{ id: "ProDip", title: "Pro Dip LLC", category: "Commercial Aesthetics", year: 2025, description: "High-performance automotive aesthetics hub featuring asymmetric CSS grids and zero-dependency architecture.", tags: ["PostgreSQL", "Analytics", "Window Fns", "Vanilla JS"], link: "https://dte-84.github.io/ProDip/", video: "assets/PRODIPpreview.mp4" },
-		{ id: "Tonys", title: "Landscaping Logic", category: "Commercial UI", year: 2026, description: "Custom interactive engine for visual data comparison and quote logic.", tags: ["GSAP", "Architecture"], link: "https://tonyslandscapingllc.com", video: "assets/Tonysllc.mp4" },
-		{ id: "SiKnight", title: "SiKnight Hub", category: "Interactive Media", year: 2026, description: "High-engagement gaming portal featuring real-time leaderboard and virtual currency.", tags: ["React 19", "Game Design"], link: "https://dte-84.github.io/SiKnight/", video: "assets/siknight.mp4" },
-		{ id: "Inventory", title: "Inventory Discovery", category: "Automotive SaaS", year: 2025, description: "Marketplace interface optimized for complex search heuristics and high-speed filtering.", tags: ["REST API", "Search"], link: "https://dte-84.github.io/CarSalesInv/", video: "assets/CarSales.mp4" },
+		{ id: "Hub", title: "DTE Solutions Hub", category: "Ecosystem", year: 2026, description: "The central entry point for my suite of applications, demonstrating cross-app navigation, consistent UI design, and scalable deployment practices on Vercel and GitHub Pages.", tags: ["PostgreSQL", "Analytics", "Window Fns", "Ecosystem"], link: "https://dte-solutions.icu", video: "assets/dte-solutionspreview.mp4" },
+		{ id: "MWProperties", title: "MW Properties", category: "Real Estate Portal", year: 2026, description: "A marketing and lead-generation website built for a real estate investment group. Developed with React and Vite for fast load times and a custom contact form integration.", tags: ["React 19", "Vite", "Vanilla JS"], link: "https://mw-properties.vercel.app/", image: "mwpropertiesmain.png" },
+		{ id: "SetLogic", title: "SetLogic Orchestrator", category: "Deterministic AI", year: 2026, description: "A fitness tracking application that logs workout metrics and provides data-driven coaching feedback using a React frontend.", tags: ["React 19", "Claude AI", "Telemetry"], link: "https://dte-solutions.icu/setlogic-breakdown.html", video: "assets/SetLogic.mp4" },
+		{ id: "KeysBeats", title: "Keys Beats Nexus", category: "Interactive Audio", year: 2026, description: "An interactive promotional website for an audio producer, featuring real-time visual effects built with the HTML5 Canvas API and Web Audio API.", tags: ["Web Audio API", "Canvas 2D", "Architecture"], link: "https://keys-beats.vercel.app/", video: "assets/KeysBeats.mp4" },
+		{ id: "Nest", title: "NestLegacy Shell", category: "Enterprise Fintech", year: 2026, description: "A landing page concept for an enterprise financial technology product, highlighting modern UI design principles and responsive layouts.", tags: ["React 19", "Architecture"], link: "https://dte-solutions.icu/nestlegacy-breakdown.html", video: "assets/NestLegacy.mp4" },
+		{ id: "Fluff", title: "Fluff Telemetry", category: "Performance Analytics", year: 2026, description: "A dashboard application designed to map and analyze GPS and biometric data for personal performance tracking.", tags: ["IoT Sync", "Geospatial"], link: "https://dte-84.github.io/Fluff/", video: "assets/Fluff.mp4" },
+		{ id: "ProDip", title: "Pro Dip LLC", category: "Commercial Aesthetics", year: 2025, description: "A business website for an automotive detailing company. Built with vanilla JavaScript and CSS Grid to showcase their services without heavy framework dependencies.", tags: ["PostgreSQL", "Analytics", "Window Fns", "Vanilla JS"], link: "https://dte-84.github.io/ProDip/", video: "assets/PRODIPpreview.mp4" },
+		{ id: "Tonys", title: "Landscaping Logic", category: "Commercial UI", year: 2026, description: "A service quote generator and informational website for a commercial landscaping business.", tags: ["GSAP", "Architecture"], link: "https://tonyslandscapingllc.com", video: "assets/Tonysllc.mp4" },
+		{ id: "SiKnight", title: "SiKnight Hub", category: "Interactive Media", year: 2026, description: "A portal for a web-based game, featuring a real-time leaderboard and user progress tracking.", tags: ["React 19", "Game Design"], link: "https://dte-84.github.io/SiKnight/", video: "assets/siknight.mp4" },
+		{ id: "Inventory", title: "Inventory Discovery", category: "Automotive SaaS", year: 2025, description: "A vehicle inventory search interface with complex filtering logic, allowing users to quickly sort and find cars based on multiple criteria.", tags: ["REST API", "Search"], link: "https://dte-84.github.io/CarSalesInv/", video: "assets/CarSales.mp4" },
 	];
 
 	return (
@@ -323,7 +319,7 @@ const Footer = ({ onContactClick }: { onContactClick: () => void }) => {
 						<a href='https://github.com/dte-84' target='_blank' rel='noreferrer' className='text-2xl text-white hover:text-accent transition-colors'><Icon icon='simple-icons:github' /></a>
 						<a href='https://linkedin.com/in/dte84' target='_blank' rel='noreferrer' className='text-2xl text-white hover:text-accent transition-colors'><Icon icon='simple-icons:linkedin' /></a>
 					</div>
-					<p className='text-[10px] font-mono text-white/10 uppercase tracking-[0.5em]'>STL MO // IL Division // © 2026 DTE Solutions LLC</p>
+					<p className='text-[10px] font-mono text-white/10 uppercase tracking-[0.5em]'>Quincy, IL — Available Remote // © 2026 DTE Solutions LLC</p>
 				</div>
 			</div>
 		</footer>

@@ -117,11 +117,11 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
 					<form ref={formRef} onSubmit={handleSubmit} className='space-y-6'>
 						<div className='form__item'>
 							<label className='block text-[9px] font-bold uppercase mb-2 text-white/30 tracking-[0.3em]'>
-								Identity
+								Name
 							</label>
 							<input
 								className='w-full p-4 bg-white/5 border border-white/10 rounded-xl text-white font-bold outline-none font-mono text-xs uppercase placeholder:text-white/20 focus:border-accent/50 transition-all'
-								placeholder='Full Name...'
+								placeholder='Your name...'
 								name='user_name'
 								type='text'
 								required
@@ -129,11 +129,11 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
 						</div>
 						<div className='form__item'>
 							<label className='block text-[9px] font-bold uppercase mb-2 text-white/30 tracking-[0.3em]'>
-								Coordinate
+								Email
 							</label>
 							<input
 								className='w-full p-4 bg-white/5 border border-white/10 rounded-xl text-white font-bold outline-none font-mono text-xs uppercase placeholder:text-white/20 focus:border-accent/50 transition-all'
-								placeholder='Email Address...'
+								placeholder='your@email.com'
 								name='user_email'
 								type='email'
 								required
@@ -141,11 +141,11 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
 						</div>
 						<div className='form__item'>
 							<label className='block text-[9px] font-bold uppercase mb-2 text-white/30 tracking-[0.3em]'>
-								Transmission
+								Message
 							</label>
 							<textarea
 								className='w-full p-4 bg-white/5 border border-white/10 rounded-xl text-white font-bold outline-none h-32 font-mono text-xs uppercase placeholder:text-white/20 focus:border-accent/50 transition-all'
-								placeholder='System Details...'
+								placeholder='How can we help you?'
 								name='message'
 								required></textarea>
 						</div>

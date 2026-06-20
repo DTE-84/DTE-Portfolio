@@ -70,9 +70,8 @@ const About: React.FC = () => {
 
 				<div className='max-w-4xl'>
 					<div className='space-y-6'>
-						<RevealText text='I design and build secure, data-driven systems that turn complex information into clear, actionable products.' />
-						<RevealText text="My work sits at the intersection of backend architecture and user experience-where structured data, predictive analytics, and real-world usability come together." />
-						<RevealText text="I specialize in creating end-to-end systems that transform raw data into meangingful insights, whether in financial behavior, clinical workflows, or business operations." />
+						<RevealText text="My work sits at the intersection of backend architecture and user experience—where structured data, predictive analytics, and real-world usability come together." />
+						<RevealText text="I specialize in creating end-to-end systems that transform raw data into meaningful insights, whether in financial behavior, clinical workflows, or business operations." />
 					</div>
 
 					<div className='mt-20 space-y-10'>
@@ -81,20 +80,13 @@ const About: React.FC = () => {
 						</h4>
 						<ul className='terminal-list list-none p-0 mt-[30px]'>
 							<li className="relative pl-[25px] mb-[18px] text-[clamp(0.85rem,1.8vw,1.1rem)] text-[#d7e3fc]/75 leading-relaxed font-semibold before:content-['>>'] before:absolute before:left-0 before:text-accent before:font-orbitron before:text-[14px] before:top-[4px] before:animate-[list-pulse_1.5s_infinite]">
-								<span className='bold'>Deterministic Architecture:</span> I believe data is not just information - it's a signal that drives decisions.
+								<span className='font-bold text-white'>Deterministic Architecture:</span> Systems should be reliable, predictable, and built on strong data integrity.
 							</li>
 							<li className="relative pl-[25px] mb-[18px] text-[clamp(0.85rem,1.8vw,1.1rem)] text-[#d7e3fc]/75 leading-relaxed font-semibold before:content-['>>'] before:absolute before:left-0 before:text-accent before:font-orbitron before:text-[14px] before:top-[4px] before:animate-[list-pulse_1.5s_infinite]">
-								<span className='bold'>High-Fidelity Signal:</span> My approach focuses on three core principles:
-								<br /><br />
-								<span className='bold'>1. Deterministic Architecture</span> - Systems should be reliable, predictable, and built on strong data integrity.
-								<br /><br />
-								<span className='bold'>2. Signal Clarity</span> - Data should be structured and presented in a way that makes decisions obvious - not overwhelming.
-								<br /><br />
-								<span className='bold'>3. Analytical Precision</span> - Every system should produce measurable, meaningful outcomes using behavioral and operational data.
+								<span className='font-bold text-white'>Signal Clarity:</span> Data should be structured and presented in a way that makes decisions obvious - not overwhelming.
 							</li>
 							<li className="relative pl-[25px] mb-[18px] text-[clamp(0.85rem,1.8vw,1.1rem)] text-[#d7e3fc]/75 leading-relaxed font-semibold before:content-['>>'] before:absolute before:left-0 before:text-accent before:font-orbitron before:text-[14px] before:top-[4px] before:animate-[list-pulse_1.5s_infinite]">
-								<span className='bold'>Analytical Precision:</span> Building 
-								tools that leverage behavioral telemetry to drive measurable results.
+								<span className='font-bold text-white'>Analytical Precision:</span> Every system should produce measurable, meaningful outcomes using behavioral and operational data.
 							</li>
 						</ul>
 					</div>
