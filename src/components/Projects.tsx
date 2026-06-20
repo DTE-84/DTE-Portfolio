@@ -152,7 +152,7 @@ const Projects: React.FC = () => {
                         description:
                                 "A digital portfolio for a real estate renovation and investor portal. Features interactive showcase sliders and a structured lead pipeline architecture.",
                         tags: ["React 18", "Vite", "Vanilla CSS"],
-                        image: "/DTE-Portfolio/mwpropertiesmain.png",
+                        image: "/mwpropertiesmain.png",
                         link: "https://mw-properties.vercel.app/",
                         caseStudy: "/mwproperties-breakdown.html",
                         featured: true,
