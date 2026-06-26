@@ -151,7 +151,7 @@ const FlagshipBuilds = () => {
 		{ id: "Pulse", title: "Pulse-AI Behavioral Finance", tags: ["FastAPI", "React 19", "PWA"], desc: "A full-stack personal finance application built with a React/Next.js frontend and a Python/FastAPI backend. Features secure user authentication, transaction categorization, and a PostgreSQL database for reliable data storage.", link: "https://dte-solutions.icu/pulse-breakdown.html", video: "assets/Pulse.mp4" },
 		{ id: "PCSP", title: "PCSP Assistant Pro", tags: ["Next.js", "AES-256", "HIPAA"], desc: "A specialized compliance documentation tool for state case managers. It securely encrypts user data locally in the browser using AES-GCM 256-bit encryption to ensure HIPAA compliance before saving.", link: getAssetPath("case-study-pcsp"), video: "assets/PCSP.mp4" },
 		{ id: "SQL", title: "SQL Analytics Engine", tags: ["PostgreSQL", "Analytics", "Window Fns"], desc: "A comprehensive data analysis project using advanced PostgreSQL queries. I utilized CTEs, window functions, and joins to analyze e-commerce datasets and extract key business metrics like customer retention and sales trends.", link: "https://ecomm-505qtlvsc-dte-solutions.vercel.app/", video: "assets/ecommSQL.mp4" },
-		{ id: "ResaleIQ", title: "ResaleIQ Neural", tags: ["React 19", "Claude AI", "SEO"], desc: "AI-powered resale assistant that generates optimized listings and pricing intelligence for luxury goods.", link: "https://dte-84.github.io/ResaleIQ/", video: "Resale-IQ.mp4" }
+		{ id: "ResaleIQ", title: "ResaleIQ Neural", tags: ["React 19", "Claude AI", "SEO"], desc: "AI-powered resale assistant that generates optimized listings and pricing intelligence for luxury goods.", link: "https://resale-iq-xi.vercel.app/", video: "Resale-IQ.mp4" }
 	];
 
 	return (
