@@ -41,10 +41,6 @@ export const metadata: Metadata = {
       "Workflow tools, behavioral products, and data-driven web apps.",
     images: ["/DTE-Portfolio/assets/DTE84resume.png"],
   },
-  icons: {
-    icon: "/favicon.ico",
-    apple: "/favicon.ico",
-  },
 };
 
 export default function RootLayout({
