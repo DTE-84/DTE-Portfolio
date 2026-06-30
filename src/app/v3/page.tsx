@@ -16,6 +16,49 @@ if (typeof window !== "undefined") {
 	gsap.registerPlugin(ScrollTrigger);
 }
 
+/**
+ * LazyVideo — only begins loading & playing when scrolled into the viewport.
+ * Uses preload="none" so the browser never fetches video data until needed.
+ */
+const LazyVideo: React.FC<{ src: string; poster?: string; className?: string }> = ({ src, poster, className }) => {
+	const videoRef = useRef<HTMLVideoElement>(null);
+
+	useEffect(() => {
+		const video = videoRef.current;
+		if (!video) return;
+
+		const observer = new IntersectionObserver(
+			(entries) => {
+				entries.forEach((entry) => {
+					if (entry.isIntersecting) {
+						// Only set src once — avoids repeated loads
+						if (!video.src) video.src = src;
+						video.play().catch(() => {});
+					} else {
+						video.pause();
+					}
+				});
+			},
+			{ threshold: 0.15 }
+		);
+
+		observer.observe(video);
+		return () => observer.disconnect();
+	}, [src]);
+
+	return (
+		<video
+			ref={videoRef}
+			poster={poster}
+			preload="none"
+			loop
+			muted
+			playsInline
+			className={className}
+		/>
+	);
+};
+
 const Hero = ({ onContactClick }: { onContactClick: () => void }) => {
 	const containerRef = useRef<HTMLDivElement>(null);
 
@@ -184,8 +227,8 @@ const FlagshipBuilds = () => {
 								<Icon icon='solar:arrow-right-up-linear' className='text-lg group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform' />
 							</a>
 						</div>
-						<Link href={build.link} target='_blank' rel='noreferrer' className='flagship-reveal relative aspect-video lg:aspect-auto rounded-[2.5rem] overflow-hidden bg-black/40 border border-white/10 order-1 lg:order-2 group-hover:border-accent/30 transition-colors'>
-							<video src={getAssetPath(build.video)} autoPlay loop muted playsInline className='w-full h-full object-cover scale-[1.02] group-hover:scale-110 transition-transform duration-[2s] ease-out' />
+						<Link href={build.link} target='_blank' rel='noreferrer' aria-label={`View ${build.title} project`} className='flagship-reveal relative aspect-video lg:aspect-auto rounded-[2.5rem] overflow-hidden bg-black/40 border border-white/10 order-1 lg:order-2 group-hover:border-accent/30 transition-colors'>
+							<LazyVideo src={getAssetPath(build.video)} className='w-full h-full object-cover scale-[1.02] group-hover:scale-110 transition-transform duration-[2s] ease-out' />
 							<div className='absolute inset-0 bg-linear-to-t from-black/80 via-transparent to-transparent' />
 						</Link>
 					</div>
@@ -208,11 +251,15 @@ const ProjectCard = ({ project, index }: { project: Project; index: number; }) =
 
 	return (
 		<div ref={cardRef} className='group relative flex flex-col gap-6 p-6 rounded-[3rem] bg-white/2 border border-white/5 hover:border-accent/30 transition-all duration-700 hover:bg-white/[0.03] shadow-2xl hover:shadow-accent/5' style={{ opacity: 0, transform: "translateY(20px)" }}>
-			<Link href={project.link} target='_blank' rel='noreferrer' className='aspect-video rounded-[2rem] overflow-hidden bg-black/40 border border-white/10 relative transition-all duration-700 group-hover:border-accent/40'>
+			<Link href={project.link} target='_blank' rel='noreferrer' aria-label={`View ${project.title} project`} className='aspect-video rounded-[2rem] overflow-hidden bg-black/40 border border-white/10 relative transition-all duration-700 group-hover:border-accent/40'>
 				{project.video ? (
-					<video src={getAssetPath(project.video)} autoPlay loop muted playsInline className='w-full h-full object-cover opacity-30 group-hover:opacity-100 duration-[2s] scale-[1.02] group-hover:scale-110 ease-out' />
+					<LazyVideo
+						src={getAssetPath(project.video)}
+						poster={project.image ? getAssetPath(project.image) : undefined}
+						className='w-full h-full object-cover opacity-30 group-hover:opacity-100 duration-[2s] scale-[1.02] group-hover:scale-110 ease-out transition-all'
+					/>
 				) : project.image ? (
-					<img src={getAssetPath(project.image)} alt={project.title} className='w-full h-full object-cover opacity-50 group-hover:opacity-100 duration-[2s] scale-[1.02] group-hover:scale-110 ease-out transition-all' />
+					<img src={getAssetPath(project.image)} alt={project.title} width={640} height={360} className='w-full h-full object-cover opacity-50 group-hover:opacity-100 duration-[2s] scale-[1.02] group-hover:scale-110 ease-out transition-all' />
 				) : null}
 				<div className='absolute inset-0 bg-linear-to-t from-black/60 via-transparent to-transparent opacity-60 group-hover:opacity-30 transition-opacity' />
 				<div className='absolute top-8 right-8 w-14 h-14 rounded-full bg-black/80 backdrop-blur-xl border border-white/10 flex items-center justify-center text-white opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 hover:bg-accent hover:text-black hover:border-accent hover:scale-110 z-20'>
@@ -317,8 +364,8 @@ const Footer = ({ onContactClick }: { onContactClick: () => void }) => {
 				</div>
 				<div className='mt-12 flex flex-col items-center gap-4 z-20'>
 					<div className='flex gap-8'>
-						<a href='https://github.com/dte-84' target='_blank' rel='noreferrer' className='text-2xl text-white hover:text-accent transition-colors'><Icon icon='simple-icons:github' /></a>
-						<a href='https://linkedin.com/in/dte84' target='_blank' rel='noreferrer' className='text-2xl text-white hover:text-accent transition-colors'><Icon icon='simple-icons:linkedin' /></a>
+						<a href='https://github.com/dte-84' target='_blank' rel='noreferrer' aria-label='GitHub profile' className='text-2xl text-white hover:text-accent transition-colors'><Icon icon='simple-icons:github' /></a>
+						<a href='https://linkedin.com/in/dte84' target='_blank' rel='noreferrer' aria-label='LinkedIn profile' className='text-2xl text-white hover:text-accent transition-colors'><Icon icon='simple-icons:linkedin' /></a>
 					</div>
 					<p className='text-[10px] font-mono text-white/10 uppercase tracking-[0.5em]'>Quincy, IL — Available Remote // © 2026 DTE Solutions LLC</p>
 				</div>

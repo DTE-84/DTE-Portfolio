@@ -89,12 +89,12 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
 
 				<div
 					className={`modal__half modal__about w-1/2 p-[45px] flex flex-col justify-center bg-accent text-black hidden md:flex transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] ${isAnimating ? "translate-x-0 opacity-100 scale-100" : "-translate-x-[150%] opacity-0 scale-90"}`}>
-					<h3 className='modal__title text-3xl font-black mb-4 uppercase tracking-tighter'>
+					<p className='modal__title text-3xl font-black mb-4 uppercase tracking-tighter'>
 						Drew T Ernst
-					</h3>
-					<h4 className='modal__sub-title text-black/40 font-black mb-6 uppercase tracking-[0.3em] text-[10px]'>
+					</p>
+					<span className='modal__sub-title block text-black/40 font-black mb-6 uppercase tracking-[0.3em] text-[10px]'>
 						Systems Engineer
-					</h4>
+					</span>
 					<p className='modal__para leading-relaxed text-black/80 text-sm font-bold'>
 						Strategic engineering focused on trust acquisition and data integrity. 
 						Building beyond the interface.
@@ -105,6 +105,7 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
 					className={`modal__half modal__contact w-full md:w-1/2 p-[45px] flex flex-col justify-center bg-[#121212] text-white relative transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] ${isAnimating ? "translate-x-0 opacity-100 scale-100" : "translate-x-[150%] opacity-0 scale-90"}`}>
 					<button
 						onClick={onClose}
+						aria-label="Close contact modal"
 						className='absolute top-8 right-8 text-2xl cursor-pointer text-white/20 hover:text-accent transition-all z-50 p-2 group/close'>
 						<Icon
 							icon='bi:x-lg'

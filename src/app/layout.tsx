@@ -58,7 +58,7 @@ export default function RootLayout({
         {children}
         <Script
           src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
-          strategy="beforeInteractive"
+          strategy="lazyOnload"
         />
       </body>
     </html>
