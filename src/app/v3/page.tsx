@@ -98,7 +98,7 @@ const Hero = ({ onContactClick }: { onContactClick: () => void }) => {
 						))}
 					</h1>
 					<p className='hero-sub text-[10px] md:text-[12px] font-mono uppercase tracking-[0.55em] font-bold mb-8' style={{ color: "var(--theme-accent)", opacity: 0 }}>
-						Data Analyst &nbsp;//&nbsp; Full-Stack Capability
+						Data Analyst &nbsp;//&nbsp; Full-Stack Engineer
 					</p>
 					<div className='hero-sub max-w-xl bg-white/2.5 backdrop-blur-md border border-white/6 px-7 py-6 rounded-3xl relative overflow-hidden group mb-10' style={{ opacity: 0 }}>
 						<p className='text-base md:text-lg text-white/75 leading-relaxed font-medium italic'>
@@ -176,6 +176,8 @@ const tagIcons: Record<string, string> = {
 	"Asymmetric Grid": "solar:grid-linear",
 	"SEO": "solar:magnifer-zoom-in-linear",
 	"Ecosystem": "solar:globus-linear",
+	"Express": "logos:express",
+	"Vite": "logos:vitejs",
 };
 
 const FlagshipBuilds = () => {
@@ -191,9 +193,9 @@ const FlagshipBuilds = () => {
 	}, []);
 
 	const builds = [
-		{ id: "Pulse", title: "Pulse-AI Behavioral Finance", tags: ["FastAPI", "React 19", "PWA"], desc: "A full-stack personal finance application built with a React/Next.js frontend and a Python/FastAPI backend. Features secure user authentication, transaction categorization, and a PostgreSQL database for reliable data storage.", link: "https://dte-solutions.icu/pulse-breakdown.html", video: "assets/Pulse.mp4" },
+		{ id: "Pulse", title: "Pulse-AI Behavioral Finance", tags: ["Express", "TypeScript", "PWA"], desc: "A behavioral finance SaaS equipped with an AI coach (Nova), a real-time stress index, Plaid streaming, and behavioral pattern detection for deep financial insights.", link: "https://dte-solutions.icu/pulse-breakdown.html", video: "assets/Pulse.mp4" },
 		{ id: "PCSP", title: "PCSP Assistant Pro", tags: ["Next.js", "AES-256", "HIPAA"], desc: "A specialized compliance documentation tool for state case managers. It securely encrypts user data locally in the browser using AES-GCM 256-bit encryption to ensure HIPAA compliance before saving.", link: getAssetPath("case-study-pcsp"), video: "assets/PCSP.mp4" },
-		{ id: "SQL", title: "SQL Analytics Engine", tags: ["PostgreSQL", "Analytics", "Window Fns"], desc: "A comprehensive data analysis project using advanced PostgreSQL queries. I utilized CTEs, window functions, and joins to analyze e-commerce datasets and extract key business metrics like customer retention and sales trends.", link: "https://ecomm-505qtlvsc-dte-solutions.vercel.app/", video: "assets/ecommSQL.mp4" },
+		{ id: "SQL", title: "Advanced Analytics Case Study", tags: ["PostgreSQL", "Analytics", "Window Fns"], desc: "A comprehensive data analysis project using advanced PostgreSQL queries. I utilized CTEs, window functions, and joins to analyze e-commerce datasets and extract key business metrics like customer retention and sales trends.", link: "https://ecomm-505qtlvsc-dte-solutions.vercel.app/", video: "assets/ecommSQL.mp4" },
 		{ id: "ResaleIQ", title: "ResaleIQ Neural", tags: ["React 19", "Claude AI", "SEO"], desc: "AI-powered resale assistant that generates optimized listings and pricing intelligence for luxury goods.", link: "https://resale-iq-xi.vercel.app/", video: "Resale-IQ.mp4" }
 	];
 
@@ -297,8 +299,8 @@ const ProjectCard = ({ project, index }: { project: Project; index: number; }) =
 const OtherWorks = () => {
 	const sectionRef = useRef<HTMLElement>(null);
 	const projects: Project[] = [
-		{ id: "Hub", title: "DTE Solutions Hub", category: "Ecosystem", year: 2026, description: "The central entry point for my suite of applications, demonstrating cross-app navigation, consistent UI design, and scalable deployment practices on Vercel and GitHub Pages.", tags: ["PostgreSQL", "Analytics", "Window Fns", "Ecosystem"], link: "https://dte-solutions.icu", video: "assets/dte-solutionspreview.mp4" },
-		{ id: "MWProperties", title: "MW Properties", category: "Real Estate Portal", year: 2026, description: "A marketing and lead-generation website built for a real estate investment group. Developed with React and Vite for fast load times and a custom contact form integration.", tags: ["React 19", "Vite", "Vanilla JS"], link: "https://mw-properties.vercel.app/", image: "mwpropertiesmain.png" },
+		{ id: "Hub", title: "DTE Solutions Hub", category: "Ecosystem", year: 2026, description: "The central entry point for my suite of applications, demonstrating cross-app navigation, consistent UI design, and scalable deployment practices on Vercel and GitHub Pages.", tags: ["Next.js", "React 19", "Ecosystem"], link: "https://dte-solutions.icu", video: "assets/dte-solutionspreview.mp4" },
+		{ id: "MWProperties", title: "MW Properties", category: "Real Estate Portal", year: 2026, description: "A marketing and lead-generation website built for a real estate investment group. Developed with React and Vite for fast load times and a custom contact form integration.", tags: ["React 19", "Vite"], link: "https://mw-properties.vercel.app/", image: "mwpropertiesmain.webp" },
 		{ id: "SetLogic", title: "SetLogic Orchestrator", category: "Deterministic AI", year: 2026, description: "A fitness tracking application that logs workout metrics and provides data-driven coaching feedback using a React frontend.", tags: ["React 19", "Claude AI", "Telemetry"], link: "https://dte-solutions.icu/setlogic-breakdown.html", video: "assets/SetLogic.mp4" },
 		{ id: "KeysBeats", title: "Keys Beats Nexus", category: "Interactive Audio", year: 2026, description: "An interactive promotional website for an audio producer, featuring real-time visual effects built with the HTML5 Canvas API and Web Audio API.", tags: ["Web Audio API", "Canvas 2D", "Architecture"], link: "https://keys-beats.vercel.app/", video: "assets/KeysBeats.mp4" },
 		{ id: "Nest", title: "NestLegacy Shell", category: "Enterprise Fintech", year: 2026, description: "A landing page concept for an enterprise financial technology product, highlighting modern UI design principles and responsive layouts.", tags: ["React 19", "Architecture"], link: "https://dte-solutions.icu/nestlegacy-breakdown.html", video: "assets/NestLegacy.mp4" },

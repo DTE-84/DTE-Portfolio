@@ -117,7 +117,7 @@ const BgAnimation: React.FC = () => {
       />
       <div
         className={`absolute inset-0 bg-cover bg-center opacity-[0.03] mix-blend-luminosity grayscale contrast-125 brightness-75`}
-        style={{ backgroundImage: `url(${getAssetPath("assets/proxima.jpg")})` }}
+        style={{ backgroundImage: `url(${getAssetPath("assets/proxima.webp")})` }}
       />
       <div
         className="absolute w-[600px] h-[600px] rounded-full blur-[120px] bg-accent opacity-10 animate-float"

@@ -30,11 +30,14 @@ const DTELogoModular = forwardRef<HTMLDivElement, DTELogoModularProps>(
 
 						
 					<Image
-						src={getAssetPath("DTELogo.png")}
+						src={getAssetPath("DTELogo.webp")}
 						alt='DTE LOGO'
 						fill
 						className='object-contain'
 						priority
+						// fetchpriority="high" is implied by priority on Next.js Image,
+						// but we also set sizes to match the container (500x500 max)
+						sizes="512px"
 					/>
 				</div>
 			</div>
