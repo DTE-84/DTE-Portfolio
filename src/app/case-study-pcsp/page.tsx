@@ -157,7 +157,7 @@ export default function CaseStudyISP() {
     },
     {
       icon: "solar:shield-keyhole-linear",
-      title: "Military-Grade Vault",
+      title: "Encrypted Vault",
       body: "v3.0 introduces AES-GCM 256-bit binary encryption. Every .pcsp file is now a cryptographically sealed container that requires the creator's unique PBKDF2-derived key to unlock, ensuring total data confidentiality.",
     },
 
@@ -941,7 +941,7 @@ export default function CaseStudyISP() {
                   VII. v3.0 Security Protocol (Hardened)
                 </h3>
                 <p className="text-sm text-white/75 leading-relaxed">
-                  Version 3.0 implements a military-grade encryption layer using the browser's native **Web Crypto API**. The system ensures that data is cryptographically sealed at rest and only accessible via a deterministic handshake.
+                  Version 3.0 implements an encryption layer using the browser's native **Web Crypto API**. The system ensures that data is cryptographically sealed at rest and only accessible via a deterministic unlock sequence.
                 </p>
                 <div className="p-6 rounded-xl bg-black border border-accent/40 font-mono text-sm space-y-3">
                   <div>
@@ -957,7 +957,7 @@ export default function CaseStudyISP() {
                     </div>
                   </div>
                   <div>
-                    <span className="text-[#00ffcc] font-bold">3. Multi-User Handshake:</span>
+                    <span className="text-[#00ffcc] font-bold">3. Decryption Flow:</span>
                     <div className="pl-4 text-zinc-400 mt-1">
                       Detect "ISPv3:" Signature → Extract Salt/IV → Derive Session Key → Decrypt RAM-Only
                     </div>
@@ -984,19 +984,13 @@ export default function CaseStudyISP() {
                 memory, I eliminated both the HIPAA risk and the IT bottleneck
                 in a single architectural decision.
               </p>
-              <p className="text-lg font-space text-white/75 max-w-3xl mx-auto leading-relaxed mb-4">
+              <p className="text-lg font-space text-white/75 max-w-3xl mx-auto leading-relaxed mb-12">
                 The result covers every Missouri ISP domain, satisfies
                 HIPAA&apos;s Security Rule without a BAA or a server, enforces
                 PHI retention policies client-side, and gets case managers from
                 blank page to audit-ready narrative in under two minutes.
                 That&apos;s the kind of problem frontend engineering is uniquely
                 positioned to solve.
-              </p>
-              <p className="text-base font-space text-[#00ffcc]/80 max-w-3xl mx-auto leading-relaxed mb-12 font-mono uppercase tracking-widest">
-                // ISP Assistant Pro passed Missouri state compliance review
-                without modification and is currently in active deployment
-                across county Departments of Developmental Disabilities — used
-                daily by the case managers who serve individuals in their care.
               </p>
               <div className="flex justify-center gap-8 flex-wrap">
                 <a
