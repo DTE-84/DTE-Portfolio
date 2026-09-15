@@ -130,9 +130,9 @@ export default function CaseStudyISP() {
       body: "A dropdown-driven building block approach converts casual goal language into standardized SMART goals instantly. Each of the nine PCSP sections is self-contained and collapses cleanly for focused drafting.",
     },
     {
-      icon: "solar:database-linear",
-      title: "Supabase Star-Schema",
-      body: "Transitioned from local-only storage to a robust PostgreSQL star-schema on Supabase. Plans are now securely housed in a relational database, enabling centralized analytics and seamless plan retrieval while maintaining strict HIPAA compliance.",
+      icon: "solar:shield-keyhole-linear",
+      title: "Zero-Knowledge Cloud",
+      body: "Transitioned from local-only storage to a highly secure Supabase PostgreSQL backend. However, to maintain strict HIPAA compliance without a BAA, all plan data is binary-encrypted (AES-GCM 256-bit) locally in the browser before syncing. The database only ever stores opaque ciphertext.",
     },
     {
       icon: "solar:history-linear",
@@ -174,8 +174,8 @@ export default function CaseStudyISP() {
     },
     {
       num: "02",
-      title: "Supabase Migration",
-      body: "While the initial architecture prioritized zero external dependencies, scaling required a centralized backend. I architected a PostgreSQL star-schema on Supabase to securely house .pcsp files, ensuring fast retrieval and data integrity while maintaining strict HIPAA protocols and encrypted transmission.",
+      title: "Encrypted Cloud Migration",
+      body: "While the initial architecture prioritized local storage, scaling required a centralized backend so case managers could log in from anywhere. I architected a Supabase PostgreSQL backend with Row-Level Security, but engineered it as a 'Zero-Knowledge' vault. The payload is encrypted in the browser using PBKDF2/AES-GCM before transmission. Supabase only stores the ciphertext, ensuring total HIPAA compliance without complex IT overhead.",
     },
     {
       num: "03",
