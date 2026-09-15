@@ -130,25 +130,29 @@ export default function CaseStudyISP() {
       body: "A dropdown-driven building block approach converts casual goal language into standardized SMART goals instantly. Each of the nine ISP sections is self-contained and collapses cleanly for focused drafting.",
     },
     {
-      icon: "solar:library-linear",
-      title: "Clinical Word Bank",
-
-      body: "Pre-loaded with Missouri-approved active verb structures — Instructional, Maintenance, Physical/Direct, Modeling, and Verbal Prompts — to enforce audit-ready language on the first draft, not the third revision.",
+      icon: "solar:database-linear",
+      title: "Supabase Star-Schema",
+      body: "Transitioned from local-only storage to a robust PostgreSQL star-schema on Supabase. Plans are now securely housed in a relational database, enabling centralized analytics and seamless plan retrieval while maintaining strict HIPAA compliance.",
     },
     {
-      icon: "solar:chat-square-like-linear",
-      title: "Communication Profiling",
-      body: "Captures primary language, sign language type, multi-select method checkboxes, evaluation status, identified barriers, and a dynamic behavior-to-response chart — all per Missouri DD guidelines.",
+      icon: "solar:history-linear",
+      title: "Non-Destructive Amendments",
+      body: "A fully wired Amendment Log tracks changes (Moves, Service changes, Provider changes) on a dated timeline without reopening or overwriting the originally approved plan. The UI displays 'Amended' chips on affected sections for immediate visibility.",
+    },
+    {
+      icon: "solar:layers-linear",
+      title: "Dynamic Plan Depths",
+      body: "One plan, two depths. By separating waiver-status and medical-complexity into independent toggles, non-waivered clients in natural homes see a condensed UI. Irrelevant sections (like HCBS education or HRST scoring) intelligently collapse with explicit reasoning, streamlining the workflow.",
+    },
+    {
+      icon: "solar:library-linear",
+      title: "Clinical Word Bank",
+      body: "Pre-loaded with Missouri-approved active verb structures — Instructional, Maintenance, Physical/Direct, Modeling, and Verbal Prompts — to enforce audit-ready language on the first draft.",
     },
     {
       icon: "solar:users-group-rounded-linear",
       title: "Person-Centered Supports",
-      body: "Dedicated sections for what the individual genuinely likes and dislikes, plus an unlimited dynamic roster of important people — each with relationship type, shared activities, and frequency of contact.",
-    },
-    {
-      icon: "solar:diskette-linear",
-      title: "Portable File System",
-      body: "Plans save as .pcsp files locally, reload on demand with full fidelity, print as clean PDFs, or persist as browser drafts — zero cloud dependency, zero IT involvement.",
+      body: "Dedicated sections for what the individual genuinely likes and dislikes, plus an unlimited dynamic roster of important people. This feeds directly into the auto-generated PDF narrative.",
     },
     {
       icon: "solar:shield-check-linear",
@@ -156,25 +160,9 @@ export default function CaseStudyISP() {
       body: "Automated workflows for federal HCBS Rule compliance and Missouri Due Process. Captures less restrictive alternatives, historical patterns, and measurable criteria for lifting rights restrictions.",
     },
     {
-      icon: "solar:shield-keyhole-linear",
-      title: "Encrypted Vault",
-      body: "v3.0 introduces AES-GCM 256-bit binary encryption. Every .pcsp file is now a cryptographically sealed container that requires the creator's unique PBKDF2-derived key to unlock, ensuring total data confidentiality.",
-    },
-
-    {
-      icon: "solar:cloud-check-linear",
-      title: "Auto-Save & Restore",
-      body: "A 4-second debounced auto-save writes session state to local browser storage after every change. On next load, the tool prompts to restore any session saved within the past 48 hours — zero work lost on unexpected tab closure.",
-    },
-    {
-      icon: "solar:alarm-linear",
-      title: "HIPAA Idle Timeout",
-      body: "After 30 minutes of inactivity, the system surfaces a workstation policy warning. Dismissing the prompt clears the auto-save and reloads the page — satisfying HIPAA's unattended workstation requirements without IT configuration.",
-    },
-    {
-      icon: "solar:target-linear",
-      title: "Multi-Goal Outcomes Engine",
-      body: "Section 9 now supports unlimited measurable outcome goals per plan — each with its own domain, support method, frequency, responsible provider, and start/end dates. All goals serialize into the .pcsp export and restore with full fidelity.",
+      icon: "solar:printer-linear",
+      title: "Automated Compilation",
+      body: "The engine instantly compiles 18 complex sections into a clean, formatted PDF. Recent refinements include dynamic pagination, precise CSS alignment for side effects, and exact mapping of 'Ways to Support' into Section 10.",
     },
   ];
 
@@ -182,48 +170,27 @@ export default function CaseStudyISP() {
     {
       num: "01",
       title: "Regulatory Discovery",
-      body: 'Before writing a line of code, I conducted a full read of Missouri 9 CSR 45-3.010 and the "Good Life" Framework to map every required clinical trigger. The nine-domain ISP structure, active treatment language requirements, and HCBS federal compliance rules all had to be baked into the logic before the UI could be designed. The first challenge was regulatory, not technical.',
+      body: 'Before writing a line of code, I conducted a full read of Missouri 9 CSR 45-3.010 and the "Good Life" Framework to map every required clinical trigger. The nine-domain ISP structure, active treatment language requirements, and HCBS federal compliance rules all had to be baked into the logic.',
     },
     {
       num: "02",
-      title: "Zero-Knowledge Architecture",
-      body: "Every other option — a hosted web app, a shared database, a cloud-synced form — introduced either a HIPAA risk or an IT bottleneck. A single-file HTML/JS deployment with zero external dependencies eliminated both problems simultaneously. By processing everything in the browser's volatile RAM, I bypassed the need for server infrastructure entirely. No POST requests. No databases. No BAA. No licensing cost.",
+      title: "Supabase Migration",
+      body: "While the initial architecture prioritized zero external dependencies, scaling required a centralized backend. I architected a PostgreSQL star-schema on Supabase to securely house .pcsp files, ensuring fast retrieval and data integrity while maintaining strict HIPAA protocols and encrypted transmission.",
     },
     {
       num: "03",
-      title: "Communication Module",
-      body: "Built a structured profiling system covering primary language, sign language type, a multi-select method checklist (Verbal, AAC Device, PECS, Gestures, Eye Gaze, Facial Expressions, Vocalizations, Behavior as Communication), evaluation status with conditional barrier documentation, and a fully dynamic Communication Chart. Each chart row maps a behavior to its meaning and the correct staff response — a direct Missouri DD compliance requirement that previously went undocumented.",
+      title: "Amendment & Depth Architecture",
+      body: "Case managers needed to amend plans without losing the original approved state. I built an interactive Amendment Log that timestamps changes and tags specific sections. Simultaneously, I implemented dynamic plan depths—toggling a client as 'Non-waiver' condenses the UI and hides irrelevant compliance blocks with explanatory notes, simplifying the form without altering the underlying 18-section schema.",
     },
     {
       num: "04",
-      title: "Likes, Dislikes & Person-Centered Supports",
-      body: "Designed dedicated form sections for capturing what the individual genuinely enjoys — favorite activities, foods, and places — alongside dislikes, triggers, and sensory sensitivities. This feeds directly into the narrative and ensures plans reflect the individual's actual life, not clinical boilerplate. The difference matters during audits.",
+      title: "UI / UX Refinements",
+      body: "Continued iterative improvements based directly on case manager feedback. This included updating the cover sheet branding, restructuring medication side-effects for better narrative flow, removing redundant signature lines for workflow efficiency, and ensuring high-fidelity print stylesheets with proper pagination and HIPAA disclaimers.",
     },
     {
       num: "05",
-      title: "Important People Engine",
-      body: "Engineered a dynamic multi-entry system for documenting the people who matter most to the individual. Each entry captures name, relationship, and an unlimited list of shared activities with frequency of contact. Staff can add or remove people and activities on the fly — the narrative auto-updates in real time. This satisfies the Natural Supports documentation requirement without a separate system.",
-    },
-    {
-      num: "06",
-      title: "Clinical Data Expansion",
-      body: "Expanded the engine to cover the full Missouri State Audit Checklist — including complex data structures for detailed medication protocols (PRN psychotropics), comprehensive family medical history, mandatory HCBS housing compliance triggers, health parameter tracking (Weight, Blood Pressure, Blood Sugar, Seizure Logs, Bowel Logs), and multi-select legal role classification.",
-    },
-    {
-      num: "07",
-      title: "Portable File System (.pcsp)",
-      body: "Implemented a complete save/restore pipeline using a custom .pcsp format. On export, the full plan state — dynamic entries, checkboxes, narratives, communication chart rows, important people, outcome goals — serializes to a locally stored JSON file. On import, a single file upload or drag-and-drop onto the workspace auto-fills the entire form in seconds, with full fidelity.",
-    },
-
-    {
-      num: "08",
-      title: "High-Fidelity Vault (v3.0)",
-      body: "Hardened the security layer by implementing a 'Zero-Knowledge' encryption pipeline. Using the Web Crypto API, passwords undergo PBKDF2 derivation (100k iterations) to generate 256-bit keys. All exported data is binary-encrypted via AES-GCM before Base64 encoding, making PII unreadable at rest.",
-    },
-    {
-      num: "09",
-      title: "Multi-Goal Outcomes Engine (v2.0)",
-      body: "Redesigned Section 9 from a single-goal builder into an unlimited multi-goal system. Each goal card is self-contained — domain, active verb, goal template, frequency, responsible provider, and date range — and can be added, removed, or reordered independently. All goals serialize into the .pcsp export and generate a numbered, audit-ready narrative block.",
+      title: "Communication & Supports",
+      body: "Engineered a dynamic multi-entry system for documenting natural supports and communication profiles. Staff can add or remove people, shared activities, and behavior-to-response chart rows on the fly, satisfying strict Missouri DD compliance requirements seamlessly.",
     },
   ];
 
