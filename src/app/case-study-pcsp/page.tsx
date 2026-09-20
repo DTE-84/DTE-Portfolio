@@ -43,15 +43,24 @@ export default function CaseStudyISP() {
   ];
 
   const domains = [
-    { num: "01", label: "Demographics & Legal" },
-    { num: "02", label: "Communication Profile" },
-    { num: "03", label: "Likes & Dislikes" },
-    { num: "04", label: "Important People" },
-    { num: "05", label: "Vision for a Good Life" },
-    { num: "06", label: "Health, Safety & Risk" },
-    { num: "07", label: "Legal Rights & Satisfaction" },
-    { num: "08", label: "Contributors & Admin" },
-    { num: "09", label: "Measurable Outcomes" },
+    { num: "01", label: "Demographics" },
+    { num: "02", label: "Preferences" },
+    { num: "03", label: "Dislikes" },
+    { num: "04", label: "People / Pets" },
+    { num: "05", label: "Hopes / Concerns" },
+    { num: "06", label: "Communication" },
+    { num: "07", label: "Programs" },
+    { num: "08", label: "Health / Risk" },
+    { num: "09", label: "Community Support" },
+    { num: "10", label: "Ways to Support" },
+    { num: "11", label: "Strengths" },
+    { num: "12", label: "Transition" },
+    { num: "13", label: "Behavioral" },
+    { num: "14", label: "Supervision" },
+    { num: "15", label: "Past / Current Goals" },
+    { num: "16", label: "Action Plan" },
+    { num: "17", label: "Comments" },
+    { num: "18", label: "Amendment Log" },
   ];
 
   const impactRows = [
@@ -127,12 +136,12 @@ export default function CaseStudyISP() {
     {
       icon: "solar:widget-add-linear",
       title: "Modular Builder",
-      body: "A dropdown-driven building block approach converts casual goal language into standardized SMART goals instantly. Each of the nine PCSP sections is self-contained and collapses cleanly for focused drafting.",
+      body: "A dropdown-driven building block approach converts casual goal language into standardized SMART goals instantly. Each of the 18 PCSP sections is self-contained and collapses cleanly for focused drafting.",
     },
     {
       icon: "solar:shield-keyhole-linear",
       title: "Zero-Knowledge Cloud",
-      body: "Transitioned from local-only storage to a highly secure Supabase PostgreSQL backend. However, to maintain strict HIPAA compliance without a BAA, all plan data is binary-encrypted (AES-GCM 256-bit) locally in the browser before syncing. The database only ever stores opaque ciphertext.",
+      body: "Transitioned from local-only storage to a highly secure Neon PostgreSQL backend. However, to maintain strict HIPAA compliance without a BAA, all plan data is binary-encrypted (AES-GCM 256-bit) locally in the browser before syncing. The database only ever stores opaque ciphertext.",
     },
     {
       icon: "solar:history-linear",
@@ -170,12 +179,12 @@ export default function CaseStudyISP() {
     {
       num: "01",
       title: "Regulatory Discovery",
-      body: 'Before writing a line of code, I conducted a full read of Missouri 9 CSR 45-3.010 and the "Good Life" Framework to map every required clinical trigger. The nine-domain PCSP structure, active treatment language requirements, and HCBS federal compliance rules all had to be baked into the logic.',
+      body: 'Before writing a line of code, I conducted a full read of Missouri 9 CSR 45-3.010 and the "Good Life" Framework to map every required clinical trigger. The eighteen-domain PCSP structure, active treatment language requirements, and HCBS federal compliance rules all had to be baked into the logic.',
     },
     {
       num: "02",
       title: "Encrypted Cloud Migration",
-      body: "While the initial architecture prioritized local storage, scaling required a centralized backend so case managers could log in from anywhere. I architected a Supabase PostgreSQL backend with Row-Level Security, but engineered it as a 'Zero-Knowledge' vault. The payload is encrypted in the browser using PBKDF2/AES-GCM before transmission. Supabase only stores the ciphertext, ensuring total HIPAA compliance without complex IT overhead.",
+      body: "While the initial architecture prioritized local storage, scaling required a centralized backend so case managers could log in from anywhere. I architected a Neon PostgreSQL backend with Row-Level Security, but engineered it as a 'Zero-Knowledge' vault. The payload is encrypted in the browser using PBKDF2/AES-GCM before transmission. Neon only stores the ciphertext, ensuring total HIPAA compliance without complex IT overhead.",
     },
     {
       num: "03",
@@ -351,13 +360,13 @@ export default function CaseStudyISP() {
                 <div className="absolute right-0 left-0 bottom-0 h-[3px] bg-gradient-to-r from-[#00ffcc] to-transparent opacity-40" />
                 <p className="text-lg text-white/95 font-medium leading-relaxed pr-6 pb-6">
                   Marion County MCSDD case managers were spending 15–20 minutes
-                  drafting each goal — across nine required clinical domains, by
+                  drafting each goal — across eighteen required clinical domains, by
                   hand, in disconnected systems. At peak caseload, documentation
                   wasn&apos;t a task on the list. It was the list.
                 </p>
               </div>
               <p className="text-base text-white/70 leading-relaxed">
-                Each PCSP required documenting nine clinical domains with
+                Each PCSP required documenting eighteen clinical domains with
                 precision. Missouri state auditors require specific active
                 language structures —{" "}
                 <em className="text-[#00ffcc]">
@@ -380,7 +389,7 @@ export default function CaseStudyISP() {
                     The Administrative Burden
                   </h4>
                   <p className="text-base text-white/85">
-                    Case managers spent 15–20 minutes per goal across nine
+                    Case managers spent 15–20 minutes per goal across eighteen
                     required clinical domains — demographics, communication
                     profiles, personal preferences, relationships, health risk,
                     and measurable outcomes — entirely by hand, in disconnected
@@ -459,8 +468,8 @@ export default function CaseStudyISP() {
                   servers. No POST requests. No IT tickets. No licensing cost.
                 </p>
                 <p className="text-base text-white/70 leading-relaxed">
-                  The interface covers all nine PCSP domains in a single unified
-                  workspace, from demographics to measurable outcomes — with a
+                  The interface covers all 18 PCSP domains in a single unified
+                  workspace, from demographics to the amendment log — with a
                   clinical word bank, a dynamic communication chart, an
                   unlimited important-people roster, and a multi-goal outcomes
                   engine baked directly into the logic.
@@ -584,7 +593,7 @@ export default function CaseStudyISP() {
               {/* 9 Domains */}
               <div className="p-6 rounded-xl border border-[#00ffcc]/20 bg-white/5">
                 <h4 className="text-[#00ffcc] text-[13px] font-black uppercase tracking-widest mb-6 font-orbitron">
-                  Full Section Architecture — 9 PCSP Domains
+                  Full Section Architecture — 18 PCSP Domains
                 </h4>
                 <div className="grid md:grid-cols-3 gap-3">
                   {domains.map(({ num, label }) => (
