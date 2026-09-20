@@ -279,7 +279,7 @@ export default function CaseStudyISP() {
                 PCSP Assistant <br />
                 <span className="text-accent italic">Pro</span>
               </h1>
-              <div className="flex flex-wrap justify-end gap-x-8 gap-y-4 pt-8 border-t border-[#00ffcc]/20">
+              <div className="grid grid-cols-3 md:grid-cols-6 gap-x-6 gap-y-6 pt-8 border-t border-[#00ffcc]/20">
                 {[
                   {
                     label: "Role",
@@ -304,7 +304,7 @@ export default function CaseStudyISP() {
                     color: "text-[#00ffcc]",
                   },
                 ].map(({ label, value, color }) => (
-                  <div key={label} className="text-right">
+                  <div key={label} className="text-center">
                     <span className="block text-[10px] font-black text-accent/50 uppercase tracking-widest mb-1">
                       {label}
                     </span>
