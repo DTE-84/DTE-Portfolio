@@ -288,7 +288,8 @@ export default function CaseStudyISP() {
                   },
                   {
                     label: "Client",
-                    value: "MCSDD (MO DMH)",
+                    value: "MCSDD",
+                    sub: "MO DMH",
                     color: "text-white/90",
                   },
                   { label: "Security", value: "HIPAA", color: "text-red-400" },
@@ -300,19 +301,25 @@ export default function CaseStudyISP() {
                   { label: "Version", value: "v3.0", color: "text-accent" },
                   {
                     label: "Status",
-                    value: "Production (Hardened)",
+                    value: "Production",
+                    sub: "Hardened",
                     color: "text-[#00ffcc]",
                   },
-                ].map(({ label, value, color }) => (
+                ].map(({ label, value, sub, color }) => (
                   <div key={label} className="text-center">
                     <span className="block text-[10px] font-black text-accent/50 uppercase tracking-widest mb-1">
                       {label}
                     </span>
                     <span
-                      className={`text-sm font-bold uppercase tracking-tight ${color}`}
+                      className={`block text-sm font-bold uppercase tracking-tight ${color}`}
                     >
                       {value}
                     </span>
+                    {sub && (
+                      <span className="block text-[10px] font-bold uppercase tracking-tight text-white/40">
+                        {sub}
+                      </span>
+                    )}
                   </div>
                 ))}
               </div>
