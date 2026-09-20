@@ -184,7 +184,7 @@ export default function CaseStudyISP() {
     {
       num: "02",
       title: "Encrypted Cloud Migration",
-      body: "While the initial architecture prioritized local storage, scaling required a centralized backend so case managers could log in from anywhere. I architected a Neon PostgreSQL backend with Row-Level Security, but engineered it as a 'Zero-Knowledge' vault. The payload is encrypted in the browser using PBKDF2/AES-GCM before transmission. Neon only stores the ciphertext, ensuring total HIPAA compliance without complex IT overhead.",
+      body: "While the initial architecture prioritized local storage, MCSDD's shift to a hybrid work model meant case managers needed the same plan available from more than one machine — in the office and in the field. I architected a Neon PostgreSQL backend with Row-Level Security, but engineered it as a 'Zero-Knowledge' vault. The payload is encrypted in the browser using PBKDF2/AES-GCM before transmission. Neon only stores the ciphertext, ensuring total HIPAA compliance without complex IT overhead.",
     },
     {
       num: "03",
@@ -359,10 +359,12 @@ export default function CaseStudyISP() {
                 <div className="absolute right-0 top-0 bottom-0 w-[3px] bg-gradient-to-b from-[#00ffcc] to-transparent opacity-40" />
                 <div className="absolute right-0 left-0 bottom-0 h-[3px] bg-gradient-to-r from-[#00ffcc] to-transparent opacity-40" />
                 <p className="text-lg text-white/95 font-medium leading-relaxed pr-6 pb-6">
-                  Marion County MCSDD case managers were spending 15–20 minutes
-                  drafting each goal — across eighteen required clinical domains, by
-                  hand, in disconnected systems. At peak caseload, documentation
-                  wasn&apos;t a task on the list. It was the list.
+                  Drafting a single goal by hand meant cross-referencing
+                  eighteen required clinical domains across disconnected
+                  systems — 15–20 minutes of careful, correct work, every
+                  time. At peak caseload, that overhead compounded fast:
+                  documentation wasn&apos;t a task on the list. It was the
+                  list.
                 </p>
               </div>
               <p className="text-base text-white/70 leading-relaxed">
@@ -377,10 +379,10 @@ export default function CaseStudyISP() {
                 <em className="text-white/90">
                   &quot;will try to improve communication&quot;
                 </em>
-                . Plans written in passive voice came back rejected. Every
-                rejection meant another revision cycle, another delay, and
-                another week before services could begin for the individual
-                waiting.
+                . That standard left zero margin for error — one
+                inconsistently worded goal, in a plan with dozens of them,
+                could trigger a revision cycle, another delay, and another
+                week before services could begin for the individual waiting.
               </p>
 
               <div className="grid gap-6">
@@ -394,7 +396,7 @@ export default function CaseStudyISP() {
                     profiles, personal preferences, relationships, health risk,
                     and measurable outcomes — entirely by hand, in disconnected
                     systems. A plan with multiple goals could take hours to
-                    produce and still return from audit with rejections. The
+                    produce, even before the audit review that followed. The
                     result was documentation fatigue that consumed the time and
                     energy meant for the people case managers were there to
                     serve.
@@ -408,10 +410,11 @@ export default function CaseStudyISP() {
                   <p className="text-base text-white/85">
                     State auditors require rigorous Active Treatment language,
                     structured communication profiles, and documented
-                    person-centered supports. Vague phrasing, missing
-                    communication barriers, or undocumented natural supports led
-                    to rejected plans, delayed services, and compounding audit
-                    risk — on plans that staff had already spent hours writing.
+                    person-centered supports. Any gap — vague phrasing, a
+                    missed communication barrier, an undocumented natural
+                    support — carried real cost: delayed services and
+                    compounding audit risk on plans that had already taken
+                    hours to write.
                   </p>
                 </div>
 
@@ -473,6 +476,16 @@ export default function CaseStudyISP() {
                   clinical word bank, a dynamic communication chart, an
                   unlimited important-people roster, and a multi-goal outcomes
                   engine baked directly into the logic.
+                </p>
+                <p className="text-base text-white/70 leading-relaxed">
+                  That zero-footprint design held up well for a single-device
+                  workflow. As MCSDD shifted to a hybrid work model — case
+                  managers splitting time between the office and field visits
+                  — the requirement changed: the same plan needed to open on
+                  more than one machine. That&apos;s what drove the move to a
+                  Neon-backed, zero-knowledge cloud sync, without giving up
+                  the client-side encryption the original architecture was
+                  built around.
                 </p>
               </div>
 
