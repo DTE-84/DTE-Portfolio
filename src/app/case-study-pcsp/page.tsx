@@ -982,16 +982,21 @@ export default function CaseStudyISP() {
               </h2>
               <p className="text-lg font-space text-white/75 max-w-3xl mx-auto leading-relaxed mb-4">
                 The constraint of &quot;no cloud tools&quot; that initially
-                seemed like a limitation turned out to be the design brief. A
-                stateless, browser-based architecture wasn&apos;t a workaround —
-                it was the right answer. By keeping everything in volatile
-                memory, I eliminated both the HIPAA risk and the IT bottleneck
-                in a single architectural decision.
+                seemed like a limitation turned out to be the design brief.
+                Encrypt everything client-side, and the backend never has to
+                be trusted with anything but ciphertext — that principle held
+                whether the plan lived in volatile browser memory for a
+                single session, or in Neon once MCSDD&apos;s hybrid schedule
+                meant staff needed it on more than one machine. By keeping
+                the encryption boundary in the browser instead of the server,
+                I eliminated both the HIPAA risk and the IT bottleneck from
+                day one — and kept them eliminated through the move to the
+                cloud.
               </p>
               <p className="text-lg font-space text-white/75 max-w-3xl mx-auto leading-relaxed mb-12">
                 The result covers every Missouri PCSP domain, satisfies
-                HIPAA&apos;s Security Rule without a BAA or a server, enforces
-                PHI retention policies client-side, and gets case managers from
+                HIPAA&apos;s Security Rule without a BAA, enforces PHI
+                retention policies client-side, and gets case managers from
                 blank page to audit-ready narrative in a few minutes instead
                 of twenty. That&apos;s the kind of problem frontend
                 engineering is uniquely positioned to solve.
