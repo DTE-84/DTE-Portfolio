@@ -920,14 +920,22 @@ export default function CaseStudyISP() {
                   VI. Deployment Strategy
                 </h3>
                 <p className="text-sm text-white/75 leading-relaxed">
-                  Hosted on the agency&apos;s{" "}
+                  Deployed as a static site backed by{" "}
                   <span className="text-white font-semibold">
-                    internal drive
+                    Neon Postgres
                   </span>
-                  , it inherits existing Windows Active Directory permissions —
-                  no separate login system required. Staff open the file in any
-                  modern browser. No installation, no IT ticket, no licensing
-                  cost. The &quot;server&quot; was already on every desk.
+                  , not an installed application. Case managers sign in with
+                  their own account and pick up the same plan from any
+                  machine — office desktop or home laptop, wherever the
+                  hybrid schedule puts them that day. There&apos;s still no
+                  server to patch, no license to renew, and no IT ticket to
+                  open: Neon manages the database, and because every payload
+                  is encrypted client-side before it ever reaches the
+                  network, the deployment carries the same low compliance
+                  overhead as the original single-file version. An offline
+                  mode remains available for staff working without a signed
+                  BAA or a reliable connection — Save Draft falls back to a
+                  local encrypted .pcsp export instead of syncing.
                 </p>
               </div>
 
