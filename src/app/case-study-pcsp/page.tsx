@@ -72,7 +72,7 @@ export default function CaseStudyISP() {
     {
       metric: "Drafting Time",
       before: "~15–20 Min / Goal",
-      after: "< 2 Minutes",
+      after: "~2–5 Minutes",
     },
     {
       metric: "Audit Compliance",
@@ -977,9 +977,9 @@ export default function CaseStudyISP() {
                 The result covers every Missouri PCSP domain, satisfies
                 HIPAA&apos;s Security Rule without a BAA or a server, enforces
                 PHI retention policies client-side, and gets case managers from
-                blank page to audit-ready narrative in under two minutes.
-                That&apos;s the kind of problem frontend engineering is uniquely
-                positioned to solve.
+                blank page to audit-ready narrative in a few minutes instead
+                of twenty. That&apos;s the kind of problem frontend
+                engineering is uniquely positioned to solve.
               </p>
               <div className="flex justify-center gap-8 flex-wrap">
                 <a
