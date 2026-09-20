@@ -1002,17 +1002,9 @@ export default function CaseStudyISP() {
                 engineering is uniquely positioned to solve.
               </p>
               <div className="flex justify-center gap-8 flex-wrap">
-                <a
-                  href="https://dte-84.github.io/PCSP-assistant-PRO/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-8 py-4 bg-[#00ffcc] text-[#0a0a0c] font-bold uppercase tracking-widest text-xs rounded hover:scale-105 transition-all"
-                >
-                  Launch Live App
-                </a>
                 <Link
                   href={getAssetPath("/")}
-                  className="px-8 py-4 border border-[#00ffcc]/20 text-[#00ffcc] font-black uppercase tracking-widest text-xs rounded hover:bg-[#00ffcc]/5 transition-all"
+                  className="px-8 py-4 bg-[#00ffcc] text-[#0a0a0c] font-bold uppercase tracking-widest text-xs rounded hover:scale-105 transition-all"
                 >
                   Back to Home
                 </Link>
