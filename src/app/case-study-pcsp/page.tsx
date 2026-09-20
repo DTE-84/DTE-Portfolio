@@ -265,7 +265,7 @@ export default function CaseStudyISP() {
             </Link>
             <div className="text-right">
               <span className="block text-[7px] font-mono text-accent/40 mb-1 uppercase tracking-widest">
-                ARCHIVE_ID: 2026_ISP_PRO_V3
+                ARCHIVE_ID: 2026_PCSP_PRO_V3
               </span>
               <div className="inline-block px-3 py-1 rounded-full border border-accent/20 bg-accent/5 text-accent text-[9px] font-black uppercase tracking-[0.4em]">
                 CASE STUDY
@@ -963,7 +963,7 @@ export default function CaseStudyISP() {
                   <div>
                     <span className="text-[#00ffcc] font-bold">3. Decryption Flow:</span>
                     <div className="pl-4 text-zinc-400 mt-1">
-                      Detect "ISPv3:" Signature → Extract Salt/IV → Derive Session Key → Decrypt RAM-Only
+                      Detect "PCSPv3:" Signature → Extract Salt/IV → Derive Session Key → Decrypt RAM-Only
                     </div>
                   </div>
                 </div>
