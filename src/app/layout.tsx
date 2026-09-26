@@ -14,7 +14,7 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://dte-solutions.icu"),
+  metadataBase: new URL("https://dte-84.github.io"),
   title: "Drew Ernst | Data Analyst & Full-Stack Developer",
   description:
     "Data analyst and full-stack developer building workflow tools, behavioral products, and data-driven web apps.",

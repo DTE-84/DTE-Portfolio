@@ -3,6 +3,7 @@ import { Icon } from "@iconify/react";
 import { useState, useEffect, useRef } from "react";
 import { useScrollLock } from "../hooks/useScrollLock";
 import { useTrapFocus } from "../hooks/useTrapFocus";
+import { getAssetPath } from "../utils/paths";
 
 interface NavbarProps {
   onContactClick?: () => void;
@@ -68,7 +69,7 @@ export default function Navbar({ onContactClick, theme, onThemeToggle }: NavbarP
               </a>
             ))}
             <a
-              href='/DTE-Portfolio/DTE_Resume.pdf'
+              href={getAssetPath('DTE_Resume.pdf')}
               target='_blank'
               className='px-6 py-2 border border-accent/40 text-accent text-xs font-bold uppercase tracking-widest hover:bg-white hover:text-black hover:border-white transition-all'>
               Resume
@@ -123,7 +124,7 @@ export default function Navbar({ onContactClick, theme, onThemeToggle }: NavbarP
         ))}
 
         <a
-          href='/DTE-Portfolio/DTE_Resume.pdf'
+          href={getAssetPath('DTE_Resume.pdf')}
           target='_blank'
           className='mt-4 px-12 py-4 border border-accent/40 text-accent text-lg font-black uppercase tracking-widest hover:bg-white hover:text-black hover:border-white transition-all'
           onClick={closeMenu}>

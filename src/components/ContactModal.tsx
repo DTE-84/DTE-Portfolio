@@ -82,7 +82,7 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
 				{isSuccess && (
 					<div className='absolute inset-0 z-[100] flex flex-col items-center justify-center bg-accent text-black font-black uppercase tracking-widest text-center px-10'>
 						<Icon icon='solar:check-circle-bold' className='text-8xl mb-6' />
-						<h2 className='text-3xl mb-4 font-orbitron'>Connecetion Successful</h2>
+						<h2 className='text-3xl mb-4 font-orbitron'>Connection Successful</h2>
 						<p className='text-sm'>Response protocol initiated</p>
 					</div>
 				)}

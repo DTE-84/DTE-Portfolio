@@ -277,7 +277,16 @@ const ProjectCard = ({ project, index }: { project: Project; index: number; }) =
 					</div>
 				</div>
 				<Link href={project.link} target='_blank' rel='noreferrer'>
-					<h3 className='text-3xl md:text-4xl font-black uppercase tracking-tighter mb-4 text-white group-hover:text-accent transition-colors duration-500'><RollingText text={project.title} /></h3>
+					<h3 className='text-3xl md:text-4xl font-black uppercase tracking-tighter mb-4 text-white group-hover:text-accent transition-colors duration-500'>
+						{project.title === 'WebPIQ' ? (
+							<span>
+								<span className="text-accent">WebP</span>
+								<span className="text-white group-hover:text-accent transition-colors duration-500">IQ</span>
+							</span>
+						) : (
+							<RollingText text={project.title} />
+						)}
+					</h3>
 				</Link>
 				<p className='text-base text-white/40 leading-relaxed font-medium mb-8 max-w-xl group-hover:text-white/60 transition-colors duration-500'>{project.description}</p>
 				<div className='flex flex-wrap gap-2'>
@@ -359,7 +368,7 @@ const Footer = ({ onContactClick }: { onContactClick: () => void }) => {
 						<RollingText text='Initiate Contact' hoverColor='text-white' />
 						<Icon icon='solar:letter-linear' className='text-xl' />
 					</button>
-					<a href='https://dte-84.github.io/DTE-Portfolio/DTE_Resume.pdf' target='_blank' rel='noreferrer' className='bg-black/5 border border-white/10 text-white px-12 py-6 rounded-2xl font-black uppercase text-sm transition-all hover:bg-white/10 hover:border-white/20 flex items-center gap-3'>
+					<a href={getAssetPath('DTE_Resume.pdf')} target='_blank' rel='noreferrer' className='bg-black/5 border border-white/10 text-white px-12 py-6 rounded-2xl font-black uppercase text-sm transition-all hover:bg-white/10 hover:border-white/20 flex items-center gap-3'>
 						<RollingText text='Download Dossier' />
 						<Icon icon='solar:file-download-linear' className='text-xl' />
 					</a>
