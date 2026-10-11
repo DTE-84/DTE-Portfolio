@@ -76,17 +76,17 @@ const Hero = ({ onContactClick }: { onContactClick: () => void }) => {
 	const nameLines = ["DREW", "ERNST."];
 
 	return (
-		<section ref={containerRef} className='relative min-h-screen flex items-center justify-center pt-24 pb-16 px-6 md:px-16 overflow-x-clip'>
-			<div className='w-full max-w-7xl flex flex-col md:flex-row items-center justify-between relative z-10'>
-				<div className='hero-logo w-full md:w-1/2 flex items-center justify-center md:justify-start' style={{ opacity: 0 }}>
-					<div className='relative w-64 h-64 md:w-120 md:h-120 flex items-center justify-center'>
+		<section ref={containerRef} className='relative min-h-screen flex items-center justify-center pt-24 pb-16 overflow-x-clip'>
+			<div className='w-full max-w-7xl mx-auto px-6 md:px-12 grid md:grid-cols-2 gap-12 md:gap-16 items-center relative z-10'>
+				<div className='hero-logo flex items-center justify-center' style={{ opacity: 0 }}>
+					<div className='relative w-64 h-64 md:w-full md:max-w-120 md:aspect-square md:h-auto flex items-center justify-center'>
 						<div className='relative z-20 w-48 h-48 md:w-80 md:h-80' style={{ WebkitMaskImage: "radial-gradient(circle, black 30%, transparent 80%)", maskImage: "radial-gradient(circle, black 30%, transparent 80%)" }}>
 							<DTELogoModular isStatic shouldSpin={false} />
 						</div>
 					</div>
 				</div>
-				<div className='w-full md:w-1/2 flex flex-col items-center md:items-start text-center md:text-left md:pl-16'>
-					<h1 className='font-orbitron font-black uppercase tracking-tighter leading-none text-white mb-4' style={{ fontSize: "clamp(3.2rem, 8vw, 7.5rem)" }}>
+				<div className='w-full max-w-xl mx-auto md:mx-0 flex flex-col items-center md:items-start text-center md:text-left'>
+					<h1 className='font-orbitron font-black uppercase tracking-tighter leading-none text-white mb-4' style={{ fontSize: "clamp(3.2rem, 10vw, 8.5rem)" }}>
 						{nameLines.map((line, lineIdx) => (
 							<div key={lineIdx} className={lineIdx > 0 ? "mt-[-0.06em]" : ""}>
 								{line.split("").map((char, charIdx) => (
@@ -97,23 +97,23 @@ const Hero = ({ onContactClick }: { onContactClick: () => void }) => {
 							</div>
 						))}
 					</h1>
-					<p className='hero-sub text-[10px] md:text-[12px] font-mono uppercase tracking-[0.55em] font-bold mb-8' style={{ color: "var(--theme-accent)", opacity: 0 }}>
+					<p className='hero-sub text-[10px] md:text-[12px] font-mono uppercase tracking-[0.3em] -mr-[0.3em] md:tracking-[0.55em] md:-mr-[0.55em] font-bold mb-8' style={{ color: "var(--theme-accent)", opacity: 0 }}>
 						Data Analyst &nbsp;//&nbsp; Full-Stack Engineer
 					</p>
-					<div className='hero-sub max-w-xl bg-white/2.5 backdrop-blur-md border border-white/6 px-7 py-6 rounded-3xl relative overflow-hidden group mb-10' style={{ opacity: 0 }}>
+					<div className='hero-sub w-full bg-white/2.5 backdrop-blur-md border border-white/6 px-7 py-6 rounded-3xl relative overflow-hidden group mb-10' style={{ opacity: 0 }}>
 						<p className='text-base md:text-lg text-white/75 leading-relaxed font-medium italic'>
 							I engineer <span className='text-accent not-italic font-bold'>full-stack applications and data pipelines</span> that solve real business problems—turning raw requirements into reliable, production-ready systems.
 						</p>
 					</div>
-					<div className='hero-sub flex flex-col sm:flex-row items-center gap-4' style={{ opacity: 0 }}>
-						<a href='#flagship' className='group flex items-center gap-3 bg-accent text-black px-8 py-4 rounded-2xl font-black uppercase text-[11px] tracking-[0.25em] transition-all duration-300 hover:scale-105 active:scale-95 shadow-[0_0_30px_rgba(var(--theme-accent-rgb),0.35)]'>
+					<div className='hero-sub w-full grid grid-cols-1 sm:grid-cols-3 gap-3' style={{ opacity: 0 }}>
+						<a href='#flagship' className='group flex items-center justify-center gap-2 px-4 py-4 rounded-2xl font-black uppercase text-[10px] tracking-[0.2em] whitespace-nowrap transition-all duration-300 bg-accent text-black hover:scale-105 active:scale-95 shadow-[0_0_30px_rgba(var(--theme-accent-rgb),0.35)]'>
 							<RollingText text='View Flagship' hoverColor='text-white' />
 							<Icon icon='solar:arrow-right-down-linear' className='text-base group-hover:translate-y-1 transition-transform' />
 						</a>
-						<a href='#work' className='group flex items-center gap-3 bg-white/4 border border-white/10 text-white/60 px-8 py-4 rounded-2xl font-black uppercase text-[11px] tracking-[0.25em] transition-all duration-300 hover:bg-white/8 hover:border-white/20 hover:text-white'>
+						<a href='#work' className='group flex items-center justify-center gap-2 px-4 py-4 rounded-2xl font-black uppercase text-[10px] tracking-[0.2em] whitespace-nowrap transition-all duration-300 bg-white/4 border border-white/10 text-white/60 hover:bg-white/8 hover:border-white/20 hover:text-white'>
 							<RollingText text='See All Projects' />
 						</a>
-						<button onClick={onContactClick} className='group flex items-center gap-3 bg-white/4 border border-white/10 text-white/60 px-8 py-4 rounded-2xl font-black uppercase text-[11px] tracking-[0.25em] transition-all duration-300 hover:bg-white/8 hover:border-white/20 hover:text-white'>
+						<button onClick={onContactClick} className='group flex items-center justify-center gap-2 px-4 py-4 rounded-2xl font-black uppercase text-[10px] tracking-[0.2em] whitespace-nowrap transition-all duration-300 bg-white/4 border border-white/10 text-white/60 hover:bg-white/8 hover:border-white/20 hover:text-white'>
 							<RollingText text='Contact' />
 						</button>
 					</div>
@@ -139,7 +139,7 @@ const StrengthsArchitecture = () => {
 							<Icon icon={s.icon} className='text-3xl text-accent' />
 						</div>
 						<span className='block font-mono text-[10px] text-accent/50 uppercase tracking-[0.4em] mb-4'>{s.id} // Strength</span>
-						<h3 className='text-2xl font-black uppercase tracking-tighter text-white mb-4'>{s.title}</h3>
+						<h3 className='text-2xl font-black uppercase tracking-tighter text-white mb-4 min-h-[2lh]'>{s.title}</h3>
 						<p className='text-white/40 leading-relaxed'>{s.body}</p>
 					</div>
 				))}
@@ -176,7 +176,14 @@ const tagIcons: Record<string, string> = {
 	"Asymmetric Grid": "solar:grid-linear",
 	"SEO": "solar:magnifer-zoom-in-linear",
 	"Ecosystem": "solar:globus-linear",
-	"Express": "logos:express",
+	"Express": "simple-icons:express",
+	"Neon": "logos:neon-icon",
+	"React": "logos:react",
+	"Telemetry": "solar:pulse-2-linear",
+	"Web Audio API": "solar:soundwave-linear",
+	"Canvas 2D": "solar:pallete-2-linear",
+	"Web Workers": "solar:cpu-bolt-linear",
+	"Local Execution": "solar:shield-check-linear",
 	"Vite": "logos:vitejs",
 };
 
@@ -201,8 +208,8 @@ const FlagshipBuilds = () => {
 
 	return (
 		<section ref={sectionRef} id='flagship' className='py-32 px-6 md:px-12 max-w-7xl mx-auto'>
-			<div className='flex flex-col gap-4 mb-20 px-4'>
-				<span className='flagship-reveal text-offset font-mono text-[10px] tracking-[0.4em] uppercase font-bold text-accent'>Principal Architecture //</span>
+			<div className='flex flex-col gap-4 mb-20'>
+				<span className='flagship-reveal text-white/30 font-mono text-[10px] tracking-[0.4em] uppercase font-bold'>Principal Architecture //</span>
 				<h2 className='flagship-reveal text-5xl md:text-8xl font-black uppercase tracking-tighter leading-none text-white'>Flagship <span className='text-accent italic'>Builds.</span></h2>
 			</div>
 			<div className='grid gap-12'>
@@ -322,7 +329,7 @@ const OtherWorks = () => {
 
 	return (
 		<section ref={sectionRef} id='work' className='py-32 px-6 md:px-12 max-w-7xl mx-auto'>
-			<div className='flex flex-col gap-4 mb-20 px-4'>
+			<div className='flex flex-col gap-4 mb-20'>
 				<span className='works-header text-white/30 font-mono text-[10px] tracking-[0.4em] uppercase font-bold'>The Systems Portfolio //</span>
 				<h2 className='works-header text-5xl md:text-8xl font-black uppercase tracking-tighter leading-none text-white'>Systems <span className='text-accent italic'>Archive.</span></h2>
 			</div>
@@ -364,11 +371,11 @@ const Footer = ({ onContactClick }: { onContactClick: () => void }) => {
 					<p className='text-xl text-white font-medium z-20'>Available for strategic engineering partnerships and high-fidelity data systems development.</p>
 				</div>
 				<div className='flex flex-wrap justify-center gap-6'>
-					<button onClick={onContactClick} className='group bg-accent text-black px-12 py-6 rounded-2xl font-black uppercase text-sm transition-all hover:scale-105 active:scale-95 flex items-center gap-3'>
+					<button onClick={onContactClick} className='group w-full sm:w-72 justify-center bg-accent text-black px-8 py-6 rounded-2xl font-black uppercase text-sm transition-all hover:scale-105 active:scale-95 flex items-center gap-3'>
 						<RollingText text='Initiate Contact' hoverColor='text-white' />
 						<Icon icon='solar:letter-linear' className='text-xl' />
 					</button>
-					<a href={getAssetPath('DTE_Resume.pdf')} target='_blank' rel='noreferrer' className='bg-black/5 border border-white/10 text-white px-12 py-6 rounded-2xl font-black uppercase text-sm transition-all hover:bg-white/10 hover:border-white/20 flex items-center gap-3'>
+					<a href={getAssetPath('DTE_Resume.pdf')} target='_blank' rel='noreferrer' className='w-full sm:w-72 justify-center bg-black/5 border border-white/10 text-white px-8 py-6 rounded-2xl font-black uppercase text-sm transition-all hover:bg-white/10 hover:border-white/20 flex items-center gap-3'>
 						<RollingText text='Download Dossier' />
 						<Icon icon='solar:file-download-linear' className='text-xl' />
 					</a>
@@ -378,7 +385,7 @@ const Footer = ({ onContactClick }: { onContactClick: () => void }) => {
 						<a href='https://github.com/dte-84' target='_blank' rel='noreferrer' aria-label='GitHub profile' className='text-2xl text-white hover:text-accent transition-colors'><Icon icon='simple-icons:github' /></a>
 						<a href='https://linkedin.com/in/dte84' target='_blank' rel='noreferrer' aria-label='LinkedIn profile' className='text-2xl text-white hover:text-accent transition-colors'><Icon icon='simple-icons:linkedin' /></a>
 					</div>
-					<p className='text-[10px] font-mono text-white/10 uppercase tracking-[0.5em]'>Quincy, IL — Available Remote // © 2026 DTE Solutions LLC</p>
+					<p className='text-[10px] font-mono text-white/30 uppercase tracking-[0.5em]'>Quincy, IL — Available Remote // © 2026 DTE Solutions LLC</p>
 				</div>
 			</div>
 		</footer>

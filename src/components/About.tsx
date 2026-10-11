@@ -55,41 +55,33 @@ const RevealText: React.FC<{ text: string; isReverse?: boolean }> = ({
 
 const About: React.FC = () => {
 	return (
-		<section id='about' className='py-[100px]'>
-			<div className='container-main'>
-				<div className='flex items-center gap-6 mb-16'>
-					<h2 className='text-2xl md:text-3xl font-bold text-white tracking-widest uppercase'>
-						My
-						<span style={{ color: "var(--theme-accent)", opacity: 0.8 }}>
-							 //
-						</span>{" "}
-						Identity
-					</h2>
-					<div className='h-[1px] flex-grow bg-[var(--theme-accent)]/40'></div>
+		<section id='about' className='py-32 px-6 md:px-12 max-w-7xl mx-auto'>
+			<div className='flex flex-col gap-4 mb-20'>
+				<span className='text-white/30 font-mono text-[10px] tracking-[0.4em] uppercase font-bold'>Who I Am //</span>
+				<h2 className='text-5xl md:text-8xl font-black uppercase tracking-tighter leading-none text-white'>My <span className='text-accent italic'>Identity.</span></h2>
+			</div>
+
+			<div className='grid lg:grid-cols-2 gap-12 items-stretch'>
+				<div className='space-y-6 text-lg md:text-xl text-white/80 leading-relaxed self-center'>
+					<RevealText text="My work sits at the intersection of backend architecture and user experience—where structured data, predictive analytics, and real-world usability come together." />
+					<RevealText text="I specialize in creating end-to-end systems that transform raw data into meaningful insights, whether in financial behavior, clinical workflows, or business operations." />
 				</div>
 
-				<div className='max-w-4xl'>
-					<div className='space-y-6'>
-						<RevealText text="My work sits at the intersection of backend architecture and user experience—where structured data, predictive analytics, and real-world usability come together." />
-						<RevealText text="I specialize in creating end-to-end systems that transform raw data into meaningful insights, whether in financial behavior, clinical workflows, or business operations." />
-					</div>
-
-					<div className='mt-20 space-y-10'>
-						<h4 className='text-lg font-bold text-white uppercase tracking-widest border-b border-[var(--theme-accent)]/60 pb-4'>
-							Philosophy
-						</h4>
-						<ul className='terminal-list list-none p-0 mt-[30px]'>
-							<li className="relative pl-[25px] mb-[18px] text-[clamp(0.85rem,1.8vw,1.1rem)] text-[#d7e3fc]/75 leading-relaxed font-semibold before:content-['>>'] before:absolute before:left-0 before:text-accent before:font-orbitron before:text-[14px] before:top-[4px] before:animate-[list-pulse_1.5s_infinite]">
-								<span className='font-bold text-white'>Deterministic Architecture:</span> Systems should be reliable, predictable, and built on strong data integrity.
-							</li>
-							<li className="relative pl-[25px] mb-[18px] text-[clamp(0.85rem,1.8vw,1.1rem)] text-[#d7e3fc]/75 leading-relaxed font-semibold before:content-['>>'] before:absolute before:left-0 before:text-accent before:font-orbitron before:text-[14px] before:top-[4px] before:animate-[list-pulse_1.5s_infinite]">
-								<span className='font-bold text-white'>Signal Clarity:</span> Data should be structured and presented in a way that makes decisions obvious - not overwhelming.
-							</li>
-							<li className="relative pl-[25px] mb-[18px] text-[clamp(0.85rem,1.8vw,1.1rem)] text-[#d7e3fc]/75 leading-relaxed font-semibold before:content-['>>'] before:absolute before:left-0 before:text-accent before:font-orbitron before:text-[14px] before:top-[4px] before:animate-[list-pulse_1.5s_infinite]">
-								<span className='font-bold text-white'>Analytical Precision:</span> Every system should produce measurable, meaningful outcomes using behavioral and operational data.
-							</li>
-						</ul>
-					</div>
+				<div className='p-10 rounded-[3rem] bg-white/2 border border-white/5'>
+					<h3 className='text-lg font-bold text-white uppercase tracking-widest border-b border-[var(--theme-accent)]/40 pb-4 mb-8'>
+						Philosophy
+					</h3>
+					<ul className='terminal-list list-none p-0 space-y-5'>
+						<li className="relative pl-[25px] text-[clamp(0.9rem,1.4vw,1.05rem)] text-[#d7e3fc]/75 leading-relaxed font-semibold before:content-['>>'] before:absolute before:left-0 before:text-accent before:font-orbitron before:text-[14px] before:top-[4px] before:animate-[list-pulse_1.5s_infinite]">
+							<span className='font-bold text-white'>Deterministic Architecture:</span> Systems should be reliable, predictable, and built on strong data integrity.
+						</li>
+						<li className="relative pl-[25px] text-[clamp(0.9rem,1.4vw,1.05rem)] text-[#d7e3fc]/75 leading-relaxed font-semibold before:content-['>>'] before:absolute before:left-0 before:text-accent before:font-orbitron before:text-[14px] before:top-[4px] before:animate-[list-pulse_1.5s_infinite]">
+							<span className='font-bold text-white'>Signal Clarity:</span> Data should be structured and presented in a way that makes decisions obvious - not overwhelming.
+						</li>
+						<li className="relative pl-[25px] text-[clamp(0.9rem,1.4vw,1.05rem)] text-[#d7e3fc]/75 leading-relaxed font-semibold before:content-['>>'] before:absolute before:left-0 before:text-accent before:font-orbitron before:text-[14px] before:top-[4px] before:animate-[list-pulse_1.5s_infinite]">
+							<span className='font-bold text-white'>Analytical Precision:</span> Every system should produce measurable, meaningful outcomes using behavioral and operational data.
+						</li>
+					</ul>
 				</div>
 			</div>
 		</section>
