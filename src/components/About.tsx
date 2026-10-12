@@ -58,7 +58,7 @@ const About: React.FC = () => {
 		<section id='about' className='py-32 px-6 md:px-12 max-w-7xl mx-auto'>
 			<div className='flex flex-col gap-4 mb-20'>
 				<span className='text-white/30 font-mono text-[10px] tracking-[0.4em] uppercase font-bold'>Who I Am //</span>
-				<h2 className='text-5xl md:text-8xl font-black uppercase tracking-tighter leading-none text-white'>My <span className='text-accent italic'>Identity.</span></h2>
+				<h2 className='text-[clamp(2.25rem,9vw,6rem)] font-black uppercase tracking-tighter leading-none text-white'>My <span className='text-accent italic'>Identity.</span></h2>
 			</div>
 
 			<div className='grid lg:grid-cols-2 gap-12 items-stretch'>

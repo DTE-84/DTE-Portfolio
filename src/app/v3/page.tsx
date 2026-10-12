@@ -210,7 +210,7 @@ const FlagshipBuilds = () => {
 		<section ref={sectionRef} id='flagship' className='py-32 px-6 md:px-12 max-w-7xl mx-auto'>
 			<div className='flex flex-col gap-4 mb-20'>
 				<span className='flagship-reveal text-white/30 font-mono text-[10px] tracking-[0.4em] uppercase font-bold'>Principal Architecture //</span>
-				<h2 className='flagship-reveal text-5xl md:text-8xl font-black uppercase tracking-tighter leading-none text-white'>Flagship <span className='text-accent italic'>Builds.</span></h2>
+				<h2 className='flagship-reveal text-[clamp(2.25rem,9vw,6rem)] font-black uppercase tracking-tighter leading-none text-white'>Flagship <span className='text-accent italic'>Builds.</span></h2>
 			</div>
 			<div className='grid gap-12'>
 				{builds.map((build, i) => (
@@ -331,7 +331,7 @@ const OtherWorks = () => {
 		<section ref={sectionRef} id='work' className='py-32 px-6 md:px-12 max-w-7xl mx-auto'>
 			<div className='flex flex-col gap-4 mb-20'>
 				<span className='works-header text-white/30 font-mono text-[10px] tracking-[0.4em] uppercase font-bold'>The Systems Portfolio //</span>
-				<h2 className='works-header text-5xl md:text-8xl font-black uppercase tracking-tighter leading-none text-white'>Systems <span className='text-accent italic'>Archive.</span></h2>
+				<h2 className='works-header text-[clamp(2.25rem,9vw,6rem)] font-black uppercase tracking-tighter leading-none text-white'>Systems <span className='text-accent italic'>Archive.</span></h2>
 			</div>
 			<div className='grid grid-cols-1 lg:grid-cols-2 gap-12'>
 				{projects.map((project, i) => (
@@ -365,10 +365,10 @@ const ExperienceMarquee = () => {
 const Footer = ({ onContactClick }: { onContactClick: () => void }) => {
 	return (
 		<footer className='py-32 px-6 md:px-12 max-w-7xl mx-auto'>
-			<div className='relative overflow-hidden bg-white/3 border border-white/10 rounded-[3rem] p-12 md:p-24 flex flex-col items-center text-center gap-12'>
+			<div className='relative overflow-hidden bg-white/3 border border-white/10 rounded-[2rem] md:rounded-[3rem] px-6 py-12 md:p-16 lg:p-24 flex flex-col items-center text-center gap-12'>
 				<div className='max-w-3xl flex flex-col gap-6'>
-					<h2 className='text-5xl md:text-8xl font-black uppercase tracking-tighter leading-none z-20'>Connect & <span className='text-accent italic'>Collaborate.</span></h2>
-					<p className='text-xl text-white font-medium z-20'>Available for strategic engineering partnerships and high-fidelity data systems development.</p>
+					<h2 className='text-[clamp(1.5rem,8vw,6rem)] font-black uppercase tracking-tighter leading-none z-20'>Connect & <span className='text-accent italic'>Collaborate.</span></h2>
+					<p className='text-base md:text-xl text-white font-medium z-20'>Available for strategic engineering partnerships and high-fidelity data systems development.</p>
 				</div>
 				<div className='flex flex-wrap justify-center gap-6'>
 					<button onClick={onContactClick} className='group w-full sm:w-72 justify-center bg-accent text-black px-8 py-6 rounded-2xl font-black uppercase text-sm transition-all hover:scale-105 active:scale-95 flex items-center gap-3'>
@@ -385,7 +385,7 @@ const Footer = ({ onContactClick }: { onContactClick: () => void }) => {
 						<a href='https://github.com/dte-84' target='_blank' rel='noreferrer' aria-label='GitHub profile' className='text-2xl text-white hover:text-accent transition-colors'><Icon icon='simple-icons:github' /></a>
 						<a href='https://linkedin.com/in/dte84' target='_blank' rel='noreferrer' aria-label='LinkedIn profile' className='text-2xl text-white hover:text-accent transition-colors'><Icon icon='simple-icons:linkedin' /></a>
 					</div>
-					<p className='text-[10px] font-mono text-white/30 uppercase tracking-[0.5em]'>Quincy, IL — Available Remote // © 2026 DTE Solutions LLC</p>
+					<p className='text-[10px] font-mono text-white/30 uppercase tracking-[0.25em] md:tracking-[0.5em] leading-relaxed'>Quincy, IL — Available Remote // © 2026 DTE Solutions LLC</p>
 				</div>
 			</div>
 		</footer>

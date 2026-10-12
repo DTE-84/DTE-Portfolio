@@ -48,8 +48,8 @@ export default function Navbar({ onContactClick, theme, onThemeToggle }: NavbarP
     <>
       <nav
         className={`fixed top-0 left-0 w-full z-[1000] transition-all duration-500 ${scrolled || isOpen ? "bg-black/90 backdrop-blur-md py-4" : "bg-transparent py-8"}`}>
-        <div className='max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-[1fr_auto] md:grid-cols-[1fr_auto_1fr] items-center'>
-          <div className='tech-logo-static flex items-center gap-3 cursor-default'>
+        <div className='max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-[1fr_auto] md:grid-cols-2 md:gap-16 items-center'>
+          <div className='tech-logo-static flex items-center md:justify-center gap-3 cursor-default'>
             <div className="w-8 h-8 bg-accent/10 border border-accent flex items-center justify-center [clip-path:polygon(25%_0%,100%_0%,75%_100%,0%_100%)]">
               <span className="text-white font-black text-xs tracking-tighter">D</span>
             </div>
@@ -58,7 +58,7 @@ export default function Navbar({ onContactClick, theme, onThemeToggle }: NavbarP
             </span>
           </div>
 
-          <div className='hidden md:flex gap-12 items-center justify-center'>
+          <div className='hidden md:flex gap-10 items-center justify-center'>
             {navLinks.map(({ href, label }) => (
               <a
                 key={href}
@@ -68,9 +68,6 @@ export default function Navbar({ onContactClick, theme, onThemeToggle }: NavbarP
                 {label}
               </a>
             ))}
-          </div>
-
-          <div className='hidden md:flex items-center justify-end gap-6'>
             {onThemeToggle && (
               <div
                 className='protocol-switch flex items-center gap-3 cursor-pointer'
