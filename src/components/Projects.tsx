@@ -90,19 +90,6 @@ const Projects: React.FC = () => {
                         featured: true,
                 },
                 {
-                        id: "NEST_LEGACY",
-                        title: "NestLegacy",
-                        category: "Lead Intelligence Nexus",
-                        year: "2026",
-                        description:
-                                "Advanced lead intelligence nexus engineered for high-net-worth qualification. Features wide-angle cinematic analytics and a 'Shatter-Join' gateway architecture to optimize high-fidelity prospect engagement.",
-                        tags: ["React 19", "Behavioral Finance", "Lead Intelligence"],
-                        image: "/DTE-Portfolio/assets/novaui.png",
-                        video: "/DTE-Portfolio/assets/NestLegacy.mp4", 
-                        link: "https://dte-solutions.icu/nest-legacy-breakdown.html",
-                        featured: true,
-                },
-                {
                         id: "PULSE_FINANCE",
                         title: "Pulse",
                         category: "Behavioral AI Engine",

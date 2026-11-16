@@ -57,18 +57,6 @@ const ProjectCard = ({ project }: { project: any }) => {
 const Work = () => {
 	const projects = [
 		{
-			id: "NestLegacy",
-			title: "NestLegacy - Wealth Transfer Engine",
-			category: "Enterprise Fintech",
-			year: "2026",
-			description:
-				"Digital trust layer for the $84 trillion wealth transfer. AI-driven lead intelligence bridging inheritors to fiduciary experts through behavioral financial modeling.",
-			tags: ["React 19", "Behavioral Finance", "Lead Intelligence", "Nova AI"],
-			image: "/DTE-E-Portfolio/assets/novaui.png",
-			video: "/DTE-E-Portfolio/assets/NestLegacy.mp4",
-			link: "https://dte-84.github.io/NestLegacy/",
-		},
-		{
 			id: "Pulse",
 			title: "Pulse - Behavioral Intelligence Platform",
 			category: "Behavioral Fintech",
