@@ -228,7 +228,7 @@ const FlagshipBuilds = () => {
 								})}
 							</div>
 							<Link href={build.link} target='_blank' rel='noreferrer'>
-								<h3 className='text-4xl md:text-5xl font-black uppercase tracking-tighter text-white group-hover:text-accent transition-colors'>{build.title}</h3>
+								<h3 className='text-3xl sm:text-4xl md:text-5xl leading-tight break-words font-black uppercase tracking-tighter text-white group-hover:text-accent transition-colors'>{build.title}</h3>
 							</Link>
 							<p className='text-lg text-white/50 leading-relaxed max-w-xl'>{build.desc}</p>
 							<a href={build.link} target='_blank' rel='noreferrer' className='group/btn inline-flex items-center gap-4 bg-accent text-black px-10 py-5 rounded-2xl font-black uppercase text-xs transition-all hover:scale-105 active:scale-95 self-start'>
@@ -284,7 +284,7 @@ const ProjectCard = ({ project, index }: { project: Project; index: number; }) =
 					</div>
 				</div>
 				<Link href={project.link} target='_blank' rel='noreferrer'>
-					<h3 className='text-3xl md:text-4xl font-black uppercase tracking-tighter mb-4 text-white group-hover:text-accent transition-colors duration-500'>
+					<h3 className='text-2xl sm:text-3xl md:text-4xl leading-tight break-words font-black uppercase tracking-tighter mb-4 text-white group-hover:text-accent transition-colors duration-500'>
 						{project.title === 'WebPIQ' ? (
 							<span>
 								<span className="text-accent">WebP</span>
@@ -319,7 +319,6 @@ const OtherWorks = () => {
 		{ id: "MWProperties", title: "MW Properties", category: "Real Estate Portal", year: 2026, description: "A marketing and lead-generation website built for a real estate investment group. Developed with React and Vite for fast load times and a custom contact form integration.", tags: ["React 19", "Vite"], link: "https://mw-properties.vercel.app/", image: "mwpropertiesmain.webp" },
 		{ id: "SetLogic", title: "SetLogic", category: "Deterministic AI", year: 2026, description: "A fitness tracking application that logs workout metrics and provides data-driven coaching feedback using a React frontend.", tags: ["React 19", "Claude AI", "Telemetry"], link: "https://dte-solutions.icu/setlogic-breakdown.html", video: "assets/SetLogic.mp4" },
 		{ id: "KeysBeats", title: "Keys Beats", category: "Interactive Audio", year: 2026, description: "An interactive promotional website for an audio producer, featuring real-time visual effects built with the HTML5 Canvas API and Web Audio API.", tags: ["Web Audio API", "Canvas 2D", "Architecture"], link: "https://keys-beats.vercel.app/", video: "assets/KeysBeats.mp4" },
-		{ id: "Nest", title: "NestLegacy Shell", category: "Enterprise Fintech", year: 2026, description: "A landing page concept for an enterprise financial technology product, highlighting modern UI design principles and responsive layouts.", tags: ["React 19", "Architecture"], link: "https://dte-solutions.icu/nestlegacy-breakdown.html", video: "assets/NestLegacy.mp4" },
 		{ id: "Fluff", title: "Fluff", category: "Performance Analytics", year: 2026, description: "A golf application designed to map and analyze GPS and biometric data for personal performance tracking.", tags: ["IoT Sync", "Geospatial"], link: "https://dte-84.github.io/Fluff/", video: "assets/Fluff.mp4" },
 		{ id: "WebPIQ", title: "WebPIQ", category: "Image Processing", year: 2026, description: "A browser-based bulk image converter and resizer tailored for e-commerce resellers, ensuring privacy with zero server uploads.", tags: ["React", "Web Workers", "Local Execution"], link: "https://dte-solutions.icu/webpiq-breakdown.html" },
 		{ id: "ProDip", title: "Pro Dip", category: "Commercial Aesthetics", year: 2025, description: "A business website for an automotive detailing company. Built with vanilla JavaScript and CSS Grid to showcase their services without heavy framework dependencies.", tags: ["PostgreSQL", "Analytics", "Window Fns", "Vanilla JS"], link: "https://dte-84.github.io/ProDip/", video: "assets/PRODIPpreview.mp4" },
