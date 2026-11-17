@@ -129,16 +129,16 @@ const Projects: React.FC = () => {
                         featured: true,
                 },
                 {
-                        id: "KEYS_BEATS",
-                        title: "Keys Beats",
-                        category: "Interactive Audio Portfolio",
+                        id: "VYBEFORMIQ",
+                        title: "VYBEFORMIQ",
+                        category: "Audio-Reactive Visualizer",
                         year: "2026",
                         description:
-                                "A high-fidelity promotional nexus featuring a real-time audio-reactive visualizer and a dynamic friction cursor. Engineered for immersive musical storytelling and elite brand positioning.",
-                        tags: ["Web Audio API", "Canvas 2D", "Space Grotesk"],
-                        image: "/DTE-Portfolio/assets/keysmainlogo.png",
-                        video: "/DTE-Portfolio/assets/KeysBeats.mp4",
-                        link: "https://keys-beats.vercel.app/",
+                                "A browser-based audio visualizer with five modes, shared device audio, microphone and file inputs, local audio analysis, and saved visual presets.",
+                        tags: ["React", "TypeScript", "Web Audio API", "Three.js", "Zustand"],
+                        image: "/DTE-Portfolio/assets/vybeformiq.svg",
+                        link: "https://vybeformiq.vercel.app/",
+                        caseStudy: "/case-study-vybeformiq/",
                         featured: true,
                 }
         ];

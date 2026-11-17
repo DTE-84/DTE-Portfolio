@@ -247,7 +247,7 @@ const FlagshipBuilds = () => {
 	);
 };
 
-interface Project { id: string; title: string; category: string; year: number; description: string; tags: string[]; link: string; video?: string; image?: string; }
+interface Project { id: string; title: string; category: string; year: number; description: string; tags: string[]; link: string; video?: string; image?: string; caseStudy?: string; source?: string; }
 
 const ProjectCard = ({ project, index }: { project: Project; index: number; }) => {
 	const cardRef = useRef<HTMLDivElement>(null);
@@ -296,6 +296,12 @@ const ProjectCard = ({ project, index }: { project: Project; index: number; }) =
 					</h3>
 				</Link>
 				<p className='text-base text-white/40 leading-relaxed font-medium mb-8 max-w-xl group-hover:text-white/60 transition-colors duration-500'>{project.description}</p>
+                {project.caseStudy && (
+                    <div className="flex flex-wrap gap-6 mb-6 text-xs font-bold uppercase tracking-widest text-accent">
+                        <Link href={project.caseStudy}>Case study &amp; technical breakdown</Link>
+                        <a href={project.source} target="_blank" rel="noreferrer">Source code ↗</a>
+                    </div>
+                )}
 				<div className='flex flex-wrap gap-2'>
 					{project.tags.map(tag => {
 						const icon = tagIcons[tag];
@@ -318,7 +324,7 @@ const OtherWorks = () => {
 		{ id: "Hub", title: "DTE Solutions Hub", category: "Ecosystem", year: 2026, description: "The central entry point for my suite of applications, demonstrating cross-app navigation, consistent UI design, and scalable deployment practices on Vercel and GitHub Pages.", tags: ["Next.js", "React 19", "Ecosystem"], link: "https://dte-solutions.icu", video: "assets/dte-solutionspreview.mp4" },
 		{ id: "MWProperties", title: "MW Properties", category: "Real Estate Portal", year: 2026, description: "A marketing and lead-generation website built for a real estate investment group. Developed with React and Vite for fast load times and a custom contact form integration.", tags: ["React 19", "Vite"], link: "https://mw-properties.vercel.app/", image: "mwpropertiesmain.webp" },
 		{ id: "SetLogic", title: "SetLogic", category: "Deterministic AI", year: 2026, description: "A fitness tracking application that logs workout metrics and provides data-driven coaching feedback using a React frontend.", tags: ["React 19", "Claude AI", "Telemetry"], link: "https://dte-solutions.icu/setlogic-breakdown.html", video: "assets/SetLogic.mp4" },
-		{ id: "KeysBeats", title: "Keys Beats", category: "Interactive Audio", year: 2026, description: "An interactive promotional website for an audio producer, featuring real-time visual effects built with the HTML5 Canvas API and Web Audio API.", tags: ["Web Audio API", "Canvas 2D", "Architecture"], link: "https://keys-beats.vercel.app/", video: "assets/KeysBeats.mp4" },
+		{ id: "VYBEFORMIQ", title: "VYBEFORMIQ", category: "Audio-Reactive Visualizer", year: 2026, description: "A browser-based audio visualizer with five modes, from frequency bars to 3D particles. Reacts to shared device audio, microphones, local files, and Creator Studio tracks, with local analysis and saved visual presets.", tags: ["React", "TypeScript", "Web Audio API", "Three.js", "Zustand"], link: "https://vybeformiq.vercel.app/", image: "assets/vybeformiq.svg", caseStudy: "/case-study-vybeformiq/", source: "https://github.com/DTE-84/VYBEFORMIQ" },
 		{ id: "Nest", title: "NestLegacy Shell", category: "Enterprise Fintech", year: 2026, description: "A landing page concept for an enterprise financial technology product, highlighting modern UI design principles and responsive layouts.", tags: ["React 19", "Architecture"], link: "https://dte-solutions.icu/nestlegacy-breakdown.html", video: "assets/NestLegacy.mp4" },
 		{ id: "Fluff", title: "Fluff", category: "Performance Analytics", year: 2026, description: "A golf application designed to map and analyze GPS and biometric data for personal performance tracking.", tags: ["IoT Sync", "Geospatial"], link: "https://dte-84.github.io/Fluff/", video: "assets/Fluff.mp4" },
 		{ id: "WebPIQ", title: "WebPIQ", category: "Image Processing", year: 2026, description: "A browser-based bulk image converter and resizer tailored for e-commerce resellers, ensuring privacy with zero server uploads.", tags: ["React", "Web Workers", "Local Execution"], link: "https://dte-solutions.icu/webpiq-breakdown.html" },
