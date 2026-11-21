@@ -136,7 +136,7 @@ const Projects: React.FC = () => {
                         description:
                                 "A browser-based audio visualizer with five modes, shared device audio, microphone and file inputs, local audio analysis, and saved visual presets.",
                         tags: ["React", "TypeScript", "Web Audio API", "Three.js", "Zustand"],
-                        image: "/DTE-Portfolio/assets/vybeformiq.svg",
+                        image: "/DTE-Portfolio/assets/vybeformiq/spectrum.webp",
                         link: "https://vybeformiq.vercel.app/",
                         caseStudy: "/case-study-vybeformiq/",
                         featured: true,
